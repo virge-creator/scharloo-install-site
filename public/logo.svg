@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 160" fill="none">
+  <!-- Car body - front view silhouette -->
+  <g fill="currentColor">
+    <!-- Location pin -->
+    <path d="M100 5 C85 5 73 17 73 32 C73 50 100 70 100 70 C100 70 127 50 127 32 C127 17 115 5 100 5Z M100 42 C94 42 89 37 89 31 C89 25 94 20 100 20 C106 20 111 25 111 31 C111 37 106 42 100 42Z"/>
+    
+    <!-- Car windshield top curve -->
+    <path d="M60 75 Q100 60 140 75 L145 85 Q100 72 55 85 Z"/>
+    
+    <!-- Car hood and headlights -->
+    <path d="M45 90 L55 85 Q100 72 145 85 L155 90 L160 95 Q100 82 40 95 Z"/>
+    
+    <!-- Main car body with headlights -->
+    <path d="M35 100 L40 95 Q100 82 160 95 L165 100 L168 108 L165 110 L155 108 L150 105 Q100 92 50 105 L45 108 L35 110 L32 108 Z"/>
+    
+    <!-- Left headlight detail -->
+    <ellipse cx="48" cy="103" rx="8" ry="4" fill="white"/>
+    <ellipse cx="48" cy="103" rx="5" ry="2.5"/>
+    
+    <!-- Right headlight detail -->
+    <ellipse cx="152" cy="103" rx="8" ry="4" fill="white"/>
+    <ellipse cx="152" cy="103" rx="5" ry="2.5"/>
+    
+    <!-- Hood lines -->
+    <path d="M75 88 L85 95" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    <path d="M125 88 L115 95" stroke="currentColor" stroke-width="1.5" fill="none"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="100" y="135" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="16" font-weight="900" fill="currentColor">SCHARLOO-INSTALL.NL</text>
+  <text x="100" y="152" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="400" letter-spacing="2" fill="currentColor">UW INBOUWPARTNER</text>
+</svg>
