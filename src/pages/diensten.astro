@@ -4,114 +4,145 @@ import Layout from '../layouts/Layout.astro';
 const services = [
   {
     id: 'ritregistratie',
-    title: 'Ritregistratie Systemen',
-    description: 'Automatische en nauwkeurige registratie van al uw ritten. Perfect voor fiscale doeleinden, wagenparkbeheer en inzicht in rijgedrag. Onze systemen zijn goedgekeurd door de Belastingdienst.',
+    title: 'Ritregistratie',
+    subtitle: 'Systemen',
+    description: 'Automatische en nauwkeurige registratie van al uw ritten. Perfect voor fiscale doeleinden en wagenparkbeheer.',
     features: ['GPS tracking', 'Automatische ritherkenning', 'Fiscaal goedgekeurd', 'Online dashboard'],
-    icon: '📍'
+    number: '01'
   },
   {
     id: 'dashcams',
-    title: 'Dashcam Inbouw',
-    description: 'Professionele, onzichtbare inbouw van dashcams met live verbinding. Geen losse kabels, geen zuignappen. Uw dashcam wordt netjes weggewerkt met een permanente stroomvoorziening en optionele live streaming.',
+    title: 'Dashcam',
+    subtitle: 'Met live verbinding',
+    description: 'Professionele, onzichtbare inbouw van dashcams. Geen losse kabels, geen zuignappen. Optionele live streaming.',
     features: ['Live verbinding', 'Onzichtbare installatie', 'Voor- en achtercamera', 'Parkeermodus'],
-    icon: '📹'
+    number: '02'
   },
   {
     id: 'canbus',
-    title: 'CAN Bus Installatie',
-    description: 'Deskundige aansluiting op het CAN Bus systeem van uw voertuig. Wij zorgen voor een veilige integratie zonder schade aan de elektronica van uw auto.',
-    features: ['Veilige integratie', 'Geen beschadiging', 'Alle merken', 'Diagnose mogelijkheid'],
-    icon: '🔌'
+    title: 'CAN Bus',
+    subtitle: 'Installaties',
+    description: 'Deskundige aansluiting op het CAN Bus systeem van uw voertuig. Veilige integratie zonder schade.',
+    features: ['Veilige integratie', 'Alle merken', 'Geen beschadiging', 'Diagnose mogelijk'],
+    number: '03'
   },
   {
     id: 'driverid',
-    title: 'Driver ID / RFID',
-    description: 'Identificatiesystemen voor bestuurders met RFID technologie. Weet altijd wie er rijdt en koppel ritten automatisch aan de juiste bestuurder.',
-    features: ['RFID tags/kaarten', 'Automatische herkenning', 'Koppeling met ritregistratie', 'Meerdere bestuurders'],
-    icon: '🪪'
+    title: 'Driver ID',
+    subtitle: 'RFID systemen',
+    description: 'Identificatiesystemen voor bestuurders. Weet altijd wie er rijdt en koppel ritten automatisch.',
+    features: ['RFID tags/kaarten', 'Automatische herkenning', 'Ritregistratie koppeling', 'Meerdere bestuurders'],
+    number: '04'
   },
   {
     id: 'tachograaf',
     title: 'Tachografen',
-    description: 'Installatie, kalibratie en onderhoud van digitale tachografen. Wij zorgen dat u voldoet aan alle wettelijke eisen voor rij- en rusttijden.',
+    subtitle: 'Installatie & kalibratie',
+    description: 'Installatie, kalibratie en onderhoud van digitale tachografen. Wettelijk conform.',
     features: ['Digitale tachograaf', 'Kalibratie', '2-jaarlijkse keuring', 'Wettelijk conform'],
-    icon: '⏱️'
+    number: '05'
   },
   {
     id: 'startblokkering',
     title: 'Startblokkeringen',
-    description: 'Bescherm uw voertuig tegen diefstal met een professioneel startblokkeringssysteem. Extra zekerheid naast uw standaard beveiliging.',
+    subtitle: 'Anti-diefstal',
+    description: 'Bescherm uw voertuig tegen diefstal met een professioneel startblokkeringssysteem.',
     features: ['Anti-diefstal', 'RFID of PIN', 'SCM gecertificeerd', 'Verzekeraar goedgekeurd'],
-    icon: '🔒'
+    number: '06'
   },
   {
     id: 'io',
-    title: 'I/O Installaties',
-    description: 'Maatwerkoplossingen voor input/output installaties. Van sensoren tot schakelaars, wij realiseren uw specifieke wensen.',
-    features: ['Maatwerk', 'Sensoren', 'Schakelaars', 'Integratie bestaande systemen'],
-    icon: '⚡'
+    title: 'I/O',
+    subtitle: 'Installaties',
+    description: 'Maatwerkoplossingen voor input/output installaties. Van sensoren tot schakelaars.',
+    features: ['Maatwerk', 'Sensoren', 'Schakelaars', 'Systeemintegratie'],
+    number: '07'
   },
 ];
 ---
 
-<Layout title="Diensten" description="Onze diensten: ritregistratie, dashcams, CAN bus, tachografen, startblokkeringen en meer.">
+<Layout title="Diensten" description="Onze diensten: ritregistratie, dashcams, CAN bus, tachografen en meer.">
   <!-- Hero -->
-  <section class="bg-black text-white py-24">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <p class="text-brand font-medium mb-4 tracking-wide uppercase">Wat wij doen</p>
-      <h1 class="text-5xl md:text-6xl font-bold mb-6">Onze diensten</h1>
-      <p class="text-xl text-gray-300 max-w-2xl">
-        Van ritregistratie tot startblokkeringen. Wij zijn uw specialist voor 
-        professionele voertuigelektronica installaties.
-      </p>
+  <section class="min-h-[60vh] bg-black text-white flex items-end pb-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+      <p class="text-brand font-medium tracking-widest uppercase mb-4 animate-fade-in-up">Diensten</p>
+      <h1 class="heading-xl animate-fade-in-up delay-100" style="opacity: 0;">
+        Wat wij<br />
+        <span class="text-gray-500">doen</span>
+      </h1>
     </div>
   </section>
 
   <!-- Services -->
-  <section class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="space-y-24">
-        {services.map((service, index) => (
-          <div id={service.id} class="scroll-mt-24">
-            <div class={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
-              <div class={index % 2 === 1 ? 'lg:order-2' : ''}>
-                <span class="text-6xl mb-6 block">{service.icon}</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-black mb-4">{service.title}</h2>
-                <p class="text-lg text-gray-600 mb-8">{service.description}</p>
-                <ul class="grid grid-cols-2 gap-4">
-                  {service.features.map(feature => (
-                    <li class="flex items-center text-gray-700">
-                      <span class="w-2 h-2 bg-brand mr-3"></span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div class={`bg-gray-100 aspect-video flex items-center justify-center ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                <span class="text-8xl opacity-20">{service.icon}</span>
-              </div>
+  <section class="bg-white">
+    {services.map((service, index) => (
+      <div 
+        id={service.id} 
+        class={`scroll-mt-24 border-b border-gray-200 ${index % 2 === 1 ? 'bg-gray-50' : ''}`}
+      >
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+            <!-- Left: Title and number -->
+            <div class="reveal">
+              <span class="text-8xl lg:text-9xl font-black text-gray-100">{service.number}</span>
+              <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold -mt-12 lg:-mt-16">
+                {service.title}<br />
+                <span class="text-gray-400">{service.subtitle}</span>
+              </h2>
+            </div>
+            
+            <!-- Right: Description and features -->
+            <div class="reveal lg:pt-20">
+              <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                {service.description}
+              </p>
+              <ul class="grid grid-cols-2 gap-4">
+                {service.features.map(feature => (
+                  <li class="flex items-center gap-3 text-gray-700">
+                    <span class="w-2 h-2 bg-brand flex-shrink-0"></span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
-        ))}
+        </div>
       </div>
-    </div>
+    ))}
   </section>
 
   <!-- CTA -->
-  <section class="py-24 bg-brand text-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-      <h2 class="text-4xl md:text-5xl font-bold mb-6">
-        Interesse in onze diensten?
+  <section class="py-32 bg-black text-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center reveal">
+      <h2 class="heading-lg mb-8">
+        Interesse?
       </h2>
-      <p class="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-        Vraag vrijblijvend een offerte aan of neem contact op voor meer informatie.
+      <p class="text-xl text-gray-400 mb-12 max-w-xl mx-auto">
+        Vraag vrijblijvend een offerte aan
       </p>
       <a 
         href="/contact" 
-        class="inline-block bg-white text-brand px-10 py-4 text-lg font-medium hover:bg-gray-100 transition-colors"
+        class="group inline-flex items-center gap-3 bg-brand text-white px-10 py-5 text-xl font-bold hover:bg-white hover:text-black transition-all duration-300"
       >
         Contact opnemen
+        <span class="group-hover:translate-x-2 transition-transform duration-300">→</span>
       </a>
     </div>
   </section>
 </Layout>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  
+  const revealOnScroll = () => {
+    reveals.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      if (top < window.innerHeight - 100) {
+        el.classList.add('active');
+      }
+    });
+  };
+  
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll();
+</script>

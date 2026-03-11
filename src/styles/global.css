@@ -37,7 +37,86 @@ body {
   background-color: var(--color-brand-dark);
 }
 
-/* Smooth transitions */
-.transition-brand {
-  @apply transition-all duration-300 ease-in-out;
+/* MrBoost style animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Stagger delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Big bold headings - MrBoost style */
+.heading-xl {
+  @apply text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none;
+}
+
+.heading-lg {
+  @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight;
+}
+
+/* Hover lift effect */
+.hover-lift {
+  @apply transition-all duration-300;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+}
+
+/* Line animation */
+.line-reveal::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background: var(--color-brand);
+  transition: width 0.4s ease;
+}
+
+.line-reveal:hover::after {
+  width: 100%;
+}
+
+/* Cursor pointer areas */
+.cursor-pointer-area {
+  cursor: pointer;
 }
