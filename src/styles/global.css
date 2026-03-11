@@ -20,6 +20,17 @@ body {
   font-family: var(--font-sans);
 }
 
+/* Subtle dot pattern background - like business card */
+.bg-pattern {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-pattern-dense {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
 /* Custom utilities */
 .text-brand {
   color: var(--color-brand);
