@@ -15,39 +15,39 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- Contact Section -->
-  <section class="py-24 lg:py-32 bg-white">
+  <section class="py-24 lg:py-32 bg-gray-950">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
         <!-- Left: Contact Info -->
         <div class="reveal">
           <div class="space-y-12">
             <div>
-              <p class="text-gray-400 uppercase tracking-widest text-sm mb-3">Telefoon</p>
+              <p class="text-gray-500 uppercase tracking-widest text-sm mb-3">Telefoon</p>
               <a href="tel:+31182796197" class="text-3xl md:text-4xl font-bold hover:text-brand transition-colors">
                 0182 796 197
               </a>
             </div>
             
             <div>
-              <p class="text-gray-400 uppercase tracking-widest text-sm mb-3">Email</p>
+              <p class="text-gray-500 uppercase tracking-widest text-sm mb-3">Email</p>
               <a href="mailto:info@scharloo-install.nl" class="text-3xl md:text-4xl font-bold hover:text-brand transition-colors">
                 info@scharloo-install.nl
               </a>
             </div>
             
             <div>
-              <p class="text-gray-400 uppercase tracking-widest text-sm mb-3">Website</p>
+              <p class="text-gray-500 uppercase tracking-widest text-sm mb-3">Website</p>
               <p class="text-3xl md:text-4xl font-bold">
                 scharloo-install.nl
               </p>
             </div>
 
             <div class="pt-8">
-              <p class="text-gray-400 uppercase tracking-widest text-sm mb-3">Openingstijden</p>
-              <div class="space-y-2 text-lg">
-                <p>Ma — Vr: <span class="font-semibold">08:00 - 17:00</span></p>
-                <p>Za: <span class="font-semibold">Op afspraak</span></p>
-                <p>Zo: <span class="text-gray-400">Gesloten</span></p>
+              <p class="text-gray-500 uppercase tracking-widest text-sm mb-3">Openingstijden</p>
+              <div class="space-y-2 text-lg text-gray-300">
+                <p>Ma — Vr: <span class="font-semibold text-white">08:00 - 17:00</span></p>
+                <p>Za: <span class="font-semibold text-white">Op afspraak</span></p>
+                <p>Zo: <span class="text-gray-500">Gesloten</span></p>
               </div>
             </div>
           </div>
@@ -58,7 +58,7 @@ import Layout from '../layouts/Layout.astro';
           <form class="space-y-8" name="contact" method="POST" data-netlify="true">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
-                <label for="name" class="block text-sm font-medium text-gray-400 uppercase tracking-widest mb-3">
+                <label for="name" class="block text-sm font-medium text-gray-500 uppercase tracking-widest mb-3">
                   Naam *
                 </label>
                 <input 
@@ -66,24 +66,24 @@ import Layout from '../layouts/Layout.astro';
                   id="name" 
                   name="name" 
                   required
-                  class="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-200 focus:border-brand focus:ring-0 text-lg transition-colors"
+                  class="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-700 focus:border-brand focus:ring-0 text-lg text-white transition-colors"
                 />
               </div>
               <div>
-                <label for="phone" class="block text-sm font-medium text-gray-400 uppercase tracking-widest mb-3">
+                <label for="phone" class="block text-sm font-medium text-gray-500 uppercase tracking-widest mb-3">
                   Telefoon
                 </label>
                 <input 
                   type="tel" 
                   id="phone" 
                   name="phone"
-                  class="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-200 focus:border-brand focus:ring-0 text-lg transition-colors"
+                  class="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-700 focus:border-brand focus:ring-0 text-lg text-white transition-colors"
                 />
               </div>
             </div>
             
             <div>
-              <label for="email" class="block text-sm font-medium text-gray-400 uppercase tracking-widest mb-3">
+              <label for="email" class="block text-sm font-medium text-gray-500 uppercase tracking-widest mb-3">
                 Email *
               </label>
               <input 
@@ -91,33 +91,33 @@ import Layout from '../layouts/Layout.astro';
                 id="email" 
                 name="email" 
                 required
-                class="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-200 focus:border-brand focus:ring-0 text-lg transition-colors"
+                class="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-700 focus:border-brand focus:ring-0 text-lg text-white transition-colors"
               />
             </div>
             
             <div>
-              <label for="service" class="block text-sm font-medium text-gray-400 uppercase tracking-widest mb-3">
+              <label for="service" class="block text-sm font-medium text-gray-500 uppercase tracking-widest mb-3">
                 Dienst
               </label>
               <select 
                 id="service" 
                 name="service"
-                class="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-200 focus:border-brand focus:ring-0 text-lg transition-colors cursor-pointer"
+                class="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-700 focus:border-brand focus:ring-0 text-lg text-white transition-colors cursor-pointer"
               >
-                <option value="">Selecteer een dienst</option>
-                <option value="ritregistratie">Ritregistratie</option>
-                <option value="dashcam">Dashcam inbouw</option>
-                <option value="canbus">CAN Bus installatie</option>
-                <option value="driverid">Driver ID / RFID</option>
-                <option value="tachograaf">Tachograaf</option>
-                <option value="startblokkering">Startblokkering</option>
-                <option value="io">I/O installatie</option>
-                <option value="anders">Anders</option>
+                <option value="" class="bg-gray-900">Selecteer een dienst</option>
+                <option value="ritregistratie" class="bg-gray-900">Ritregistratie</option>
+                <option value="dashcam" class="bg-gray-900">Dashcam inbouw</option>
+                <option value="canbus" class="bg-gray-900">CAN Bus installatie</option>
+                <option value="driverid" class="bg-gray-900">Driver ID / RFID</option>
+                <option value="tachograaf" class="bg-gray-900">Tachograaf</option>
+                <option value="startblokkering" class="bg-gray-900">Startblokkering</option>
+                <option value="io" class="bg-gray-900">I/O installatie</option>
+                <option value="anders" class="bg-gray-900">Anders</option>
               </select>
             </div>
             
             <div>
-              <label for="message" class="block text-sm font-medium text-gray-400 uppercase tracking-widest mb-3">
+              <label for="message" class="block text-sm font-medium text-gray-500 uppercase tracking-widest mb-3">
                 Bericht *
               </label>
               <textarea 
@@ -125,13 +125,13 @@ import Layout from '../layouts/Layout.astro';
                 name="message" 
                 rows="4" 
                 required
-                class="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-200 focus:border-brand focus:ring-0 text-lg transition-colors resize-none"
+                class="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-700 focus:border-brand focus:ring-0 text-lg text-white transition-colors resize-none"
               ></textarea>
             </div>
             
             <button 
               type="submit"
-              class="group w-full bg-black text-white py-5 text-lg font-semibold hover:bg-brand transition-all duration-300 flex items-center justify-center gap-3 mt-8"
+              class="group w-full bg-brand text-white py-5 text-lg font-semibold hover:bg-white hover:text-black transition-all duration-300 flex items-center justify-center gap-3 mt-8"
             >
               Verstuur bericht
               <span class="group-hover:translate-x-2 transition-transform duration-300">→</span>

@@ -74,31 +74,31 @@ const services = [
   </section>
 
   <!-- Services -->
-  <section class="bg-white">
+  <section class="bg-black">
     {services.map((service, index) => (
       <div 
         id={service.id} 
-        class={`scroll-mt-24 border-b border-gray-200 ${index % 2 === 1 ? 'bg-gray-50' : ''}`}
+        class={`scroll-mt-24 border-b border-gray-800 ${index % 2 === 1 ? 'bg-gray-950' : 'bg-black'}`}
       >
         <div class="max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <!-- Left: Title and number -->
             <div class="reveal">
-              <span class="text-8xl lg:text-9xl font-black text-gray-100">{service.number}</span>
+              <span class="text-8xl lg:text-9xl font-black text-gray-900">{service.number}</span>
               <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold -mt-12 lg:-mt-16">
                 {service.title}<br />
-                <span class="text-gray-400">{service.subtitle}</span>
+                <span class="text-gray-500">{service.subtitle}</span>
               </h2>
             </div>
             
             <!-- Right: Description and features -->
             <div class="reveal lg:pt-20">
-              <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p class="text-xl text-gray-400 mb-8 leading-relaxed">
                 {service.description}
               </p>
               <ul class="grid grid-cols-2 gap-4">
                 {service.features.map(feature => (
-                  <li class="flex items-center gap-3 text-gray-700">
+                  <li class="flex items-center gap-3 text-gray-300">
                     <span class="w-2 h-2 bg-brand flex-shrink-0"></span>
                     {feature}
                   </li>
@@ -112,17 +112,17 @@ const services = [
   </section>
 
   <!-- CTA -->
-  <section class="py-32 bg-black text-white">
+  <section class="py-32 bg-brand text-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center reveal">
       <h2 class="heading-lg mb-8">
         Interesse?
       </h2>
-      <p class="text-xl text-gray-400 mb-12 max-w-xl mx-auto">
+      <p class="text-xl text-white/80 mb-12 max-w-xl mx-auto">
         Vraag vrijblijvend een offerte aan
       </p>
       <a 
-        href="/contact" 
-        class="group inline-flex items-center gap-3 bg-brand text-white px-10 py-5 text-xl font-bold hover:bg-white hover:text-black transition-all duration-300"
+        href="/scharloo-install-site/contact/" 
+        class="group inline-flex items-center gap-3 bg-white text-brand px-10 py-5 text-xl font-bold hover:bg-black hover:text-white transition-all duration-300"
       >
         Contact opnemen
         <span class="group-hover:translate-x-2 transition-transform duration-300">→</span>

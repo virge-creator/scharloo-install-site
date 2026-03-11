@@ -10,13 +10,13 @@
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-/* Base styles */
+/* Base styles - Dark theme */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  @apply bg-white text-black antialiased;
+  @apply bg-black text-white antialiased;
   font-family: var(--font-sans);
 }
 
@@ -114,9 +114,4 @@ body {
 
 .line-reveal:hover::after {
   width: 100%;
-}
-
-/* Cursor pointer areas */
-.cursor-pointer-area {
-  cursor: pointer;
 }

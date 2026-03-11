@@ -1,19 +1,19 @@
 ---
 const navItems = [
-  { href: '/diensten/', label: 'Diensten' },
-  { href: '/over-ons/', label: 'Over ons' },
-  { href: '/contact/', label: 'Contact' },
+  { href: '/scharloo-install-site/diensten/', label: 'Diensten' },
+  { href: '/scharloo-install-site/over-ons/', label: 'Over ons' },
+  { href: '/scharloo-install-site/contact/', label: 'Contact' },
 ];
 
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 mix-blend-difference">
+<header class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800">
   <nav class="max-w-7xl mx-auto px-6 lg:px-8">
-    <div class="flex items-center justify-between h-24">
+    <div class="flex items-center justify-between h-20">
       <!-- Logo -->
-      <a href="/" class="text-white font-bold text-xl tracking-tight hover:opacity-70 transition-opacity">
-        SCHARLOO<span class="text-brand mix-blend-normal">—</span>INSTALL
+      <a href="/scharloo-install-site/" class="text-white font-bold text-xl tracking-tight hover:text-brand transition-colors">
+        SCHARLOO<span class="text-brand">—</span>INSTALL
       </a>
 
       <!-- Desktop Navigation -->
@@ -21,8 +21,8 @@ const currentPath = Astro.url.pathname;
         {navItems.map(item => (
           <a 
             href={item.href}
-            class={`text-sm font-medium tracking-wide uppercase text-white hover:opacity-70 transition-opacity ${
-              currentPath.startsWith(item.href) ? 'opacity-70' : ''
+            class={`text-sm font-medium tracking-wide uppercase hover:text-brand transition-colors ${
+              currentPath.includes(item.href.split('/')[2]) ? 'text-brand' : 'text-gray-400'
             }`}
           >
             {item.label}
@@ -45,10 +45,10 @@ const currentPath = Astro.url.pathname;
 </header>
 
 <!-- Mobile Navigation Overlay -->
-<div id="mobile-menu" class="fixed inset-0 bg-black z-40 hidden flex-col justify-center items-center">
+<div id="mobile-menu" class="fixed inset-0 bg-black z-[60] hidden flex-col justify-center items-center">
   <button 
     id="mobile-menu-close"
-    class="absolute top-8 right-6 p-2 text-white"
+    class="absolute top-6 right-6 p-2 text-white"
     aria-label="Menu sluiten"
   >
     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -57,7 +57,7 @@ const currentPath = Astro.url.pathname;
   </button>
   
   <nav class="flex flex-col items-center space-y-8">
-    <a href="/" class="text-4xl font-bold text-white hover:text-brand transition-colors">Home</a>
+    <a href="/scharloo-install-site/" class="text-4xl font-bold text-white hover:text-brand transition-colors">Home</a>
     {navItems.map(item => (
       <a 
         href={item.href}
@@ -68,6 +68,9 @@ const currentPath = Astro.url.pathname;
     ))}
   </nav>
 </div>
+
+<!-- Spacer for fixed header -->
+<div class="h-20"></div>
 
 <script>
   const btn = document.getElementById('mobile-menu-btn');

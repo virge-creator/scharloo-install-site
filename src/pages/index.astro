@@ -50,14 +50,14 @@ const projects = [
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row gap-4 pt-8 animate-fade-in-up delay-300" style="opacity: 0;">
           <a 
-            href="/contact" 
+            href="/scharloo-install-site/contact/" 
             class="group bg-brand text-white px-8 py-4 text-lg font-semibold hover:bg-white hover:text-black transition-all duration-300 inline-flex items-center justify-center gap-3"
           >
             Offerte aanvragen
             <span class="group-hover:translate-x-2 transition-transform duration-300">→</span>
           </a>
           <a 
-            href="/diensten" 
+            href="/scharloo-install-site/diensten/" 
             class="border-2 border-white text-white px-8 py-4 text-lg font-semibold hover:bg-white hover:text-black transition-all duration-300 text-center"
           >
             Bekijk diensten
@@ -91,29 +91,29 @@ const projects = [
     </div>
   </section>
 
-  <!-- Services Grid - Clean, minimal -->
-  <section class="py-32 bg-white">
+  <!-- Services Grid - Dark -->
+  <section class="py-32 bg-gray-950">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <!-- Section header -->
       <div class="mb-20 reveal">
         <p class="text-brand font-medium tracking-widest uppercase mb-4">Diensten</p>
         <h2 class="heading-lg">
           Wat wij<br />
-          <span class="text-gray-400">voor u doen</span>
+          <span class="text-gray-500">voor u doen</span>
         </h2>
       </div>
       
       <!-- Services list -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border-t border-gray-200 reveal">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border-t border-gray-800 reveal">
         {services.map((service, i) => (
           <a 
-            href={`/diensten#${service.id}`}
-            class={`group py-8 md:py-12 border-b border-gray-200 flex items-center justify-between hover:bg-gray-50 transition-colors px-4 md:px-8 ${i % 2 === 0 ? 'md:border-r' : ''}`}
+            href={`/scharloo-install-site/diensten/#${service.id}`}
+            class={`group py-8 md:py-12 border-b border-gray-800 flex items-center justify-between hover:bg-gray-900 transition-colors px-4 md:px-8 ${i % 2 === 0 ? 'md:border-r' : ''}`}
           >
             <span class="text-2xl md:text-3xl font-bold group-hover:text-brand transition-colors">
               {service.title}
             </span>
-            <span class="text-3xl text-gray-300 group-hover:text-brand group-hover:translate-x-2 transition-all duration-300">
+            <span class="text-3xl text-gray-600 group-hover:text-brand group-hover:translate-x-2 transition-all duration-300">
               →
             </span>
           </a>
@@ -123,57 +123,57 @@ const projects = [
   </section>
 
   <!-- Stats - Big numbers -->
-  <section class="py-24 bg-black text-white">
+  <section class="py-24 bg-black">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 text-center reveal">
         <div class="space-y-2">
           <p class="text-6xl md:text-7xl lg:text-8xl font-black text-brand">500+</p>
-          <p class="text-gray-400 text-lg uppercase tracking-widest">Installaties</p>
+          <p class="text-gray-500 text-lg uppercase tracking-widest">Installaties</p>
         </div>
         <div class="space-y-2">
           <p class="text-6xl md:text-7xl lg:text-8xl font-black text-brand">15+</p>
-          <p class="text-gray-400 text-lg uppercase tracking-widest">Jaar ervaring</p>
+          <p class="text-gray-500 text-lg uppercase tracking-widest">Jaar ervaring</p>
         </div>
         <div class="space-y-2">
           <p class="text-6xl md:text-7xl lg:text-8xl font-black text-brand">100%</p>
-          <p class="text-gray-400 text-lg uppercase tracking-widest">Vakmanschap</p>
+          <p class="text-gray-500 text-lg uppercase tracking-widest">Vakmanschap</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About teaser -->
-  <section class="py-32 bg-white">
+  <!-- About teaser - Dark -->
+  <section class="py-32 bg-gray-950">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div class="reveal">
           <p class="text-brand font-medium tracking-widest uppercase mb-4">Over ons</p>
           <h2 class="heading-lg mb-8">
             Precisie &<br />
-            <span class="text-gray-400">vakmanschap</span>
+            <span class="text-gray-500">vakmanschap</span>
           </h2>
-          <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+          <p class="text-xl text-gray-400 mb-8 leading-relaxed">
             Wij zijn gespecialiseerd in de professionele inbouw van voertuigelektronica. 
             Elke installatie wordt netjes en onzichtbaar weggewerkt, zonder losse kabels.
           </p>
           <a 
-            href="/over-ons" 
-            class="inline-flex items-center gap-3 text-lg font-semibold hover:text-brand transition-colors line-reveal"
+            href="/scharloo-install-site/over-ons/" 
+            class="inline-flex items-center gap-3 text-lg font-semibold hover:text-brand transition-colors"
           >
             Meer over ons
             <span>→</span>
           </a>
         </div>
-        <div class="bg-gray-100 aspect-square flex items-center justify-center reveal">
+        <div class="bg-gray-900 aspect-square flex items-center justify-center reveal border border-gray-800">
           <div class="text-center">
-            <span class="text-9xl opacity-10">🔧</span>
+            <span class="text-9xl opacity-20">🔧</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section - Bold -->
+  <!-- CTA Section - Brand -->
   <section class="py-32 bg-brand text-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center reveal">
       <h2 class="heading-lg mb-8">
@@ -183,7 +183,7 @@ const projects = [
         Neem contact op voor een vrijblijvende offerte
       </p>
       <a 
-        href="/contact" 
+        href="/scharloo-install-site/contact/" 
         class="group inline-flex items-center gap-3 bg-white text-brand px-10 py-5 text-xl font-bold hover:bg-black hover:text-white transition-all duration-300"
       >
         Neem contact op
