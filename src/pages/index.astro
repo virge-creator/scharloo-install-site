@@ -1,0 +1,140 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    title: 'Ritregistratie',
+    description: 'Automatische registratie van ritten voor fiscale doeleinden en wagenparkbeheer.',
+    icon: '📍',
+    id: 'ritregistratie'
+  },
+  {
+    title: 'Dashcams',
+    description: 'Professionele inbouw van dashcams voor veiligheid en bewijs bij incidenten.',
+    icon: '📹',
+    id: 'dashcams'
+  },
+  {
+    title: 'CAN Bus Installatie',
+    description: 'Deskundige aansluiting op het CAN Bus systeem van uw voertuig.',
+    icon: '🔌',
+    id: 'canbus'
+  },
+  {
+    title: 'Driver ID / RFID',
+    description: 'Identificatiesystemen voor bestuurders met RFID technologie.',
+    icon: '🪪',
+    id: 'driverid'
+  },
+  {
+    title: 'Tachografen',
+    description: 'Installatie en onderhoud van digitale tachografen conform wetgeving.',
+    icon: '⏱️',
+    id: 'tachograaf'
+  },
+  {
+    title: 'Startblokkeringen',
+    description: 'Beveiliging tegen diefstal met professionele startblokkeringssystemen.',
+    icon: '🔒',
+    id: 'startblokkering'
+  },
+];
+
+const stats = [
+  { value: '500+', label: 'Installaties' },
+  { value: '15+', label: 'Jaar ervaring' },
+  { value: '100%', label: 'Vakmanschap' },
+];
+---
+
+<Layout title="Home">
+  <!-- Hero Section -->
+  <section class="relative bg-black text-white min-h-[90vh] flex items-center">
+    <div class="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8 py-20">
+      <div class="max-w-3xl">
+        <p class="text-brand font-medium mb-4 tracking-wide uppercase">Uw inbouwpartner</p>
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+          Professionele<br />
+          <span class="text-brand">voertuig</span>elektronica
+        </h1>
+        <p class="text-xl text-gray-300 mb-10 max-w-xl">
+          Specialist in ritregistratie, dashcams, CAN bus installaties en meer. 
+          Vakkundige inbouw voor particulier en zakelijk.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a 
+            href="/contact" 
+            class="bg-brand text-white px-8 py-4 text-lg font-medium hover:bg-brand-dark transition-colors text-center"
+          >
+            Offerte aanvragen
+          </a>
+          <a 
+            href="/diensten" 
+            class="border border-white text-white px-8 py-4 text-lg font-medium hover:bg-white hover:text-black transition-colors text-center"
+          >
+            Onze diensten
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="bg-brand text-white py-12">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-3 gap-8 text-center">
+        {stats.map(stat => (
+          <div>
+            <p class="text-4xl md:text-5xl font-bold">{stat.value}</p>
+            <p class="text-white/80 mt-2">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="text-brand font-medium mb-4 tracking-wide uppercase">Wat wij doen</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-black">Onze diensten</h2>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map(service => (
+          <a 
+            href={`/diensten#${service.id}`}
+            class="group p-8 border border-gray-200 hover:border-brand transition-colors"
+          >
+            <span class="text-4xl mb-4 block">{service.icon}</span>
+            <h3 class="text-xl font-bold text-black mb-3 group-hover:text-brand transition-colors">
+              {service.title}
+            </h3>
+            <p class="text-gray-600">{service.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold text-black mb-6">
+        Klaar om te beginnen?
+      </h2>
+      <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+        Neem contact met ons op voor een vrijblijvende offerte. 
+        Wij denken graag met u mee over de beste oplossing.
+      </p>
+      <a 
+        href="/contact" 
+        class="inline-block bg-black text-white px-10 py-4 text-lg font-medium hover:bg-brand transition-colors"
+      >
+        Neem contact op
+      </a>
+    </div>
+  </section>
+</Layout>
