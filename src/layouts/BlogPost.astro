@@ -21,22 +21,22 @@ const formattedDate = new Date(date).toLocaleDateString('nl-NL', {
 <Layout title={title} description={description}>
   <article class="min-h-screen bg-black bg-pattern">
     <!-- Hero -->
-    <header class="py-20 lg:py-32 border-b border-gray-800">
-      <div class="max-w-4xl mx-auto px-6 lg:px-8">
-        <div class="mb-6">
-          <a href="/scharloo-install-site/blog/" class="text-brand hover:underline text-sm uppercase tracking-widest">
-            ← Terug naar blog
+    <header class="py-24 lg:py-32 border-b border-gray-800">
+      <div class="max-w-5xl mx-auto px-6 lg:px-8">
+        <div class="mb-8">
+          <a href="/scharloo-install-site/blog/" class="text-brand hover:text-white transition-colors text-sm font-medium uppercase tracking-widest inline-flex items-center gap-2">
+            <span>←</span> Terug naar blog
           </a>
         </div>
-        <p class="text-gray-500 mb-4">{formattedDate}</p>
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+        <p class="text-gray-500 uppercase tracking-widest text-sm mb-6">{formattedDate}</p>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-8 leading-tight">
           {title}
         </h1>
-        <p class="text-xl text-gray-400">{description}</p>
+        <p class="text-xl md:text-2xl text-gray-400 leading-relaxed max-w-3xl">{description}</p>
         {tags.length > 0 && (
-          <div class="flex flex-wrap gap-2 mt-6">
+          <div class="flex flex-wrap gap-3 mt-8">
             {tags.map(tag => (
-              <span class="bg-gray-800 text-gray-300 px-3 py-1 text-sm">{tag}</span>
+              <span class="border border-gray-700 text-gray-400 px-4 py-1.5 text-sm font-medium">{tag}</span>
             ))}
           </div>
         )}
@@ -44,33 +44,153 @@ const formattedDate = new Date(date).toLocaleDateString('nl-NL', {
     </header>
 
     <!-- Content -->
-    <div class="py-16 lg:py-24">
+    <div class="py-20 lg:py-28 bg-gray-950 bg-pattern">
       <div class="max-w-4xl mx-auto px-6 lg:px-8">
-        <div class="prose prose-lg prose-invert max-w-none
-          prose-headings:font-bold prose-headings:text-white
-          prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
-          prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-          prose-p:text-gray-300 prose-p:leading-relaxed
-          prose-a:text-brand prose-a:no-underline hover:prose-a:underline
-          prose-strong:text-white
-          prose-ul:text-gray-300 prose-ol:text-gray-300
-          prose-li:my-2
-          prose-blockquote:border-brand prose-blockquote:text-gray-400
-          prose-code:text-brand prose-code:bg-gray-800 prose-code:px-2 prose-code:py-1 prose-code:rounded
-          prose-pre:bg-gray-900 prose-pre:border prose-pre:border-gray-800
-        ">
+        <div class="blog-content text-lg leading-relaxed">
           <slot />
         </div>
       </div>
     </div>
 
-    <!-- Author -->
-    <footer class="py-12 border-t border-gray-800">
+    <!-- Author & CTA -->
+    <footer class="py-16 bg-black border-t border-gray-800">
       <div class="max-w-4xl mx-auto px-6 lg:px-8">
-        <p class="text-gray-500">
-          Geschreven door <span class="text-white font-medium">{author}</span>
-        </p>
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+          <p class="text-gray-500">
+            Geschreven door <span class="text-white font-semibold">{author}</span>
+          </p>
+          <a 
+            href="/scharloo-install-site/contact/" 
+            class="group inline-flex items-center gap-3 bg-brand text-white px-6 py-3 font-semibold hover:bg-white hover:text-black transition-all duration-300"
+          >
+            Vraag advies aan
+            <span class="group-hover:translate-x-2 transition-transform duration-300">→</span>
+          </a>
+        </div>
       </div>
     </footer>
   </article>
 </Layout>
+
+<style>
+  .blog-content :global(p) {
+    color: rgb(209 213 219);
+    margin-bottom: 2rem;
+  }
+  
+  .blog-content :global(h2) {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .blog-content :global(h3) {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .blog-content :global(a) {
+    color: var(--color-brand);
+  }
+  
+  .blog-content :global(a:hover) {
+    text-decoration: underline;
+  }
+  
+  .blog-content :global(strong) {
+    color: white;
+    font-weight: 600;
+  }
+  
+  .blog-content :global(ul),
+  .blog-content :global(ol) {
+    color: rgb(209 213 219);
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+  }
+  
+  .blog-content :global(ul) {
+    list-style-type: disc;
+  }
+  
+  .blog-content :global(ol) {
+    list-style-type: decimal;
+  }
+  
+  .blog-content :global(li) {
+    margin-bottom: 0.75rem;
+  }
+  
+  .blog-content :global(blockquote) {
+    border-left: 4px solid var(--color-brand);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    color: rgb(156 163 175);
+    font-style: italic;
+  }
+  
+  .blog-content :global(code) {
+    color: var(--color-brand);
+    background: rgb(31 41 55);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9em;
+  }
+  
+  .blog-content :global(pre) {
+    background: rgb(17 24 39);
+    border: 1px solid rgb(31 41 55);
+    padding: 1.5rem;
+    overflow-x: auto;
+    margin-bottom: 2rem;
+  }
+  
+  .blog-content :global(pre code) {
+    background: transparent;
+    padding: 0;
+  }
+  
+  .blog-content :global(table) {
+    width: 100%;
+    margin-bottom: 2rem;
+    border-collapse: collapse;
+  }
+  
+  .blog-content :global(th) {
+    text-align: left;
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgb(55 65 81);
+    background: rgb(17 24 39);
+  }
+  
+  .blog-content :global(td) {
+    color: rgb(209 213 219);
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgb(31 41 55);
+  }
+  
+  .blog-content :global(hr) {
+    border-color: rgb(31 41 55);
+    margin: 3rem 0;
+  }
+
+  @media (min-width: 768px) {
+    .blog-content {
+      font-size: 1.25rem;
+    }
+    
+    .blog-content :global(h2) {
+      font-size: 2.5rem;
+    }
+    
+    .blog-content :global(h3) {
+      font-size: 1.875rem;
+    }
+  }
+</style>
