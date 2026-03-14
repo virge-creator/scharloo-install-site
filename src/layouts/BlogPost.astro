@@ -1,15 +1,13 @@
 ---
 import Layout from './Layout.astro';
 
-interface Props {
-  title: string;
-  description: string;
-  date: string;
-  author?: string;
-  tags?: string[];
-}
-
-const { title, description, date, author = "Scharloo-Install", tags = [] } = Astro.props;
+// In Astro, frontmatter from .md files comes via Astro.props.frontmatter
+const { frontmatter } = Astro.props;
+const title = frontmatter?.title || "Blog Post";
+const description = frontmatter?.description || "";
+const date = frontmatter?.date || new Date().toISOString();
+const author = frontmatter?.author || "Scharloo-Install";
+const tags = frontmatter?.tags || [];
 
 const formattedDate = new Date(date).toLocaleDateString('nl-NL', {
   year: 'numeric',
