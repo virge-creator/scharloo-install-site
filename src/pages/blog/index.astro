@@ -1,10 +1,18 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
 
-// Get all blog posts using import.meta.glob
-const blogPosts = import.meta.glob('./*.md', { eager: true });
-const posts = Object.values(blogPosts) as any[];
+// Get all blog posts using import.meta.glob with file paths as keys
+const blogPostFiles = import.meta.glob('./*.md', { eager: true });
+
+// Convert to array with slug extracted from file path
+const posts = Object.entries(blogPostFiles).map(([path, post]: [string, any]) => {
+  // path is like "./digitale-tachograaf-2026-nieuwe-regels.md"
+  const slug = path.replace('./', '').replace('.md', '');
+  return {
+    ...post,
+    slug,
+  };
+});
 
 const sortedPosts = posts
   .filter(post => post.frontmatter?.title)
@@ -16,16 +24,6 @@ function formatDate(dateStr: string) {
     month: 'long',
     day: 'numeric'
   });
-}
-
-function getSlug(post: any) {
-  const url = post.url || post.file;
-  if (url) {
-    const parts = url.split('/');
-    const filename = parts[parts.length - 1];
-    return filename.replace('.md', '');
-  }
-  return '';
 }
 ---
 
@@ -50,9 +48,9 @@ function getSlug(post: any) {
         </div>
       ) : (
         <div class="grid gap-8">
-          {sortedPosts.map((post, index) => (
+          {sortedPosts.map((post) => (
             <a 
-              href={`/scharloo-install-site/blog/${getSlug(post)}/`}
+              href={`/scharloo-install-site/blog/${post.slug}/`}
               class="group block border-b border-gray-800 pb-8 hover:border-brand transition-colors reveal"
             >
               <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
