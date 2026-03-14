@@ -1,0 +1,76 @@
+---
+import Layout from './Layout.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  date: string;
+  author?: string;
+  tags?: string[];
+}
+
+const { title, description, date, author = "Scharloo-Install", tags = [] } = Astro.props;
+
+const formattedDate = new Date(date).toLocaleDateString('nl-NL', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+---
+
+<Layout title={title} description={description}>
+  <article class="min-h-screen bg-black bg-pattern">
+    <!-- Hero -->
+    <header class="py-20 lg:py-32 border-b border-gray-800">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        <div class="mb-6">
+          <a href="/scharloo-install-site/blog/" class="text-brand hover:underline text-sm uppercase tracking-widest">
+            ← Terug naar blog
+          </a>
+        </div>
+        <p class="text-gray-500 mb-4">{formattedDate}</p>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          {title}
+        </h1>
+        <p class="text-xl text-gray-400">{description}</p>
+        {tags.length > 0 && (
+          <div class="flex flex-wrap gap-2 mt-6">
+            {tags.map(tag => (
+              <span class="bg-gray-800 text-gray-300 px-3 py-1 text-sm">{tag}</span>
+            ))}
+          </div>
+        )}
+      </div>
+    </header>
+
+    <!-- Content -->
+    <div class="py-16 lg:py-24">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        <div class="prose prose-lg prose-invert max-w-none
+          prose-headings:font-bold prose-headings:text-white
+          prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
+          prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
+          prose-p:text-gray-300 prose-p:leading-relaxed
+          prose-a:text-brand prose-a:no-underline hover:prose-a:underline
+          prose-strong:text-white
+          prose-ul:text-gray-300 prose-ol:text-gray-300
+          prose-li:my-2
+          prose-blockquote:border-brand prose-blockquote:text-gray-400
+          prose-code:text-brand prose-code:bg-gray-800 prose-code:px-2 prose-code:py-1 prose-code:rounded
+          prose-pre:bg-gray-900 prose-pre:border prose-pre:border-gray-800
+        ">
+          <slot />
+        </div>
+      </div>
+    </div>
+
+    <!-- Author -->
+    <footer class="py-12 border-t border-gray-800">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        <p class="text-gray-500">
+          Geschreven door <span class="text-white font-medium">{author}</span>
+        </p>
+      </div>
+    </footer>
+  </article>
+</Layout>

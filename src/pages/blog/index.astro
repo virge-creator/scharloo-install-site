@@ -1,0 +1,106 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// Get all blog posts using import.meta.glob
+const blogPosts = import.meta.glob('./*.md', { eager: true });
+const posts = Object.values(blogPosts) as any[];
+
+const sortedPosts = posts
+  .filter(post => post.frontmatter?.title)
+  .sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime());
+
+function formatDate(dateStr: string) {
+  return new Date(dateStr).toLocaleDateString('nl-NL', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+}
+
+function getSlug(post: any) {
+  const url = post.url || post.file;
+  if (url) {
+    const parts = url.split('/');
+    const filename = parts[parts.length - 1];
+    return filename.replace('.md', '');
+  }
+  return '';
+}
+---
+
+<Layout title="Blog" description="Nieuws en updates uit de wereld van voertuigelektronica, telematica en inbouwtechniek.">
+  <!-- Hero -->
+  <section class="min-h-[50vh] bg-black bg-pattern text-white flex items-end pb-16">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+      <p class="text-brand font-medium tracking-widest uppercase mb-4 animate-fade-in-up">Blog</p>
+      <h1 class="heading-xl animate-fade-in-up delay-100" style="opacity: 0;">
+        Nieuws &<br />
+        <span class="text-gray-500">updates</span>
+      </h1>
+    </div>
+  </section>
+
+  <!-- Blog posts -->
+  <section class="py-16 lg:py-24 bg-gray-950 bg-pattern">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      {sortedPosts.length === 0 ? (
+        <div class="text-center py-20">
+          <p class="text-gray-400 text-xl">Nog geen blog posts. Binnenkort meer!</p>
+        </div>
+      ) : (
+        <div class="grid gap-8">
+          {sortedPosts.map((post, index) => (
+            <a 
+              href={`/scharloo-install-site/blog/${getSlug(post)}/`}
+              class="group block border-b border-gray-800 pb-8 hover:border-brand transition-colors reveal"
+            >
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div class="flex-1">
+                  <p class="text-gray-500 text-sm mb-2">{formatDate(post.frontmatter.date)}</p>
+                  <h2 class="text-2xl md:text-3xl font-bold group-hover:text-brand transition-colors">
+                    {post.frontmatter.title}
+                  </h2>
+                  <p class="text-gray-400 mt-2 line-clamp-2">{post.frontmatter.description}</p>
+                </div>
+                <span class="text-3xl text-gray-600 group-hover:text-brand group-hover:translate-x-2 transition-all duration-300 hidden md:block">
+                  →
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-black">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold mb-6">Vragen over onze diensten?</h2>
+      <a 
+        href="/scharloo-install-site/contact/" 
+        class="group inline-flex items-center gap-3 bg-brand text-white px-8 py-4 text-lg font-semibold hover:bg-white hover:text-black transition-all duration-300"
+      >
+        Neem contact op
+        <span class="group-hover:translate-x-2 transition-transform duration-300">→</span>
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  
+  const revealOnScroll = () => {
+    reveals.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      if (top < window.innerHeight - 100) {
+        el.classList.add('active');
+      }
+    });
+  };
+  
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll();
+</script>
