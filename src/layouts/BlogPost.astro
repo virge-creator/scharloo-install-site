@@ -17,7 +17,7 @@ const formattedDate = new Date(date).toLocaleDateString('nl-NL', {
 ---
 
 <Layout title={title} description={description}>
-  <article class="min-h-screen bg-black bg-pattern">
+  <article class="min-h-screen bg-black">
     <!-- Hero -->
     <header class="py-24 lg:py-32 border-b border-gray-800">
       <div class="max-w-5xl mx-auto px-6 lg:px-8">
@@ -42,7 +42,7 @@ const formattedDate = new Date(date).toLocaleDateString('nl-NL', {
     </header>
 
     <!-- Content -->
-    <div class="py-20 lg:py-28 bg-gray-950 bg-pattern">
+    <div class="py-20 lg:py-28 bg-gray-950">
       <div class="max-w-4xl mx-auto px-6 lg:px-8">
         <div class="blog-content text-lg leading-relaxed">
           <slot />

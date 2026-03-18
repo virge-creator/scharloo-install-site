@@ -29,7 +29,7 @@ function formatDate(dateStr: string) {
 
 <Layout title="Blog" description="Nieuws en updates uit de wereld van voertuigelektronica, telematica en inbouwtechniek.">
   <!-- Hero -->
-  <section class="min-h-[50vh] bg-black bg-pattern text-white flex items-end pb-16">
+  <section class="min-h-[50vh] bg-black text-white dots-corner-tr flex items-end pb-16">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
       <p class="text-brand font-medium tracking-widest uppercase mb-4 animate-fade-in-up">Blog</p>
       <h1 class="heading-xl animate-fade-in-up delay-100" style="opacity: 0;">
@@ -40,7 +40,7 @@ function formatDate(dateStr: string) {
   </section>
 
   <!-- Blog posts -->
-  <section class="py-16 lg:py-24 bg-gray-950 bg-pattern">
+  <section class="py-16 lg:py-24 bg-gray-950">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       {sortedPosts.length === 0 ? (
         <div class="text-center py-20">
