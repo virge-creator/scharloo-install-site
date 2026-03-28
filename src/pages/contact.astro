@@ -55,7 +55,9 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Right: Contact Form -->
         <div class="reveal">
-          <form class="space-y-8" name="contact" method="POST" data-netlify="true">
+          <form class="space-y-8" name="contact" method="POST" action="https://formspree.io/f/mpqjjpnb">
+            <input type="hidden" name="_subject" value="Nieuw bericht via Scharloo-Install.nl" />
+            <input type="hidden" name="_source" value="scharloo-install.nl" />
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
                 <label for="name" class="block text-sm font-medium text-gray-500 uppercase tracking-widest mb-3">
