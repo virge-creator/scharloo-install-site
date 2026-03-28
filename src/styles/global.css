@@ -307,3 +307,62 @@ body {
     rgba(0, 153, 255, 0.4) 50%
   );
 }
+
+/* ===== Video Card Styling (Portrait/Shorts) ===== */
+.video-card {
+  position: relative;
+  width: 260px;
+  aspect-ratio: 9 / 16;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(0, 153, 255, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.video-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 153, 255, 0.4) 0%,
+    rgba(0, 153, 255, 0.1) 50%,
+    rgba(0, 153, 255, 0.3) 100%
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.video-card iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+}
+
+.video-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 
+    0 20px 48px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(0, 153, 255, 0.2),
+    0 0 0 1px rgba(0, 153, 255, 0.4);
+}
+
+.video-card:hover::before {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 153, 255, 0.6) 0%,
+    rgba(0, 153, 255, 0.2) 50%,
+    rgba(0, 153, 255, 0.5) 100%
+  );
+}
