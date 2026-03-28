@@ -90,13 +90,28 @@ const projects = [
   <!-- Services Grid - Dark -->
   <section class="py-32 bg-gray-950">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <!-- Section header -->
-      <div class="mb-20 reveal">
-        <p class="text-brand font-medium tracking-widest uppercase mb-4">Diensten</p>
-        <h2 class="heading-lg">
-          Wat wij<br />
-          <span class="text-gray-500">voor u doen</span>
-        </h2>
+      <!-- Section header with video -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-20 items-center">
+        <div class="reveal">
+          <p class="text-brand font-medium tracking-widest uppercase mb-4">Diensten</p>
+          <h2 class="heading-lg">
+            Wat wij<br />
+            <span class="text-gray-500">voor u doen</span>
+          </h2>
+        </div>
+        <!-- YouTube Short -->
+        <div class="reveal photo-card flex justify-center lg:justify-end">
+          <div class="w-[280px] aspect-[9/16] max-h-[500px]">
+            <iframe 
+              src="https://www.youtube.com/embed/ZPwM8LCmHtc" 
+              title="Scharloo-Install video"
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen
+              class="w-full h-full rounded"
+            ></iframe>
+          </div>
+        </div>
       </div>
       
       <!-- Services list -->
