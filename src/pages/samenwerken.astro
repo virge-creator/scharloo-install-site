@@ -9,7 +9,12 @@ const reasons = [
   { title: 'Meedenkend', description: 'Oplossingen op maat die beide partijen sterker maken' },
 ];
 
-const partners = ['Suivo', 'GPS-Buddy', 'Linqo', 'Allsetra'];
+const partners = [
+  { name: 'Suivo', color: '#00A651' },
+  { name: 'GPS-Buddy', color: '#0066CC' },
+  { name: 'Linqo', color: '#E31937' },
+  { name: 'Allsetra', color: '#FF6600' },
+];
 ---
 
 <Layout title="Samenwerken | Scharloo-Install" description="Word onze partner in professionele voertuiginstallaties. Wij geloven in lange-termijn samenwerkingen die voor beide partijen waarde creëren.">
@@ -32,10 +37,10 @@ const partners = ['Suivo', 'GPS-Buddy', 'Linqo', 'Allsetra'];
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="max-w-3xl reveal">
         <p class="text-xl text-gray-400 leading-relaxed">
-          Bij Scharloo-Install B.V. gelooft ons team in <span class="text-white font-semibold">lange-termijn samenwerkingen</span> die voor beide partijen waarde creëren. Of het nu gaat om voertuigvolgsystemen, dashcams of alarmsystemen, wij werken met partners die willen groeien en profiteren van professionaliteit, oog voor kwaliteit en maximale klanttevredenheid.
+          Bij <span class="text-white font-bold">Scharloo-Install B.V.</span> gelooft <span class="text-white font-bold">ons team</span> in <span class="text-white font-semibold">lange-termijn samenwerkingen</span> die voor beide partijen waarde creëren. Of het nu gaat om voertuigvolgsystemen, dashcams of alarmsystemen, wij werken met partners die willen groeien en profiteren van professionaliteit, oog voor kwaliteit en maximale klanttevredenheid.
         </p>
         <p class="text-xl text-gray-400 leading-relaxed mt-6">
-          Ons team is <span class="text-white font-semibold">flexibel inzetbaar</span>, op de gewenste planning en locatie, en denkt actief mee over oplossingen op maat, zodat projecten efficiënt en betrouwbaar worden uitgevoerd.
+          <span class="text-white font-bold">Ons team</span> is <span class="text-white font-semibold">flexibel inzetbaar</span>, op de gewenste planning en locatie, en denkt actief mee over oplossingen op maat, zodat projecten efficiënt en betrouwbaar worden uitgevoerd.
         </p>
       </div>
     </div>
@@ -63,7 +68,7 @@ const partners = ['Suivo', 'GPS-Buddy', 'Linqo', 'Allsetra'];
       </div>
       
       <p class="text-xl text-gray-400 mt-12 reveal">
-        Samen met ons team bouwen we aan een <span class="text-white font-semibold">duurzame samenwerking</span>, waarbij beide partijen profiteren van ervaring en expertise.
+        Samen met <span class="text-white font-bold">ons team</span> bouwen we aan een <span class="text-white font-semibold">duurzame samenwerking</span>, waarbij beide partijen profiteren van ervaring en expertise.
       </p>
     </div>
   </section>
@@ -73,20 +78,22 @@ const partners = ['Suivo', 'GPS-Buddy', 'Linqo', 'Allsetra'];
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="reveal">
         <p class="text-brand font-medium tracking-widest uppercase mb-4">Trusted by</p>
-        <h2 class="heading-lg mb-8">
-          Ons team werkt al<br />
+        <h2 class="heading-lg mb-12">
+          <span class="text-white font-bold">Ons team</span> werkt al<br />
           <span class="text-gray-500">succesvol samen met</span>
         </h2>
-        <div class="flex flex-wrap gap-4 mb-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
           {partners.map(partner => (
-            <span class="bg-black px-6 py-3 text-xl font-semibold border border-gray-800">
-              {partner}
-            </span>
+            <div class="bg-black border border-gray-800 p-8 flex items-center justify-center hover:border-brand transition-colors group">
+              <span 
+                class="text-2xl md:text-3xl font-black tracking-tight group-hover:scale-105 transition-transform"
+                style={`color: ${partner.color}`}
+              >
+                {partner.name}
+              </span>
+            </div>
           ))}
         </div>
-        <p class="text-xl text-gray-400">
-          Wij staan altijd open voor nieuwe waardevolle samenwerkingen.
-        </p>
       </div>
     </div>
   </section>
@@ -94,11 +101,11 @@ const partners = ['Suivo', 'GPS-Buddy', 'Linqo', 'Allsetra'];
   <!-- CTA -->
   <section class="py-32 bg-brand text-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center reveal">
-      <h2 class="heading-lg mb-8">
-        Ons team is klaar
+      <h2 class="heading-lg mb-4">
+        Wij staan altijd open voor nieuwe<br />waardevolle samenwerkingen
       </h2>
-      <p class="text-xl text-white/80 mb-12 max-w-xl mx-auto">
-        om ook met u een betrouwbare en langdurige samenwerking op te bouwen.
+      <p class="text-xl text-white/80 mb-12 max-w-2xl mx-auto">
+        Ons team is klaar om ook met u een betrouwbare en langdurige samenwerking op te bouwen.
       </p>
       <a 
         href="/scharloo-install-site/contact/" 

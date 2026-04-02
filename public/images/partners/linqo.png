@@ -1,0 +1,618 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156535071-1" type="pmdelayedscript" data-cfasync="false" data-no-optimize="1" data-no-defer="1" data-no-minify="1"></script>
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="f691ec14-a1e4-4fef-93a6-3a903a460352" data-culture="en" data-blockingmode="auto" type="pmdelayedscript" data-perfmatters-type="text/javascript" data-cfasync="false" data-no-optimize="1" data-no-defer="1" data-no-minify="1"></script>
+    <script type="pmdelayedscript" data-cfasync="false" data-no-optimize="1" data-no-defer="1" data-no-minify="1">
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-156535071-1');
+    </script>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="https://linqo.eu/wp-content/themes/linqo-wp/assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://linqo.eu/wp-content/themes/linqo-wp/assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://linqo.eu/wp-content/themes/linqo-wp/assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://linqo.eu/wp-content/themes/linqo-wp/assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://linqo.eu/wp-content/themes/linqo-wp/assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://linqo.eu/wp-content/themes/linqo-wp/assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://linqo.eu/wp-content/themes/linqo-wp/assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://linqo.eu/wp-content/themes/linqo-wp/assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://linqo.eu/wp-content/themes/linqo-wp/assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="https://linqo.eu/wp-content/themes/linqo-wp/assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://linqo.eu/wp-content/themes/linqo-wp/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://linqo.eu/wp-content/themes/linqo-wp/assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://linqo.eu/wp-content/themes/linqo-wp/assets/favicon/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="https://linqo.eu/wp-content/themes/linqo-wp/assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name='robots' content='noindex, follow' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v27.1.1 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<title>Page not found - Linqo</title>
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:title" content="Page not found - Linqo" />
+	<meta property="og:site_name" content="Linqo" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://linqo.eu/#website","url":"https://linqo.eu/","name":"Linqo","description":"GPS tracking solutions linked to your success.","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://linqo.eu/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//maps.googleapis.com' />
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+		<style>
+			.lazyload,
+			.lazyloading {
+				max-width: 100%;
+			}
+		</style>
+		<style id='wp-img-auto-sizes-contain-inline-css' type='text/css'>
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id='wp-block-library-inline-css' type='text/css'>
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}.has-text-align-center{text-align:center}.has-text-align-left{text-align:left}.has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=wp-block-library-inline-css */
+</style>
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+<link rel='stylesheet' id='dnd-upload-cf7-css' href='https://linqo.eu/wp-content/plugins/drag-and-drop-multiple-file-upload-contact-form-7/assets/css/dnd-upload-cf7.css?ver=1.3.9.6' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css' href='https://linqo.eu/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=6.1.5' type='text/css' media='all' />
+<link rel='stylesheet' id='swiperjs-css' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.3.1/swiper-bundle.css?ver=4a5348d0392f16583793333dd17b6638' type='text/css' media='all' />
+<link rel='stylesheet' id='mpwp-css' href='https://linqo.eu/wp-content/themes/linqo-wp/assets/css/prod.css?ver=1775148933' type='text/css' media='all' />
+<script type="text/javascript" src="https://linqo.eu/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js" data-cookieconsent="ignore"></script><link rel="https://api.w.org/" href="https://linqo.eu/wp-json/" />		<script>
+			document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+		</script>
+				<style>
+			.no-js img.lazyload {
+				display: none;
+			}
+
+			figure.wp-block-image img.lazyloading {
+				min-width: 150px;
+			}
+
+			.lazyload,
+			.lazyloading {
+				--smush-placeholder-width: 100px;
+				--smush-placeholder-aspect-ratio: 1/1;
+				width: var(--smush-image-width, var(--smush-placeholder-width)) !important;
+				aspect-ratio: var(--smush-image-aspect-ratio, var(--smush-placeholder-aspect-ratio)) !important;
+			}
+
+						.lazyload, .lazyloading {
+				opacity: 0;
+			}
+
+			.lazyloaded {
+				opacity: 1;
+				transition: opacity 400ms;
+				transition-delay: 0ms;
+			}
+
+					</style>
+		<link rel="icon" href="https://linqo.eu/wp-content/uploads/2022/08/favicon.svg" sizes="32x32" />
+<link rel="icon" href="https://linqo.eu/wp-content/uploads/2022/08/favicon.svg" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://linqo.eu/wp-content/uploads/2022/08/favicon.svg" />
+<meta name="msapplication-TileImage" content="https://linqo.eu/wp-content/uploads/2022/08/favicon.svg" />
+    <!-- Google Tag Manager -->
+    <script type="pmdelayedscript" data-cfasync="false" data-no-optimize="1" data-no-defer="1" data-no-minify="1">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WQVMP4Z');</script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body class="error404 wp-theme-linqo-wp">
+
+<header class="header js-header ">
+    <div class="container header-wrapper">
+        <a class="site-logo" href="https://linqo.eu">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     viewBox="0 0 283.46 85.45" style="enable-background:new 0 0 283.46 85.45;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:white;}
+	.st1{fill:#F89A1C;}
+	.st2{fill:url(#SVGID_1_);}
+	.st3{fill-rule:evenodd;clip-rule:evenodd;fill:white;}
+</style>
+    <g>
+	<g>
+		<path class="st0" d="M91.62,70c0.48-0.25,1.02-0.37,1.63-0.37c0.69,0,1.32,0.17,1.9,0.51c0.57,0.34,1.02,0.82,1.35,1.43
+			c0.33,0.61,0.49,1.32,0.49,2.12c0,0.8-0.16,1.51-0.49,2.14c-0.33,0.63-0.78,1.12-1.35,1.47c-0.57,0.35-1.2,0.53-1.9,0.53
+			c-0.61,0-1.14-0.12-1.61-0.37c-0.47-0.24-0.86-0.55-1.15-0.92v4.93h-1.64V69.75h1.64v1.17C90.76,70.56,91.14,70.25,91.62,70z
+			 M94.98,72.27c-0.23-0.4-0.52-0.7-0.89-0.91c-0.37-0.21-0.77-0.31-1.19-0.31c-0.41,0-0.8,0.11-1.17,0.32
+			c-0.37,0.21-0.67,0.52-0.89,0.92c-0.23,0.4-0.34,0.88-0.34,1.43c0,0.55,0.11,1.03,0.34,1.43c0.23,0.41,0.52,0.72,0.89,0.93
+			c0.37,0.21,0.76,0.32,1.17,0.32c0.42,0,0.82-0.11,1.19-0.32c0.37-0.22,0.67-0.53,0.89-0.94c0.23-0.41,0.34-0.89,0.34-1.44
+			C95.31,73.14,95.2,72.67,94.98,72.27z"/>
+        <path class="st0" d="M100.03,77.31c-0.61-0.34-1.08-0.82-1.43-1.44c-0.35-0.62-0.52-1.34-0.52-2.15c0-0.81,0.18-1.52,0.53-2.15
+			c0.36-0.62,0.84-1.1,1.46-1.44c0.61-0.34,1.3-0.5,2.06-0.5c0.76,0,1.45,0.17,2.06,0.5c0.61,0.34,1.1,0.82,1.46,1.44
+			c0.36,0.62,0.53,1.34,0.53,2.15c0,0.81-0.18,1.52-0.55,2.15c-0.37,0.62-0.86,1.11-1.49,1.45c-0.63,0.34-1.32,0.51-2.08,0.51
+			C101.31,77.83,100.63,77.66,100.03,77.31z M103.25,76.1c0.37-0.2,0.67-0.5,0.9-0.91c0.23-0.4,0.35-0.89,0.35-1.47
+			c0-0.58-0.11-1.06-0.33-1.46c-0.22-0.4-0.51-0.7-0.88-0.9c-0.37-0.2-0.76-0.3-1.18-0.3c-0.42,0-0.81,0.1-1.17,0.3
+			c-0.36,0.2-0.65,0.5-0.86,0.9c-0.21,0.4-0.32,0.89-0.32,1.46c0,0.86,0.22,1.52,0.66,1.98c0.44,0.47,0.99,0.7,1.65,0.7
+			C102.48,76.4,102.88,76.3,103.25,76.1z"/>
+        <path class="st0" d="M118.47,69.75l-2.46,7.94h-1.73l-1.6-5.87l-1.6,5.87h-1.73l-2.48-7.94h1.67l1.66,6.38l1.69-6.38h1.71
+			l1.61,6.36l1.64-6.36H118.47z"/>
+        <path class="st0" d="M126.92,74.34h-6.07c0.05,0.63,0.28,1.14,0.71,1.53c0.42,0.38,0.94,0.58,1.56,0.58
+			c0.88,0,1.51-0.37,1.87-1.11h1.77c-0.24,0.73-0.68,1.33-1.3,1.79c-0.63,0.47-1.41,0.7-2.34,0.7c-0.76,0-1.44-0.17-2.04-0.51
+			c-0.6-0.34-1.07-0.82-1.41-1.44c-0.34-0.62-0.51-1.34-0.51-2.15c0-0.82,0.17-1.53,0.5-2.15c0.33-0.62,0.8-1.1,1.4-1.43
+			c0.6-0.34,1.29-0.5,2.07-0.5c0.75,0,1.42,0.16,2,0.49c0.59,0.33,1.04,0.79,1.37,1.38c0.33,0.59,0.49,1.27,0.49,2.04
+			C126.98,73.83,126.96,74.1,126.92,74.34z M125.26,73.01c-0.01-0.61-0.23-1.09-0.65-1.46c-0.42-0.37-0.95-0.55-1.57-0.55
+			c-0.57,0-1.05,0.18-1.46,0.54c-0.4,0.36-0.64,0.85-0.72,1.46H125.26z"/>
+        <path class="st0" d="M131.19,69.96c0.4-0.23,0.87-0.34,1.42-0.34v1.7h-0.42c-0.64,0-1.13,0.16-1.46,0.49
+			c-0.33,0.33-0.5,0.89-0.5,1.7v4.18h-1.64v-7.94h1.64v1.15C130.47,70.5,130.79,70.19,131.19,69.96z"/>
+        <path class="st0" d="M141.34,74.34h-6.07c0.05,0.63,0.28,1.14,0.71,1.53c0.42,0.38,0.94,0.58,1.56,0.58
+			c0.88,0,1.51-0.37,1.87-1.11h1.77c-0.24,0.73-0.68,1.33-1.3,1.79c-0.63,0.47-1.41,0.7-2.34,0.7c-0.76,0-1.44-0.17-2.04-0.51
+			c-0.6-0.34-1.07-0.82-1.41-1.44c-0.34-0.62-0.51-1.34-0.51-2.15c0-0.82,0.17-1.53,0.5-2.15c0.33-0.62,0.8-1.1,1.4-1.43
+			c0.6-0.34,1.29-0.5,2.07-0.5c0.75,0,1.42,0.16,2,0.49c0.59,0.33,1.04,0.79,1.37,1.38c0.33,0.59,0.49,1.27,0.49,2.04
+			C141.4,73.83,141.38,74.1,141.34,74.34z M139.69,73.01c-0.01-0.61-0.23-1.09-0.65-1.46c-0.42-0.37-0.95-0.55-1.57-0.55
+			c-0.57,0-1.05,0.18-1.46,0.54c-0.4,0.36-0.64,0.85-0.72,1.46H139.69z"/>
+        <path class="st0" d="M142.97,71.57c0.33-0.61,0.78-1.09,1.35-1.43c0.57-0.34,1.21-0.51,1.91-0.51c0.52,0,1.03,0.11,1.53,0.34
+			c0.5,0.23,0.91,0.53,1.2,0.9v-3.83h1.66V77.7h-1.66v-1.2c-0.27,0.38-0.64,0.7-1.12,0.95c-0.48,0.25-1.02,0.37-1.64,0.37
+			c-0.69,0-1.32-0.18-1.9-0.53c-0.57-0.35-1.02-0.84-1.35-1.47c-0.33-0.63-0.5-1.34-0.5-2.14
+			C142.47,72.89,142.63,72.19,142.97,71.57z M148.63,72.29c-0.23-0.4-0.52-0.71-0.89-0.92c-0.37-0.21-0.76-0.32-1.18-0.32
+			c-0.42,0-0.82,0.1-1.18,0.31c-0.37,0.21-0.66,0.51-0.89,0.91c-0.23,0.4-0.34,0.87-0.34,1.42c0,0.55,0.11,1.03,0.34,1.44
+			c0.23,0.41,0.52,0.73,0.89,0.94c0.37,0.22,0.76,0.32,1.17,0.32c0.42,0,0.82-0.11,1.18-0.32c0.36-0.21,0.66-0.52,0.89-0.93
+			c0.23-0.41,0.34-0.89,0.34-1.43C148.97,73.17,148.86,72.69,148.63,72.29z"/>
+        <path class="st0" d="M159.32,69.99c0.48-0.24,1.03-0.37,1.62-0.37c0.7,0,1.34,0.17,1.9,0.5c0.57,0.34,1.01,0.81,1.34,1.43
+			c0.33,0.62,0.49,1.33,0.49,2.13c0,0.8-0.16,1.51-0.49,2.14c-0.33,0.63-0.78,1.12-1.35,1.47c-0.57,0.35-1.2,0.53-1.9,0.53
+			c-0.62,0-1.16-0.12-1.64-0.36c-0.48-0.24-0.85-0.55-1.13-0.92v1.15h-1.64V67.03h1.64v3.91C158.46,70.55,158.84,70.24,159.32,69.99
+			z M162.67,72.27c-0.23-0.4-0.52-0.7-0.89-0.91c-0.37-0.21-0.77-0.31-1.19-0.31c-0.41,0-0.8,0.11-1.17,0.32
+			c-0.37,0.21-0.67,0.52-0.89,0.92c-0.23,0.4-0.34,0.88-0.34,1.43c0,0.55,0.11,1.03,0.34,1.43c0.23,0.41,0.52,0.72,0.89,0.93
+			c0.37,0.21,0.76,0.32,1.17,0.32c0.42,0,0.82-0.11,1.19-0.32c0.37-0.22,0.67-0.53,0.89-0.94c0.23-0.41,0.34-0.89,0.34-1.44
+			C163.01,73.14,162.89,72.67,162.67,72.27z"/>
+        <path class="st0" d="M173.45,69.75l-4.87,11.67h-1.7l1.61-3.86l-3.13-7.81h1.83l2.23,6.05l2.32-6.05H173.45z"/>
+        <path class="st0" d="M183.64,77.7l-2.31-4.01h-1.25v4.01h-1.64V67.68h3.46c0.77,0,1.42,0.13,1.95,0.4
+			c0.53,0.27,0.93,0.63,1.2,1.08c0.26,0.45,0.4,0.96,0.4,1.51c0,0.65-0.19,1.25-0.57,1.78c-0.38,0.53-0.96,0.9-1.75,1.09l2.48,4.15
+			H183.64z M180.08,72.38h1.82c0.61,0,1.08-0.15,1.39-0.46c0.31-0.31,0.47-0.72,0.47-1.24s-0.15-0.92-0.46-1.22
+			c-0.31-0.29-0.77-0.44-1.4-0.44h-1.82V72.38z"/>
+        <path class="st0" d="M194.74,69.75v7.94h-1.64v-0.94c-0.26,0.33-0.6,0.58-1.02,0.77c-0.42,0.19-0.86,0.28-1.33,0.28
+			c-0.62,0-1.18-0.13-1.68-0.39c-0.49-0.26-0.88-0.64-1.17-1.15c-0.28-0.51-0.43-1.12-0.43-1.84v-4.67h1.63v4.42
+			c0,0.71,0.18,1.26,0.53,1.64c0.36,0.38,0.84,0.57,1.46,0.57c0.61,0,1.1-0.19,1.46-0.57c0.36-0.38,0.54-0.92,0.54-1.64v-4.42
+			H194.74z"/>
+        <path class="st0" d="M199.68,70c0.48-0.25,1.02-0.37,1.63-0.37c0.69,0,1.32,0.17,1.9,0.51c0.57,0.34,1.02,0.82,1.35,1.43
+			c0.33,0.61,0.49,1.32,0.49,2.12c0,0.8-0.16,1.51-0.49,2.14c-0.33,0.63-0.78,1.12-1.35,1.47c-0.57,0.35-1.2,0.53-1.9,0.53
+			c-0.61,0-1.14-0.12-1.61-0.37c-0.47-0.24-0.86-0.55-1.15-0.92v4.93h-1.64V69.75h1.64v1.17C198.82,70.56,199.2,70.25,199.68,70z
+			 M203.03,72.27c-0.23-0.4-0.52-0.7-0.89-0.91c-0.37-0.21-0.77-0.31-1.19-0.31c-0.41,0-0.8,0.11-1.17,0.32
+			c-0.37,0.21-0.67,0.52-0.89,0.92c-0.23,0.4-0.34,0.88-0.34,1.43c0,0.55,0.11,1.03,0.34,1.43c0.23,0.41,0.52,0.72,0.89,0.93
+			c0.37,0.21,0.76,0.32,1.17,0.32c0.42,0,0.82-0.11,1.19-0.32c0.37-0.22,0.67-0.53,0.89-0.94c0.23-0.41,0.34-0.89,0.34-1.44
+			C203.37,73.14,203.26,72.67,203.03,72.27z"/>
+        <path class="st0" d="M208.59,71.1v4.4c0,0.3,0.07,0.51,0.21,0.64c0.14,0.13,0.38,0.19,0.71,0.19h1.01v1.37h-1.3
+			c-0.74,0-1.31-0.17-1.7-0.52c-0.39-0.35-0.59-0.91-0.59-1.69v-4.4H206v-1.34h0.94v-1.97h1.66v1.97h1.93v1.34H208.59z"/>
+        <path class="st0" d="M219.25,74.34h-6.07c0.05,0.63,0.28,1.14,0.71,1.53c0.42,0.38,0.94,0.58,1.56,0.58
+			c0.88,0,1.51-0.37,1.87-1.11h1.77c-0.24,0.73-0.68,1.33-1.3,1.79c-0.63,0.47-1.41,0.7-2.34,0.7c-0.76,0-1.44-0.17-2.04-0.51
+			c-0.6-0.34-1.07-0.82-1.41-1.44c-0.34-0.62-0.51-1.34-0.51-2.15c0-0.82,0.17-1.53,0.5-2.15c0.33-0.62,0.8-1.1,1.4-1.43
+			c0.6-0.34,1.29-0.5,2.07-0.5c0.75,0,1.42,0.16,2,0.49c0.59,0.33,1.04,0.79,1.37,1.38c0.33,0.59,0.49,1.27,0.49,2.04
+			C219.31,73.83,219.29,74.1,219.25,74.34z M217.6,73.01c-0.01-0.61-0.23-1.09-0.65-1.46c-0.42-0.37-0.95-0.55-1.57-0.55
+			c-0.57,0-1.05,0.18-1.46,0.54c-0.4,0.36-0.64,0.85-0.72,1.46H217.6z"/>
+        <path class="st0" d="M222.57,67.03V77.7h-1.64V67.03H222.57z"/>
+        <path class="st0" d="M224.68,71.57c0.33-0.61,0.78-1.09,1.35-1.43c0.57-0.34,1.2-0.51,1.9-0.51c0.62,0,1.17,0.12,1.64,0.37
+			c0.47,0.24,0.84,0.55,1.12,0.92v-1.15h1.66v7.94h-1.66v-1.18c-0.28,0.37-0.66,0.69-1.14,0.94c-0.48,0.25-1.03,0.37-1.64,0.37
+			c-0.68,0-1.31-0.18-1.87-0.53c-0.57-0.35-1.02-0.84-1.35-1.47c-0.33-0.63-0.5-1.34-0.5-2.14
+			C224.18,72.89,224.35,72.19,224.68,71.57z M230.34,72.29c-0.23-0.4-0.52-0.71-0.89-0.92c-0.37-0.21-0.76-0.32-1.18-0.32
+			c-0.42,0-0.82,0.1-1.18,0.31c-0.37,0.21-0.66,0.51-0.89,0.91c-0.23,0.4-0.34,0.87-0.34,1.42c0,0.55,0.11,1.03,0.34,1.44
+			c0.23,0.41,0.52,0.73,0.89,0.94c0.37,0.22,0.76,0.32,1.17,0.32c0.42,0,0.82-0.11,1.18-0.32c0.37-0.21,0.66-0.52,0.89-0.93
+			c0.23-0.41,0.34-0.89,0.34-1.43C230.68,73.17,230.57,72.69,230.34,72.29z"/>
+        <path class="st0" d="M245.5,70.56c-0.26-0.5-0.62-0.88-1.08-1.13c-0.46-0.25-0.99-0.38-1.6-0.38c-0.66,0-1.25,0.15-1.77,0.45
+			c-0.52,0.3-0.92,0.72-1.22,1.27c-0.29,0.55-0.44,1.18-0.44,1.9c0,0.72,0.15,1.36,0.44,1.91c0.29,0.55,0.7,0.98,1.22,1.28
+			c0.52,0.3,1.11,0.45,1.77,0.45c0.89,0,1.62-0.25,2.18-0.75c0.56-0.5,0.9-1.18,1.02-2.03h-3.76V72.2h5.52v1.28
+			c-0.11,0.78-0.38,1.49-0.83,2.15c-0.45,0.65-1.03,1.17-1.74,1.56c-0.72,0.39-1.51,0.58-2.39,0.58c-0.94,0-1.8-0.22-2.58-0.66
+			c-0.78-0.44-1.4-1.04-1.85-1.82c-0.46-0.78-0.68-1.66-0.68-2.64c0-0.98,0.23-1.86,0.68-2.64c0.46-0.78,1.08-1.39,1.86-1.82
+			c0.78-0.44,1.64-0.66,2.57-0.66c1.07,0,2.02,0.26,2.85,0.79c0.83,0.52,1.43,1.27,1.81,2.23H245.5z"/>
+        <path class="st0" d="M251.99,69.96c0.4-0.23,0.87-0.34,1.42-0.34v1.7h-0.42c-0.64,0-1.13,0.16-1.46,0.49
+			c-0.33,0.33-0.5,0.89-0.5,1.7v4.18h-1.64v-7.94h1.64v1.15C251.27,70.5,251.59,70.19,251.99,69.96z"/>
+        <path class="st0" d="M256.33,77.31c-0.61-0.34-1.08-0.82-1.43-1.44c-0.35-0.62-0.52-1.34-0.52-2.15c0-0.81,0.18-1.52,0.53-2.15
+			c0.36-0.62,0.84-1.1,1.46-1.44c0.61-0.34,1.3-0.5,2.06-0.5c0.76,0,1.45,0.17,2.06,0.5c0.61,0.34,1.1,0.82,1.46,1.44
+			c0.36,0.62,0.53,1.34,0.53,2.15c0,0.81-0.18,1.52-0.55,2.15c-0.37,0.62-0.86,1.11-1.49,1.45c-0.63,0.34-1.32,0.51-2.08,0.51
+			C257.62,77.83,256.94,77.66,256.33,77.31z M259.56,76.1c0.37-0.2,0.67-0.5,0.9-0.91c0.23-0.4,0.35-0.89,0.35-1.47
+			c0-0.58-0.11-1.06-0.33-1.46c-0.22-0.4-0.51-0.7-0.88-0.9c-0.37-0.2-0.76-0.3-1.18-0.3c-0.42,0-0.81,0.1-1.17,0.3
+			s-0.65,0.5-0.86,0.9c-0.21,0.4-0.32,0.89-0.32,1.46c0,0.86,0.22,1.52,0.66,1.98c0.44,0.47,0.99,0.7,1.65,0.7
+			C258.79,76.4,259.19,76.3,259.56,76.1z"/>
+        <path class="st0" d="M271.31,69.75v7.94h-1.64v-0.94c-0.26,0.33-0.6,0.58-1.02,0.77c-0.42,0.19-0.86,0.28-1.33,0.28
+			c-0.62,0-1.18-0.13-1.68-0.39c-0.49-0.26-0.88-0.64-1.17-1.15c-0.28-0.51-0.43-1.12-0.43-1.84v-4.67h1.63v4.42
+			c0,0.71,0.18,1.26,0.53,1.64c0.36,0.38,0.84,0.57,1.46,0.57c0.61,0,1.1-0.19,1.46-0.57c0.36-0.38,0.54-0.92,0.54-1.64v-4.42
+			H271.31z"/>
+        <path class="st0" d="M276.25,70c0.48-0.25,1.02-0.37,1.63-0.37c0.69,0,1.32,0.17,1.9,0.51c0.57,0.34,1.02,0.82,1.35,1.43
+			c0.33,0.61,0.49,1.32,0.49,2.12c0,0.8-0.16,1.51-0.49,2.14c-0.33,0.63-0.78,1.12-1.35,1.47c-0.57,0.35-1.2,0.53-1.9,0.53
+			c-0.61,0-1.14-0.12-1.61-0.37c-0.47-0.24-0.86-0.55-1.15-0.92v4.93h-1.64V69.75h1.64v1.17C275.39,70.56,275.77,70.25,276.25,70z
+			 M279.6,72.27c-0.23-0.4-0.52-0.7-0.89-0.91c-0.37-0.21-0.77-0.31-1.19-0.31c-0.41,0-0.8,0.11-1.17,0.32
+			c-0.37,0.21-0.67,0.52-0.89,0.92c-0.23,0.4-0.34,0.88-0.34,1.43c0,0.55,0.11,1.03,0.34,1.43c0.23,0.41,0.52,0.72,0.89,0.93
+			c0.37,0.21,0.76,0.32,1.17,0.32c0.42,0,0.82-0.11,1.19-0.32c0.37-0.22,0.67-0.53,0.89-0.94c0.23-0.41,0.34-0.89,0.34-1.44
+			C279.94,73.14,279.83,72.67,279.6,72.27z"/>
+	</g>
+        <g>
+		<g>
+			<circle class="st1" cx="53.62" cy="35.41" r="10.54"/>
+
+            <radialGradient id="SVGID_1_" cx="-727.3536" cy="1567.5006" r="0.1203" gradientTransform="matrix(-0.8104 389.5402 261.0754 0.5432 -409802.4375 282517.5312)" gradientUnits="userSpaceOnUse">
+				<stop  offset="0.0606" style="stop-color:#E16139"/>
+                <stop  offset="0.6621" style="stop-color:#F89A1C"/>
+			</radialGradient>
+            <path class="st2" d="M44.01,14.52c0,5.82-4.72,10.54-10.54,10.54c-0.08,0-0.16,0-0.24,0l0.01,0.01
+				c-5.62,0.12-10.16,4.66-10.3,10.28l-0.01-0.01c0,0.09,0,0.18,0,0.26c0,0.04,0,0.07,0,0.11l0.01-0.01l0.02,0.02
+				c0.15,5.53,4.56,10,10.06,10.25c0.15-0.01,0.29-0.01,0.44-0.01c5.82,0,10.54,4.72,10.54,10.54c0,5.82-4.72,10.54-10.54,10.54
+				c-5.82,0-10.54-4.72-10.54-10.54c0-0.19,0.01-0.39,0.02-0.58c-0.28-5.1-4.2-9.24-9.21-9.86c-0.44,0.06-0.89,0.09-1.35,0.09
+				c-5.82,0-10.54-4.72-10.54-10.54c0-5.82,4.72-10.54,10.54-10.54c0.09,0,0.18,0,0.28,0l0.01-0.01c5.6-0.15,10.1-4.66,10.25-10.25
+				l0.01-0.01c0-0.09,0-0.18,0-0.28c0-5.82,4.72-10.54,10.54-10.54C39.29,3.98,44.01,8.7,44.01,14.52z"/>
+            <path class="st1" d="M17.37,35.51c0,0.1-0.01,0.2-0.01,0.3l0.03,0c0.32,5.51,2.96,7.26,6.82,9.8c1.55,1.02,3.29,2.17,5.15,3.74
+				c7.8,6.57,4.68,16.87-3.52,14.2c1.93,2.13,4.72,3.47,7.82,3.47c4.69,0,8.67-3.07,10.03-7.3c1.76-4.84-0.25-10.37-4.93-12.88
+				c-1.63-0.87-2.92-0.9-4.72-0.93c-0.71-0.01-1.5-0.03-2.42-0.1c-4.84-0.87-8.53-5.04-8.66-10.09l-0.02-0.02l-0.01,0.01
+				c0-0.04,0-0.07,0-0.11c0-0.03,0-0.06,0-0.09c0-0.03,0-0.06,0-0.09c0-0.02,0-0.04,0-0.05c0-0.02,0-0.03,0-0.05l0.01,0.01
+				l0.02-0.02c0.13-5.05,3.82-9.22,8.66-10.09c0.92-0.07,1.71-0.08,2.42-0.1c1.8-0.03,3.09-0.06,4.72-0.93
+				c4.68-2.51,6.69-8.04,4.93-12.88c-1.37-4.24-5.34-7.3-10.03-7.3c-3.1,0-5.89,1.34-7.82,3.47c8.2-2.67,11.31,7.63,3.52,14.2
+				c-1.86,1.57-3.6,2.72-5.15,3.74c-3.86,2.54-6.5,4.29-6.82,9.8l-0.03,0C17.36,35.31,17.36,35.41,17.37,35.51z"/>
+		</g>
+            <path class="st3" d="M124.27,54.25c0,0.72,0.58,1.31,1.31,1.31h3.24c0.72,0,1.31-0.59,1.31-1.31V16.31c0-0.72-0.58-1.31-1.31-1.31
+			h-3.24c-0.72,0-1.31,0.59-1.31,1.31V54.25z"/>
+            <path class="st3" d="M239.95,35.28c0,11.82,9.01,20.83,20.83,20.83c11.82,0,20.83-9.01,20.83-20.83
+			c0-11.82-9.01-20.83-20.83-20.83C248.96,14.45,239.95,23.46,239.95,35.28z M245.96,35.28c0-8.51,6.36-15.04,14.82-15.04
+			c8.47,0,14.87,6.54,14.87,15.04s-6.41,15.04-14.87,15.04C252.32,50.32,245.96,43.79,245.96,35.28z"/>
+            <path class="st3" d="M112.37,55.55c0.72,0,1.31-0.59,1.31-1.31v-3.01c0-0.72-0.59-1.31-1.31-1.31H94.18V16.31
+			c0-0.72-0.59-1.31-1.31-1.31h-3.24c-0.72,0-1.31,0.59-1.31,1.31v37.94c0,0.72,0.59,1.31,1.31,1.31H112.37z"/>
+            <path class="st0" d="M225.38,48.3c2.75-3.52,4.39-8.03,4.39-13.02c0-11.82-9.01-20.83-20.83-20.83
+			c-11.82,0-20.83,9.01-20.83,20.83c0,11.82,9.01,20.83,20.83,20.83c2.69,0,5.23-0.46,7.54-1.33l-4.76-4.72
+			c-0.89,0.16-1.82,0.25-2.78,0.25c-8.46,0-14.82-6.53-14.82-15.04s6.36-15.04,14.82-15.04c8.47,0,14.87,6.54,14.87,15.04
+			c0,3.28-1.03,6.29-2.76,8.69l-8.17-8.22c-0.25-0.25-0.58-0.39-0.93-0.39c-0.35,0-0.68,0.14-0.93,0.39l-2.23,2.29
+			c-0.5,0.51-0.49,1.33,0.01,1.83l8.05,8.1l4.31,4.31l3.65,3.61c0.25,0.24,0.58,0.38,0.93,0.38c0.35,0,0.68-0.15,0.92-0.39
+			l2.23-2.29c0.5-0.51,0.49-1.34-0.02-1.84L225.38,48.3z"/>
+            <path class="st0" d="M177.63,43.59l-5.85-7.93V16.24c0-0.72,0.58-1.31,1.31-1.31h3.24c0.72,0,1.31,0.59,1.31,1.31V43.59z"/>
+            <path class="st0" d="M177.63,52.64v1.53c0,0.72-0.59,1.31-1.31,1.31h-3.24c-0.41,0-0.8-0.19-1.04-0.52l-20.19-26.73v25.95
+			c0,0.72-0.59,1.31-1.31,1.31h-3.24c-0.72,0-1.31-0.59-1.31-1.31V20.72l-2.34-3.4c-0.15-0.22-0.23-0.48-0.23-0.74v-0.33
+			c0-0.72,0.58-1.31,1.31-1.31h4.02c0.41,0,0.8,0.19,1.05,0.52l22.01,29.39L177.63,52.64z"/>
+	</g>
+</g>
+</svg>
+        </a>
+        <div class="page-menu js-navigation">
+                            <div class="menu-links main-menu-links">
+                    <div class="menu-main-menu-de-container"><ul id="menu-main-menu-de" class="nav js-nav"><li id="menu-item-872" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-872 dropdown"><a title="Solutions" href="#" data-toggle="dropdown" class="dropdown-toggle">Solutions </a>
+<ul role="menu" class="sub-menu js-sub-menu dropdown-menu"><li class="sub-menu-button js-sub-menu-button"><button> 
+ Solutions 
+</button></li>
+	<li class="link-wrap "><div class="js-child-menu-item child-menu-item"><img src=https://linqo.eu/wp-content/uploads/2022/10/Tracking-solutions-01.svg alt="menu-icon"><a title="Tracking Solutions" href="https://linqo.eu/solutions/tracking-solutions/">Tracking Solutions</a></div></li>
+	<li class="link-wrap "><div class="js-child-menu-item child-menu-item"><img src=https://linqo.eu/wp-content/uploads/2022/10/fuel-25.svg alt="menu-icon"><a title="Fuel Monitoring &#038; Control" href="https://linqo.eu/solutions/fuel-monitoring-and-control/">Fuel Monitoring &#038; Control</a></div></li>
+	<li class="link-wrap "><div class="js-child-menu-item child-menu-item"><img src=https://linqo.eu/wp-content/uploads/2022/08/Frame-3371.svg alt="menu-icon"><a title="Tachograph Management" href="https://linqo.eu/solutions/tachograph-management/">Tachograph Management</a></div></li>
+	<li class="link-wrap "><div class="js-child-menu-item child-menu-item"><img src=https://linqo.eu/wp-content/uploads/2022/08/Access-control-02.svg alt="menu-icon"><a title="Access Control" href="https://linqo.eu/solutions/access-control/">Access Control</a></div></li>
+	<li class="link-wrap "><div class="js-child-menu-item child-menu-item"><img src=https://linqo.eu/wp-content/uploads/2022/08/e-toll-05.svg alt="menu-icon"><a title="e-Toll Solutions" href="https://linqo.eu/solutions/e-toll/">e-Toll Solutions</a></div></li>
+	<li class="link-wrap "><div class="js-child-menu-item child-menu-item"><img src=https://linqo.eu/wp-content/uploads/2022/08/API-visibility-04.svg alt="menu-icon"><a title="API Visibility" href="https://linqo.eu/solutions/api/">API Visibility</a></div></li>
+	<li class="link-wrap "><div class="js-child-menu-item child-menu-item"><img src=https://linqo.eu/wp-content/uploads/2022/08/asset-trailer-tracking-03.svg alt="menu-icon"><a title="Asset &#038; Trailer Tracking" href="https://linqo.eu/solutions/asset-and-trailer-tracking/">Asset &#038; Trailer Tracking</a></div></li>
+	<li class="link-wrap "><div class="js-child-menu-item child-menu-item"><img src=https://linqo.eu/wp-content/uploads/2022/08/super-ecodrive.svg alt="menu-icon"><a title="Super Eco-Drive" href="https://linqo.eu/solutions/eco-drive/">Super Eco-Drive</a></div></li>
+	<li class="link-wrap "><div class="js-child-menu-item child-menu-item"><img src=https://linqo.eu/wp-content/uploads/2022/09/Frame-4301-1.svg alt="menu-icon"><a title="Logbook Solutions" href="https://linqo.eu/solutions/logbook-solutions/">Logbook Solutions</a></div></li>
+	<li class="link-wrap "><div class="js-child-menu-item child-menu-item"><img src=https://linqo.eu/wp-content/uploads/2024/10/routing-3.svg alt="menu-icon"><a title="Advanced Routing &#038; Tasking" href="https://linqo.eu/solutions/routing-tasking/">Advanced Routing &#038; Tasking</a></div></li>
+	<li class="link-wrap "><div class="js-child-menu-item child-menu-item"><img src=https://linqo.eu/wp-content/uploads/2023/10/EV-icon.svg alt="menu-icon"><a title="Electric Vehicle (EV) Fleet Management" href="https://linqo.eu/solutions/electric-vehicle-fleet-management/">Electric Vehicle (EV) Fleet Management</a></div></li>
+	<li class="link-wrap "><div class="js-child-menu-item child-menu-item"><img src=https://linqo.eu/wp-content/uploads/2025/02/cam-black.svg alt="menu-icon"><a title="Smart DashCam Solution" href="https://linqo.eu/solutions/dashcam-solution/">Smart DashCam Solution</a></div></li>
+	<li class="link-wrap "><div class="js-child-menu-item child-menu-item"><img src=https://linqo.eu/wp-content/uploads/2022/08/Frame-3374.svg alt="menu-icon"><a title="Integrations" href="https://linqo.eu/integrations/">Integrations</a></div></li>
+</ul>
+</li>
+<li id="menu-item-530" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-530 dropdown"><a title="Why Linqo?" href="#" data-toggle="dropdown" class="dropdown-toggle">Why Linqo? </a>
+<ul role="menu" class="sub-menu js-sub-menu dropdown-menu"><li class="sub-menu-button js-sub-menu-button"><button> 
+ Why Linqo? 
+</button></li>
+	<li class="link-wrap "><div class="js-child-menu-item child-menu-item"><img src=https://linqo.eu/wp-content/uploads/2022/09/Frame-4296-1.png alt="menu-icon"><p>We are Linqo – a quality GPS tracking solution provider </p><a title="About us" href="https://linqo.eu/about-us/">About us</a></div></li>
+	<li class="link-wrap "><div class="js-child-menu-item child-menu-item"><img src=https://linqo.eu/wp-content/uploads/2022/09/Frame-3370.svg alt="menu-icon"><p>We believe that people is the key to a successful professional journey</p><a title="Career" href="https://linqo.eu/career/">Career</a></div></li>
+	<li class="link-wrap "><div class="js-child-menu-item child-menu-item"><img src=https://linqo.eu/wp-content/uploads/2022/09/Frame-4295.svg alt="menu-icon"><p>Learn how companies worldwide use Linqo solutions to accelerate their growth</p><a title="Success stories" href="https://linqo.eu/success-stories/">Success stories</a></div></li>
+	<li class="link-wrap "><div class="js-child-menu-item child-menu-item"><img src=https://linqo.eu/wp-content/uploads/2022/09/Frame-4295-2.svg alt="menu-icon"><a title="News" href="https://linqo.eu/news/">News</a></div></li>
+	<li class="link-wrap "><div class="js-child-menu-item child-menu-item"><img src=https://linqo.eu/wp-content/uploads/2025/10/Referral.svg alt="menu-icon"><p>Turn Referrals into Rewards</p><a title="Referral Program" href="https://linqo.eu/solutions/referral-program/">Referral Program</a></div></li>
+</ul>
+</li>
+<li id="menu-item-531" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-531 dropdown"><a title="Support" href="#" data-toggle="dropdown" class="dropdown-toggle">Support </a>
+<ul role="menu" class="sub-menu js-sub-menu dropdown-menu"><li class="sub-menu-button js-sub-menu-button"><button> 
+ Support 
+</button></li>
+	<li class="link-wrap "><div class="js-child-menu-item child-menu-item"><img src=https://linqo.eu/wp-content/uploads/2022/09/Frame-4296.png alt="menu-icon"><p>Get in touch and our Support team will answer all your questions</p><a title="Customer support" href="https://linqo.eu/customer-support/">Customer support</a></div></li>
+	<li class="link-wrap "><div class="js-child-menu-item child-menu-item"><img src=https://linqo.eu/wp-content/uploads/2022/09/Frame-3370-1.svg alt="menu-icon"><p>Frequently asked questions </p><a title="FAQ" href="https://linqo.eu/faq/">FAQ</a></div></li>
+</ul>
+</li>
+<li id="menu-item-1042" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1042"><a title="Contact us" href="https://linqo.eu/contacts/">Contact us</a></li>
+</ul></div>                </div>
+                                        <div class="menu-links language-menu-mobile">
+                    <div class="menu-language-menu-container"><ul id="menu-language-menu" class="nav js-nav"><li id="menu-item-1008" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-children menu-item-1008 dropdown"><a title="English" href="#" data-toggle="dropdown" class="dropdown-toggle">English </a>
+<ul role="menu" class="sub-menu js-sub-menu dropdown-menu"><li class="sub-menu-button js-sub-menu-button"><button> 
+ English 
+</button></li>
+	<li class="link-wrap "><div class="js-child-menu-item child-menu-item"><img src=https://linqo.eu/wp-content/uploads/2022/09/LT.svg alt="menu-icon"><a title="Lithuanian" href="https://linqo.lt">Lithuanian</a></div></li>
+	<li class="link-wrap "><div class="js-child-menu-item child-menu-item"><img src=https://linqo.eu/wp-content/uploads/2022/09/DE.svg alt="menu-icon"><a title="German" href="https://linqo.de">German</a></div></li>
+	<li class="link-wrap "><div class="js-child-menu-item child-menu-item"><img src=https://linqo.eu/wp-content/uploads/2022/09/NL.svg alt="menu-icon"><a title="Dutch" href="https://linqo.nl">Dutch</a></div></li>
+	<li class="link-wrap "><div class="js-child-menu-item child-menu-item"><img src=https://linqo.eu/wp-content/uploads/2022/09/PL.svg alt="menu-icon"><a title="Polish" href="https://linqo.pl">Polish</a></div></li>
+	<li class="link-wrap "><div class="js-child-menu-item child-menu-item"><img src=https://linqo.eu/wp-content/uploads/2022/09/UA.png alt="menu-icon"><a title="Ukrainian" href="https://linqo.com.ua/">Ukrainian</a></div></li>
+</ul>
+</li>
+</ul></div>                </div>
+                    </div>
+        <div class="page-menu-lang menu-content">
+                            <div class="menu-links language-dropdown">
+                    <div class="menu-language-menu-container"><ul id="menu-language-menu-1" class="nav js-nav"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-children menu-item-1008 dropdown"><a title="English" href="#" data-toggle="dropdown" class="dropdown-toggle">English </a>
+<ul role="menu" class="sub-menu js-sub-menu dropdown-menu"><li class="sub-menu-button js-sub-menu-button"><button> 
+ English 
+</button></li>
+	<li class="link-wrap "><div class="js-child-menu-item child-menu-item"><img src=https://linqo.eu/wp-content/uploads/2022/09/LT.svg alt="menu-icon"><a title="Lithuanian" href="https://linqo.lt">Lithuanian</a></div></li>
+	<li class="link-wrap "><div class="js-child-menu-item child-menu-item"><img src=https://linqo.eu/wp-content/uploads/2022/09/DE.svg alt="menu-icon"><a title="German" href="https://linqo.de">German</a></div></li>
+	<li class="link-wrap "><div class="js-child-menu-item child-menu-item"><img src=https://linqo.eu/wp-content/uploads/2022/09/NL.svg alt="menu-icon"><a title="Dutch" href="https://linqo.nl">Dutch</a></div></li>
+	<li class="link-wrap "><div class="js-child-menu-item child-menu-item"><img src=https://linqo.eu/wp-content/uploads/2022/09/PL.svg alt="menu-icon"><a title="Polish" href="https://linqo.pl">Polish</a></div></li>
+	<li class="link-wrap "><div class="js-child-menu-item child-menu-item"><img src=https://linqo.eu/wp-content/uploads/2022/09/UA.png alt="menu-icon"><a title="Ukrainian" href="https://linqo.com.ua/">Ukrainian</a></div></li>
+</ul>
+</li>
+</ul></div>                </div>
+                                        <a href="https://trackde.linqo.io/login"
+                   target="_blank"
+                   class="button blurred">Login</a>
+                        <div class="hamburger js-burger">
+                <span class="js-burger-1"></span>
+                <span class="js-burger-2"></span>
+                <span class="js-burger-3"></span>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="fixed-buttons">
+    <button class="chat-button js-chat-button">
+        <span>Contact Us</span>
+        <span class="open-icon icon"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.838867 3.04651C0.838867 1.91625 1.75512 1 2.88538 1H20.7924C21.9226 1 22.8389 1.91625 22.8389 3.04651V16.8605C22.8389 17.9907 21.9226 18.907 20.7924 18.907H13.2736L6.1241 22.8201C6.00536 22.8851 5.86807 22.7719 5.90917 22.643L7.09974 18.907H2.88538C1.75512 18.907 0.838867 17.9907 0.838867 16.8605V3.04651Z" stroke="white" stroke-width="1.5"/>
+<path d="M4.83887 6H18.8389" stroke="white" stroke-width="1.5"/>
+<path d="M4.83887 10H11.8389" stroke="white" stroke-width="1.5"/>
+</svg>
+</span>
+    </button>
+    <button class="page-up-button js-page-up-button hide">
+        <svg width="12" height="17" viewBox="0 0 12 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1264_16)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.70698 4.4142L1.41409 7.7071L-0.000122538 6.29288L4.99987 1.29289L5.70698 0.585792L6.41409 1.29289L11.4141 6.29288L9.99987 7.7071L6.70698 4.4142L6.70698 17L4.70698 17L4.70698 4.4142Z" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_1264_16">
+<rect width="17" height="12.0001" fill="white" transform="translate(-0.00012207 17) rotate(-90)"/>
+</clipPath>
+</defs>
+</svg>
+    </button>
+</div>
+
+    <div class="chat-pop-block js-chat-popup">
+        <div class="close-button js-popup-close-button">
+            <img src="https://linqo.eu/wp-content/themes/linqo-wp/assets/images/icons/icon_x_large.svg"
+                 alt="close icon">
+        </div>
+        <div class="contact-form contact-popup-form js-popup-cf7">
+            <div class="js-popup-form-wrapper popup-form-wrapper">
+                <span class="popup-title">Let's talk</span>
+                <p>Have any questions? We'd love to hear from you. </p>
+                
+<div class="wpcf7 no-js" id="wpcf7-f1021-o1" lang="en-US" dir="ltr" data-wpcf7-id="1021">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/wp-content/uploads/2020/01/linqo-logo.png#wpcf7-f1021-o1" method="post" class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="1021" /><input type="hidden" name="_wpcf7_version" value="6.1.5" /><input type="hidden" name="_wpcf7_locale" value="en_US" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f1021-o1" /><input type="hidden" name="_wpcf7_container_post" value="0" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" /><input type="hidden" name="_wpcf7_recaptcha_response" value="" />
+</fieldset>
+<div class="field-group js-popup-field-label">
+	<p class="field-label js-popup-field-label" data-field="chatNamefield">Your name*
+	</p>
+	<p><span class="wpcf7-form-control-wrap" data-name="your-name"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required js-popup-input-field" id="chatNamefield" aria-required="true" aria-invalid="false" value="" type="text" name="your-name" /></span>
+	</p>
+</div>
+<div class="field-group js-popup-field-label">
+	<p class="field-label js-popup-field-label" data-field="chatEmailfield">Email*
+	</p>
+	<p><span class="wpcf7-form-control-wrap" data-name="your-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email js-popup-input-field" id="chatEmailfield" aria-required="true" aria-invalid="false" value="" type="email" name="your-email" /></span>
+	</p>
+</div>
+<div class="field-group js-popup-field-label">
+	<p class="field-label js-popup-field-label" data-field="chatNumberfield">Phone number*
+	</p>
+	<p><span class="wpcf7-form-control-wrap" data-name="your-number"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required js-popup-input-field" id="chatNumberfield" aria-required="true" aria-invalid="false" value="" type="text" name="your-number" /></span>
+	</p>
+</div>
+<div class="field-group js-popup-field-label">
+	<p class="field-label js-popup-field-label" data-field="chatCompanyfield">Company name*
+	</p>
+	<p><span class="wpcf7-form-control-wrap" data-name="your-company"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required js-popup-input-field" id="chatCompanyfield" aria-required="true" aria-invalid="false" value="" type="text" name="your-company" /></span>
+	</p>
+</div>
+<div class="field-group js-popup-field-label">
+	<p class="field-label js-popup-field-label" data-field="chatMessagefield">Your message
+	</p>
+	<p><span class="wpcf7-form-control-wrap" data-name="message"><textarea cols="40" rows="10" maxlength="2000" class="wpcf7-form-control wpcf7-textarea js-popup-input-field" id="chatMessagefield" aria-invalid="false" name="message"></textarea></span>
+	</p>
+</div>
+<input class="wpcf7-form-control wpcf7-hidden action-page" value="" type="hidden" name="action-page" />
+<p><button type="submit" class="button form primary">Send</button>
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+            </div>
+
+            <div class="loader-wrapper js-popup-cf7-loader">
+                <span class="page-loader"></span>
+            </div>
+
+                            <div class="cf7-success-message js-popup-cf7-success">
+                                            <img src="https://linqo.eu/wp-content/uploads/2023/05/Linqo-ownership-24.svg" alt="success">
+                                        <span class="success-message-title">Thank you!</span>
+                    <p>We will contact you shortly</p>
+                </div>
+                    </div>
+    </div>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQVMP4Z"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<main>    <section class="page-404">
+        <svg width="447" height="174" viewBox="0 0 447 174" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 143.109V110.997L73.5325 5.81745H117.978V108.67H137.059V143.109H117.978V173.36H78.1865V143.109H0ZM80.9788 49.5646L41.8856 108.67H80.9788V49.5646Z" fill="url(#paint0_linear_1059_994)"/>
+            <path d="M156.549 86.0982C156.549 59.4155 161.669 38.3951 171.907 23.0371C182.301 7.67903 198.978 0 221.937 0C244.897 0 261.496 7.67903 271.735 23.0371C282.128 38.3951 287.325 59.4155 287.325 86.0982C287.325 113.091 282.128 134.267 271.735 149.625C261.496 164.983 244.897 172.662 221.937 172.662C198.978 172.662 182.301 164.983 171.907 149.625C161.669 134.267 156.549 113.091 156.549 86.0982ZM248.232 86.0982C248.232 70.4299 246.526 58.4072 243.113 50.03C239.7 41.4978 232.641 37.2317 221.937 37.2317C211.233 37.2317 204.175 41.4978 200.762 50.03C197.349 58.4072 195.642 70.4299 195.642 86.0982C195.642 96.6472 196.263 105.412 197.504 112.393C198.745 119.219 201.227 124.804 204.95 129.147C208.829 133.336 214.491 135.43 221.937 135.43C229.384 135.43 234.968 133.336 238.692 129.147C242.57 124.804 245.13 119.219 246.371 112.393C247.612 105.412 248.232 96.6472 248.232 86.0982Z" fill="url(#paint1_linear_1059_994)"/>
+            <path d="M309.279 143.109V110.997L382.811 5.81745H427.257V108.67H446.338V143.109H427.257V173.36H387.465V143.109H309.279ZM390.258 49.5646L351.165 108.67H390.258V49.5646Z" fill="url(#paint2_linear_1059_994)"/>
+            <defs>
+                <linearGradient id="paint0_linear_1059_994" x1="446.338" y1="8.56864e-06" x2="119.823" y2="302.637" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#241F16"/>
+                    <stop offset="1" stop-color="#1D212B"/>
+                </linearGradient>
+                <linearGradient id="paint1_linear_1059_994" x1="446.338" y1="8.56864e-06" x2="119.823" y2="302.637" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#241F16"/>
+                    <stop offset="1" stop-color="#1D212B"/>
+                </linearGradient>
+                <linearGradient id="paint2_linear_1059_994" x1="446.338" y1="8.56864e-06" x2="119.823" y2="302.637" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#241F16"/>
+                    <stop offset="1" stop-color="#1D212B"/>
+                </linearGradient>
+            </defs>
+        </svg>
+        <h1 class="title">You didn't break the Internet</h1>
+        <p class="text">but we can't find what you're looking for</p>
+        <a href="https://linqo.eu" class="button primary">Go back to home page</a>
+    </section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="grid-cols-12 gap-20 d-grid">
+            <div class="col-span-12 md-col-span-3 copyrights-wrapper">
+                <a href="https://linqo.eu">
+                                            <img class="logo" src="https://linqo.eu/wp-content/uploads/2023/06/Linqo-PBRG-logo.svg"
+                             alt="linqo logo">
+                                    </a>
+                                    <div class="copy-right-text"><p>© 2026 LINQO Powered by Ruptela Group. All rights reserved. <a href="https://linqo.eu/privacy-policy/">Privacy policy.</a></p>
+</div>
+                                <div class="social">
+                                                                <a class="social-link" target="_blank" href="https://www.linkedin.com/company/linqogpstracking/">
+                            <img src="https://linqo.eu/wp-content/themes/linqo-wp/assets/images/icons/icon_linkedIn.svg"
+                                 alt="linkedin icon">
+                        </a>
+                                        
+                </div>
+            </div>
+
+            <div class="col-span-12 md-col-span-6 menu-wrapper">
+                                    <div class="footer-navigation">
+                        <div class="menu-footer-menu-de-container"><ul id="menu-footer-menu-de" class="nav js-footer-nav"><li id="menu-item-1073" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1073"><a href="https://linqo.eu/all-solutions/">Solutions</a>
+<ul class="sub-menu">
+	<li id="menu-item-1585" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1585"><a href="https://linqo.eu/integrations/">Integrations</a></li>
+	<li id="menu-item-1786" class="menu-item menu-item-type-post_type menu-item-object-solutions menu-item-1786"><a href="https://linqo.eu/solutions/linqotrack/">LinqoTrack</a></li>
+</ul>
+</li>
+<li id="menu-item-538" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-538"><a href="#">Why Linqo?</a>
+<ul class="sub-menu">
+	<li id="menu-item-1356" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1356"><a href="https://linqo.eu/about-us/">About us</a></li>
+	<li id="menu-item-1358" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1358"><a href="https://linqo.eu/success-stories/">Success stories</a></li>
+	<li id="menu-item-1586" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1586"><a href="https://linqo.eu/career/">Career</a></li>
+	<li id="menu-item-2098" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2098"><a href="https://linqo.eu/news/">News</a></li>
+</ul>
+</li>
+<li id="menu-item-627" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-627"><a href="#">Support</a>
+<ul class="sub-menu">
+	<li id="menu-item-1588" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1588"><a href="https://linqo.eu/customer-support/">Customer support</a></li>
+	<li id="menu-item-1355" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1355"><a href="https://linqo.eu/faq/">FAQ</a></li>
+</ul>
+</li>
+</ul></div>                    </div>
+                            </div>
+
+            <div class="col-span-12 md-col-span-3 contacts-wrapper">
+                                    <div class="contacts-cta">
+                        <p class="title">Have any questions? </p>
+                        <p class="text">Interested to see in a free tailor-designed demo? Contact us for more information.</p>
+                                                    <a class="button secondary"
+                               href="https://linqo.eu/contacts/">Contact us</a>
+                                            </div>
+                            </div>
+        </div>
+    </div>
+</footer>
+    <script data-cookieconsent="ignore">
+        const popupDelayInSeconds = 10;
+    </script>
+    <div class="welcome-popup">
+        <div class="popup-box">
+            <svg class="close-icon" width="21" height="22" viewBox="0 0 21 22" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M11.558 11.0001L20.526 2.0321L19.4654 0.971436L10.4974 9.93942L1.52941 0.97146L0.46875 2.03212L9.43671 11.0001L0.46875 19.968L1.52941 21.0287L10.4974 12.0607L19.4654 21.0287L20.526 19.9681L11.558 11.0001Z"
+                      fill="white"/>
+            </svg>
+            <div class="img-container">
+                <img 
+					src="https://linqo.eu/wp-content/uploads/2025/10/popup.png"
+                    srcset="https://linqo.eu/wp-content/uploads/2025/10/popup-300x156.png 300w, https://linqo.eu/wp-content/uploads/2025/10/popup-1024x533.png 1024w, https://linqo.eu/wp-content/uploads/2025/10/popup-768x400.png 768w, https://linqo.eu/wp-content/uploads/2025/10/popup.png 1509w"
+                    alt=""
+											sizes="(max-width: 768px) 100vw, 768px"
+										>
+            </div>
+            <div class="content">
+                                    <div class="popup-title">Turn Referrals into Rewards </div>
+                                                    <div class="popup-text">with LINQO!</div>
+                                                    <a href="https://linqo.eu/solutions/referral-program/"
+                       class="button primary">Learn more</a>
+                            </div>
+        </div>
+    </div>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/linqo-wp/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script type="text/javascript" src="https://linqo.eu/wp-includes/js/dist/hooks.min.js?ver=dd5603f07f9220ed27f1" id="wp-hooks-js" defer></script>
+<script type="text/javascript" src="https://linqo.eu/wp-includes/js/dist/i18n.min.js?ver=c26c3dc7bed366793375" id="wp-i18n-js" defer></script>
+<script type="text/javascript" id="wp-i18n-js-after">
+/* <![CDATA[ */
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://linqo.eu/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=6.1.5" id="swv-js" defer></script>
+<script type="text/javascript" id="contact-form-7-js-before">
+/* <![CDATA[ */
+var wpcf7 = {
+    "api": {
+        "root": "https:\/\/linqo.eu\/wp-json\/",
+        "namespace": "contact-form-7\/v1"
+    }
+};
+//# sourceURL=contact-form-7-js-before
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://linqo.eu/wp-content/plugins/contact-form-7/includes/js/index.js?ver=6.1.5" id="contact-form-7-js" defer></script>
+<script type="text/javascript" id="codedropz-uploader-js-extra">
+/* <![CDATA[ */
+var dnd_cf7_uploader = {"ajax_url":"https://linqo.eu/wp-admin/admin-ajax.php","ajax_nonce":"4a59cd51db","drag_n_drop_upload":{"tag":"h3","text":"Drag & Drop Files Here","or_separator":"or","browse":"Browse Files","server_max_error":"The uploaded file exceeds the maximum upload size of your server.","large_file":"Uploaded file is too large","inavalid_type":"Uploaded file is not allowed for file type","max_file_limit":"Note : Some of the files are not uploaded ( Only %count% files allowed )","required":"This field is required.","delete":{"text":"deleting","title":"Remove"}},"dnd_text_counter":"of","disable_btn":""};
+//# sourceURL=codedropz-uploader-js-extra
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://linqo.eu/wp-content/plugins/drag-and-drop-multiple-file-upload-contact-form-7/assets/js/codedropz-uploader-min.js?ver=1.3.9.6" id="codedropz-uploader-js" defer></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjXbUCezDAniRZrYVYmVR04GKyR8sUYBM" id="googlemaps-js" defer></script>
+<script type="text/javascript" src="https://linqo.eu/wp-content/themes/linqo-wp/assets/js/swiper-bundle.min.js?ver=4a5348d0392f16583793333dd17b6638" id="swiperjs-js" data-cookieconsent="ignore" defer></script><script type="text/javascript" src="https://linqo.eu/wp-content/themes/linqo-wp/assets/js/gsap.min.js?ver=4a5348d0392f16583793333dd17b6638" id="gsap-js" data-cookieconsent="ignore" defer></script><script type="text/javascript" src="https://linqo.eu/wp-content/themes/linqo-wp/assets/js/locomotive-scroll.min.js?ver=4a5348d0392f16583793333dd17b6638" id="locomotive-js" defer></script>
+<script type="text/javascript" id="mpwp-js-extra">
+/* <![CDATA[ */
+var postmpwp = {"ajax_url":"https://linqo.eu/wp-admin/admin-ajax.php","template_directory":"https://linqo.eu/wp-content/themes/linqo-wp"};
+//# sourceURL=mpwp-js-extra
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://linqo.eu/wp-content/themes/linqo-wp/assets/js/prod.js?ver=1775148933" id="mpwp-js" data-cookieconsent="ignore" defer></script><script type="text/javascript" src="https://www.google.com/recaptcha/api.js?render=6LcVx8gqAAAAAL4qL3tb8RdyMVXomwW7JnSEKANa&amp;ver=3.0" id="google-recaptcha-js" data-cookieconsent="ignore" defer></script><script type="text/javascript" src="https://linqo.eu/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" id="wp-polyfill-js" defer></script>
+<script type="text/javascript" id="wpcf7-recaptcha-js-before">
+/* <![CDATA[ */
+var wpcf7_recaptcha = {
+    "sitekey": "6LcVx8gqAAAAAL4qL3tb8RdyMVXomwW7JnSEKANa",
+    "actions": {
+        "homepage": "homepage",
+        "contactform": "contactform"
+    }
+};
+//# sourceURL=wpcf7-recaptcha-js-before
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://linqo.eu/wp-content/plugins/contact-form-7/modules/recaptcha/index.js?ver=6.1.5" id="wpcf7-recaptcha-js" defer></script>
+<script type="text/javascript" src="https://linqo.eu/wp-content/plugins/wp-smushit/app/assets/js/smush-lazy-load.min.js?ver=3.24.0" id="smush-lazy-load-js" data-cookieconsent="ignore" defer></script></main>
+<script id="perfmatters-delayed-scripts-js">(function(){window.pmDC=0;if(window.pmDT){var e=setTimeout(d,window.pmDT*1e3)}const t=["keydown","mousedown","mousemove","wheel","touchmove","touchstart","touchend"];const n={normal:[],defer:[],async:[]};const o=[];const i=[];var r=false;var a="";window.pmIsClickPending=false;t.forEach(function(e){window.addEventListener(e,d,{passive:true})});if(window.pmDC){window.addEventListener("touchstart",b,{passive:true});window.addEventListener("mousedown",b)}function d(){if(typeof e!=="undefined"){clearTimeout(e)}t.forEach(function(e){window.removeEventListener(e,d,{passive:true})});if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",s)}else{s()}}async function s(){c();u();f();m();await w(n.normal);await w(n.defer);await w(n.async);await p();document.querySelectorAll("link[data-pmdelayedstyle]").forEach(function(e){e.setAttribute("href",e.getAttribute("data-pmdelayedstyle"))});window.dispatchEvent(new Event("perfmatters-allScriptsLoaded")),E().then(()=>{h()})}function c(){let o={};function e(t,e){function n(e){return o[t].delayedEvents.indexOf(e)>=0?"perfmatters-"+e:e}if(!o[t]){o[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},delayedEvents:[]};t.addEventListener=function(){arguments[0]=n(arguments[0]);o[t].originalFunctions.add.apply(t,arguments)};t.removeEventListener=function(){arguments[0]=n(arguments[0]);o[t].originalFunctions.remove.apply(t,arguments)}}o[t].delayedEvents.push(e)}function t(t,n){const e=t[n];Object.defineProperty(t,n,{get:!e?function(){}:e,set:function(e){t["perfmatters"+n]=e}})}e(document,"DOMContentLoaded");e(window,"DOMContentLoaded");e(window,"load");e(document,"readystatechange");t(document,"onreadystatechange");t(window,"onload")}function u(){let n=window.jQuery;Object.defineProperty(window,"jQuery",{get(){return n},set(t){if(t&&t.fn&&!o.includes(t)){t.fn.ready=t.fn.init.prototype.ready=function(e){if(r){e.bind(document)(t)}else{document.addEventListener("perfmatters-DOMContentLoaded",function(){e.bind(document)(t)})}};const e=t.fn.on;t.fn.on=t.fn.init.prototype.on=function(){if(this[0]===window){function t(e){e=e.split(" ");e=e.map(function(e){if(e==="load"||e.indexOf("load.")===0){return"perfmatters-jquery-load"}else{return e}});e=e.join(" ");return e}if(typeof arguments[0]=="string"||arguments[0]instanceof String){arguments[0]=t(arguments[0])}else if(typeof arguments[0]=="object"){Object.keys(arguments[0]).forEach(function(e){delete Object.assign(arguments[0],{[t(e)]:arguments[0][e]})[e]})}}return e.apply(this,arguments),this};o.push(t)}n=t}})}function f(){document.querySelectorAll("script[type=pmdelayedscript]").forEach(function(e){if(e.hasAttribute("src")){if(e.hasAttribute("defer")&&e.defer!==false){n.defer.push(e)}else if(e.hasAttribute("async")&&e.async!==false){n.async.push(e)}else{n.normal.push(e)}}else{n.normal.push(e)}})}function m(){var o=document.createDocumentFragment();[...n.normal,...n.defer,...n.async].forEach(function(e){var t=e.getAttribute("src");if(t){var n=document.createElement("link");n.href=t;if(e.getAttribute("data-perfmatters-type")=="module"){n.rel="modulepreload"}else{n.rel="preload";n.as="script"}o.appendChild(n)}});document.head.appendChild(o)}async function w(e){var t=e.shift();if(t){await l(t);return w(e)}return Promise.resolve()}async function l(t){await v();return new Promise(function(e){const n=document.createElement("script");[...t.attributes].forEach(function(e){let t=e.nodeName;if(t!=="type"){if(t==="data-perfmatters-type"){t="type"}n.setAttribute(t,e.nodeValue)}});if(t.hasAttribute("src")){n.addEventListener("load",e);n.addEventListener("error",e)}else{n.text=t.text;e()}t.parentNode?t.parentNode.replaceChild(n,t):e()})}async function p(){r=true;await v();document.dispatchEvent(new Event("perfmatters-DOMContentLoaded"));await v();window.dispatchEvent(new Event("perfmatters-DOMContentLoaded"));await v();document.dispatchEvent(new Event("perfmatters-readystatechange"));await v();if(document.perfmattersonreadystatechange){document.perfmattersonreadystatechange()}await v();window.dispatchEvent(new Event("perfmatters-load"));await v();if(window.perfmattersonload){window.perfmattersonload()}await v();o.forEach(function(e){e(window).trigger("perfmatters-jquery-load")})}async function v(){return new Promise(function(e){requestAnimationFrame(e)})}function h(){window.removeEventListener("touchstart",b,{passive:true});window.removeEventListener("mousedown",b);i.forEach(e=>{if(e.target.outerHTML===a){e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:true,cancelable:true}))}})}function E(){return new Promise(e=>{window.pmIsClickPending?g=e:e()})}function y(){window.pmIsClickPending=true}function g(){window.pmIsClickPending=false}function L(e){e.target.removeEventListener("click",L);C(e.target,"pm-onclick","onclick");i.push(e),e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();g()}function b(e){if(e.target.tagName!=="HTML"){if(!a){a=e.target.outerHTML}window.addEventListener("touchend",A);window.addEventListener("mouseup",A);window.addEventListener("touchmove",k,{passive:true});window.addEventListener("mousemove",k);e.target.addEventListener("click",L);C(e.target,"onclick","pm-onclick");y()}}function k(e){window.removeEventListener("touchend",A);window.removeEventListener("mouseup",A);window.removeEventListener("touchmove",k,{passive:true});window.removeEventListener("mousemove",k);e.target.removeEventListener("click",L);C(e.target,"pm-onclick","onclick");g()}function A(e){window.removeEventListener("touchend",A);window.removeEventListener("mouseup",A);window.removeEventListener("touchmove",k,{passive:true});window.removeEventListener("mousemove",k)}function C(e,t,n){if(e.hasAttribute&&e.hasAttribute(t)){event.target.setAttribute(n,event.target.getAttribute(t));event.target.removeAttribute(t)}}})();</script></body>
+</html>
