@@ -17,7 +17,7 @@ const mainServices = [
     description: 'Installatie van dashcams voor veiligheid en bewijslast. Professionele, onzichtbare inbouw zonder losse kabels.',
     features: ['Live verbinding', 'Onzichtbare installatie', 'Voor- en achtercamera', 'Parkeermodus'],
     number: '02',
-    link: { text: 'Bekijk ook onze dashcam webshop', url: '#' }
+    link: { text: 'Dashcam webshop', url: 'https://shop.scharloo-install.nl', isButton: true }
   },
   {
     id: 'alarmsystemen',
@@ -35,7 +35,7 @@ const extensions = [
     title: 'Tachosystemen',
     subtitle: 'Remote download',
     description: 'Installatie van GPS systeem met Remote tacho download integratie. Voldoe aan de wettelijke eisen zonder handmatige uitlezing.',
-    features: ['Remote download', 'Wettelijk conform', 'Digitale tachograaf', 'Automatisch uitlezen'],
+    features: ['Remote download', 'Conform wetgeving', 'Digitale tachograaf', 'Automatisch uitlezen'],
     number: '04'
   },
   {
@@ -49,7 +49,7 @@ const extensions = [
   {
     id: 'driverid',
     title: 'Driver ID / RFID',
-    subtitle: 'Bestuurdersidentificatie',
+    subtitle: 'Identificatie',
     description: 'Installatie voor identificatie van bestuurders. Weet altijd wie er rijdt en koppel ritten automatisch aan de juiste persoon.',
     features: ['RFID tags/kaarten', 'Automatische herkenning', 'Ritregistratie koppeling', 'Meerdere bestuurders'],
     number: '06'
@@ -105,15 +105,15 @@ const reasons = [
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <!-- Left: Title and number -->
             <div class="reveal">
-              <span class="text-8xl lg:text-9xl font-black text-gray-900">{service.number}</span>
-              <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold -mt-12 lg:-mt-16">
+              <span class="text-7xl lg:text-8xl font-black text-gray-900">{service.number}</span>
+              <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold -mt-8 lg:-mt-10">
                 {service.title}<br />
                 <span class="text-gray-500">{service.subtitle}</span>
               </h2>
             </div>
             
             <!-- Right: Description and features -->
-            <div class="reveal lg:pt-20">
+            <div class="reveal lg:pt-16">
               <p class="text-xl text-gray-400 mb-8 leading-relaxed">
                 {service.description}
               </p>
@@ -126,8 +126,14 @@ const reasons = [
                 ))}
               </ul>
               {service.link && (
-                <a href={service.link.url} class="inline-flex items-center gap-2 text-brand hover:text-white transition-colors">
-                  👉 {service.link.text}
+                <a 
+                  href={service.link.url} 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-3 bg-brand text-white px-6 py-3 font-semibold hover:bg-white hover:text-black transition-all duration-300"
+                >
+                  {service.link.text}
+                  <span>→</span>
                 </a>
               )}
             </div>
@@ -157,15 +163,15 @@ const reasons = [
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <!-- Left: Title and number -->
             <div class="reveal">
-              <span class="text-8xl lg:text-9xl font-black text-gray-900">{service.number}</span>
-              <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold -mt-12 lg:-mt-16">
+              <span class="text-7xl lg:text-8xl font-black text-gray-900">{service.number}</span>
+              <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold -mt-8 lg:-mt-10">
                 {service.title}<br />
                 <span class="text-gray-500">{service.subtitle}</span>
               </h2>
             </div>
             
             <!-- Right: Description and features -->
-            <div class="reveal lg:pt-20">
+            <div class="reveal lg:pt-16">
               <p class="text-xl text-gray-400 mb-8 leading-relaxed">
                 {service.description}
               </p>
