@@ -1,0 +1,132 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const reasons = [
+  { title: 'Professionaliteit', description: 'Installaties volgens de hoogste standaard' },
+  { title: 'Oog voor kwaliteit', description: 'Nauwkeurig en betrouwbaar uitgevoerd' },
+  { title: 'Klanttevredenheid', description: 'Wij denken mee met wensen en projecten' },
+  { title: 'Flexibiliteit', description: 'Ons team is flexibel inzetbaar, op de gewenste planning en locatie' },
+  { title: 'Meedenkend', description: 'Oplossingen op maat die beide partijen sterker maken' },
+];
+
+const partners = ['Suivo', 'GPS-Buddy', 'Linqo', 'Allsetra'];
+---
+
+<Layout title="Samenwerken | Scharloo-Install" description="Word onze partner in professionele voertuiginstallaties. Wij geloven in lange-termijn samenwerkingen die voor beide partijen waarde creëren.">
+  <!-- Hero -->
+  <section class="min-h-[60vh] bg-black text-white flex items-end pb-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+      <p class="text-brand font-medium tracking-widest uppercase mb-4 animate-fade-in-up">Samenwerken</p>
+      <h1 class="heading-xl animate-fade-in-up delay-100" style="opacity: 0;">
+        Word onze<br />
+        <span class="text-gray-500">partner</span>
+      </h1>
+      <p class="text-xl text-gray-400 max-w-2xl mt-8 animate-fade-in-up delay-200" style="opacity: 0;">
+        in professionele voertuiginstallaties
+      </p>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="py-24 bg-gray-950">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-3xl reveal">
+        <p class="text-xl text-gray-400 leading-relaxed">
+          Bij Scharloo-Install B.V. gelooft ons team in <span class="text-white font-semibold">lange-termijn samenwerkingen</span> die voor beide partijen waarde creëren. Of het nu gaat om voertuigvolgsystemen, dashcams of alarmsystemen, wij werken met partners die willen groeien en profiteren van professionaliteit, oog voor kwaliteit en maximale klanttevredenheid.
+        </p>
+        <p class="text-xl text-gray-400 leading-relaxed mt-6">
+          Ons team is <span class="text-white font-semibold">flexibel inzetbaar</span>, op de gewenste planning en locatie, en denkt actief mee over oplossingen op maat, zodat projecten efficiënt en betrouwbaar worden uitgevoerd.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Partner -->
+  <section class="py-24 bg-black">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="reveal">
+        <p class="text-brand font-medium tracking-widest uppercase mb-4">Waarom samenwerken</p>
+        <h2 class="heading-lg mb-12">
+          Waarom samenwerken<br />
+          <span class="text-gray-500">met Scharloo-Install?</span>
+        </h2>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {reasons.map((reason, i) => (
+          <div class="reveal bg-gray-950 p-8 border border-gray-800 hover:border-brand transition-colors">
+            <span class="text-brand text-3xl mb-4 block">✓</span>
+            <h3 class="text-2xl font-bold mb-2">{reason.title}</h3>
+            <p class="text-gray-400">{reason.description}</p>
+          </div>
+        ))}
+      </div>
+      
+      <p class="text-xl text-gray-400 mt-12 reveal">
+        Samen met ons team bouwen we aan een <span class="text-white font-semibold">duurzame samenwerking</span>, waarbij beide partijen profiteren van ervaring en expertise.
+      </p>
+    </div>
+  </section>
+
+  <!-- Trusted By -->
+  <section class="py-24 bg-gray-950">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="reveal">
+        <p class="text-brand font-medium tracking-widest uppercase mb-4">Trusted by</p>
+        <h2 class="heading-lg mb-8">
+          Ons team werkt al<br />
+          <span class="text-gray-500">succesvol samen met</span>
+        </h2>
+        <div class="flex flex-wrap gap-4 mb-8">
+          {partners.map(partner => (
+            <span class="bg-black px-6 py-3 text-xl font-semibold border border-gray-800">
+              {partner}
+            </span>
+          ))}
+        </div>
+        <p class="text-xl text-gray-400">
+          Wij staan altijd open voor nieuwe waardevolle samenwerkingen.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-32 bg-brand text-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center reveal">
+      <h2 class="heading-lg mb-8">
+        Ons team is klaar
+      </h2>
+      <p class="text-xl text-white/80 mb-12 max-w-xl mx-auto">
+        om ook met u een betrouwbare en langdurige samenwerking op te bouwen.
+      </p>
+      <a 
+        href="/scharloo-install-site/contact/" 
+        class="group inline-flex items-center gap-3 bg-white text-brand px-10 py-5 text-xl font-bold hover:bg-black hover:text-white transition-all duration-300"
+      >
+        Neem contact op
+        <span class="group-hover:translate-x-2 transition-transform duration-300">→</span>
+      </a>
+      <div class="mt-12 text-white/80">
+        <p class="text-lg">📞 (0182) 79 61 97</p>
+        <p class="text-lg">✉ info@scharloo-install.nl</p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  
+  const revealOnScroll = () => {
+    reveals.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      if (top < window.innerHeight - 100) {
+        el.classList.add('active');
+      }
+    });
+  };
+  
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll();
+</script>

@@ -1,81 +1,154 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const services = [
+const mainServices = [
   {
-    id: 'ritregistratie',
-    title: 'Ritregistratie',
-    subtitle: 'Systemen',
-    description: 'Automatische en nauwkeurige registratie van al uw ritten. Perfect voor fiscale doeleinden en wagenparkbeheer.',
-    features: ['GPS tracking', 'Automatische ritherkenning', 'Fiscaal goedgekeurd', 'Online dashboard'],
+    id: 'voertuigvolgsystemen',
+    title: 'Voertuigvolgsystemen',
+    subtitle: 'Tracking & ritregistratie',
+    description: 'Installatie van systemen voor realtime tracking en ritregistratie. Perfect voor wagenparkbeheer en fiscale doeleinden.',
+    features: ['GPS tracking', 'Realtime locatie', 'Ritregistratie', 'Online dashboard'],
     number: '01'
   },
   {
     id: 'dashcams',
-    title: 'Dashcam',
-    subtitle: 'Met live verbinding',
-    description: 'Professionele, onzichtbare inbouw van dashcams. Geen losse kabels, geen zuignappen. Optionele live streaming.',
+    title: 'Dashcams',
+    subtitle: 'Veiligheid & bewijslast',
+    description: 'Installatie van dashcams voor veiligheid en bewijslast. Professionele, onzichtbare inbouw zonder losse kabels.',
     features: ['Live verbinding', 'Onzichtbare installatie', 'Voor- en achtercamera', 'Parkeermodus'],
-    number: '02'
+    number: '02',
+    link: { text: 'Bekijk ook onze dashcam webshop', url: '#' }
   },
   {
-    id: 'canbus',
-    title: 'CAN Bus',
-    subtitle: 'Installaties',
-    description: 'Deskundige aansluiting op het CAN Bus systeem van uw voertuig. Veilige integratie zonder schade.',
-    features: ['Veilige integratie', 'Alle merken', 'Geen beschadiging', 'Diagnose mogelijk'],
+    id: 'alarmsystemen',
+    title: 'Alarmsystemen',
+    subtitle: 'SCM gecertificeerd',
+    description: 'Installatie van alarmklasse 1 t/m 5 systemen. SCM gecertificeerd voor optimale beveiliging van uw voertuig.',
+    features: ['Klasse 1 t/m 5', 'SCM gecertificeerd', 'Verzekeraar goedgekeurd', 'Anti-diefstal'],
     number: '03'
   },
+];
+
+const extensions = [
   {
-    id: 'driverid',
-    title: 'Driver ID',
-    subtitle: 'RFID systemen',
-    description: 'Identificatiesystemen voor bestuurders. Weet altijd wie er rijdt en koppel ritten automatisch.',
-    features: ['RFID tags/kaarten', 'Automatische herkenning', 'Ritregistratie koppeling', 'Meerdere bestuurders'],
+    id: 'tachosystemen',
+    title: 'Tachosystemen',
+    subtitle: 'Remote download',
+    description: 'Installatie van GPS systeem met Remote tacho download integratie. Voldoe aan de wettelijke eisen zonder handmatige uitlezing.',
+    features: ['Remote download', 'Wettelijk conform', 'Digitale tachograaf', 'Automatisch uitlezen'],
     number: '04'
   },
   {
-    id: 'tachograaf',
-    title: 'Tachografen',
-    subtitle: 'Installatie & kalibratie',
-    description: 'Installatie, kalibratie en onderhoud van digitale tachografen. Wettelijk conform.',
-    features: ['Digitale tachograaf', 'Kalibratie', '2-jaarlijkse keuring', 'Wettelijk conform'],
+    id: 'canbus',
+    title: 'CAN-bus koppelingen',
+    subtitle: 'Voertuiggegevens',
+    description: 'Installatie van voertuigvolgsysteem met CAN-bus koppeling waarbij voertuiggegevens op afstand ingezien kunnen worden.',
+    features: ['Brandstofverbruik', 'Rijstijlanalyse', 'Foutcodes uitlezen', 'Alle merken'],
     number: '05'
   },
   {
-    id: 'startblokkering',
-    title: 'Startblokkeringen',
-    subtitle: 'Anti-diefstal',
-    description: 'Bescherm uw voertuig tegen diefstal met een professioneel startblokkeringssysteem.',
-    features: ['Anti-diefstal', 'RFID of PIN', 'SCM gecertificeerd', 'Verzekeraar goedgekeurd'],
+    id: 'driverid',
+    title: 'Driver ID / RFID',
+    subtitle: 'Bestuurdersidentificatie',
+    description: 'Installatie voor identificatie van bestuurders. Weet altijd wie er rijdt en koppel ritten automatisch aan de juiste persoon.',
+    features: ['RFID tags/kaarten', 'Automatische herkenning', 'Ritregistratie koppeling', 'Meerdere bestuurders'],
     number: '06'
   },
   {
     id: 'io',
-    title: 'I/O',
-    subtitle: 'Installaties',
-    description: 'Maatwerkoplossingen voor input/output installaties. Van sensoren tot schakelaars.',
+    title: 'I/O integraties',
+    subtitle: 'Maatwerk koppelingen',
+    description: 'Installatie van maatwerk koppelingen en extra functionaliteiten. Van sensoren tot schakelaars, alles is mogelijk.',
     features: ['Maatwerk', 'Sensoren', 'Schakelaars', 'Systeemintegratie'],
     number: '07'
   },
 ];
+
+const reasons = [
+  'Specialist in installatie van voertuigsystemen',
+  'Focus op kwaliteit en klanttevredenheid',
+  'Flexibel en snel inzetbaar',
+  'Ervaring met diverse systemen en merken',
+  'Actief in Nederland en België',
+];
 ---
 
-<Layout title="Diensten" description="Onze diensten: ritregistratie, dashcams, CAN bus, tachografen en meer.">
+<Layout title="Installatie voertuigvolgsystemen & alarmsystemen | Scharloo-Install" description="Professionele installatie van voertuigvolgsystemen, dashcams en SCM alarmsystemen. Uitbreidingen zoals CAN-bus, tacho en RFID mogelijk. Actief in Nederland en België.">
   <!-- Hero -->
   <section class="min-h-[60vh] bg-black text-white flex items-end pb-20">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
-      <p class="text-brand font-medium tracking-widest uppercase mb-4 animate-fade-in-up">Diensten</p>
+      <p class="text-brand font-medium tracking-widest uppercase mb-4 animate-fade-in-up">Onze diensten</p>
       <h1 class="heading-xl animate-fade-in-up delay-100" style="opacity: 0;">
-        Wat wij<br />
-        <span class="text-gray-500">doen</span>
+        Inbouw<br />
+        <span class="text-gray-500">voertuigsystemen</span>
       </h1>
+      <p class="text-xl text-gray-400 max-w-2xl mt-8 animate-fade-in-up delay-200" style="opacity: 0;">
+        Scharloo-Install B.V. is specialist in de installatie van voertuigsystemen. Wij verzorgen professionele inbouw voor bedrijven en wagenparken, met focus op kwaliteit en klanttevredenheid.
+      </p>
     </div>
   </section>
 
-  <!-- Services -->
+  <!-- Main Services -->
+  <section class="bg-gray-950 py-16">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <p class="text-brand font-medium tracking-widest uppercase mb-4 reveal">Hoofddiensten</p>
+    </div>
+  </section>
+
   <section class="bg-black">
-    {services.map((service, index) => (
+    {mainServices.map((service, index) => (
+      <div 
+        id={service.id} 
+        class={`scroll-mt-24 border-b border-gray-800 ${index % 2 === 1 ? 'bg-gray-950' : 'bg-black'}`}
+      >
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+            <!-- Left: Title and number -->
+            <div class="reveal">
+              <span class="text-8xl lg:text-9xl font-black text-gray-900">{service.number}</span>
+              <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold -mt-12 lg:-mt-16">
+                {service.title}<br />
+                <span class="text-gray-500">{service.subtitle}</span>
+              </h2>
+            </div>
+            
+            <!-- Right: Description and features -->
+            <div class="reveal lg:pt-20">
+              <p class="text-xl text-gray-400 mb-8 leading-relaxed">
+                {service.description}
+              </p>
+              <ul class="grid grid-cols-2 gap-4 mb-6">
+                {service.features.map(feature => (
+                  <li class="flex items-center gap-3 text-gray-300">
+                    <span class="w-2 h-2 bg-brand flex-shrink-0"></span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              {service.link && (
+                <a href={service.link.url} class="inline-flex items-center gap-2 text-brand hover:text-white transition-colors">
+                  👉 {service.link.text}
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </section>
+
+  <!-- Extensions Section -->
+  <section class="bg-gray-950 py-16">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <p class="text-brand font-medium tracking-widest uppercase mb-4 reveal">Uitbreidingen & integraties</p>
+      <p class="text-xl text-gray-400 reveal">
+        Deze opties worden gekoppeld aan voertuigvolgsystemen voor extra functionaliteit.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-black">
+    {extensions.map((service, index) => (
       <div 
         id={service.id} 
         class={`scroll-mt-24 border-b border-gray-800 ${index % 2 === 1 ? 'bg-gray-950' : 'bg-black'}`}
@@ -111,14 +184,31 @@ const services = [
     ))}
   </section>
 
+  <!-- Why Scharloo-Install -->
+  <section class="py-24 bg-gray-950">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-3xl reveal">
+        <p class="text-brand font-medium tracking-widest uppercase mb-4">Waarom Scharloo-Install</p>
+        <ul class="space-y-4">
+          {reasons.map(reason => (
+            <li class="flex items-center gap-4 text-xl text-gray-300">
+              <span class="text-brand text-2xl">✓</span>
+              {reason}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="py-32 bg-brand text-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center reveal">
       <h2 class="heading-lg mb-8">
-        Interesse?
+        Op zoek naar een<br />betrouwbare installatiepartner?
       </h2>
       <p class="text-xl text-white/80 mb-12 max-w-xl mx-auto">
-        Vraag vrijblijvend een offerte aan
+        Neem contact op of stel je vragen direct
       </p>
       <a 
         href="/scharloo-install-site/contact/" 
@@ -127,6 +217,10 @@ const services = [
         Contact opnemen
         <span class="group-hover:translate-x-2 transition-transform duration-300">→</span>
       </a>
+      <div class="mt-12 text-white/80">
+        <p class="text-lg">📞 (0182) 79 61 97</p>
+        <p class="text-lg">✉ info@scharloo-install.nl</p>
+      </div>
     </div>
   </section>
 </Layout>
