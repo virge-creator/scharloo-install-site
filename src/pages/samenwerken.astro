@@ -10,10 +10,12 @@ const reasons = [
 ];
 
 const partners = [
-  { name: 'Suivo', color: '#00A651' },
-  { name: 'GPS-Buddy', color: '#0066CC' },
-  { name: 'Linqo', color: '#E31937' },
-  { name: 'Allsetra', color: '#FF6600' },
+  { name: 'Radius', logo: '/scharloo-install-site/images/partners/radius.png' },
+  { name: 'Targa Telematics', logo: '/scharloo-install-site/images/partners/targa.png' },
+  { name: 'GPS-Buddy', logo: '/scharloo-install-site/images/partners/gps-buddy.png' },
+  { name: 'Roadsoft', logo: '/scharloo-install-site/images/partners/roadsoft.jpg' },
+  { name: 'Webfleet Solutions', logo: '/scharloo-install-site/images/partners/webfleet.png' },
+  { name: 'Hyrde', logo: '/scharloo-install-site/images/partners/hyrde.png' },
 ];
 ---
 
@@ -82,15 +84,14 @@ const partners = [
           <span class="text-white font-bold">Ons team</span> werkt al<br />
           <span class="text-gray-500">succesvol samen met</span>
         </h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
           {partners.map(partner => (
-            <div class="bg-black border border-gray-800 p-8 flex items-center justify-center hover:border-brand transition-colors group">
-              <span 
-                class="text-2xl md:text-3xl font-black tracking-tight group-hover:scale-105 transition-transform"
-                style={`color: ${partner.color}`}
-              >
-                {partner.name}
-              </span>
+            <div class="bg-black border border-gray-800 p-6 md:p-8 flex items-center justify-center hover:border-brand transition-colors group min-h-[120px]">
+              <img 
+                src={partner.logo} 
+                alt={partner.name}
+                class="max-h-16 md:max-h-20 w-auto object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity"
+              />
             </div>
           ))}
         </div>
