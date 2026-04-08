@@ -84,7 +84,7 @@ Voor kleinere vloten of voertuigen die dagelijks op de thuisbasis zijn, kan een 
 
 ## Nieuwe tachograafplicht maakt remote download extra relevant
 
-Met de [uitbreiding van de tachograafplicht naar bestelwagens](/scharloo-install-site/blog/tachograafplicht-bestelwagens-juli-2026/) vanaf juli 2026 groeit het aantal voertuigen waarvoor gegevens moeten worden bijgehouden. Voor bedrijven die hun vloot zien uitbreiden met tachograafplichtige bestelwagens, is dit het uitgelezen moment om meteen een remote download oplossing te overwegen.
+Met de [uitbreiding van de tachograafplicht naar bestelwagens](/blog/tachograafplicht-bestelwagens-juli-2026/) vanaf juli 2026 groeit het aantal voertuigen waarvoor gegevens moeten worden bijgehouden. Voor bedrijven die hun vloot zien uitbreiden met tachograafplichtige bestelwagens, is dit het uitgelezen moment om meteen een remote download oplossing te overwegen.
 
 ## Aan de slag met remote tachograaf download
 
@@ -95,4 +95,4 @@ Overweegt u over te stappen op remote download? Bij Scharloo-Install helpen we u
 - **Integratie**: Koppeling met uw bestaande systemen
 - **Support**: Ondersteuning bij vragen en problemen
 
-[Neem contact op](/scharloo-install-site/contact/) voor een vrijblijvend gesprek over de mogelijkheden voor uw wagenpark.
+[Neem contact op](/contact/) voor een vrijblijvend gesprek over de mogelijkheden voor uw wagenpark.

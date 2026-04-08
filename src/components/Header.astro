@@ -1,10 +1,10 @@
 ---
 const navItems = [
-  { href: '/scharloo-install-site/diensten/', label: 'Diensten' },
-  { href: '/scharloo-install-site/samenwerken/', label: 'Samenwerken' },
-  { href: '/scharloo-install-site/blog/', label: 'Blog' },
-  { href: '/scharloo-install-site/over-ons/', label: 'Over ons' },
-  { href: '/scharloo-install-site/contact/', label: 'Contact' },
+  { href: '/diensten/', label: 'Diensten' },
+  { href: '/samenwerken/', label: 'Samenwerken' },
+  { href: '/blog/', label: 'Blog' },
+  { href: '/over-ons/', label: 'Over ons' },
+  { href: '/contact/', label: 'Contact' },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -14,9 +14,9 @@ const currentPath = Astro.url.pathname;
   <nav class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
       <!-- Logo -->
-      <a href="/scharloo-install-site/" class="hover:opacity-80 transition-opacity">
+      <a href="/" class="hover:opacity-80 transition-opacity">
         <img 
-          src="/scharloo-install-site/images/logo-scharloo.png" 
+          src="/images/logo-scharloo.png" 
           alt="Scharloo-Install" 
           class="h-14 md:h-16 w-auto -mb-2 -mt-[2px]"
         />
@@ -63,7 +63,7 @@ const currentPath = Astro.url.pathname;
   </button>
   
   <nav class="flex flex-col items-center space-y-8">
-    <a href="/scharloo-install-site/" class="text-4xl font-bold text-white hover:text-brand transition-colors">Home</a>
+    <a href="/" class="text-4xl font-bold text-white hover:text-brand transition-colors">Home</a>
     {navItems.map(item => (
       <a 
         href={item.href}

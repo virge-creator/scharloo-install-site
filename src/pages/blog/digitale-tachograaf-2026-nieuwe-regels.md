@@ -42,4 +42,4 @@ Scharloo-Install is gespecialiseerd in de installatie en kalibratie van digitale
 - Officiële kalibratie en certificering
 - Periodieke keuringen
 
-Neem [contact](/scharloo-install-site/contact/) met ons op voor meer informatie of een vrijblijvende offerte.
+Neem [contact](/contact/) met ons op voor meer informatie of een vrijblijvende offerte.

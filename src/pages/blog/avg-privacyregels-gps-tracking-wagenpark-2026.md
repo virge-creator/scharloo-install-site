@@ -68,4 +68,4 @@ Als specialist in voertuigelektronica adviseren wij u over ritregistratiesysteme
 
 Privacy en efficiëntie hoeven niet te botsen. Met de juiste apparatuur en een helder beleid beheert u uw wagenpark effectief én respecteert u de rechten van uw medewerkers.
 
-[Neem contact op](/scharloo-install-site/contact/) voor advies over AVG-compliant ritregistratie voor uw wagenpark.
+[Neem contact op](/contact/) voor advies over AVG-compliant ritregistratie voor uw wagenpark.

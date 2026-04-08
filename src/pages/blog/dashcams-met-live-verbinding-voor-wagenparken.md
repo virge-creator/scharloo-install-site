@@ -61,4 +61,4 @@ Bij Scharloo-Install verzorgen wij de complete installatie van dashcams met live
 
 Wij werken met bewezen merken en zorgen dat uw systeem naadloos integreert met eventuele bestaande ritregistratie of fleet management software.
 
-Neem [contact](/scharloo-install-site/contact/) op voor een vrijblijvend adviesgesprek of offerte.
+Neem [contact](/contact/) op voor een vrijblijvend adviesgesprek of offerte.

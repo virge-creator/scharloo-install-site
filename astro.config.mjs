@@ -4,8 +4,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://virge-creator.github.io',
-  base: '/scharloo-install-site',
+  site: 'https://scharloo-install.nl',
+  base: '/',
   output: 'static',
   trailingSlash: 'always',
   vite: {

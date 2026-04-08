@@ -77,4 +77,4 @@ Als specialist in voertuigelektronica verzorgen wij de complete installatie van 
 3. **Officiële kalibratie** - Direct na installatie wordt uw tachograaf gekalibreerd en gecertificeerd
 4. **Documentatie** - U ontvangt alle benodigde papieren voor controles
 
-Wacht niet tot het laatste moment. [Neem contact op](/scharloo-install-site/contact/) voor een vrijblijvend adviesgesprek en zorg dat uw wagenpark op tijd klaar is voor juli 2026.
+Wacht niet tot het laatste moment. [Neem contact op](/contact/) voor een vrijblijvend adviesgesprek en zorg dat uw wagenpark op tijd klaar is voor juli 2026.
