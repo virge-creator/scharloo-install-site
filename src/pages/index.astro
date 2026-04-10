@@ -11,11 +11,6 @@ const services = [
   { title: 'I/O integraties', id: 'io' },
 ];
 
-const partners = [
-  'Suivo', 'GPS-Buddy', 'Linqo', 'Allsetra',
-  'Mercedes-Benz', 'Volkswagen', 'Renault', 'Peugeot', 'Ford', 'Iveco', 'MAN', 'DAF'
-];
-
 const reasons = [
   'Gespecialiseerd in voertuigsystemen',
   'Nette en professionele afwerking',
@@ -71,22 +66,6 @@ const reasons = [
       <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
       </svg>
-    </div>
-  </section>
-
-  <!-- Partner ticker -->
-  <section class="bg-brand text-white py-4 overflow-hidden">
-    <div class="animate-marquee whitespace-nowrap flex">
-      {[...Array(2)].map(() => (
-        <div class="flex items-center">
-          {partners.map(partner => (
-            <span class="mx-8 text-lg font-medium flex items-center gap-4">
-              <span class="w-2 h-2 bg-white rounded-full"></span>
-              <span>{partner}</span>
-            </span>
-          ))}
-        </div>
-      ))}
     </div>
   </section>
 
