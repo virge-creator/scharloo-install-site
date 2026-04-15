@@ -27,8 +27,10 @@ const currentPath = Astro.url.pathname;
         {navItems.map(item => (
           <a 
             href={item.href}
-            class={`text-sm font-medium tracking-wide uppercase hover:text-brand transition-colors border-b-2 pb-1 ${
-              currentPath.includes(item.href.split('/')[2]) ? 'text-brand border-brand' : 'text-gray-400 border-transparent'
+            class={`text-sm font-medium tracking-wide uppercase transition-colors ${
+              currentPath.includes(item.href.split('/')[2]) 
+                ? 'text-brand border-b-2 border-brand pb-1' 
+                : 'text-gray-400 hover:text-brand border-b-2 border-transparent pb-1'
             }`}
           >
             {item.label}
