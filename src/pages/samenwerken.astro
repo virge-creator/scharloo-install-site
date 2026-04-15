@@ -10,12 +10,11 @@ const reasons = [
 ];
 
 const partners = [
-  { name: 'Radius', logo: '/images/partners/radius.png' },
-  { name: 'Targa Telematics', logo: '/images/partners/targa.png' },
-  { name: 'GPS-Buddy', logo: '/images/partners/gps-buddy.png' },
-  { name: 'Roadsoft', logo: '/images/partners/roadsoft.jpg' },
-  { name: 'Webfleet Solutions', logo: '/images/partners/webfleet.png' },
-  { name: 'Hyrde', logo: '/images/partners/hyrde.png' },
+  { name: 'GPS-Buddy', logo: '/images/partners/gps-buddy.svg', url: 'https://www.gps-buddy.com/nl/' },
+  { name: 'Allsetra', logo: '/images/partners/allsetra.png', url: 'https://allsetra.nl' },
+  { name: 'RouteConnect', logo: '/images/partners/routeconnect.webp', url: 'https://routeconnect.com' },
+  { name: 'Linqo', logo: '/images/partners/linqo.png', url: 'https://linqo.nl/produkte/routes-en-taken/' },
+  { name: 'Suivo', logo: '/images/partners/suivo.png', url: 'https://www.suivo.com/nl/' },
 ];
 ---
 
@@ -87,13 +86,13 @@ const partners = [
         </h2>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
           {partners.map(partner => (
-            <div class="bg-black border border-gray-800 p-6 md:p-8 flex items-center justify-center hover:border-brand transition-colors group min-h-[120px]">
+            <a href={partner.url} target="_blank" rel="noopener noreferrer" class="bg-black border border-gray-800 p-6 md:p-8 flex items-center justify-center hover:border-brand transition-colors group min-h-[120px]">
               <img 
                 src={partner.logo} 
                 alt={partner.name}
                 class="max-h-16 md:max-h-20 w-auto object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity"
               />
-            </div>
+            </a>
           ))}
         </div>
       </div>
