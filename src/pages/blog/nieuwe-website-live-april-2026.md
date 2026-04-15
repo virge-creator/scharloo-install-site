@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/BlogPost.astro
-title: "Scharloo-Install lanceert nieuwe website: modern, gebruiksvriendelijk en informative"
+title: "Scharloo-Install lanceert nieuwe website: modern, gebruiksvriendelijk en informatief"
 date: 2026-04-15
 description: "We zijn trots om onze nieuwe website te lanceren. Ontdek onze diensten, partners en wat we voor uw wagenpark kunnen betekenen."
 heroImage: "/images/blog/hero-website.jpg"
