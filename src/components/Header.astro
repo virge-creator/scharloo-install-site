@@ -30,7 +30,7 @@ const currentPath = Astro.url.pathname;
             class={`text-sm font-medium tracking-wide uppercase transition-colors ${
               currentPath.includes(item.href.split('/')[2]) 
                 ? 'text-brand border-b-2 border-brand pb-1' 
-                : 'text-gray-400 hover:text-brand border-b-2 border-transparent pb-1'
+                : 'text-gray-400 hover:text-brand'
             }`}
           >
             {item.label}
