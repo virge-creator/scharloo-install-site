@@ -90,7 +90,8 @@ const partners = [
               <img 
                 src={partner.logo} 
                 alt={partner.name}
-                class="max-h-16 w-auto object-contain mt-[-15px]"
+                class={`max-h-16 w-auto object-contain ${partner.name === 'Suivo' ? 'mt-[-15px]' : ''}`}
+              />
               />
               <div></div>
             </a>
