@@ -85,13 +85,14 @@ const partners = [
         </h2>
         <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
           {partners.map(partner => (
-            <a href={partner.url} target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center p-6 rounded-2xl bg-black border border-gray-800 hover:border-brand hover:shadow-2xl hover:shadow-brand/20 hover:scale-105 transition-all duration-300 group min-h-[180px]">
-              <span class="text-white font-semibold text-sm text-center mb-4">{partner.name}</span>
+            <a href={partner.url} target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-between p-6 rounded-2xl bg-white border-2 border-gray-200 hover:border-brand hover:shadow-2xl hover:shadow-brand/20 hover:scale-105 transition-all duration-300 group min-h-[180px]">
+              <span class="text-black font-semibold text-sm text-center">{partner.name}</span>
               <img 
                 src={partner.logo} 
                 alt={partner.name}
-                class="max-h-16 w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+                class="max-h-16 w-auto object-contain"
               />
+              <div class="text-xs text-gray-400 text-center group-hover:text-brand transition-colors">→</div>
             </a>
           ))}
         </div>
