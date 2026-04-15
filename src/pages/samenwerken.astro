@@ -75,7 +75,6 @@ const partners = [
   </section>
 
   <!-- Trusted By -->
-<!--
   <section class="py-24 bg-gray-950">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="reveal">
@@ -84,13 +83,13 @@ const partners = [
           <span class="text-white font-bold">Ons team</span> werkt al<br />
           <span class="text-gray-500">succesvol samen met</span>
         </h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {partners.map(partner => (
-            <a href={partner.url} target="_blank" rel="noopener noreferrer" class="bg-black border border-gray-800 p-6 md:p-8 flex items-center justify-center hover:border-brand transition-colors group min-h-[120px]">
+            <a href={partner.url} target="_blank" rel="noopener noreferrer" class="bg-black border border-gray-800 p-6 md:p-8 flex items-center justify-center hover:border-brand hover:scale-105 transition-all duration-300 group min-h-[140px]">
               <img 
                 src={partner.logo} 
                 alt={partner.name}
-                class="max-h-16 md:max-h-20 w-auto object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity"
+                class="max-h-20 w-auto object-contain"
               />
             </a>
           ))}
@@ -98,7 +97,6 @@ const partners = [
       </div>
     </div>
   </section>
--->
 
   <!-- CTA -->
   <section class="py-32 bg-black text-white">
