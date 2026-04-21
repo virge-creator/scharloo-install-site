@@ -2,9 +2,9 @@
 
 @theme {
   /* Scharloo-Install brand colors */
-  --color-brand: #0099FF;
+  --color-brand: #005FA3;
   --color-brand-dark: #007ACC;
-  --color-brand-light: #005FA3;
+  --color-brand-light: #33AAFF;
   
   /* Typography */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
