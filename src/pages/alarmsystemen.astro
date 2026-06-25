@@ -1,0 +1,475 @@
+---
+// ⚠️ PAS DEZE IMPORT AAN naar jouw eigen layout-bestand.
+// Kijk in src/layouts/ welk bestand je basislayout is (bv. Layout.astro of BaseLayout.astro)
+// en pas de naam hieronder zo nodig aan. Geeft jouw layout geen `title`/`description` door,
+// haal die props dan weg.
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Alarmsystemen — prijzen en pakketten | Scharloo-Install";
+const pageDescription =
+  "SCM-alarmsystemen en voertuigvolgsystemen voor uw voertuig, professioneel ingebouwd. Bekijk de pakketten en vanaf-prijzen, inclusief montage en SCM/CCV-certificaat.";
+
+// Alarmsystemen — eenmalige prijs, incl. btw, incl. montage en SCM-certificaat
+const alarmPakketten = [
+  {
+    klasse: "Klasse 2",
+    prijs: "€749",
+    handzender: "€799",
+    populair: false,
+    omschrijving: "Startonderbreker met inbraak- en omtrekbeveiliging.",
+    features: [
+      "SCM/CCV-certificaat",
+      "Startonderbreker",
+      "Radardetectie en omtrekbeveiliging",
+      "Noodstroomsirene",
+    ],
+  },
+  {
+    klasse: "Klasse 3",
+    prijs: "€899",
+    handzender: "€949",
+    populair: true,
+    omschrijving: "Klasse 2, uitgebreid met hellingshoekdetectie tegen wegslepen.",
+    features: [
+      "SCM/CCV-certificaat",
+      "Startonderbreker",
+      "Radardetectie en omtrekbeveiliging",
+      "Hellingshoekdetectie",
+      "Noodstroomsirene",
+    ],
+  },
+];
+
+// Voertuigvolgsystemen — eenmalige prijs + jaarlijks meldkamerabonnement (PAC)
+const volgPakketten = [
+  {
+    klasse: "Klasse 4",
+    prijs: "€649",
+    abonnement: "€275 per jaar",
+    populair: false,
+    omschrijving: "Voertuigvolgsysteem met 24/7 meldkamer en jammingdetectie.",
+    features: [
+      "SCM/CCV-certificaat",
+      "Voertuigvolgsysteem",
+      "Startblokkade op afstand",
+      "24/7 meldkamer",
+      "Jammingdetectie",
+    ],
+  },
+  {
+    klasse: "Klasse 5 — nieuwe installatie",
+    prijs: "€1.495",
+    abonnement: "€275 per jaar",
+    populair: true,
+    omschrijving: "Het complete systeem: volgsysteem én alarm met pushmelding.",
+    features: [
+      "SCM/CCV-certificaat",
+      "Voertuigvolgsysteem",
+      "Startblokkade op afstand",
+      "24/7 meldkamer",
+      "Jammingdetectie",
+      "Pushmelding bij alarm",
+    ],
+  },
+  {
+    klasse: "Klasse 5 — bij bestaand klasse 3-alarm",
+    prijs: "€725",
+    abonnement: "€275 per jaar",
+    populair: false,
+    omschrijving: "Heeft u al een klasse 3-alarm? Hiermee maakt u het compleet.",
+    features: [
+      "SCM/CCV-certificaat",
+      "Voertuigvolgsysteem",
+      "Startblokkade op afstand",
+      "24/7 meldkamer",
+      "Jammingdetectie",
+      "Pushmelding bij alarm",
+    ],
+  },
+  {
+    klasse: "Klasse TV — terugvindsysteem",
+    prijs: "€299",
+    abonnement: "€99 per jaar",
+    populair: false,
+    omschrijving: "Compact terugvindsysteem om uw voertuig na diefstal te traceren.",
+    features: [
+      "SCM/CCV-certificaat",
+      "Terugvindsysteem",
+      "24/7 meldkamer",
+    ],
+  },
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <main class="alarm-page">
+    <!-- Hero -->
+    <section class="hero">
+      <p class="eyebrow">Beveiliging</p>
+      <h1>Alarmsystemen die uw voertuig écht beschermen</h1>
+      <p class="lede">
+        Steeds vaker eisen verzekeraars een SCM-goedgekeurd alarm. Wij bouwen het
+        professioneel in — op locatie of in de werkplaats — en leveren het met
+        SCM-certificaat op. Hieronder vindt u onze pakketten en vanaf-prijzen.
+      </p>
+      <a class="cta cta--primary" href="#contact">Vraag een offerte aan</a>
+    </section>
+
+    <!-- Korte uitleg klassen -->
+    <section class="intro">
+      <h2>Welke klasse heeft u nodig?</h2>
+      <p>
+        Voertuigbeveiliging is door SCM/CCV ingedeeld in klassen, van een alarm met
+        inbraak- en omtrekbeveiliging tot een volledig gekoppeld volgsysteem met
+        24/7 meldkamer. Welke klasse voor u verplicht of verstandig is, hangt af van
+        uw voertuig en de eisen van uw verzekeraar. Weet u het niet zeker? Wij
+        adviseren u vrijblijvend.
+      </p>
+    </section>
+
+    <!-- Alarmsystemen -->
+    <section class="packages">
+      <header class="section-head">
+        <h2>Alarmsystemen</h2>
+        <p>Eenmalige prijs, inclusief btw, montage en SCM/CCV-certificaat.</p>
+      </header>
+
+      <div class="grid grid--2">
+        {alarmPakketten.map((pakket) => (
+          <article class={`card${pakket.populair ? " card--featured" : ""}`}>
+            {pakket.populair && <span class="badge">Meest gekozen</span>}
+            <h3>{pakket.klasse}</h3>
+            <p class="card-desc">{pakket.omschrijving}</p>
+            <div class="price">
+              <span class="price-prefix">vanaf</span>
+              <span class="price-amount">{pakket.prijs}</span>
+            </div>
+            <p class="price-variant">Met losse handzender: {pakket.handzender}</p>
+            <ul class="features">
+              {pakket.features.map((f) => <li>{f}</li>)}
+            </ul>
+            <a class="cta cta--card" href="#contact">Offerte aanvragen</a>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- Voertuigvolgsystemen -->
+    <section class="packages">
+      <header class="section-head">
+        <h2>Voertuigvolgsystemen</h2>
+        <p>Eenmalige prijs plus een jaarlijks abonnement op de meldkamer (PAC).</p>
+      </header>
+
+      <div class="grid grid--4">
+        {volgPakketten.map((pakket) => (
+          <article class={`card${pakket.populair ? " card--featured" : ""}`}>
+            {pakket.populair && <span class="badge">Compleet</span>}
+            <h3>{pakket.klasse}</h3>
+            <p class="card-desc">{pakket.omschrijving}</p>
+            <div class="price">
+              <span class="price-prefix">vanaf</span>
+              <span class="price-amount">{pakket.prijs}</span>
+            </div>
+            <p class="price-variant">+ {pakket.abonnement}</p>
+            <ul class="features">
+              {pakket.features.map((f) => <li>{f}</li>)}
+            </ul>
+            <a class="cta cta--card" href="#contact">Offerte aanvragen</a>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- Toelichting -->
+    <section class="notes">
+      <h2>Goed om te weten</h2>
+      <ul>
+        <li>Alle prijzen zijn inclusief btw, montage en SCM/CCV-certificaat.</li>
+        <li>
+          Het zijn vanaf-prijzen. De definitieve prijs hangt af van merk, model en
+          bouwjaar — bijvoorbeeld bij een dubbele startblokkering of wanneer er
+          LED-verlichting moet worden aangestuurd.
+        </li>
+        <li>
+          Het jaarbedrag bij de volgsystemen is het abonnement op de particuliere
+          alarmcentrale (PAC), die uw voertuig 24/7 in de gaten houdt.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Contact / CTA -->
+    <section class="contact" id="contact">
+      <h2>Benieuwd wat het voor uw voertuig kost?</h2>
+      <p>
+        Stuur ons het merk, type, bouwjaar en kenteken, dan maken wij een passend
+        voorstel. We zijn inzetbaar door heel Nederland.
+      </p>
+      <div class="contact-actions">
+        <!-- ⚠️ Pas het telefoonnummer/e-mail zo nodig aan -->
+        <a class="cta cta--primary" href="tel:0182796197">Bel 0182 796 197</a>
+        <a class="cta cta--ghost" href="mailto:info@scharloo-install.nl">
+          info@scharloo-install.nl
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  /* Lokale tokens — pas deze 4 waarden aan op jouw huisstijl en de hele pagina kleurt mee. */
+  .alarm-page {
+    /* Gekoppeld aan je Tailwind-thema (global.css). De fallback is je merkblauw,
+       mocht de variabele er onverhoopt niet zijn. */
+    --accent: var(--color-brand, #1681DE);            /* accentkleur (knoppen, highlights) */
+    --accent-dark: var(--color-brand-dark, #007ACC);  /* accent bij hover */
+    --ink: #14181f;             /* donkere tekst */
+    --muted: #5b6472;           /* secundaire tekst */
+    --line: #e4e7ec;            /* lijnen/randen */
+    --surface: #ffffff;         /* kaartachtergrond */
+    --surface-alt: #f6f7f9;     /* zachte sectie-achtergrond */
+
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 1.25rem 5rem;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  .alarm-page h1,
+  .alarm-page h2,
+  .alarm-page h3 {
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  /* Hero */
+  .hero {
+    text-align: center;
+    padding: 4rem 0 3rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 0 0 0.75rem;
+  }
+  .hero h1 {
+    font-size: clamp(1.9rem, 4vw, 2.9rem);
+    margin: 0 auto 1rem;
+    max-width: 16ch;
+  }
+  .lede {
+    max-width: 60ch;
+    margin: 0 auto 1.75rem;
+    color: var(--muted);
+    font-size: 1.075rem;
+  }
+
+  /* Secties */
+  .intro,
+  .packages,
+  .notes,
+  .contact {
+    padding-top: 3.25rem;
+  }
+  .intro {
+    max-width: 70ch;
+  }
+  .intro p {
+    color: var(--muted);
+  }
+  .section-head {
+    margin-bottom: 1.75rem;
+  }
+  .section-head h2 {
+    margin: 0 0 0.35rem;
+    font-size: 1.6rem;
+  }
+  .section-head p {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  /* Kaartroosters */
+  .grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+  .grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid--4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Kaarten */
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.5rem 1.35rem;
+  }
+  .card--featured {
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px -16px rgba(0, 0, 0, 0.25);
+  }
+  .badge {
+    position: absolute;
+    top: -0.7rem;
+    left: 1.35rem;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+  }
+  .card h3 {
+    margin: 0.4rem 0 0.4rem;
+    font-size: 1.2rem;
+  }
+  .card-desc {
+    margin: 0 0 1rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+    min-height: 2.6em;
+  }
+  .price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+  }
+  .price-prefix {
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+  .price-amount {
+    font-size: 1.85rem;
+    font-weight: 800;
+  }
+  .price-variant {
+    margin: 0.35rem 0 1.1rem;
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+  .features {
+    list-style: none;
+    margin: 0 0 1.4rem;
+    padding: 0;
+    display: grid;
+    gap: 0.55rem;
+    font-size: 0.92rem;
+  }
+  .features li {
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  .features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 800;
+  }
+
+  /* Knoppen */
+  .cta {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 10px;
+    transition: transform 0.12s ease, opacity 0.12s ease;
+  }
+  .cta:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+  }
+  .cta--primary {
+    background: var(--accent);
+    color: #fff;
+    padding: 0.85rem 1.6rem;
+  }
+  .cta--ghost {
+    border: 1px solid var(--line);
+    color: var(--ink);
+    padding: 0.85rem 1.6rem;
+  }
+  .cta--card {
+    margin-top: auto;
+    text-align: center;
+    background: var(--surface-alt);
+    color: var(--ink);
+    border: 1px solid var(--line);
+    padding: 0.7rem 1rem;
+  }
+  .cta:hover {
+    transform: translateY(-1px);
+    opacity: 0.95;
+  }
+  .cta--primary:hover {
+    background: var(--accent-dark);
+    opacity: 1;
+  }
+
+  /* Toelichting */
+  .notes ul {
+    margin: 1rem 0 0;
+    padding-left: 1.1rem;
+    color: var(--muted);
+    display: grid;
+    gap: 0.6rem;
+    max-width: 75ch;
+  }
+
+  /* Contact */
+  .contact {
+    margin-top: 3.5rem;
+    background: var(--surface-alt);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+  }
+  .contact h2 {
+    margin: 0 0 0.6rem;
+  }
+  .contact p {
+    margin: 0 auto 1.5rem;
+    max-width: 55ch;
+    color: var(--muted);
+  }
+  .contact-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Responsief */
+  @media (max-width: 900px) {
+    .grid--4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 560px) {
+    .grid--2,
+    .grid--4 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta {
+      transition: none;
+    }
+  }
+</style>
