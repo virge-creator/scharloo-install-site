@@ -23,9 +23,10 @@ const mainServices = [
     id: 'alarmsystemen',
     title: 'Alarmsystemen',
     subtitle: 'SCM gecertificeerd',
-    description: 'Installatie van alarmklasse 1 t/m 5 systemen. SCM gecertificeerd voor optimale beveiliging van uw voertuig.',
-    features: ['Klasse 1 t/m 5', 'SCM gecertificeerd', 'Verzekeraar goedgekeurd', 'Anti-diefstal'],
-    number: '03'
+    description: 'Installatie van alarmklasse 2 t/m 5 systemen. SCM/CCV gecertificeerd voor optimale beveiliging van uw voertuig.',
+    features: ['Klasse 2 t/m 5', 'SCM/CCV gecertificeerd', 'Verzekeraar goedgekeurd', 'Anti-diefstal'],
+    number: '03',
+    link: { text: 'Bekijk alarmsystemen & prijzen', url: '/alarmsystemen/' }
   },
 ];
 
@@ -136,8 +137,7 @@ const reasons = [
               {service.link && (
                 <a 
                   href={service.link.url} 
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  {...(service.link.url.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                   class="inline-flex items-center gap-3 bg-brand text-white rounded-full px-6 py-3 font-semibold hover:bg-white hover:text-black transition-all duration-300"
                 >
                   {service.link.text}
