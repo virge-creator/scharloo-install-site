@@ -6,7 +6,7 @@
 // Wil je vaste vanaf-prijzen tonen? Vul dan de `prijzen`-lijst, bijvoorbeeld:
 //   prijzen: [
 //     { naam: 'Basis', prijs: '€349', detail: '+ €9 per maand' },
-//     { naam: 'Plus',  prijs: '€499' },
+//     { naam: 'Plus',  prijs: '€475' },
 //   ],
 
 export interface Prijs {
@@ -93,7 +93,7 @@ export const diensten: Dienst[] = [
     prijzen: [
       {
         naam: 'Compleet geïnstalleerd',
-        prijs: '€499',
+        prijs: '€475',
         detail: 'incl. inbouw en btw',
         maand: '€15',
         maandDetail: 'p/m excl. btw',
@@ -101,7 +101,7 @@ export const diensten: Dienst[] = [
       },
     ],
     metaTitle: 'GPS + startonderbreker — voertuigbeveiliging op afstand',
-    metaDesc: 'GPS-tracking, ritregistratie en startonderbreking op afstand. Eenmalig vanaf €499 incl. inbouw en btw, daarna €15 p/m. Maak uw voertuig bij diefstal op afstand onstartbaar.',
+    metaDesc: 'GPS-tracking, ritregistratie en startonderbreking op afstand. Eenmalig vanaf €475 incl. inbouw en btw, daarna €15 p/m. Maak uw voertuig bij diefstal op afstand onstartbaar.',
     genereerPagina: true,
   },
   {
