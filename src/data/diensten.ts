@@ -59,10 +59,10 @@ export const diensten: Dienst[] = [
     genereerPagina: true,
   },
   {
-    slug: 'gps-voertuigbeveiliging',
+    slug: 'gps-startonderbreker',
     nummer: '02',
-    title: 'GPS-voertuigbeveiliging',
-    subtitle: 'Tracking & startblokkering op afstand',
+    title: 'GPS + startonderbreker',
+    subtitle: 'Tracking & startonderbreking op afstand',
     kort: 'Live voertuigtracking, ritregistratie en een op afstand bedienbare startonderbreking — bij diefstal zet u uw voertuig op afstand stil.',
     intro: 'Live voertuigtracking, ritregistratie en een op afstand bedienbare startonderbreking. Bij diefstal of ongeoorloofd gebruik maakt u uw voertuig op afstand onstartbaar — waar het ook is.',
     over: [
@@ -81,7 +81,7 @@ export const diensten: Dienst[] = [
     prijzen: [
       { naam: 'Compleet geïnstalleerd', prijs: '€499', detail: 'inclusief inbouw en btw' },
     ],
-    metaTitle: 'GPS-voertuigbeveiliging — tracking & startblokkering op afstand',
+    metaTitle: 'GPS + startonderbreker — voertuigbeveiliging op afstand',
     metaDesc: 'Live GPS-tracking, ritregistratie en op afstand bedienbare startonderbreking vanaf €499 incl. inbouw en btw. Maak uw voertuig bij diefstal op afstand onstartbaar.',
     genereerPagina: true,
   },
