@@ -56,9 +56,18 @@ export const diensten: Dienst[] = [
       'Minder administratie voor u en uw chauffeurs',
     ],
     features: ['GPS tracking', 'Realtime locatie', 'Ritregistratie', 'Online dashboard'],
-    prijzen: [],
+    prijzen: [
+      {
+        naam: 'Compleet geïnstalleerd',
+        prijs: '€275',
+        detail: 'incl. montage en btw',
+        maand: '€12,50',
+        maandDetail: 'p/m excl. btw',
+        maandOmschrijving: 'Voor 24/7 live tracking, automatische ritregistratie en het online platform — altijd inzicht in uw voertuig of wagenpark.',
+      },
+    ],
     metaTitle: 'Voertuigvolgsysteem inbouwen — GPS-tracking & ritregistratie',
-    metaDesc: 'Professionele inbouw van voertuigvolgsystemen met realtime GPS-tracking en sluitende ritregistratie. Voor één voertuig of een heel wagenpark.',
+    metaDesc: 'Voertuigvolgsysteem met realtime GPS-tracking en sluitende ritregistratie. Eenmalig €275 incl. montage en btw, daarna €12,50 p/m. Voor één voertuig of een heel wagenpark.',
     genereerPagina: true,
   },
   {
