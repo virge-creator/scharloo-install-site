@@ -30,10 +30,17 @@ const eerstePrijs = dienst.prijzen[0];
 
       {heeftPrijs && (
         <div class="mt-8 animate-fade-in-up delay-200" style="opacity: 0;">
-          <span class="inline-flex items-center gap-3 border border-gray-700 rounded-full pl-5 pr-6 py-2.5">
+          <span class="inline-flex flex-wrap items-center gap-x-3 gap-y-1 border border-gray-700 rounded-full pl-5 pr-6 py-2.5">
             <span class="text-gray-500 text-sm uppercase tracking-wide">vanaf</span>
             <span class="text-brand text-lg font-bold">{eerstePrijs.prijs}</span>
             {eerstePrijs.detail && <span class="text-gray-400 text-sm">{eerstePrijs.detail}</span>}
+            {eerstePrijs.maand && (
+              <>
+                <span class="text-gray-600">+</span>
+                <span class="text-brand text-lg font-bold">{eerstePrijs.maand}</span>
+                <span class="text-gray-400 text-sm">{eerstePrijs.maandDetail}</span>
+              </>
+            )}
           </span>
         </div>
       )}
@@ -82,13 +89,40 @@ const eerstePrijs = dienst.prijzen[0];
             {heeftPrijs ? (
               <>
                 {eerstePrijs.naam && (
-                  <p class="text-gray-500 text-sm uppercase tracking-widest mb-6">{eerstePrijs.naam}</p>
+                  <p class="text-gray-500 text-sm uppercase tracking-widest mb-8">{eerstePrijs.naam}</p>
                 )}
-                <div class="flex items-end justify-center gap-2">
-                  <span class="text-gray-500 text-lg mb-2">vanaf</span>
-                  <span class="text-6xl lg:text-7xl font-black text-white leading-none">{eerstePrijs.prijs}</span>
-                </div>
-                {eerstePrijs.detail && <p class="text-gray-400 mt-3">{eerstePrijs.detail}</p>}
+                {eerstePrijs.maand ? (
+                  <>
+                    <div class="grid grid-cols-2 gap-6 max-w-sm mx-auto">
+                      <div>
+                        <p class="text-gray-500 text-xs uppercase tracking-widest mb-2">Eenmalig</p>
+                        <div class="flex items-end justify-center gap-1.5">
+                          <span class="text-gray-500 text-sm mb-1.5">vanaf</span>
+                          <span class="text-4xl lg:text-5xl font-black text-white leading-none">{eerstePrijs.prijs}</span>
+                        </div>
+                        {eerstePrijs.detail && <p class="text-gray-500 text-xs mt-2">{eerstePrijs.detail}</p>}
+                      </div>
+                      <div class="border-l border-gray-800 pl-6">
+                        <p class="text-gray-500 text-xs uppercase tracking-widest mb-2">Per maand</p>
+                        <div class="flex items-end justify-center gap-1.5">
+                          <span class="text-4xl lg:text-5xl font-black text-brand leading-none">{eerstePrijs.maand}</span>
+                        </div>
+                        {eerstePrijs.maandDetail && <p class="text-gray-500 text-xs mt-2">{eerstePrijs.maandDetail}</p>}
+                      </div>
+                    </div>
+                    {eerstePrijs.maandOmschrijving && (
+                      <p class="text-gray-400 text-sm mt-6 max-w-sm mx-auto leading-relaxed">{eerstePrijs.maandOmschrijving}</p>
+                    )}
+                  </>
+                ) : (
+                  <>
+                    <div class="flex items-end justify-center gap-2">
+                      <span class="text-gray-500 text-lg mb-2">vanaf</span>
+                      <span class="text-6xl lg:text-7xl font-black text-white leading-none">{eerstePrijs.prijs}</span>
+                    </div>
+                    {eerstePrijs.detail && <p class="text-gray-400 mt-3">{eerstePrijs.detail}</p>}
+                  </>
+                )}
               </>
             ) : (
               <>

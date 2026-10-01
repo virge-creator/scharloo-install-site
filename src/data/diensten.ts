@@ -11,8 +11,11 @@
 
 export interface Prijs {
   naam: string;
-  prijs: string;
+  prijs: string;              // eenmalig bedrag
   detail?: string;
+  maand?: string;             // maandbedrag, bv '€15'
+  maandDetail?: string;       // bv 'p/m excl. btw'
+  maandOmschrijving?: string; // verkopende regel: wat het abonnement biedt
 }
 
 export interface Dienst {
@@ -79,10 +82,17 @@ export const diensten: Dienst[] = [
     ],
     features: ['Live GPS-tracking', 'Startonderbreking op afstand', 'Ritregistratie', 'Anti-diefstal'],
     prijzen: [
-      { naam: 'Compleet geïnstalleerd', prijs: '€499', detail: 'inclusief inbouw en btw' },
+      {
+        naam: 'Compleet geïnstalleerd',
+        prijs: '€499',
+        detail: 'incl. inbouw en btw',
+        maand: '€15',
+        maandDetail: 'p/m excl. btw',
+        maandOmschrijving: 'Voor 24/7 live tracking, het online platform en de bediening van de startonderbreking op afstand — dag en nacht grip op uw voertuig.',
+      },
     ],
     metaTitle: 'GPS + startonderbreker — voertuigbeveiliging op afstand',
-    metaDesc: 'Live GPS-tracking, ritregistratie en op afstand bedienbare startonderbreking vanaf €499 incl. inbouw en btw. Maak uw voertuig bij diefstal op afstand onstartbaar.',
+    metaDesc: 'GPS-tracking, ritregistratie en startonderbreking op afstand. Eenmalig vanaf €499 incl. inbouw en btw, daarna €15 p/m. Maak uw voertuig bij diefstal op afstand onstartbaar.',
     genereerPagina: true,
   },
   {
