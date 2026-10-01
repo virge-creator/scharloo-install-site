@@ -1,77 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
-const mainServices = [
-  {
-    id: 'voertuigvolgsystemen',
-    title: 'Voertuigvolgsystemen',
-    subtitle: 'Tracking & ritregistratie',
-    description: 'Installatie van systemen voor realtime tracking en ritregistratie. Perfect voor wagenparkbeheer en fiscale doeleinden.',
-    features: ['GPS tracking', 'Realtime locatie', 'Ritregistratie', 'Online dashboard'],
-    number: '01'
-  },
-  {
-    id: 'dashcams',
-    title: 'Dashcams',
-    subtitle: 'Veiligheid & bewijslast',
-    description: 'Installatie van dashcams voor veiligheid en bewijslast. Professionele, onzichtbare inbouw zonder losse kabels.',
-    features: ['Live verbinding', 'Onzichtbare installatie', 'Voor- en achtercamera', 'Parkeermodus'],
-    number: '02',
-    link: { text: 'Dashcam webshop', url: 'https://scharloo-install.vercel.app/nl', isButton: true }
-  },
-  {
-    id: 'alarmsystemen',
-    title: 'Alarmsystemen',
-    subtitle: 'SCM gecertificeerd',
-    description: 'Installatie van alarmklasse 2 t/m 5 systemen. SCM/CCV gecertificeerd voor optimale beveiliging van uw voertuig.',
-    features: ['Klasse 2 t/m 5', 'SCM/CCV gecertificeerd', 'Verzekeraar goedgekeurd', 'Anti-diefstal'],
-    number: '03',
-    link: { text: 'Bekijk alarmsystemen & prijzen', url: '/alarmsystemen/' }
-  },
-];
-
-const extensions = [
-  {
-    id: 'tachosystemen',
-    title: 'Remote tachograaf download',
-    subtitle: 'Remote download',
-    description: 'Installatie van GPS systeem met Remote tacho download integratie. Voldoe aan de wettelijke eisen zonder handmatige uitlezing.',
-    features: ['Remote download', 'Conform wetgeving', 'Digitale tachograaf', 'Automatisch uitlezen'],
-    number: '04'
-  },
-  {
-    id: 'canbus',
-    title: 'CAN-bus koppelingen',
-    subtitle: 'Voertuiggegevens',
-    description: 'Installatie van voertuigvolgsysteem met CAN-bus koppeling waarbij voertuiggegevens op afstand ingezien kunnen worden.',
-    features: ['Brandstofverbruik', 'Rijstijlanalyse', 'Live inzicht in voertuiggegevens', 'Alle merken'],
-    number: '05'
-  },
-  {
-    id: 'driverid',
-    title: 'Driver ID / RFID',
-    subtitle: 'Identificatie',
-    description: 'Installatie voor identificatie van bestuurders. Weet altijd wie er rijdt en koppel ritten automatisch aan de juiste persoon.',
-    features: ['RFID tags/kaarten', 'Automatische herkenning', 'Ritregistratie koppeling', 'Meerdere bestuurders'],
-    number: '06'
-  },
-  {
-    id: 'io',
-    title: 'I/O integraties',
-    subtitle: 'Maatwerk koppelingen',
-    description: 'Installatie van maatwerk koppelingen en extra functionaliteiten. Van sensoren tot schakelaars, alles is mogelijk.',
-    features: ['Maatwerk', 'Sensoren', 'Schakelaars', 'Systeemintegratie'],
-    number: '07'
-  },
-  {
-    id: 'temperatuur',
-    title: 'Temperatuur monitoring',
-    subtitle: 'Realtime inzicht',
-    description: 'Altijd realtime inzicht in de temperatuur van voertuigen en laadruimtes. Ideaal voor temperatuurgevoelige goederen en directe signalering bij afwijkingen.',
-    features: ['Realtime temperatuurdata', 'Automatische alerts bij afwijkingen', 'Geschikt voor koeltransport', 'HACCP-ondersteuning'],
-    number: '08'
-  },
-];
+import { diensten, dienstUrl } from '../data/diensten';
 
 const reasons = [
   'Specialist in installatie van voertuigsystemen',
@@ -82,7 +11,10 @@ const reasons = [
 ];
 ---
 
-<Layout title="Installatie voertuigvolgsystemen & alarmsystemen | Scharloo-Install" description="Professionele installatie van voertuigvolgsystemen, dashcams en SCM alarmsystemen. Uitbreidingen zoals CAN-bus, tacho en RFID mogelijk. Actief in Nederland en België.">
+<Layout
+  title="Diensten — inbouw voertuigsystemen, dashcams & alarm"
+  description="Alle diensten van Scharloo-Install: voertuigvolgsystemen, dashcams, SCM/CCV-alarm, CAN-bus, tachograaf, Driver ID, I/O en temperatuurmonitoring. Klik door voor info en prijzen."
+>
   <!-- Hero -->
   <section class="min-h-[60vh] bg-black text-white flex items-end pb-20">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
@@ -92,119 +24,63 @@ const reasons = [
         <span class="text-gray-500">voertuigsystemen</span>
       </h1>
       <p class="text-xl text-gray-400 max-w-2xl mt-8 animate-fade-in-up delay-200" style="opacity: 0;">
-        Scharloo-Install B.V. is specialist in de installatie van voertuigsystemen. Wij verzorgen professionele inbouw voor bedrijven en wagenparken, met focus op kwaliteit en klanttevredenheid.
+        Scharloo-Install B.V. is specialist in de installatie van voertuigsystemen. Klik een dienst open voor meer informatie, en bekijk op de dienstpagina de details en prijzen.
       </p>
     </div>
   </section>
 
-  <!-- Main Services -->
-  <section class="bg-gray-950 py-16">
+  <!-- Uitklapbaar overzicht -->
+  <section class="bg-black py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <p class="text-brand font-medium tracking-widest uppercase mb-4 reveal">Hoofddiensten</p>
-    </div>
-  </section>
+      <p class="text-brand font-medium tracking-widest uppercase mb-10 reveal">Overzicht diensten</p>
 
-  <section class="bg-black">
-    {mainServices.map((service, index) => (
-      <div 
-        id={service.id} 
-        class={`scroll-mt-24 border-b border-gray-800 ${index % 2 === 1 ? 'bg-gray-950' : 'bg-black'}`}
-      >
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-            <!-- Left: Title and number -->
-            <div class="reveal">
-              <span class="text-7xl lg:text-8xl font-black text-gray-900">{service.number}</span>
-              <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold -mt-8 lg:-mt-10">
-                {service.title}<br />
-                <span class="text-gray-500">{service.subtitle}</span>
-              </h2>
-            </div>
-            
-            <!-- Right: Description and features -->
-            <div class="reveal lg:pt-16">
-              <p class="text-xl text-gray-400 mb-8 leading-relaxed">
-                {service.description}
-              </p>
-              <ul class="grid grid-cols-2 gap-4 mb-6">
-                {service.features.map(feature => (
-                  <li class="flex items-center gap-3 text-gray-300">
-                    <span class="w-2 h-2 bg-brand flex-shrink-0"></span>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              {service.link && (
-                <a 
-                  href={service.link.url} 
-                  {...(service.link.url.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+      <div class="border-t border-gray-800">
+        {diensten.map((d) => (
+          <details class="reveal group border-b border-gray-800">
+            <summary class="dienst-summary flex items-center justify-between gap-6 py-7 cursor-pointer select-none">
+              <div class="flex items-baseline gap-4 md:gap-6">
+                <span class="text-brand font-black text-lg md:text-xl tabular-nums">{d.nummer}</span>
+                <div>
+                  <h2 class="text-2xl md:text-3xl font-bold leading-tight">{d.title}</h2>
+                  <p class="text-gray-500 mt-1">{d.subtitle}</p>
+                </div>
+              </div>
+              <span class="dienst-icon text-brand text-3xl font-light leading-none flex-shrink-0 transition-transform duration-300">+</span>
+            </summary>
+
+            <div class="pb-10 md:pl-[3.4rem] grid lg:grid-cols-2 gap-8 lg:gap-12">
+              <p class="text-lg text-gray-400 leading-relaxed">{d.kort}</p>
+              <div>
+                <ul class="grid grid-cols-2 gap-3 mb-8">
+                  {d.features.map((f) => (
+                    <li class="flex items-center gap-3 text-gray-300 text-sm">
+                      <span class="w-2 h-2 bg-brand flex-shrink-0"></span>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={dienstUrl(d)}
                   class="inline-flex items-center gap-3 bg-brand text-white rounded-full px-6 py-3 font-semibold hover:bg-white hover:text-black transition-all duration-300"
                 >
-                  {service.link.text}
+                  {d.slug === 'alarmsystemen' ? 'Bekijk alarmsystemen & prijzen' : 'Bekijk dienst & prijzen'}
                   <span>→</span>
                 </a>
-              )}
+              </div>
             </div>
-          </div>
-        </div>
+          </details>
+        ))}
       </div>
-    ))}
-  </section>
-
-  <!-- Extensions Section -->
-  <section class="bg-gray-950 py-16">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <p class="text-brand font-medium tracking-widest uppercase mb-4 reveal">Uitbreidingen & integraties</p>
-      <p class="text-xl text-gray-400 reveal">
-        Deze opties worden gekoppeld aan voertuigvolgsystemen voor extra functionaliteit.
-      </p>
     </div>
   </section>
 
-  <section class="bg-black">
-    {extensions.map((service, index) => (
-      <div 
-        id={service.id} 
-        class={`scroll-mt-24 border-b border-gray-800 ${index % 2 === 1 ? 'bg-gray-950' : 'bg-black'}`}
-      >
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-            <!-- Left: Title and number -->
-            <div class="reveal">
-              <span class="text-7xl lg:text-8xl font-black text-gray-900">{service.number}</span>
-              <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold -mt-8 lg:-mt-10">
-                {service.title}<br />
-                <span class="text-gray-500">{service.subtitle}</span>
-              </h2>
-            </div>
-            
-            <!-- Right: Description and features -->
-            <div class="reveal lg:pt-16">
-              <p class="text-xl text-gray-400 mb-8 leading-relaxed">
-                {service.description}
-              </p>
-              <ul class="grid grid-cols-2 gap-4">
-                {service.features.map(feature => (
-                  <li class="flex items-center gap-3 text-gray-300">
-                    <span class="w-2 h-2 bg-brand flex-shrink-0"></span>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    ))}
-  </section>
-
-  <!-- Why Scharloo-Install -->
+  <!-- Waarom Scharloo-Install -->
   <section class="py-24 bg-gray-950">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="max-w-3xl reveal">
         <p class="text-brand font-medium tracking-widest uppercase mb-4">Waarom Scharloo-Install</p>
         <ul class="space-y-4">
-          {reasons.map(reason => (
+          {reasons.map((reason) => (
             <li class="flex items-center gap-4 text-xl text-gray-300">
               <span class="text-brand text-2xl">✓</span>
               {reason}
@@ -222,10 +98,10 @@ const reasons = [
         Op zoek naar een<br />betrouwbare installatiepartner?
       </h2>
       <p class="text-xl text-white/80 mb-12 max-w-xl mx-auto">
-        Neem contact op of stel je vragen direct
+        Neem contact op of stel uw vraag direct.
       </p>
-      <a 
-        href="/contact/" 
+      <a
+        href="/contact/"
         class="group inline-flex items-center gap-3 bg-white text-brand rounded-full px-10 py-5 text-xl font-bold hover:bg-black hover:text-white transition-all duration-300"
       >
         Contact opnemen
@@ -239,18 +115,32 @@ const reasons = [
   </section>
 </Layout>
 
+<style>
+  /* Verberg het standaard uitklap-driehoekje van <details> */
+  .dienst-summary {
+    list-style: none;
+  }
+  .dienst-summary::-webkit-details-marker {
+    display: none;
+  }
+  /* + wordt × wanneer de dienst open staat */
+  details[open] .dienst-icon {
+    transform: rotate(45deg);
+  }
+</style>
+
 <script>
   const reveals = document.querySelectorAll('.reveal');
-  
+
   const revealOnScroll = () => {
-    reveals.forEach(el => {
+    reveals.forEach((el) => {
       const top = el.getBoundingClientRect().top;
       if (top < window.innerHeight - 100) {
         el.classList.add('active');
       }
     });
   };
-  
+
   window.addEventListener('scroll', revealOnScroll);
   revealOnScroll();
 </script>

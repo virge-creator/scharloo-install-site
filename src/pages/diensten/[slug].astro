@@ -1,0 +1,156 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { diensten, type Dienst } from '../../data/diensten';
+
+export function getStaticPaths() {
+  return diensten
+    .filter((d) => d.genereerPagina)
+    .map((d) => ({ params: { slug: d.slug }, props: { dienst: d } }));
+}
+
+const { dienst } = Astro.props as { dienst: Dienst };
+---
+
+<Layout title={dienst.metaTitle} description={dienst.metaDesc}>
+  <!-- Hero -->
+  <section class="min-h-[55vh] bg-black text-white flex items-end pb-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+      <a href="/diensten/" class="inline-block text-gray-400 hover:text-white transition-colors text-sm mb-6 animate-fade-in-up">← Alle diensten</a>
+      <p class="text-brand font-medium tracking-widest uppercase mb-4 animate-fade-in-up delay-100">Dienst</p>
+      <h1 class="heading-xl animate-fade-in-up delay-100" style="opacity: 0;">
+        {dienst.title}<br />
+        <span class="text-gray-500">{dienst.subtitle}</span>
+      </h1>
+      <p class="text-xl text-gray-400 max-w-2xl mt-8 animate-fade-in-up delay-200" style="opacity: 0;">
+        {dienst.intro}
+      </p>
+    </div>
+  </section>
+
+  <!-- Wat we doen + voordelen -->
+  <section class="py-24 bg-gray-950">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
+        <div class="reveal">
+          <p class="text-brand font-medium tracking-widest uppercase mb-4">Wat we doen</p>
+          {dienst.over.map((alinea) => (
+            <p class="text-lg text-gray-400 leading-relaxed mb-6">{alinea}</p>
+          ))}
+
+          <ul class="grid grid-cols-2 gap-3 mt-8">
+            {dienst.features.map((f) => (
+              <li class="flex items-center gap-3 text-gray-300 text-sm">
+                <span class="w-2 h-2 bg-brand flex-shrink-0"></span>
+                {f}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="reveal">
+          <p class="text-brand font-medium tracking-widest uppercase mb-4">Voordelen</p>
+          <ul class="space-y-4">
+            {dienst.voordelen.map((v) => (
+              <li class="flex items-start gap-4 text-lg text-gray-300">
+                <span class="text-brand text-2xl leading-none">✓</span>
+                {v}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prijzen -->
+  <section class="py-24 bg-black">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="reveal">
+        <p class="text-brand font-medium tracking-widest uppercase mb-4">Prijzen</p>
+        <h2 class="heading-lg mb-12">Wat kost het?</h2>
+      </div>
+
+      {dienst.prijzen.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {dienst.prijzen.map((p) => (
+            <div class="reveal bg-gray-950 p-8 border border-gray-800 hover:border-brand transition-colors">
+              <h3 class="text-xl font-bold mb-3">{p.naam}</h3>
+              <div class="flex items-baseline gap-2">
+                <span class="text-gray-500 text-sm">vanaf</span>
+                <span class="text-4xl font-black text-white">{p.prijs}</span>
+              </div>
+              {p.detail && <p class="text-gray-500 text-sm mt-2">{p.detail}</p>}
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div class="reveal bg-gray-950 border border-gray-800 p-8 lg:p-12 max-w-3xl">
+          <p class="text-2xl font-bold mb-3">Prijs op aanvraag</p>
+          <p class="text-lg text-gray-400 mb-8">
+            De prijs hangt af van uw voertuig(en), het aantal en uw specifieke wensen. Vertel ons wat u zoekt, dan maken wij een passende, vrijblijvende offerte.
+          </p>
+          <a
+            href="/contact/"
+            class="inline-flex items-center gap-3 bg-brand text-white rounded-full px-6 py-3 font-semibold hover:bg-white hover:text-black transition-all duration-300"
+          >
+            Vraag een offerte aan
+            <span>→</span>
+          </a>
+        </div>
+      )}
+
+      {dienst.externLink && (
+        <div class="reveal mt-10">
+          <a
+            href={dienst.externLink.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-3 border border-gray-700 text-white rounded-full px-6 py-3 font-semibold hover:border-brand hover:text-brand transition-colors"
+          >
+            {dienst.externLink.text}
+            <span>→</span>
+          </a>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-32 bg-brand text-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center reveal">
+      <h2 class="heading-lg mb-8">
+        Interesse in<br />{dienst.title.toLowerCase()}?
+      </h2>
+      <p class="text-xl text-white/80 mb-12 max-w-xl mx-auto">
+        Neem contact op voor advies of een vrijblijvende offerte. We zijn inzetbaar door heel Nederland en België.
+      </p>
+      <a
+        href="/contact/"
+        class="group inline-flex items-center gap-3 bg-white text-brand rounded-full px-10 py-5 text-xl font-bold hover:bg-black hover:text-white transition-all duration-300"
+      >
+        Contact opnemen
+        <span class="group-hover:translate-x-2 transition-transform duration-300">→</span>
+      </a>
+      <div class="mt-12 text-white/80">
+        <p class="text-lg"><a href="tel:+31182796197" class="hover:text-white transition-colors">📞 (0182) 79 61 97</a></p>
+        <p class="text-lg"><a href="mailto:info@scharloo-install.nl" class="hover:text-white transition-colors">✉ info@scharloo-install.nl</a></p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+
+  const revealOnScroll = () => {
+    reveals.forEach((el) => {
+      const top = el.getBoundingClientRect().top;
+      if (top < window.innerHeight - 100) {
+        el.classList.add('active');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll();
+</script>
