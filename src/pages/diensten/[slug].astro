@@ -9,11 +9,14 @@ export function getStaticPaths() {
 }
 
 const { dienst } = Astro.props as { dienst: Dienst };
+const heeftPrijs = dienst.prijzen.length > 0;
+const eenPrijs = dienst.prijzen.length === 1;
+const eerstePrijs = dienst.prijzen[0];
 ---
 
 <Layout title={dienst.metaTitle} description={dienst.metaDesc}>
   <!-- Hero -->
-  <section class="min-h-[55vh] bg-black text-white flex items-end pb-20">
+  <section class="min-h-[60vh] bg-black text-white flex items-end pb-20">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
       <a href="/diensten/" class="inline-block text-gray-400 hover:text-white transition-colors text-sm mb-6 animate-fade-in-up">← Alle diensten</a>
       <p class="text-brand font-medium tracking-widest uppercase mb-4 animate-fade-in-up delay-100">Dienst</p>
@@ -24,6 +27,16 @@ const { dienst } = Astro.props as { dienst: Dienst };
       <p class="text-xl text-gray-400 max-w-2xl mt-8 animate-fade-in-up delay-200" style="opacity: 0;">
         {dienst.intro}
       </p>
+
+      {heeftPrijs && (
+        <div class="mt-8 animate-fade-in-up delay-200" style="opacity: 0;">
+          <span class="inline-flex items-center gap-3 border border-gray-700 rounded-full pl-5 pr-6 py-2.5">
+            <span class="text-gray-500 text-sm uppercase tracking-wide">vanaf</span>
+            <span class="text-brand text-lg font-bold">{eerstePrijs.prijs}</span>
+            {eerstePrijs.detail && <span class="text-gray-400 text-sm">{eerstePrijs.detail}</span>}
+          </span>
+        </div>
+      )}
     </div>
   </section>
 
@@ -36,15 +49,6 @@ const { dienst } = Astro.props as { dienst: Dienst };
           {dienst.over.map((alinea) => (
             <p class="text-lg text-gray-400 leading-relaxed mb-6">{alinea}</p>
           ))}
-
-          <ul class="grid grid-cols-2 gap-3 mt-8">
-            {dienst.features.map((f) => (
-              <li class="flex items-center gap-3 text-gray-300 text-sm">
-                <span class="w-2 h-2 bg-brand flex-shrink-0"></span>
-                {f}
-              </li>
-            ))}
-          </ul>
         </div>
 
         <div class="reveal">
@@ -62,50 +66,94 @@ const { dienst } = Astro.props as { dienst: Dienst };
     </div>
   </section>
 
-  <!-- Prijzen -->
+  <!-- Prijs / aanbod -->
   <section class="py-24 bg-black">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="reveal">
-        <p class="text-brand font-medium tracking-widest uppercase mb-4">Prijzen</p>
-        <h2 class="heading-lg mb-12">Wat kost het?</h2>
+      <div class="reveal text-center max-w-2xl mx-auto mb-14">
+        <p class="text-brand font-medium tracking-widest uppercase mb-4">Prijs</p>
+        <h2 class="heading-lg">Wat kost het?</h2>
       </div>
 
-      {dienst.prijzen.length > 0 ? (
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {dienst.prijzen.map((p) => (
-            <div class="reveal bg-gray-950 p-8 border border-gray-800 hover:border-brand transition-colors">
-              <h3 class="text-xl font-bold mb-3">{p.naam}</h3>
-              <div class="flex items-baseline gap-2">
-                <span class="text-gray-500 text-sm">vanaf</span>
-                <span class="text-4xl font-black text-white">{p.prijs}</span>
-              </div>
-              {p.detail && <p class="text-gray-500 text-sm mt-2">{p.detail}</p>}
-            </div>
-          ))}
+      {eenPrijs || !heeftPrijs ? (
+        <!-- Eén vaste prijs, of prijs op aanvraag: één strak aanbod-blok -->
+        <div class="reveal max-w-xl mx-auto relative bg-gray-950 border border-gray-800">
+          <div class="absolute inset-x-0 top-0 h-1 bg-brand"></div>
+          <div class="p-10 lg:p-12 text-center">
+            {heeftPrijs ? (
+              <>
+                {eerstePrijs.naam && (
+                  <p class="text-gray-500 text-sm uppercase tracking-widest mb-6">{eerstePrijs.naam}</p>
+                )}
+                <div class="flex items-end justify-center gap-2">
+                  <span class="text-gray-500 text-lg mb-2">vanaf</span>
+                  <span class="text-6xl lg:text-7xl font-black text-white leading-none">{eerstePrijs.prijs}</span>
+                </div>
+                {eerstePrijs.detail && <p class="text-gray-400 mt-3">{eerstePrijs.detail}</p>}
+              </>
+            ) : (
+              <>
+                <p class="text-3xl font-black text-white mb-3">Prijs op aanvraag</p>
+                <p class="text-gray-400 max-w-sm mx-auto">
+                  De prijs hangt af van uw voertuig(en) en wensen. Wij maken een passende, vrijblijvende offerte.
+                </p>
+              </>
+            )}
+
+            <div class="h-px bg-gray-800 my-8"></div>
+
+            <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-3 text-left mb-10">
+              {dienst.features.map((f) => (
+                <li class="flex items-center gap-3 text-gray-300 text-sm">
+                  <span class="text-brand flex-shrink-0">✓</span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href="/contact/"
+              class="inline-flex w-full sm:w-auto items-center justify-center gap-3 bg-brand text-white rounded-full px-10 py-4 font-semibold hover:bg-white hover:text-black transition-all duration-300"
+            >
+              Vraag een offerte aan
+              <span>→</span>
+            </a>
+          </div>
         </div>
       ) : (
-        <div class="reveal bg-gray-950 border border-gray-800 p-8 lg:p-12 max-w-3xl">
-          <p class="text-2xl font-bold mb-3">Prijs op aanvraag</p>
-          <p class="text-lg text-gray-400 mb-8">
-            De prijs hangt af van uw voertuig(en), het aantal en uw specifieke wensen. Vertel ons wat u zoekt, dan maken wij een passende, vrijblijvende offerte.
-          </p>
-          <a
-            href="/contact/"
-            class="inline-flex items-center gap-3 bg-brand text-white rounded-full px-6 py-3 font-semibold hover:bg-white hover:text-black transition-all duration-300"
-          >
-            Vraag een offerte aan
-            <span>→</span>
-          </a>
+        <!-- Meerdere prijzen: nette rij kaarten -->
+        <div>
+          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
+            {dienst.prijzen.map((p) => (
+              <div class="reveal relative bg-gray-950 border border-gray-800 p-8 text-center">
+                <div class="absolute inset-x-0 top-0 h-1 bg-brand"></div>
+                <p class="text-gray-500 text-sm uppercase tracking-widest mb-4">{p.naam}</p>
+                <div class="flex items-end justify-center gap-2">
+                  <span class="text-gray-500 text-sm mb-1">vanaf</span>
+                  <span class="text-4xl font-black text-white">{p.prijs}</span>
+                </div>
+                {p.detail && <p class="text-gray-400 text-sm mt-2">{p.detail}</p>}
+              </div>
+            ))}
+          </div>
+          <div class="text-center mt-10 reveal">
+            <a
+              href="/contact/"
+              class="inline-flex items-center justify-center gap-3 bg-brand text-white rounded-full px-10 py-4 font-semibold hover:bg-white hover:text-black transition-all duration-300"
+            >
+              Vraag een offerte aan
+              <span>→</span>
+            </a>
+          </div>
         </div>
       )}
 
       {dienst.externLink && (
-        <div class="reveal mt-10">
+        <div class="reveal text-center mt-8">
           <a
             href={dienst.externLink.url}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-3 border border-gray-700 text-white rounded-full px-6 py-3 font-semibold hover:border-brand hover:text-brand transition-colors"
+            class="inline-flex items-center gap-3 text-gray-400 hover:text-brand transition-colors font-medium"
           >
             {dienst.externLink.text}
             <span>→</span>
@@ -119,7 +167,7 @@ const { dienst } = Astro.props as { dienst: Dienst };
   <section class="py-32 bg-brand text-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center reveal">
       <h2 class="heading-lg mb-8">
-        Interesse in<br />{dienst.title.toLowerCase()}?
+        Interesse in<br />{dienst.title}?
       </h2>
       <p class="text-xl text-white/80 mb-12 max-w-xl mx-auto">
         Neem contact op voor advies of een vrijblijvende offerte. We zijn inzetbaar door heel Nederland en België.
