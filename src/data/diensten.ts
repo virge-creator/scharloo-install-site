@@ -1,5 +1,6 @@
 // Alle diensten op één plek. Pas hier teksten en prijzen aan — de
-// overzichtspagina (/diensten/) en de detailpagina's gebruiken dit bestand.
+// overzichtspagina (/diensten/), de detailpagina's en het uitklapmenu
+// in de header gebruiken dit bestand.
 //
 // PRIJZEN: standaard staat elke dienst op "op aanvraag" (lege prijzen-lijst).
 // Wil je vaste vanaf-prijzen tonen? Vul dan de `prijzen`-lijst, bijvoorbeeld:
@@ -58,8 +59,35 @@ export const diensten: Dienst[] = [
     genereerPagina: true,
   },
   {
-    slug: 'dashcams',
+    slug: 'gps-voertuigbeveiliging',
     nummer: '02',
+    title: 'GPS-voertuigbeveiliging',
+    subtitle: 'Tracking & startblokkering op afstand',
+    kort: 'Live voertuigtracking, ritregistratie en een op afstand bedienbare startonderbreking — bij diefstal zet u uw voertuig op afstand stil.',
+    intro: 'Live voertuigtracking, ritregistratie en een op afstand bedienbare startonderbreking. Bij diefstal of ongeoorloofd gebruik maakt u uw voertuig op afstand onstartbaar — waar het ook is.',
+    over: [
+      'Met GPS-voertuigbeveiliging volgt u uw voertuig 24/7 live en weet u altijd waar het is. De kracht zit in de op afstand bedienbare startonderbreking: wordt uw voertuig gestolen of ongeoorloofd gebruikt, dan maakt u het met één handeling onstartbaar, zodat het niet verder kan.',
+      'Veilig ontworpen: de startonderbreking schakelt uitsluitend wanneer het voertuig stilstaat, nooit tijdens het rijden. Ideaal voor ondernemers, verhuur en lease — bijvoorbeeld bij wanbetaling of een vermoeden van diefstal. Tracking, ritregistratie en beveiliging komen samen in één systeem.',
+    ],
+    voordelen: [
+      'Zet uw voertuig bij diefstal op afstand stil — waar het ook is',
+      '24/7 live zicht op de exacte locatie van uw voertuig',
+      'Onmisbaar bij verhuur, lease en bij wanbetaling',
+      'Veilig ontworpen: blokkeert nooit tijdens het rijden',
+      'Grotere kans dat uw voertuig na diefstal wordt teruggevonden',
+      'Tracking, ritregistratie én beveiliging in één systeem',
+    ],
+    features: ['Live GPS-tracking', 'Startonderbreking op afstand', 'Ritregistratie', 'Anti-diefstal'],
+    prijzen: [
+      { naam: 'Compleet geïnstalleerd', prijs: '€499', detail: 'inclusief inbouw en btw' },
+    ],
+    metaTitle: 'GPS-voertuigbeveiliging — tracking & startblokkering op afstand',
+    metaDesc: 'Live GPS-tracking, ritregistratie en op afstand bedienbare startonderbreking vanaf €499 incl. inbouw en btw. Maak uw voertuig bij diefstal op afstand onstartbaar.',
+    genereerPagina: true,
+  },
+  {
+    slug: 'dashcams',
+    nummer: '03',
     title: 'Dashcams',
     subtitle: 'Veiligheid & bewijslast',
     kort: 'Professioneel ingebouwde dashcams voor extra veiligheid en onbetwistbare bewijslast bij schade — netjes weggewerkt, zonder losse kabels.',
@@ -84,7 +112,7 @@ export const diensten: Dienst[] = [
   },
   {
     slug: 'alarmsystemen',
-    nummer: '03',
+    nummer: '04',
     title: 'Alarmsystemen',
     subtitle: 'SCM/CCV gecertificeerd',
     kort: 'SCM/CCV-gecertificeerde alarm- en voertuigvolgsystemen, klasse 2 t/m 5, met vaste vanaf-prijzen op de aparte alarmsystemen-pagina.',
@@ -100,7 +128,7 @@ export const diensten: Dienst[] = [
   },
   {
     slug: 'tachograaf',
-    nummer: '04',
+    nummer: '05',
     title: 'Remote tachograaf download',
     subtitle: 'Remote download',
     kort: 'Automatische, draadloze uitlezing van de digitale tachograaf en bestuurderskaart — voldoe aan de wettelijke bewaarplicht zonder handmatig werk.',
@@ -124,7 +152,7 @@ export const diensten: Dienst[] = [
   },
   {
     slug: 'can-bus',
-    nummer: '05',
+    nummer: '06',
     title: 'CAN-bus koppelingen',
     subtitle: 'Voertuiggegevens',
     kort: 'Lees voertuiggegevens rechtstreeks uit via de CAN-bus en bekijk brandstofverbruik, rijstijl en meer op afstand — voor vrijwel elk merk.',
@@ -148,7 +176,7 @@ export const diensten: Dienst[] = [
   },
   {
     slug: 'driver-id',
-    nummer: '06',
+    nummer: '07',
     title: 'Driver ID / RFID',
     subtitle: 'Bestuurdersidentificatie',
     kort: 'Automatische bestuurdersidentificatie met RFID — weet altijd wie er rijdt en koppel ritten moeiteloos aan de juiste persoon.',
@@ -172,7 +200,7 @@ export const diensten: Dienst[] = [
   },
   {
     slug: 'io-integraties',
-    nummer: '07',
+    nummer: '08',
     title: 'I/O integraties',
     subtitle: 'Maatwerk koppelingen',
     kort: 'Maatwerkkoppelingen voor extra functies op uw voertuig — van sensoren en schakelaars tot signalering, precies op uw werkproces afgestemd.',
@@ -196,7 +224,7 @@ export const diensten: Dienst[] = [
   },
   {
     slug: 'temperatuur-monitoring',
-    nummer: '08',
+    nummer: '09',
     title: 'Temperatuur monitoring',
     subtitle: 'Realtime inzicht',
     kort: 'Realtime temperatuurbewaking van voertuigen en laadruimtes, met directe alerts bij afwijkingen — onmisbaar voor temperatuurgevoelig transport.',
