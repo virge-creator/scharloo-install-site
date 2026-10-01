@@ -1,20 +1,35 @@
 ---
-const navItems = [
-  { href: '/diensten/', label: 'Diensten' },
+import { diensten, dienstUrl } from '../data/diensten';
+
+type NavChild = { href: string; label: string };
+type NavItem = { href: string; label: string; children?: NavChild[] };
+
+const navItems: NavItem[] = [
+  {
+    href: '/diensten/',
+    label: 'Diensten',
+    children: diensten.map((d) => ({ href: dienstUrl(d), label: d.title })),
+  },
   { href: '/samenwerken/', label: 'Samenwerken' },
   { href: '/blog/', label: 'Blog' },
-  { 
-    href: '/over-ons/', 
+  {
+    href: '/over-ons/',
     label: 'Over ons',
     children: [
       { href: '/over-ons/', label: 'Over Scharloo-Install' },
       { href: '/team/', label: 'Ons Team' },
-    ]
+    ],
   },
   { href: '/contact/', label: 'Contact' },
 ];
 
 const currentPath = Astro.url.pathname;
+
+// Een item is actief als het huidige pad bij het item zelf of bij een subpagina hoort
+function isActive(item: NavItem): boolean {
+  const hrefs = [item.href, ...(item.children ? item.children.map((c) => c.href) : [])];
+  return hrefs.some((h) => currentPath === h || currentPath.startsWith(h));
+}
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800">
@@ -25,9 +40,9 @@ const currentPath = Astro.url.pathname;
 
       <!-- Logo (centered on mobile, left on desktop) -->
       <a href="/" class="hover:opacity-80 transition-opacity md:mr-auto absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0">
-        <img 
-          src="/images/logo-scharloo.png" 
-          alt="Scharloo-Install" 
+        <img
+          src="/images/logo-scharloo.png"
+          alt="Scharloo-Install"
           class="h-14 md:h-16 w-auto -mb-2 -mt-[2px]"
         />
       </a>
@@ -37,11 +52,11 @@ const currentPath = Astro.url.pathname;
         {navItems.map(item => (
           item.children ? (
             <div class="relative group">
-              <a 
+              <a
                 href={item.href}
                 class={`text-sm font-medium tracking-wide uppercase transition-colors inline-flex items-center gap-1.5 ${
-                  currentPath.includes(item.href.split('/')[1]) || currentPath.includes('team')
-                    ? 'text-brand border-b-2 border-brand pb-1' 
+                  isActive(item)
+                    ? 'text-brand border-b-2 border-brand pb-1'
                     : 'text-gray-400 hover:text-brand'
                 }`}
               >
@@ -50,19 +65,19 @@ const currentPath = Astro.url.pathname;
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </a>
-              
+
               {/* Dropdown */}
               <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div class="bg-gray-900 border border-gray-800 shadow-2xl shadow-black/50 min-w-[220px] py-2">
+                <div class="bg-gray-900 border border-gray-800 shadow-2xl shadow-black/50 min-w-[240px] py-2">
                   {/* Arrow */}
                   <div class="absolute -top-[6px] left-1/2 -translate-x-1/2 w-3 h-3 bg-gray-900 border-l border-t border-gray-800 rotate-45"></div>
-                  
+
                   {item.children.map(child => (
-                    <a 
+                    <a
                       href={child.href}
                       class={`block px-5 py-3 text-sm font-medium tracking-wide transition-all hover:bg-gray-800 hover:text-brand hover:pl-7 ${
-                        currentPath === child.href 
-                          ? 'text-brand bg-gray-800/50' 
+                        currentPath === child.href
+                          ? 'text-brand bg-gray-800/50'
                           : 'text-gray-400'
                       }`}
                     >
@@ -73,11 +88,11 @@ const currentPath = Astro.url.pathname;
               </div>
             </div>
           ) : (
-            <a 
+            <a
               href={item.href}
               class={`text-sm font-medium tracking-wide uppercase transition-colors ${
-                currentPath.includes(item.href.split('/')[1]) 
-                  ? 'text-brand border-b-2 border-brand pb-1' 
+                isActive(item)
+                  ? 'text-brand border-b-2 border-brand pb-1'
                   : 'text-gray-400 hover:text-brand'
               }`}
             >
@@ -88,7 +103,7 @@ const currentPath = Astro.url.pathname;
       </div>
 
       <!-- Mobile menu button -->
-      <button 
+      <button
         id="mobile-menu-btn"
         class="md:hidden p-2 text-white"
         aria-label="Menu openen"
@@ -102,8 +117,8 @@ const currentPath = Astro.url.pathname;
 </header>
 
 <!-- Mobile Navigation Overlay -->
-<div id="mobile-menu" class="fixed inset-0 bg-black z-[60] hidden flex-col justify-center items-center">
-  <button 
+<div id="mobile-menu" class="fixed inset-0 bg-black z-[60] hidden flex-col justify-center items-center overflow-y-auto py-20">
+  <button
     id="mobile-menu-close"
     class="absolute top-6 right-6 p-2 text-white"
     aria-label="Menu sluiten"
@@ -112,13 +127,13 @@ const currentPath = Astro.url.pathname;
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
     </svg>
   </button>
-  
+
   <nav class="flex flex-col items-center space-y-6">
     <a href="/" class="text-4xl font-bold text-white hover:text-brand transition-colors">Home</a>
     {navItems.map(item => (
       item.children ? (
         <div class="flex flex-col items-center space-y-3">
-          <a 
+          <a
             href={item.href}
             class="text-4xl font-bold text-white hover:text-brand transition-colors"
           >
@@ -127,7 +142,7 @@ const currentPath = Astro.url.pathname;
           {/* Mobile sub-items */}
           <div class="flex flex-col items-center space-y-2">
             {item.children.map(child => (
-              <a 
+              <a
                 href={child.href}
                 class="text-lg text-gray-500 hover:text-brand transition-colors"
               >
@@ -137,7 +152,7 @@ const currentPath = Astro.url.pathname;
           </div>
         </div>
       ) : (
-        <a 
+        <a
           href={item.href}
           class="text-4xl font-bold text-white hover:text-brand transition-colors"
         >
@@ -155,19 +170,19 @@ const currentPath = Astro.url.pathname;
   const btn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
   const closeBtn = document.getElementById('mobile-menu-close');
-  
+
   btn?.addEventListener('click', () => {
     menu?.classList.remove('hidden');
     menu?.classList.add('flex');
     document.body.style.overflow = 'hidden';
   });
-  
+
   closeBtn?.addEventListener('click', () => {
     menu?.classList.add('hidden');
     menu?.classList.remove('flex');
     document.body.style.overflow = '';
   });
-  
+
   // Close on link click
   menu?.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
