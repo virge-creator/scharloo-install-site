@@ -15,6 +15,7 @@ const partners = [
   { name: 'RouteConnect', logo: '/images/partners/routeconnect.webp', url: 'https://routeconnect.com' },
   { name: 'Linqo', logo: '/images/partners/linqo.png', url: 'https://linqo.nl/produkte/routes-en-taken/' },
   { name: 'Suivo', logo: '/images/partners/suivo.png', url: 'https://www.suivo.com/nl/' },
+  { name: 'Fleets Online', logo: '/images/partners/fleets-online.png', url: 'https://fleets-online.com/' },
 ];
 ---
 
@@ -83,15 +84,15 @@ const partners = [
           <span class="text-white font-bold">Ons team</span> werkt al<br />
           <span class="text-gray-500">succesvol samen met</span>
         </h2>
-        <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
           {partners.map(partner => (
             <a href={partner.url} target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-between p-6 rounded-2xl bg-white border-2 border-gray-200 hover:border-brand hover:shadow-2xl hover:shadow-brand/20 hover:scale-105 transition-all duration-300 group min-h-[180px]">
               <span class="text-black font-semibold text-sm text-center">{partner.name}</span>
-              <img 
-                src={partner.logo} 
+              <img
+                src={partner.logo}
                 alt={partner.name}
                 class={`max-h-16 w-auto object-contain ${partner.name === 'Suivo' ? 'mt-[-15px]' : ''}`}
-              />
+                onerror="this.style.display='none'"
               />
               <div></div>
             </a>
