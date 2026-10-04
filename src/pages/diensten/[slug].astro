@@ -47,6 +47,23 @@ const eerstePrijs = dienst.prijzen[0];
     </div>
   </section>
 
+  <!-- Afbeelding (alleen als er een foto is ingesteld) -->
+  {dienst.afbeelding && (
+    <section class="bg-black">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="reveal relative overflow-hidden border border-gray-800 -mt-10 lg:-mt-16">
+          <img
+            src={dienst.afbeelding}
+            alt={dienst.afbeeldingAlt ?? dienst.title}
+            class="w-full h-auto object-cover"
+            loading="lazy"
+            onerror="this.closest('section').style.display='none'"
+          />
+        </div>
+      </div>
+    </section>
+  )}
+
   <!-- Wat we doen + voordelen -->
   <section class="py-24 bg-gray-950">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">

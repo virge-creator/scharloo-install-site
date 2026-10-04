@@ -34,6 +34,8 @@ export interface Dienst {
   externLink?: { text: string; url: string }; // bv. webshop
   detailUrl?: string;        // overschrijft de standaard /diensten/<slug>/
   genereerPagina: boolean;   // false = geen eigen detailpagina (bv. alarmsystemen)
+  afbeelding?: string;       // pad naar foto, bv '/images/diensten/target-blu-eye.jpg'
+  afbeeldingAlt?: string;    // alt-tekst bij de foto (goed voor Google)
 }
 
 export const diensten: Dienst[] = [
@@ -263,6 +265,40 @@ export const diensten: Dienst[] = [
     prijzen: [],
     metaTitle: 'Temperatuur monitoring — realtime bewaking laadruimte',
     metaDesc: 'Realtime temperatuurbewaking van laadruimtes met automatische alerts en HACCP-ondersteuning. Onmisbaar voor koel- en vriestransport.',
+    genereerPagina: true,
+  },
+  {
+    slug: 'target-blu-eye',
+    nummer: '10',
+    title: 'Target Blu Eye 2',
+    subtitle: 'Hulpdiensten vroegtijdig detecteren',
+    kort: 'Het unieke systeem dat de aanwezigheid van naderende hulpdiensten detecteert en u ruim op tijd waarschuwt — voor meer overzicht en rust achter het stuur.',
+    intro: 'Weet eerder dan wie ook dat er een hulpdienst nadert. De Target Blu Eye 2 detecteert het communicatienetwerk van politie, ambulance, brandweer en marechaussee, en waarschuwt u ruim op tijd — professioneel ingebouwd in uw voertuig.',
+    over: [
+      'Hulpdiensten zoals politie, ambulance, brandweer en marechaussee communiceren via het landelijke C2000-netwerk. De Target Blu Eye 2 vangt de aanwezigheid van dit netwerk op en herkent daarmee dat er een hulpdienstvoertuig in de buurt is — vaak nog voordat u zwaailichten of sirene ziet of hoort.',
+      'U krijgt een duidelijke, tijdige waarschuwing via een discreet display en signaal. Zo heeft u meer overzicht, kunt u rustig anticiperen, veilig ruimte maken en voorkomt u schrikreacties. De Blu Eye 2 is de nieuwste generatie: gevoeliger, slimmer en nog fraaier afgewerkt dan zijn voorganger.',
+      'Belangrijk om te weten: de Target Blu Eye is geen radar- of flitserdetector. Het systeem spoort geen snelheidscontroles op, maar signaleert uitsluitend de aanwezigheid van het communicatienetwerk van hulpdiensten. Daarmee is het in Nederland toegestaan.',
+    ],
+    voordelen: [
+      'Detecteert naderende hulpdiensten, vaak vóór u ze ziet of hoort',
+      'Meer overzicht en rust, minder schrikreacties in het verkeer',
+      'Veilig en tijdig ruimte maken voor hulpdiensten',
+      'Discrete, professionele inbouw die past bij uw interieur',
+      'Nieuwste generatie: gevoeliger en slimmer dan de vorige',
+      'Geen radardetector — in Nederland toegestaan',
+    ],
+    features: ['Detectie C2000-netwerk', 'Tijdige waarschuwing', 'Discrete inbouw', 'Nieuwste generatie'],
+    prijzen: [
+      {
+        naam: 'Target Blu Eye 2, compleet geïnstalleerd',
+        prijs: '€1.899',
+        detail: 'incl. inbouw en btw',
+      },
+    ],
+    metaTitle: 'Target Blu Eye 2 inbouwen — hulpdiensten detecteren',
+    metaDesc: 'Target Blu Eye 2 professioneel laten inbouwen voor €1.899 incl. inbouw en btw. Detecteert naderende politie, ambulance en brandweer via het C2000-netwerk. Geen radardetector.',
+    afbeelding: '/images/diensten/target-blu-eye.jpg',
+    afbeeldingAlt: 'Target Blu Eye 2 ingebouwd in het dashboard van een voertuig',
     genereerPagina: true,
   },
 ];
