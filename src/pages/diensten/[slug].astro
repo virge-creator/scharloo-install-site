@@ -12,6 +12,10 @@ const { dienst } = Astro.props as { dienst: Dienst };
 const heeftPrijs = dienst.prijzen.length > 0;
 const eenPrijs = dienst.prijzen.length === 1;
 const eerstePrijs = dienst.prijzen[0];
+const heeftVarianten = !!(dienst.varianten && dienst.varianten.length > 0);
+// Houd de secties netjes afwisselend: met een varianten-blok ertussen
+// wisselt de prijs-sectie mee van achtergrond.
+const prijsBg = heeftVarianten ? 'bg-gray-950' : 'bg-black';
 ---
 
 <Layout title={dienst.metaTitle} description={dienst.metaDesc}>
@@ -90,8 +94,29 @@ const eerstePrijs = dienst.prijzen[0];
     </div>
   </section>
 
+  <!-- Varianten / keuze-opties (alleen als ingesteld) -->
+  {heeftVarianten && (
+    <section class="py-24 bg-black">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="reveal mb-12">
+          <p class="text-brand font-medium tracking-widest uppercase mb-4">Opties</p>
+          <h2 class="heading-lg">{dienst.variantenTitel ?? 'Twee mogelijkheden'}</h2>
+        </div>
+        <div class="grid gap-6 md:grid-cols-2 max-w-4xl">
+          {dienst.varianten.map((v) => (
+            <div class="reveal relative bg-gray-950 border border-gray-800 hover:border-brand transition-colors p-8">
+              <div class="absolute inset-x-0 top-0 h-1 bg-brand"></div>
+              <h3 class="text-2xl font-bold mb-3">{v.naam}</h3>
+              <p class="text-gray-400 leading-relaxed">{v.omschrijving}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
   <!-- Prijs / aanbod -->
-  <section class="py-24 bg-black">
+  <section class={`py-24 ${prijsBg}`}>
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="reveal text-center max-w-2xl mx-auto mb-14">
         <p class="text-brand font-medium tracking-widest uppercase mb-4">Prijs</p>

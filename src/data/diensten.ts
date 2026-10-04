@@ -36,6 +36,8 @@ export interface Dienst {
   genereerPagina: boolean;   // false = geen eigen detailpagina (bv. alarmsystemen)
   afbeelding?: string;       // pad naar foto, bv '/images/diensten/target-blu-eye.jpg'
   afbeeldingAlt?: string;    // alt-tekst bij de foto (goed voor Google)
+  varianten?: { naam: string; omschrijving: string }[]; // keuze-opties, bv weergave
+  variantenTitel?: string;   // kopje boven de varianten, bv 'Kies uw weergave'
 }
 
 export const diensten: Dienst[] = [
@@ -276,18 +278,30 @@ export const diensten: Dienst[] = [
     intro: 'Weet eerder dan wie ook dat er een hulpdienst nadert. De Target Blu Eye 2 detecteert het communicatienetwerk van politie, ambulance, brandweer en marechaussee, en waarschuwt u ruim op tijd — professioneel ingebouwd in uw voertuig.',
     over: [
       'Hulpdiensten zoals politie, ambulance, brandweer en marechaussee communiceren via het landelijke C2000-netwerk. De Target Blu Eye 2 vangt de aanwezigheid van dit netwerk op en herkent daarmee dat er een hulpdienstvoertuig in de buurt is — vaak nog voordat u zwaailichten of sirene ziet of hoort.',
-      'U krijgt een duidelijke, tijdige waarschuwing via een discreet display en signaal. Zo heeft u meer overzicht, kunt u rustig anticiperen, veilig ruimte maken en voorkomt u schrikreacties. De Blu Eye 2 is de nieuwste generatie: gevoeliger, slimmer en nog fraaier afgewerkt dan zijn voorganger.',
+      'Het grote voordeel: ook onopvallende, ongemarkeerde politievoertuigen worden herkend. Juist deze auto’s ziet u normaal gesproken niet aankomen, maar zolang hun C2000-apparatuur actief is, signaleert de Blu Eye 2 hun aanwezigheid. Zo rijdt u altijd met een scherper beeld van wat er om u heen gebeurt.',
+      'U krijgt een duidelijke, tijdige waarschuwing. Zo heeft u meer overzicht, kunt u rustig anticiperen, veilig ruimte maken en voorkomt u schrikreacties. De Blu Eye 2 is de nieuwste generatie: gevoeliger, slimmer en nog fraaier afgewerkt dan zijn voorganger.',
       'Belangrijk om te weten: de Target Blu Eye is geen radar- of flitserdetector. Het systeem spoort geen snelheidscontroles op, maar signaleert uitsluitend de aanwezigheid van het communicatienetwerk van hulpdiensten. Daarmee is het in Nederland toegestaan.',
     ],
     voordelen: [
       'Detecteert naderende hulpdiensten, vaak vóór u ze ziet of hoort',
+      'Herkent ook onopvallende, ongemarkeerde politievoertuigen',
       'Meer overzicht en rust, minder schrikreacties in het verkeer',
       'Veilig en tijdig ruimte maken voor hulpdiensten',
-      'Discrete, professionele inbouw die past bij uw interieur',
-      'Nieuwste generatie: gevoeliger en slimmer dan de vorige',
+      'Keuze uit twee discrete weergaves, passend bij uw interieur',
       'Geen radardetector — in Nederland toegestaan',
     ],
-    features: ['Detectie C2000-netwerk', 'Tijdige waarschuwing', 'Discrete inbouw', 'Nieuwste generatie'],
+    features: ['Detectie C2000-netwerk', 'Ook onopvallende politie', 'Twee weergave-opties', 'Discrete inbouw'],
+    variantenTitel: 'Kies uw weergave',
+    varianten: [
+      {
+        naam: 'LED-display',
+        omschrijving: 'Een apart, strak display dat u op een door u gekozen plek monteren. Overzichtelijke weergave van het type melding en de signaalsterkte, zonder dat u ergens anders op hoeft te letten.',
+      },
+      {
+        naam: "LED's in de binnenspiegel",
+        omschrijving: 'De meest discrete oplossing: subtiele led-indicatie, geïntegreerd in de binnenspiegel. Vrijwel onzichtbaar in het interieur en altijd in uw blikveld, zonder extra kastje op het dashboard.',
+      },
+    ],
     prijzen: [
       {
         naam: 'Target Blu Eye 2, compleet geïnstalleerd',
