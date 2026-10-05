@@ -315,6 +315,32 @@ export const diensten: Dienst[] = [
     afbeeldingAlt: 'Target Blu Eye 2 ingebouwd in het dashboard van een voertuig',
     genereerPagina: true,
   },
+  {
+    slug: 'trekhaken',
+    nummer: '11',
+    title: 'Trekhaken',
+    subtitle: 'Montage voor elk merk en model',
+    kort: 'Professionele montage van trekhaken, inclusief de juiste elektra-aansluiting — vakkundig gemonteerd voor vrijwel elk merk en model.',
+    intro: 'Een trekhaak laten monteren door specialisten die uw voertuig door en door kennen. Vakkundig gemonteerd met de juiste kogelhaak en elektra, voor vrijwel elk merk en model.',
+    over: [
+      'Of u nu een aanhanger, fietsendrager of caravan wilt trekken: een goed gemonteerde trekhaak is onmisbaar. Wij monteren een trekhaak die past bij uw voertuig en gebruik, van een vaste en afneembare tot een wegklapbare kogel.',
+      'De montage omvat niet alleen de haak zelf, maar ook de bijbehorende elektra-aansluiting (7- of 13-polig), afgestemd op uw voertuig. Zo werken de verlichting en signalering van uw aanhanger of drager betrouwbaar en storingsvrij, en blijft de boordelektronica van uw auto netjes intact.',
+      'Wij werken met kwaliteitsmaterialen en leveren het werk netjes en volgens de geldende eisen op. Omdat elke auto anders is, bepalen we samen met u de juiste trekhaak en stellen we een passende prijs op.',
+    ],
+    voordelen: [
+      'Vakkundige montage voor vrijwel elk merk en model',
+      'Keuze uit vaste, afneembare en wegklapbare kogelhaak',
+      'Juiste elektra-aansluiting (7- of 13-polig) inbegrepen',
+      'Betrouwbare verlichting en signalering, storingsvrij',
+      'Kwaliteitsmaterialen, netjes afgewerkt',
+      'Persoonlijk advies over de beste keuze voor uw voertuig',
+    ],
+    features: ['Elk merk en model', 'Vast, afneembaar of wegklapbaar', 'Elektra inbegrepen', 'Netjes afgewerkt'],
+    prijzen: [],
+    metaTitle: 'Trekhaak laten monteren — voor elk merk en model',
+    metaDesc: 'Professionele montage van trekhaken inclusief de juiste elektra-aansluiting, voor vrijwel elk merk en model. Vraag een vrijblijvende offerte aan.',
+    genereerPagina: true,
+  },
 ];
 
 // Handig voor de detailpagina's: de juiste link per dienst.
