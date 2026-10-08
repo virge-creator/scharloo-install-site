@@ -36,6 +36,7 @@ export interface Dienst {
   genereerPagina: boolean;   // false = geen eigen detailpagina (bv. alarmsystemen)
   afbeelding?: string;       // pad naar foto, bv '/images/diensten/target-blu-eye.jpg'
   afbeeldingAlt?: string;    // alt-tekst bij de foto (goed voor Google)
+  afbeeldingen?: { src: string; alt: string; bijschrift: string }[];
   varianten?: { naam: string; omschrijving: string }[]; // keuze-opties, bv weergave
   variantenTitel?: string;   // kopje boven de varianten, bv 'Kies uw weergave'
 }
@@ -131,6 +132,11 @@ export const diensten: Dienst[] = [
     metaTitle: 'Dashcam inbouwen — onzichtbare installatie voor bewijslast',
     metaDesc: 'Professionele, onzichtbare inbouw van dashcams met voor- en achtercamera, live verbinding en parkeermodus. Onbetwistbare bewijslast bij schade.',
     externLink: { text: 'Bekijk de dashcam webshop', url: 'https://scharloo-install.vercel.app/nl' },
+    afbeeldingen: [
+      { src: '/images/BMW-dashcam-950-600.png.webp', alt: 'Dashcam netjes weggewerkt bij de binnenspiegel van een BMW', bijschrift: 'Discreet ingebouwd in een BMW' },
+      { src: '/images/Volkswagen-dashcam-2.png.webp', alt: 'Dashcam geïntegreerd achter de binnenspiegel van een Volkswagen', bijschrift: 'Strakke montage in een Volkswagen' },
+      { src: '/images/Audi-dashcam.png.webp', alt: 'Professioneel ingebouwde dashcam in een Audi', bijschrift: 'Professionele inbouw in een Audi' },
+    ],
     genereerPagina: true,
   },
   {
@@ -311,8 +317,8 @@ export const diensten: Dienst[] = [
     ],
     metaTitle: 'Target Blu Eye 2 inbouwen — hulpdiensten detecteren',
     metaDesc: 'Target Blu Eye 2 professioneel laten inbouwen voor €1.899 incl. inbouw en btw. Detecteert naderende politie, ambulance en brandweer via het C2000-netwerk. Geen radardetector.',
-    afbeelding: '/images/diensten/target-blu-eye.jpg',
-    afbeeldingAlt: 'Target Blu Eye 2 ingebouwd in het dashboard van een voertuig',
+    afbeelding: '/images/blu-eye-2-set-transparant.png',
+    afbeeldingAlt: 'Target Blu Eye 2 detectiemodule en bediening',
     genereerPagina: true,
   },
   {
@@ -339,6 +345,10 @@ export const diensten: Dienst[] = [
     prijzen: [],
     metaTitle: 'Trekhaak laten monteren — voor elk merk en model',
     metaDesc: 'Professionele montage van trekhaken inclusief de juiste elektra-aansluiting, voor vrijwel elk merk en model. Vraag een vrijblijvende offerte aan.',
+    afbeeldingen: [
+      { src: '/images/maxresdefault.jpg', alt: 'Trekhaak gemonteerd onder de achterbumper van een auto', bijschrift: 'Netjes gemonteerd onder de achterbumper' },
+      { src: '/images/590000.jpg', alt: 'Trekhaak met bevestigingsmaterialen en onderdelen', bijschrift: 'Trekhaak en bijbehorende montagematerialen' },
+    ],
     genereerPagina: true,
   },
 ];

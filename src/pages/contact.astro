@@ -4,13 +4,19 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Contact" description="Neem contact op met Scharloo-Install voor een vrijblijvende offerte.">
   <!-- Hero -->
-  <section class="min-h-[60vh] bg-black text-white flex items-end pb-20">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+  <section class="min-h-[60vh] bg-black text-white flex items-end pb-20 relative overflow-hidden">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
       <p class="text-brand font-medium tracking-widest uppercase mb-4 animate-fade-in-up">Contact</p>
       <h1 class="heading-xl animate-fade-in-up delay-100" style="opacity: 0;">
         Neem<br />
         <span class="text-gray-500">contact op</span>
       </h1>
+      <p class="text-xl text-gray-400 max-w-2xl mt-8 animate-fade-in-up delay-200">Stel uw vraag of vraag vrijblijvend een offerte aan. Met het merk, model en bouwjaar van uw voertuig kunnen we gerichter met u meedenken.</p>
+      <div class="mt-7 flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-300">
+        <a href="#formulier" class="inline-flex items-center justify-center rounded-full bg-brand px-7 py-4 font-semibold text-white transition-all duration-300 hover:bg-white hover:text-black">Stuur een aanvraag <span class="ml-2">↓</span></a>
+        <a href="tel:+31182796197" class="inline-flex items-center justify-center rounded-full border border-gray-700 px-7 py-4 font-semibold text-white transition-colors hover:border-brand hover:text-brand">Bel (0182) 79 61 97</a>
+      </div>
     </div>
   </section>
 
@@ -19,7 +25,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="max-w-4xl reveal">
         <p class="text-xl md:text-2xl text-gray-300 leading-relaxed">
-          Bij <span class="text-white font-semibold">Scharloo-Install B.V.</span> staan wij klaar om uw vragen te beantwoorden en u te helpen bij professionele voertuiginstallaties. Of het nu gaat om voertuigvolgsystemen, dashcams of alarmsystemen. Ons team denkt meedenkend mee en zorgt voor een <span class="text-brand">snelle en betrouwbare service</span>. Wij streven naar kwaliteit, klanttevredenheid en flexibiliteit bij elk contactmoment.
+          Bij <span class="text-white font-semibold">Scharloo-Install B.V.</span> kunt u terecht voor professionele inbouw van voertuigsystemen. Vertel ons wat u zoekt en voor welk voertuig; we denken met u mee over de passende oplossing.
         </p>
       </div>
     </div>
@@ -40,19 +46,12 @@ import Layout from '../layouts/Layout.astro';
             </div>
             
             <div>
-              <p class="text-gray-500 uppercase tracking-widest text-sm mb-3">Email</p>
-              <a href="mailto:info@scharloo-install.nl" class="text-3xl md:text-4xl font-bold hover:text-brand transition-colors">
+              <p class="text-gray-500 uppercase tracking-widest text-sm mb-3">E-mail</p>
+              <a href="mailto:info@scharloo-install.nl" class="text-xl md:text-3xl break-all font-bold hover:text-brand transition-colors">
                 info@scharloo-install.nl
               </a>
             </div>
             
-            <div>
-              <p class="text-gray-500 uppercase tracking-widest text-sm mb-3">Website</p>
-              <p class="text-3xl md:text-4xl font-bold">
-                scharloo-install.nl
-              </p>
-            </div>
-
             <div class="pt-8">
               <p class="text-gray-500 uppercase tracking-widest text-sm mb-3">Openingstijden</p>
               <div class="space-y-2 text-lg text-gray-300">
@@ -66,9 +65,13 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Right: Contact Form -->
         <div class="reveal">
-          <form class="space-y-8" name="contact" method="POST" action="https://formspree.io/f/mykbkjjw">
+          <form id="formulier" class="space-y-7 scroll-mt-28 rounded-2xl border border-gray-800 bg-black/40 p-6 md:p-9" name="contact" method="POST" action="https://formspree.io/f/mykbkjjw">
             <input type="hidden" name="_subject" value="Nieuw bericht via Scharloo-Install.nl" />
             <input type="hidden" name="_source" value="scharloo-install.nl" />
+            <div>
+              <h2 class="text-2xl md:text-3xl font-bold text-white">Waar kunnen we u mee helpen?</h2>
+              <p class="text-gray-400 mt-2">Vul uw gegevens in; we nemen contact met u op over uw aanvraag.</p>
+            </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
                 <label for="name" class="block text-sm font-medium text-gray-500 uppercase tracking-widest mb-3">
@@ -79,6 +82,7 @@ import Layout from '../layouts/Layout.astro';
                   id="name" 
                   name="name" 
                   required
+                  autocomplete="name"
                   class="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-700 focus:border-brand focus:ring-0 text-lg text-white transition-colors"
                 />
               </div>
@@ -90,6 +94,7 @@ import Layout from '../layouts/Layout.astro';
                   type="tel" 
                   id="phone" 
                   name="phone"
+                  autocomplete="tel"
                   class="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-700 focus:border-brand focus:ring-0 text-lg text-white transition-colors"
                 />
               </div>
@@ -97,15 +102,26 @@ import Layout from '../layouts/Layout.astro';
             
             <div>
               <label for="email" class="block text-sm font-medium text-gray-500 uppercase tracking-widest mb-3">
-                Email *
+                E-mail *
               </label>
               <input 
                 type="email" 
                 id="email" 
                 name="email" 
                 required
+                autocomplete="email"
                 class="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-700 focus:border-brand focus:ring-0 text-lg text-white transition-colors"
               />
+            </div>
+
+            <div>
+              <label for="company" class="block text-sm font-medium text-gray-500 uppercase tracking-widest mb-3">Bedrijf <span class="normal-case tracking-normal">(optioneel)</span></label>
+              <input type="text" id="company" name="company" autocomplete="organization" class="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-700 focus:border-brand focus:ring-0 text-lg text-white transition-colors" />
+            </div>
+
+            <div>
+              <label for="vehicle" class="block text-sm font-medium text-gray-500 uppercase tracking-widest mb-3">Voertuig <span class="normal-case tracking-normal">(optioneel)</span></label>
+              <input type="text" id="vehicle" name="vehicle" placeholder="Bijvoorbeeld: merk, model en bouwjaar" class="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-700 focus:border-brand focus:ring-0 text-lg text-white transition-colors placeholder:text-gray-600" />
             </div>
             
             <div>
@@ -118,14 +134,17 @@ import Layout from '../layouts/Layout.astro';
                 class="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-700 focus:border-brand focus:ring-0 text-lg text-white transition-colors cursor-pointer"
               >
                 <option value="" class="bg-gray-900">Selecteer een dienst</option>
-                <option value="ritregistratie" class="bg-gray-900">Ritregistratie</option>
-                <option value="dashcam" class="bg-gray-900">Dashcam inbouw</option>
+                <option value="voertuigvolgsystemen" class="bg-gray-900">Voertuigvolgsysteem / ritregistratie</option>
+                <option value="gps-startonderbreker" class="bg-gray-900">GPS + startonderbreker</option>
+                <option value="dashcams" class="bg-gray-900">Dashcam inbouw</option>
                 <option value="alarmsystemen" class="bg-gray-900">Alarmsystemen</option>
-                <option value="canbus" class="bg-gray-900">CAN Bus installatie</option>
-                <option value="driverid" class="bg-gray-900">Driver ID / RFID</option>
-                <option value="tachograaf" class="bg-gray-900">Tachograaf</option>
-                <option value="startblokkering" class="bg-gray-900">Startblokkering</option>
-                <option value="io" class="bg-gray-900">I/O installatie</option>
+                <option value="tachograaf" class="bg-gray-900">Remote tachograaf download</option>
+                <option value="can-bus" class="bg-gray-900">CAN-bus koppeling</option>
+                <option value="driver-id" class="bg-gray-900">Driver ID / RFID</option>
+                <option value="io-integraties" class="bg-gray-900">I/O integratie</option>
+                <option value="temperatuur-monitoring" class="bg-gray-900">Temperatuurmonitoring</option>
+                <option value="target-blu-eye" class="bg-gray-900">Target Blu Eye 2</option>
+                <option value="trekhaken" class="bg-gray-900">Trekhaak</option>
                 <option value="anders" class="bg-gray-900">Anders</option>
               </select>
             </div>
@@ -139,6 +158,7 @@ import Layout from '../layouts/Layout.astro';
                 name="message" 
                 rows="4" 
                 required
+                placeholder="Beschrijf kort uw vraag of gewenste installatie."
                 class="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-700 focus:border-brand focus:ring-0 text-lg text-white transition-colors resize-none"
               ></textarea>
             </div>
@@ -150,6 +170,7 @@ import Layout from '../layouts/Layout.astro';
               Verstuur bericht
               <span class="group-hover:translate-x-2 transition-transform duration-300">→</span>
             </button>
+            <p class="text-sm text-gray-500 text-center">Uw aanvraag is vrijblijvend. Bekijk ook ons <a href="/privacy/" class="text-gray-300 underline hover:text-white">privacybeleid</a>.</p>
           </form>
         </div>
       </div>
@@ -224,17 +245,10 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <script>
-  const reveals = document.querySelectorAll('.reveal');
-  
-  const revealOnScroll = () => {
-    reveals.forEach(el => {
-      const top = el.getBoundingClientRect().top;
-      if (top < window.innerHeight - 100) {
-        el.classList.add('active');
-      }
-    });
-  };
-  
-  window.addEventListener('scroll', revealOnScroll);
-  revealOnScroll();
+  /** @type {HTMLSelectElement | null} */
+  const serviceSelect = document.querySelector('#service');
+  const requestedService = new URLSearchParams(window.location.search).get('dienst');
+  if (serviceSelect && requestedService && [...serviceSelect.options].some((option) => option.value === requestedService)) {
+    serviceSelect.value = requestedService;
+  }
 </script>

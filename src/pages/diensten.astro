@@ -16,16 +16,21 @@ const reasons = [
   description="Alle diensten van Scharloo-Install: voertuigvolgsystemen, dashcams, SCM/CCV-alarm, CAN-bus, tachograaf, Driver ID, I/O en temperatuurmonitoring. Klik door voor info en prijzen."
 >
   <!-- Hero -->
-  <section class="min-h-[60vh] bg-black text-white flex items-end pb-20">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+  <section class="min-h-[60vh] bg-black text-white flex items-end pb-20 relative overflow-hidden">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
       <p class="text-brand font-medium tracking-widest uppercase mb-4 animate-fade-in-up">Onze diensten</p>
       <h1 class="heading-xl animate-fade-in-up delay-100" style="opacity: 0;">
         Inbouw<br />
         <span class="text-gray-500">voertuigsystemen</span>
       </h1>
       <p class="text-xl text-gray-400 max-w-2xl mt-8 animate-fade-in-up delay-200" style="opacity: 0;">
-        Scharloo-Install B.V. is specialist in de installatie van voertuigsystemen. Klik een dienst open voor meer informatie, en bekijk op de dienstpagina de details en prijzen.
+        Kies de oplossing die past bij uw voertuig of wagenpark. Bekijk de mogelijkheden en prijzen, of vraag ons om vrijblijvend advies.
       </p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-300">
+        <a href="/contact/#formulier" class="inline-flex items-center justify-center gap-3 rounded-full bg-brand px-7 py-4 font-semibold text-white transition-all duration-300 hover:bg-white hover:text-black">Vraag vrijblijvend advies <span>→</span></a>
+        <a href="tel:+31182796197" class="inline-flex items-center justify-center rounded-full border border-gray-700 px-7 py-4 font-semibold text-white transition-colors hover:border-brand hover:text-brand">Bel (0182) 79 61 97</a>
+      </div>
     </div>
   </section>
 
@@ -36,7 +41,7 @@ const reasons = [
 
       <div class="border-t border-gray-800">
         {diensten.map((d) => (
-          <details class="reveal group border-b border-gray-800">
+          <details id={d.slug} class="reveal group border-b border-gray-800">
             <summary class="dienst-summary flex items-center justify-between gap-6 py-7 cursor-pointer select-none">
               <div class="flex items-baseline gap-4 md:gap-6">
                 <span class="text-brand font-black text-lg md:text-xl tabular-nums">{d.nummer}</span>
@@ -101,7 +106,7 @@ const reasons = [
         Neem contact op of stel uw vraag direct.
       </p>
       <a
-        href="/contact/"
+        href="/contact/#formulier"
         class="group inline-flex items-center gap-3 bg-white text-brand rounded-full px-10 py-5 text-xl font-bold hover:bg-black hover:text-white transition-all duration-300"
       >
         Contact opnemen

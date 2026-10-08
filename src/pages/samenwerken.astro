@@ -61,7 +61,7 @@ const partners = [
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {reasons.map((reason, i) => (
-          <div class="reveal bg-gray-950 p-8 border border-gray-800 hover:border-brand transition-colors">
+          <div class="reveal motion-card bg-gray-950 p-8 border border-gray-800 hover:border-brand transition-colors">
             <span class="text-brand text-3xl mb-4 block">✓</span>
             <h3 class="text-2xl font-bold mb-2">{reason.title}</h3>
             <p class="text-gray-400">{reason.description}</p>
@@ -79,14 +79,14 @@ const partners = [
   <section class="py-24 bg-gray-950">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="reveal">
-        <p class="text-brand font-medium tracking-widest uppercase mb-4 text-center">Trusted by</p>
+        <p class="text-brand font-medium tracking-widest uppercase mb-4 text-center">Onze partners</p>
         <h2 class="heading-lg mb-12 text-center">
           <span class="text-white font-bold">Ons team</span> werkt al<br />
           <span class="text-gray-500">succesvol samen met</span>
         </h2>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
           {partners.map(partner => (
-            <a href={partner.url} target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-between p-6 rounded-2xl bg-white border-2 border-gray-200 hover:border-brand hover:shadow-2xl hover:shadow-brand/20 hover:scale-105 transition-all duration-300 group min-h-[180px]">
+            <a href={partner.url} target="_blank" rel="noopener noreferrer" class="reveal motion-card flex flex-col items-center justify-between p-6 rounded-2xl bg-white border-2 border-gray-200 hover:border-brand hover:shadow-2xl hover:shadow-brand/20 hover:scale-105 transition-all duration-300 group min-h-[180px]">
               <span class="text-black font-semibold text-sm text-center">{partner.name}</span>
               <img
                 src={partner.logo}
@@ -123,7 +123,7 @@ const partners = [
         </a>
       </div>
       <a 
-        href="/contact/" 
+        href="/contact/#formulier" 
         class="inline-flex items-center gap-2 text-gray-500 hover:text-brand transition-colors"
       >
         Of vul ons contactformulier in →

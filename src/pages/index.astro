@@ -1,16 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
-const services = [
-  { title: 'Voertuigvolgsystemen', id: 'voertuigvolgsystemen' },
-  { title: 'Remote tachograaf download', id: 'tachosystemen' },
-  { title: 'Dashcams', id: 'dashcams' },
-  { title: 'Alarmsystemen', id: 'alarmsystemen' },
-  { title: 'CAN-bus koppelingen', id: 'canbus' },
-  { title: 'Driver ID / RFID', id: 'driverid' },
-  { title: 'I/O integraties', id: 'io' },
-  { title: 'Temperatuur monitoring', id: 'temperatuur' },
-];
+import { diensten, dienstUrl } from '../data/diensten';
 
 const reasons = [
   'Gespecialiseerd in voertuigsystemen',
@@ -21,45 +11,50 @@ const reasons = [
 ];
 ---
 
-<Layout title="Scharloo-Install B.V. | Inbouw voertuigsystemen" description="Specialist in het installeren van voertuigvolgsystemen, tacho, dashcams en CAN-bus. Actief in Nederland en België.">
+<Layout title="Voertuigsystemen professioneel ingebouwd" description="Scharloo-Install bouwt voertuigvolgsystemen, alarmsystemen, dashcams en voertuigtechniek netjes in. Voor particulieren, bedrijven en wagenparken in Nederland en België.">
   <!-- Hero Section -->
   <section class="min-h-screen bg-black text-white flex flex-col justify-center relative overflow-hidden">
-    
-    <div class="relative max-w-7xl mx-auto px-6 lg:px-8 py-20">
-      <div class="space-y-8">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-20">
+      <div class="space-y-8 relative z-10">
         <!-- Tagline -->
-        <p class="text-brand font-medium tracking-widest uppercase animate-fade-in-up">
-          Professionele inbouw
-        </p>
+        <p class="text-brand font-medium tracking-widest uppercase animate-fade-in-up">Voertuigtechniek, zorgvuldig ingebouwd</p>
         
         <!-- Main heading -->
         <h1 class="heading-xl animate-fade-in-up delay-100" style="opacity: 0;">
-          Specialist in<br />
-          <span class="text-brand">voertuig</span> systemen
+          Voertuigsystemen<br />
+          <span class="text-brand">professioneel</span> ingebouwd
         </h1>
         
         <!-- Subtext -->
         <p class="text-xl md:text-2xl text-gray-400 max-w-2xl animate-fade-in-up delay-200" style="opacity: 0;">
-          Inbouw van voertuigvolgsystemen, tachosystemen, dashcams en CAN-bus koppelingen. Actief in Nederland en België. Kwaliteit, nette afwerking en snel schakelen.
+          Van GPS-tracking en voertuigbeveiliging tot dashcams en maatwerkintegraties. Netjes ingebouwd voor één voertuig of uw hele wagenpark.
         </p>
         
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row gap-4 pt-8 animate-fade-in-up delay-300" style="opacity: 0;">
           <a 
-            href="/contact/" 
+            href="/contact/#formulier" 
             class="group bg-brand text-white rounded-full px-8 py-4 text-lg font-semibold hover:bg-white hover:text-black transition-all duration-300 inline-flex items-center justify-center gap-3"
           >
             Offerte aanvragen
             <span class="group-hover:translate-x-2 transition-transform duration-300">→</span>
           </a>
           <a 
-            href="/contact/" 
+            href="/diensten/" 
             class="border-2 border-white text-white rounded-full px-8 py-4 text-lg font-semibold hover:bg-white hover:text-black transition-all duration-300 text-center"
           >
-            Contact opnemen
+            Bekijk onze diensten
           </a>
         </div>
       </div>
+
+      <div class="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm md:text-base text-gray-300 animate-fade-in-up delay-300">
+        <span><span class="text-brand mr-2">✓</span>Voor particulier en zakelijk</span>
+        <span><span class="text-brand mr-2">✓</span>Eén voertuig of wagenpark</span>
+        <span><span class="text-brand mr-2">✓</span>Actief in Nederland en België</span>
+      </div>
+
     </div>
 
     <!-- Scroll indicator -->
@@ -80,7 +75,7 @@ const reasons = [
           <span class="text-gray-500">professionele inbouw</span>
         </h2>
         <p class="text-xl text-gray-400 leading-relaxed">
-          Scharloo-Install B.V. is dé partner voor professionele inbouw van telematica- en voertuigsystemen. Wij werken voor zakelijke klanten die zoeken naar een betrouwbare installateur met oog voor kwaliteit en een nette oplevering.
+          Scharloo-Install B.V. verzorgt professionele inbouw van telematica en voertuigelektronica voor particulieren en bedrijven. Van één auto tot een volledig wagenpark: we denken mee over de juiste oplossing en leveren netjes op.
         </p>
       </div>
     </div>
@@ -99,11 +94,11 @@ const reasons = [
           </h2>
         </div>
         <!-- YouTube Short (Portrait) -->
-        <div class="reveal flex justify-center lg:justify-end">
+        <div class="reveal flex justify-center lg:justify-end image-zoom">
           <div class="video-card">
             <iframe 
               src="https://www.youtube.com/embed/Vykfc3ZDeMw" 
-              title="Scharloo-Install video"
+              title="Bekijk een installatie van Scharloo-Install"
               frameborder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
               allowfullscreen
@@ -114,10 +109,11 @@ const reasons = [
       
       <!-- Services list -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border-t border-gray-800 reveal">
-        {services.map((service, i) => (
+        {diensten.map((service, i) => (
           <a 
-            href={`/diensten/#${service.id}`}
-            class={`group py-8 md:py-12 border-b border-gray-800 flex items-center justify-between hover:bg-gray-900 transition-colors px-4 md:px-8 ${i % 2 === 0 ? 'md:border-r' : ''}`}
+            href={dienstUrl(service)}
+            class={`group motion-card py-8 md:py-12 border-b border-gray-800 flex items-center justify-between hover:bg-gray-900 transition-colors px-4 md:px-8 ${i % 2 === 0 ? 'md:border-r' : ''}`}
+            style={`--item-index:${i}`}
           >
             <span class="text-2xl md:text-3xl font-bold group-hover:text-brand transition-colors">
               {service.title}
@@ -154,6 +150,7 @@ const reasons = [
           <img 
             src="/images/team-homepage.jpg" 
             alt="Het Scharloo-Install team" 
+            loading="lazy"
           />
         </div>
       </div>
@@ -166,15 +163,15 @@ const reasons = [
       <h2 class="heading-lg mb-8">
         Op zoek naar een betrouwbare inbouwpartner?
       </h2>
-      <p class="text-xl text-white/80 mb-12 max-w-xl mx-auto">
-        Neem contact met ons op voor de mogelijkheden of vraag direct een offerte aan.
+      <p class="text-xl text-white/80 mb-12 max-w-2xl mx-auto">
+        Vertel ons welk systeem u zoekt en in welk voertuig het moet worden ingebouwd. We denken mee over een passende oplossing en maken graag een vrijblijvende offerte.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a 
-          href="/contact/" 
+          href="/contact/#formulier" 
           class="group inline-flex items-center gap-3 bg-white text-brand rounded-full px-10 py-5 text-xl font-bold hover:bg-black hover:text-white transition-all duration-300"
         >
-          Contact opnemen
+          Vraag vrijblijvend een offerte aan
           <span class="group-hover:translate-x-2 transition-transform duration-300">→</span>
         </a>
       </div>

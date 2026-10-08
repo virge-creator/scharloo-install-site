@@ -146,8 +146,9 @@ const faqSchema = {
   description="SCM/CCV-alarmsystemen en voertuigvolgsystemen (klasse 2 t/m 5 en terugvindsysteem) professioneel ingebouwd, inclusief montage en certificaat. Bekijk de prijzen."
 >
   <!-- Hero -->
-  <section class="min-h-[60vh] bg-black text-white flex items-end pb-20">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+  <section class="min-h-[60vh] bg-black text-white flex items-end pb-20 relative overflow-hidden">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
       <p class="text-brand font-medium tracking-widest uppercase mb-4 animate-fade-in-up">Voertuigbeveiliging</p>
       <h1 class="heading-xl animate-fade-in-up delay-100" style="opacity: 0;">
         Alarmsysteem inbouwen<br />
@@ -156,6 +157,10 @@ const faqSchema = {
       <p class="text-xl text-gray-400 max-w-2xl mt-8 animate-fade-in-up delay-200" style="opacity: 0;">
         SCM/CCV-gecertificeerde alarmsystemen en voertuigvolgsystemen (klasse 2 t/m 5), professioneel ingebouwd op locatie of in onze werkplaats. Bekijk hieronder de klassen en prijzen.
       </p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-300">
+        <a href="/contact/?dienst=alarmsystemen#formulier" class="inline-flex items-center justify-center gap-3 rounded-full bg-brand px-7 py-4 font-semibold text-white transition-all duration-300 hover:bg-white hover:text-black">Vraag advies over uw voertuig <span>→</span></a>
+        <a href="tel:+31182796197" class="inline-flex items-center justify-center rounded-full border border-gray-700 px-7 py-4 font-semibold text-white transition-colors hover:border-brand hover:text-brand">Bel (0182) 79 61 97</a>
+      </div>
     </div>
   </section>
 
@@ -167,6 +172,31 @@ const faqSchema = {
         <p class="text-xl text-gray-400 leading-relaxed">
           Voertuigbeveiliging is door <span class="text-white font-semibold">SCM/CCV</span> ingedeeld in klassen, van een alarm met inbraak- en omtrekbeveiliging tot een volledig gekoppeld voertuigvolgsysteem met 24/7 meldkamer. Welke klasse voor u verplicht of verstandig is, hangt af van uw voertuig en de eisen van uw verzekeraar. Als <span class="text-white font-semibold">SCM/CCV-erkend inbouwbedrijf</span> monteren wij op locatie of in onze werkplaats in Reeuwijk, inzetbaar door heel Nederland. Weet u het niet zeker? <span class="text-white font-semibold">Wij adviseren u vrijblijvend.</span>
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificering en keurmerken -->
+  <section class="py-20 bg-black">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="reveal mb-10 max-w-3xl">
+        <p class="text-brand font-medium tracking-widest uppercase mb-4">Kennis en kwaliteit</p>
+        <h2 class="heading-lg">Erkende voertuigbeveiliging</h2>
+        <p class="text-lg text-gray-400 mt-5">Wij helpen u met een beveiligingsoplossing die past bij uw voertuig en de eisen van uw verzekeraar.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-4xl">
+        <figure class="reveal motion-card rounded-2xl border border-gray-800 bg-gray-950 p-5">
+          <div class="flex h-36 items-center justify-center rounded-xl bg-white p-5">
+            <img src="/images/SCM-logo-Kiwa-kleuren-ONDERTITEL.jpg" alt="SCM Secure Connected Mobility en Kiwa" class="max-h-full w-full object-contain" loading="lazy" />
+          </div>
+          <figcaption class="mt-4 text-sm text-gray-300">SCM en Kiwa</figcaption>
+        </figure>
+        <figure class="reveal motion-card rounded-2xl border border-gray-800 bg-gray-950 p-5">
+          <div class="flex h-36 items-center justify-center rounded-xl bg-white p-5">
+            <img src="/images/driehoek-CCV-voertuigbeveiliging-oranje.png" alt="CCV-keurmerk voor voertuigbeveiliging" class="max-h-full w-auto object-contain" loading="lazy" />
+          </div>
+          <figcaption class="mt-4 text-sm text-gray-300">CCV voertuigbeveiliging</figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -187,7 +217,7 @@ const faqSchema = {
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {alarmPakketten.map((pakket) => (
-          <div class={`reveal relative bg-gray-950 p-8 border ${pakket.populair ? 'border-brand' : 'border-gray-800'} hover:border-brand transition-colors flex flex-col`}>
+          <div class={`reveal motion-card relative bg-gray-950 p-8 border ${pakket.populair ? 'border-brand' : 'border-gray-800'} hover:border-brand transition-colors flex flex-col`}>
             {pakket.populair && (
               <span class="absolute -top-3 left-8 bg-brand text-white text-xs font-bold uppercase tracking-wide px-3 py-1">Meest gekozen</span>
             )}
@@ -206,7 +236,7 @@ const faqSchema = {
                 </li>
               ))}
             </ul>
-            <a href="#contact" class="mt-auto inline-flex items-center justify-center gap-2 border border-gray-700 text-white rounded-full px-6 py-3 font-semibold hover:border-brand hover:text-brand transition-colors">
+            <a href="/contact/?dienst=alarmsystemen#formulier" class="mt-auto inline-flex items-center justify-center gap-2 border border-gray-700 text-white rounded-full px-6 py-3 font-semibold hover:border-brand hover:text-brand transition-colors">
               Offerte aanvragen
             </a>
           </div>
@@ -231,7 +261,7 @@ const faqSchema = {
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {volgPakketten.map((pakket) => (
-          <div class={`reveal relative bg-black p-8 border ${pakket.populair ? 'border-brand' : 'border-gray-800'} hover:border-brand transition-colors flex flex-col`}>
+          <div class={`reveal motion-card relative bg-black p-8 border ${pakket.populair ? 'border-brand' : 'border-gray-800'} hover:border-brand transition-colors flex flex-col`}>
             {pakket.populair && (
               <span class="absolute -top-3 left-8 bg-brand text-white text-xs font-bold uppercase tracking-wide px-3 py-1">Meest gekozen</span>
             )}
@@ -250,7 +280,7 @@ const faqSchema = {
                 </li>
               ))}
             </ul>
-            <a href="#contact" class="mt-auto inline-flex items-center justify-center gap-2 border border-gray-700 text-white rounded-full px-6 py-3 font-semibold hover:border-brand hover:text-brand transition-colors">
+            <a href="/contact/?dienst=alarmsystemen#formulier" class="mt-auto inline-flex items-center justify-center gap-2 border border-gray-700 text-white rounded-full px-6 py-3 font-semibold hover:border-brand hover:text-brand transition-colors">
               Offerte aanvragen
             </a>
           </div>
@@ -336,7 +366,7 @@ const faqSchema = {
         Stuur ons het merk, type, bouwjaar en kenteken, dan maken wij een passend voorstel. We zijn inzetbaar door heel Nederland.
       </p>
       <a
-        href="/contact/"
+        href="/contact/?dienst=alarmsystemen#formulier"
         class="group inline-flex items-center gap-3 bg-white text-brand rounded-full px-10 py-5 text-xl font-bold hover:bg-black hover:text-white transition-all duration-300"
       >
         Vraag een offerte aan

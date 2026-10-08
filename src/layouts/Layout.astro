@@ -39,5 +39,119 @@ const { title, description = "Scharloo-Install - Uw inbouwpartner. Specialist in
       <slot />
     </main>
     <Footer />
+
+    <div class="mobile-contact-bar" aria-label="Direct contact">
+      <a href="tel:+31182796197" class="mobile-contact-call">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 11.2 18.8a19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.09 3.18 2 2 0 0 1 4.08 1h3a2 2 0 0 1 2 1.72c.12.96.35 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.05 8.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.84.57 2.8.69A2 2 0 0 1 22 16.92Z"/></svg>
+        Bel ons
+      </a>
+      <a href="/contact/#formulier" class="mobile-contact-quote">Vrijblijvende offerte</a>
+    </div>
+
+    <style is:global>
+      @media (max-width: 767px) {
+        body { padding-bottom: calc(74px + env(safe-area-inset-bottom)); }
+        .mobile-contact-bar {
+          position: fixed; z-index: 60; inset: auto 0 0; display: grid; grid-template-columns: .85fr 1.4fr;
+          gap: 10px; padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+          background: rgb(5 7 10 / 94%); border-top: 1px solid rgb(255 255 255 / 12%); backdrop-filter: blur(12px);
+        }
+        .mobile-contact-bar a { min-height: 46px; display:flex; align-items:center; justify-content:center; gap:8px; border-radius:9999px; font-weight:700; font-size:14px; }
+        .mobile-contact-call { color:white; border:1px solid rgb(255 255 255 / 22%); }
+        .mobile-contact-call svg { width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+        .mobile-contact-quote { color:white; background:var(--color-brand, #0099ff); }
+      }
+      @media (min-width: 768px) { .mobile-contact-bar { display:none; } }
+    </style>
+
+<style is:global>
+  html { scroll-behavior: smooth; }
+
+  /* Rustige beweging op alle pagina's. De inhoud blijft zichtbaar als JS uit staat. */
+  .motion-ready .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 650ms ease, transform 650ms cubic-bezier(.2,.75,.25,1);
+  }
+  .motion-ready .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .photo-card, .image-zoom { overflow: hidden; }
+  .photo-card img, .image-zoom img {
+    transition: transform 800ms cubic-bezier(.2,.75,.25,1), filter 500ms ease;
+    will-change: transform;
+  }
+  .photo-card:hover img, .image-zoom:hover img { transform: scale(1.045); }
+
+  .motion-card {
+    transition: transform 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
+  }
+  .motion-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 48px rgb(0 0 0 / 24%);
+  }
+
+  a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 2px solid var(--color-brand, #0099ff);
+    outline-offset: 4px;
+  }
+
+  details[open] > div { animation: details-enter 260ms ease-out both; }
+  @keyframes details-enter {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-photo { animation: hero-float 8s ease-in-out infinite; }
+  .hero-glow {
+    position: absolute; z-index: 0; top: -18vw; left: -14vw; width: min(58vw, 720px); aspect-ratio: 1;
+    border-radius: 9999px; pointer-events: none; opacity: .22; filter: blur(32px);
+    background: radial-gradient(circle, rgb(0 153 255 / 48%) 0%, rgb(0 153 255 / 10%) 38%, transparent 70%);
+    animation: glow-drift 16s ease-in-out infinite alternate;
+  }
+  @keyframes glow-drift {
+    from { transform: translate3d(0,0,0) scale(.94); }
+    to { transform: translate3d(10vw,7vh,0) scale(1.08); }
+  }
+
+  .motion-button { transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease, color 220ms ease; }
+  .motion-button:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgb(0 0 0 / 22%); }
+  @keyframes hero-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-9px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      scroll-behavior: auto !important;
+      animation-duration: .01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: .01ms !important;
+    }
+    .motion-ready .reveal { opacity: 1; transform: none; }
+    .hero-photo, .hero-glow { animation: none !important; }
+  }
+</style>
+
+<script is:inline>
+  document.body.classList.add('motion-ready');
+  const revealItems = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -35px 0px' });
+    revealItems.forEach((item) => revealObserver.observe(item));
+  } else {
+    revealItems.forEach((item) => item.classList.add('active'));
+  }
+</script>
+
   </body>
 </html>
