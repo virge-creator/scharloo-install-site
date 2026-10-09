@@ -1,0 +1,368 @@
+@import "tailwindcss";
+
+@theme {
+  /* Scharloo-Install brand colors */
+  --color-brand: #1681DE;
+  --color-brand-dark: #007ACC;
+  --color-brand-light: #33AAFF;
+  
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Base styles - Dark theme */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-black text-white antialiased;
+  font-family: var(--font-sans);
+}
+
+/* Subtle dot pattern - matching business card style */
+/* Use sparingly as accent, not on every section! */
+
+/* Full background pattern (use rarely) */
+.bg-pattern {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Corner accent patterns - like on business card */
+/* Dots absolutely positioned to right edge of viewport */
+.dots-absolute-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 400px;
+  height: 400px;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.12) 2px, transparent 2px);
+  background-size: 18px 18px;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse at bottom right, black 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at bottom right, black 0%, transparent 70%);
+  z-index: 1;
+}
+
+.dots-corner-br {
+  position: relative;
+}
+.dots-corner-br::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 350px;
+  height: 350px;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.12) 2px, transparent 2px);
+  background-size: 18px 18px;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse at bottom right, black 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at bottom right, black 0%, transparent 70%);
+}
+
+.dots-corner-tr {
+  position: relative;
+}
+.dots-corner-tr::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 250px;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse at top right, black 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at top right, black 0%, transparent 70%);
+}
+
+.dots-corner-bl {
+  position: relative;
+}
+.dots-corner-bl::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 180px;
+  height: 180px;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse at bottom left, black 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at bottom left, black 0%, transparent 70%);
+}
+
+/* Custom utilities */
+.text-brand {
+  color: var(--color-brand);
+}
+
+.bg-brand {
+  background-color: var(--color-brand);
+}
+
+.border-brand {
+  border-color: var(--color-brand);
+}
+
+.hover\:bg-brand-dark:hover {
+  background-color: var(--color-brand-dark);
+}
+
+/* MrBoost style animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Stagger delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Big bold headings - MrBoost style */
+.heading-xl {
+  @apply text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none;
+}
+
+.heading-lg {
+  @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight;
+}
+
+/* Hover lift effect */
+.hover-lift {
+  @apply transition-all duration-300;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+}
+
+/* Line animation */
+.line-reveal::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background: var(--color-brand);
+  transition: width 0.4s ease;
+}
+
+.line-reveal:hover::after {
+  width: 100%;
+}
+
+/* ===== Photo Card Styling ===== */
+/* Use .photo-card wrapper for consistent image presentation */
+
+.photo-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Subtle brand glow border */
+.photo-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(0, 153, 255, 0.3);
+  border-radius: 4px;
+  z-index: 2;
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+
+/* Gradient overlay - dark fade at bottom */
+.photo-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.4) 80%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover effects */
+.photo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(0, 153, 255, 0.15);
+}
+
+.photo-card:hover::before {
+  border-color: rgba(0, 153, 255, 0.6);
+  box-shadow: inset 0 0 20px rgba(0, 153, 255, 0.1);
+}
+
+.photo-card:hover::after {
+  opacity: 0.7;
+}
+
+.photo-card:hover img {
+  transform: scale(1.03);
+}
+
+/* Brand accent line at bottom */
+.photo-card-accent {
+  position: relative;
+}
+
+.photo-card-accent::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-brand), var(--color-brand-light));
+  transition: width 0.4s ease;
+  z-index: 3;
+}
+
+.photo-card-accent:hover::after {
+  width: 100%;
+}
+
+/* Corner accent variant - subtle brand corner */
+.photo-card-corner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(
+    135deg,
+    transparent 50%,
+    rgba(0, 153, 255, 0.2) 50%
+  );
+  z-index: 2;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.photo-card-corner:hover::before {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(
+    135deg,
+    transparent 50%,
+    rgba(0, 153, 255, 0.4) 50%
+  );
+}
+
+/* ===== Video Card Styling (Portrait/Shorts) ===== */
+.video-card {
+  position: relative;
+  width: 260px;
+  aspect-ratio: 9 / 16;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(0, 153, 255, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.video-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 153, 255, 0.4) 0%,
+    rgba(0, 153, 255, 0.1) 50%,
+    rgba(0, 153, 255, 0.3) 100%
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.video-card iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+}
+
+.video-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 
+    0 20px 48px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(0, 153, 255, 0.2),
+    0 0 0 1px rgba(0, 153, 255, 0.4);
+}
+
+.video-card:hover::before {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 153, 255, 0.6) 0%,
+    rgba(0, 153, 255, 0.2) 50%,
+    rgba(0, 153, 255, 0.5) 100%
+  );
+}
