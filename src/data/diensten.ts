@@ -347,7 +347,7 @@ export const diensten: Dienst[] = [
     metaDesc: 'Professionele montage van trekhaken inclusief de juiste elektra-aansluiting, voor vrijwel elk merk en model. Vraag een vrijblijvende offerte aan.',
     afbeeldingen: [
       { src: '/images/maxresdefault.jpg', alt: 'Trekhaak gemonteerd onder de achterbumper van een auto', bijschrift: 'Netjes gemonteerd onder de achterbumper' },
-      { src: '/images/590000.jpg', alt: 'Trekhaak met bevestigingsmaterialen en onderdelen', bijschrift: 'Trekhaak en bijbehorende montagematerialen', contain: true },
+      { src: '/images/590000-transparant.png', alt: 'Trekhaak met bevestigingsmaterialen en onderdelen', bijschrift: '', contain: true },
     ],
     genereerPagina: true,
   },
