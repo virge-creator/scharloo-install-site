@@ -36,7 +36,7 @@ export interface Dienst {
   genereerPagina: boolean;   // false = geen eigen detailpagina (bv. alarmsystemen)
   afbeelding?: string;       // pad naar foto, bv '/images/diensten/target-blu-eye.jpg'
   afbeeldingAlt?: string;    // alt-tekst bij de foto (goed voor Google)
-  afbeeldingen?: { src: string; alt: string; bijschrift: string }[];
+  afbeeldingen?: { src: string; alt: string; bijschrift: string; contain?: boolean }[];
   varianten?: { naam: string; omschrijving: string }[]; // keuze-opties, bv weergave
   variantenTitel?: string;   // kopje boven de varianten, bv 'Kies uw weergave'
 }
@@ -347,7 +347,7 @@ export const diensten: Dienst[] = [
     metaDesc: 'Professionele montage van trekhaken inclusief de juiste elektra-aansluiting, voor vrijwel elk merk en model. Vraag een vrijblijvende offerte aan.',
     afbeeldingen: [
       { src: '/images/maxresdefault.jpg', alt: 'Trekhaak gemonteerd onder de achterbumper van een auto', bijschrift: 'Netjes gemonteerd onder de achterbumper' },
-      { src: '/images/590000.jpg', alt: 'Trekhaak met bevestigingsmaterialen en onderdelen', bijschrift: 'Trekhaak en bijbehorende montagematerialen' },
+      { src: '/images/590000.jpg', alt: 'Trekhaak met bevestigingsmaterialen en onderdelen', bijschrift: 'Trekhaak en bijbehorende montagematerialen', contain: true },
     ],
     genereerPagina: true,
   },
