@@ -58,69 +58,67 @@ const prijsBg = heeftVarianten ? 'bg-gray-950' : 'bg-black';
     </div>
   </section>
 
-  <!-- Immersieve foto (vloeit over in de achtergrond) -->
+  <!-- Hoofdfoto (ingekaderd, niet schermvullend) -->
   {dienst.afbeelding && !bluEyePagina && (
-    <section class="relative bg-black">
-      <div class="reveal relative w-full overflow-hidden">
-        <img
-          src={dienst.afbeelding}
-          alt={dienst.afbeeldingAlt ?? dienst.title}
-          class="w-full h-[48vh] md:h-[64vh] object-cover"
-          loading="lazy"
-          onerror="this.closest('section').style.display='none'"
-        />
-        <div class="pointer-events-none absolute inset-0" style="background:linear-gradient(to bottom,#000 0%,transparent 16%,transparent 84%,#000 100%)"></div>
+    <section class="bg-black">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8 -mt-6 lg:-mt-10">
+        <div class="reveal relative overflow-hidden rounded-2xl ring-1 ring-white/10">
+          <img
+            src={dienst.afbeelding}
+            alt={dienst.afbeeldingAlt ?? dienst.title}
+            class="w-full h-[34vh] min-h-[220px] max-h-[420px] object-cover"
+            loading="lazy"
+            onerror="this.closest('section').style.display='none'"
+          />
+        </div>
       </div>
     </section>
   )}
 
   {bluEyePagina && (
-    <section class="relative bg-black pb-16">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="reveal mb-6 max-w-3xl">
+    <section class="bg-black pt-10 pb-16">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <div class="reveal mb-8 max-w-2xl">
           <p class="text-brand font-medium tracking-widest uppercase mb-4">Target Blu Eye 2</p>
           <h2 class="heading-lg">Het systeem<br /><span class="text-gray-500">in beeld</span></h2>
         </div>
-      </div>
-      <div class="relative reveal">
-        <div class="pointer-events-none absolute inset-0" style="background:radial-gradient(55% 60% at 50% 45%,rgba(22,129,222,.20),transparent 70%)"></div>
-        <img src="/images/blu-eye-2-set-transparant.png" alt="Target Blu Eye 2 module en bediening" class="relative mx-auto max-h-[46vh] w-auto object-contain px-6" loading="lazy" />
-      </div>
-      <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-1.5">
-        <div class="reveal relative overflow-hidden">
-          <img src="/images/spiegel-162.jpg" alt="Blu Eye detectie-indicator bij de binnenspiegel" class="w-full h-[42vh] md:h-[52vh] object-cover" loading="lazy" />
-          <div class="pointer-events-none absolute inset-0" style="background:linear-gradient(to bottom,#000 0%,transparent 20%,transparent 80%,#000 100%)"></div>
+        <div class="relative reveal mb-5">
+          <div class="pointer-events-none absolute inset-0" style="background:radial-gradient(50% 60% at 50% 50%,rgba(22,129,222,.16),transparent 70%)"></div>
+          <img src="/images/blu-eye-2-set-transparant.png" alt="Target Blu Eye 2 module en bediening" class="relative mx-auto max-h-64 md:max-h-72 w-auto object-contain" loading="lazy" />
         </div>
-        <div class="reveal relative overflow-hidden">
-          <img src="/images/blu-eye-2-z-ford-7-150.webp" alt="Target Blu Eye 2 display in het dashboard" class="w-full h-[42vh] md:h-[52vh] object-cover" loading="lazy" />
-          <div class="pointer-events-none absolute inset-0" style="background:linear-gradient(to bottom,#000 0%,transparent 20%,transparent 80%,#000 100%)"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="reveal overflow-hidden rounded-2xl ring-1 ring-white/10 aspect-[4/3]">
+            <img src="/images/spiegel-162.jpg" alt="Blu Eye detectie-indicator bij de binnenspiegel" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="reveal overflow-hidden rounded-2xl ring-1 ring-white/10 aspect-[4/3]">
+            <img src="/images/blu-eye-2-z-ford-7-150.webp" alt="Target Blu Eye 2 display in het dashboard" class="w-full h-full object-cover" loading="lazy" />
+          </div>
         </div>
       </div>
     </section>
   )}
 
   {dienst.afbeeldingen && dienst.afbeeldingen.length > 0 && (
-    <section class="relative bg-black pb-16">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="reveal mb-8 max-w-3xl">
+    <section class="bg-black pt-10 pb-16">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <div class="reveal mb-8 max-w-2xl">
           <p class="text-brand font-medium tracking-widest uppercase mb-4">In de praktijk</p>
           <h2 class="heading-lg">Bekijk het<br /><span class="text-gray-500">resultaat</span></h2>
         </div>
-      </div>
-      <div class="space-y-1.5">
-        {dienst.afbeeldingen.map((foto) => (
-          foto.contain ? (
-            <div class="reveal relative py-6">
-              <div class="pointer-events-none absolute inset-0" style="background:radial-gradient(55% 65% at 50% 50%,rgba(22,129,222,.16),transparent 70%)"></div>
-              <img src={foto.src} alt={foto.alt} class="relative mx-auto max-h-[46vh] w-auto object-contain px-6" loading="lazy" />
-            </div>
-          ) : (
-            <div class="reveal relative overflow-hidden">
-              <img src={foto.src} alt={foto.alt} class="w-full h-[46vh] md:h-[58vh] object-cover" loading="lazy" />
-              <div class="pointer-events-none absolute inset-0" style="background:linear-gradient(to bottom,#000 0%,transparent 16%,transparent 84%,#000 100%)"></div>
-            </div>
-          )
-        ))}
+        <div class={`grid gap-4 ${dienst.afbeeldingen.length >= 3 ? 'md:grid-cols-3' : 'md:grid-cols-2'}`}>
+          {dienst.afbeeldingen.map((foto) => (
+            foto.contain ? (
+              <div class="reveal relative overflow-hidden rounded-2xl ring-1 ring-white/10 aspect-[4/3] bg-gray-950">
+                <div class="pointer-events-none absolute inset-0" style="background:radial-gradient(55% 65% at 50% 50%,rgba(22,129,222,.16),transparent 70%)"></div>
+                <img src={foto.src} alt={foto.alt} class="relative w-full h-full object-contain p-6" loading="lazy" />
+              </div>
+            ) : (
+              <div class="reveal overflow-hidden rounded-2xl ring-1 ring-white/10 aspect-[4/3]">
+                <img src={foto.src} alt={foto.alt} class="w-full h-full object-cover" loading="lazy" />
+              </div>
+            )
+          ))}
+        </div>
       </div>
     </section>
   )}
