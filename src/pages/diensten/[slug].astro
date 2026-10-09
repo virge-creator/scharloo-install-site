@@ -86,14 +86,6 @@ const prijsBg = heeftVarianten ? 'bg-gray-950' : 'bg-black';
           <div class="pointer-events-none absolute inset-0" style="background:radial-gradient(50% 60% at 50% 50%,rgba(22,129,222,.16),transparent 70%)"></div>
           <img src="/images/blu-eye-2-set-transparant.png" alt="Target Blu Eye 2 module en bediening" class="relative mx-auto max-h-64 md:max-h-72 w-auto object-contain" loading="lazy" />
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="reveal overflow-hidden rounded-2xl ring-1 ring-white/10 aspect-[4/3]">
-            <img src="/images/spiegel-162.jpg" alt="Blu Eye detectie-indicator bij de binnenspiegel" class="w-full h-full object-cover" loading="lazy" />
-          </div>
-          <div class="reveal overflow-hidden rounded-2xl ring-1 ring-white/10 aspect-[4/3]">
-            <img src="/images/blu-eye-2-z-ford-7-150.webp" alt="Target Blu Eye 2 display in het dashboard" class="w-full h-full object-cover" loading="lazy" />
-          </div>
-        </div>
       </div>
     </section>
   )}
@@ -159,10 +151,17 @@ const prijsBg = heeftVarianten ? 'bg-gray-950' : 'bg-black';
         </div>
         <div class="grid gap-6 md:grid-cols-2 max-w-4xl">
           {dienst.varianten.map((v) => (
-            <div class="reveal motion-card relative bg-gray-950 border border-gray-800 hover:border-brand transition-colors p-8">
-              <div class="absolute inset-x-0 top-0 h-1 bg-brand"></div>
-              <h3 class="text-2xl font-bold mb-3">{v.naam}</h3>
-              <p class="text-gray-400 leading-relaxed">{v.omschrijving}</p>
+            <div class="reveal motion-card relative overflow-hidden bg-gray-950 border border-gray-800 hover:border-brand transition-colors">
+              <div class="absolute inset-x-0 top-0 h-1 bg-brand z-10"></div>
+              {v.afbeelding && (
+                <div class="aspect-[16/10] overflow-hidden border-b border-gray-800">
+                  <img src={v.afbeelding} alt={v.afbeeldingAlt ?? v.naam} class="w-full h-full object-cover" loading="lazy" />
+                </div>
+              )}
+              <div class="p-8">
+                <h3 class="text-2xl font-bold mb-3">{v.naam}</h3>
+                <p class="text-gray-400 leading-relaxed">{v.omschrijving}</p>
+              </div>
             </div>
           ))}
         </div>

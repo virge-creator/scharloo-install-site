@@ -37,7 +37,7 @@ export interface Dienst {
   afbeelding?: string;       // pad naar foto, bv '/images/diensten/target-blu-eye.jpg'
   afbeeldingAlt?: string;    // alt-tekst bij de foto (goed voor Google)
   afbeeldingen?: { src: string; alt: string; bijschrift: string; contain?: boolean }[];
-  varianten?: { naam: string; omschrijving: string }[]; // keuze-opties, bv weergave
+  varianten?: { naam: string; omschrijving: string; afbeelding?: string; afbeeldingAlt?: string }[]; // keuze-opties, bv weergave
   variantenTitel?: string;   // kopje boven de varianten, bv 'Kies uw weergave'
 }
 
@@ -301,10 +301,14 @@ export const diensten: Dienst[] = [
     varianten: [
       {
         naam: 'LED-display',
+        afbeelding: '/images/blu-eye-2-z-ford-7-150.webp',
+        afbeeldingAlt: 'LED-display van de Target Blu Eye 2 in het dashboard',
         omschrijving: 'Een apart, strak display dat u op een door u gekozen plek monteren. Overzichtelijke weergave van het type melding en de signaalsterkte, zonder dat u ergens anders op hoeft te letten.',
       },
       {
         naam: "LED's in de binnenspiegel",
+        afbeelding: '/images/spiegel-162.jpg',
+        afbeeldingAlt: "LED-indicatie geïntegreerd in de binnenspiegel",
         omschrijving: 'De meest discrete oplossing: subtiele led-indicatie, geïntegreerd in de binnenspiegel. Vrijwel onzichtbaar in het interieur en altijd in uw blikveld, zonder extra kastje op het dashboard.',
       },
     ],
