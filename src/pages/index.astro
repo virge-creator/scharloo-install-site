@@ -13,10 +13,10 @@ const reasons = [
 // Media-muur: tegels met een korte preview-video (plaats de MP4's in /public/videos/).
 // Zolang de MP4 er nog niet is, toont de poster (een bestaande foto) — nooit een leeg vak.
 const reels = [
-  { video: '/videos/reel-1.mp4', poster: '/images/maxresdefault.jpg', titel: 'Installatie in beeld', bron: 'tiktok' },
-  { video: '/videos/reel-2.mp4', poster: '/images/blu-eye-2-z-ford-7-150.webp', titel: 'Target Blu Eye 2', bron: 'instagram' },
-  { video: '/videos/reel-3.mp4', poster: '/images/spiegel-162.jpg', titel: 'Discreet weggewerkt', bron: 'tiktok' },
-  { video: '/videos/reel-4.mp4', poster: '/images/BMW-dashcam-950-600.png.webp', titel: 'Dashcam in spiegelkap', bron: 'instagram' },
+  { video: '/videos/reel-1.mp4', poster: '/videos/reel-1.jpg', titel: 'In onze werkplaats', bron: 'tiktok' },
+  { video: '/videos/reel-2.mp4', poster: '/videos/reel-2.jpg', titel: 'Target Blu Eye in beeld', bron: 'instagram' },
+  { video: '/videos/reel-3.mp4', poster: '/videos/reel-3.jpg', titel: 'Strak afgewerkt', bron: 'tiktok' },
+  { video: '/videos/reel-4.mp4', poster: '/videos/reel-4.jpg', titel: 'Vakwerk van dichtbij', bron: 'instagram' },
 ];
 
 const tiktokUrl = 'https://www.tiktok.com/@scharlooinstall';
@@ -28,13 +28,13 @@ const instagramUrl = 'https://www.instagram.com/scharloo_install';
   <section class="relative min-h-screen bg-black text-white flex flex-col justify-center overflow-hidden">
     <!-- Achtergrondvideo (valt terug op de poster-foto tot de MP4 is geplaatst) -->
     <video
-      class="hero-bg-video absolute inset-0 w-full h-full object-cover z-0"
+      class="hero-bg-video absolute inset-0 w-full h-full object-cover object-center z-0"
       autoplay
       muted
       loop
       playsinline
       preload="metadata"
-      poster="/images/maxresdefault.jpg"
+      poster="/videos/hero-poster.jpg"
       aria-hidden="true"
     >
       <source src="/videos/hero.mp4" type="video/mp4" />
