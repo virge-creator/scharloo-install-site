@@ -13,11 +13,13 @@ const heeftPrijs = dienst.prijzen.length > 0;
 const eenPrijs = dienst.prijzen.length === 1;
 const eerstePrijs = dienst.prijzen[0];
 const heeftVarianten = !!(dienst.varianten && dienst.varianten.length > 0);
+const extraFotos = dienst.afbeeldingen ? dienst.afbeeldingen.slice(1) : [];
+const heeftExtraFotos = extraFotos.length > 0;
 const bluEyePagina = `${dienst.slug} ${dienst.title} ${dienst.subtitle}`.toLowerCase().includes('blu eye');
 const contactUrl = `/contact/?dienst=${encodeURIComponent(dienst.slug)}#formulier`;
 // Houd de secties netjes afwisselend: met een varianten-blok ertussen
 // wisselt de prijs-sectie mee van achtergrond.
-const prijsBg = heeftVarianten ? 'bg-gray-950' : 'bg-black';
+const prijsBg = (heeftVarianten || heeftExtraFotos) ? 'bg-gray-950' : 'bg-black';
 ---
 
 <Layout title={dienst.metaTitle} description={dienst.metaDesc}>
@@ -91,26 +93,22 @@ const prijsBg = heeftVarianten ? 'bg-gray-950' : 'bg-black';
   )}
 
   {dienst.afbeeldingen && dienst.afbeeldingen.length > 0 && (
-    <section class="bg-black pt-10 pb-16">
+    <section class="bg-black pt-10 pb-14">
       <div class="max-w-6xl mx-auto px-6 lg:px-8">
         <div class="reveal mb-8 max-w-2xl">
           <p class="text-brand font-medium tracking-widest uppercase mb-4">In de praktijk</p>
           <h2 class="heading-lg">Bekijk het<br /><span class="text-gray-500">resultaat</span></h2>
         </div>
-        <div class={`grid gap-4 ${dienst.afbeeldingen.length >= 3 ? 'md:grid-cols-3' : 'md:grid-cols-2'}`}>
-          {dienst.afbeeldingen.map((foto) => (
-            foto.contain ? (
-              <div class="reveal relative overflow-hidden rounded-2xl ring-1 ring-white/10 aspect-[4/3] bg-gray-950">
-                <div class="pointer-events-none absolute inset-0" style="background:radial-gradient(55% 65% at 50% 50%,rgba(22,129,222,.16),transparent 70%)"></div>
-                <img src={foto.src} alt={foto.alt} class="relative w-full h-full object-contain p-6" loading="lazy" />
-              </div>
-            ) : (
-              <div class="reveal overflow-hidden rounded-2xl ring-1 ring-white/10 aspect-[4/3]">
-                <img src={foto.src} alt={foto.alt} class="w-full h-full object-cover" loading="lazy" />
-              </div>
-            )
-          ))}
-        </div>
+        {dienst.afbeeldingen[0].contain ? (
+          <div class="reveal relative overflow-hidden rounded-2xl ring-1 ring-white/10 bg-gray-950">
+            <div class="pointer-events-none absolute inset-0" style="background:radial-gradient(50% 60% at 50% 50%,rgba(22,129,222,.16),transparent 70%)"></div>
+            <img src={dienst.afbeeldingen[0].src} alt={dienst.afbeeldingen[0].alt} class="relative mx-auto max-h-[46vh] w-auto object-contain p-8" loading="lazy" />
+          </div>
+        ) : (
+          <div class="reveal overflow-hidden rounded-2xl ring-1 ring-white/10">
+            <img src={dienst.afbeeldingen[0].src} alt={dienst.afbeeldingen[0].alt} class="w-full h-[40vh] min-h-[260px] max-h-[460px] object-cover" loading="lazy" />
+          </div>
+        )}
       </div>
     </section>
   )}
@@ -140,6 +138,28 @@ const prijsBg = heeftVarianten ? 'bg-gray-950' : 'bg-black';
       </div>
     </div>
   </section>
+
+  <!-- Meer beelden (verdeeld over de pagina) -->
+  {heeftExtraFotos && (
+    <section class="bg-black py-16">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <div class={`grid gap-4 ${extraFotos.length >= 3 ? 'md:grid-cols-3' : extraFotos.length === 2 ? 'md:grid-cols-2' : 'max-w-2xl mx-auto'}`}>
+          {extraFotos.map((foto) => (
+            foto.contain ? (
+              <div class="reveal relative overflow-hidden rounded-2xl ring-1 ring-white/10 aspect-[4/3] bg-gray-950">
+                <div class="pointer-events-none absolute inset-0" style="background:radial-gradient(55% 65% at 50% 50%,rgba(22,129,222,.16),transparent 70%)"></div>
+                <img src={foto.src} alt={foto.alt} class="relative w-full h-full object-contain p-6" loading="lazy" />
+              </div>
+            ) : (
+              <div class="reveal overflow-hidden rounded-2xl ring-1 ring-white/10 aspect-[4/3]">
+                <img src={foto.src} alt={foto.alt} class="w-full h-full object-cover" loading="lazy" />
+              </div>
+            )
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 
   <!-- Varianten / keuze-opties (alleen als ingesteld) -->
   {heeftVarianten && (
