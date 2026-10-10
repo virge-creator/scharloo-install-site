@@ -9,64 +9,167 @@ const reasons = [
   'Ervaring met diverse merken en systemen',
   'Actief in Nederland en België',
 ];
+
+// Media-muur: tegels met een korte preview-video (plaats de MP4's in /public/videos/).
+// Zolang de MP4 er nog niet is, toont de poster (een bestaande foto) — nooit een leeg vak.
+const reels = [
+  { video: '/videos/reel-1.mp4', poster: '/images/maxresdefault.jpg', titel: 'Installatie in beeld', bron: 'tiktok' },
+  { video: '/videos/reel-2.mp4', poster: '/images/blu-eye-2-z-ford-7-150.webp', titel: 'Target Blu Eye 2', bron: 'instagram' },
+  { video: '/videos/reel-3.mp4', poster: '/images/spiegel-162.jpg', titel: 'Discreet weggewerkt', bron: 'tiktok' },
+  { video: '/videos/reel-4.mp4', poster: '/images/BMW-dashcam-950-600.png.webp', titel: 'Dashcam in spiegelkap', bron: 'instagram' },
+];
+
+const tiktokUrl = 'https://www.tiktok.com/@scharlooinstall';
+const instagramUrl = 'https://www.instagram.com/scharloo_install';
 ---
 
 <Layout title="Voertuigsystemen professioneel ingebouwd" description="Scharloo-Install bouwt voertuigvolgsystemen, alarmsystemen, dashcams en voertuigtechniek netjes in. Voor particulieren, bedrijven en wagenparken in Nederland en België.">
-  <!-- Hero Section -->
-  <section class="min-h-screen bg-black text-white flex flex-col justify-center relative overflow-hidden">
-    <div class="hero-glow" aria-hidden="true"></div>
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-20">
-      <div class="space-y-8 relative z-10">
-        <!-- Tagline -->
+  <!-- Hero Section met achtergrondvideo -->
+  <section class="relative min-h-screen bg-black text-white flex flex-col justify-center overflow-hidden">
+    <!-- Achtergrondvideo (valt terug op de poster-foto tot de MP4 is geplaatst) -->
+    <video
+      class="hero-bg-video absolute inset-0 w-full h-full object-cover z-0"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="/images/maxresdefault.jpg"
+      aria-hidden="true"
+    >
+      <source src="/videos/hero.mp4" type="video/mp4" />
+    </video>
+    <!-- Donkere laag voor leesbaarheid -->
+    <div class="absolute inset-0 z-[1]" style="background: linear-gradient(to bottom, rgba(0,0,0,.62), rgba(0,0,0,.60) 45%, rgba(0,0,0,.90));"></div>
+    <div class="hero-glow z-[2]" aria-hidden="true"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-20 w-full">
+      <div class="space-y-8">
         <p class="text-brand font-medium tracking-widest uppercase animate-fade-in-up">Voertuigtechniek, zorgvuldig ingebouwd</p>
-        
-        <!-- Main heading -->
+
         <h1 class="heading-xl animate-fade-in-up delay-100" style="opacity: 0;">
           Voertuigsystemen<br />
           <span class="text-brand">professioneel</span> ingebouwd
         </h1>
-        
-        <!-- Subtext -->
-        <p class="text-xl md:text-2xl text-gray-400 max-w-2xl animate-fade-in-up delay-200" style="opacity: 0;">
+
+        <p class="text-xl md:text-2xl text-gray-200 max-w-2xl animate-fade-in-up delay-200" style="opacity: 0;">
           Van GPS-tracking en voertuigbeveiliging tot dashcams en maatwerkintegraties. Netjes ingebouwd voor één voertuig of uw hele wagenpark.
         </p>
-        
-        <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row gap-4 pt-8 animate-fade-in-up delay-300" style="opacity: 0;">
-          <a 
-            href="/contact/#formulier" 
+
+        <div class="flex flex-col sm:flex-row gap-4 pt-6 animate-fade-in-up delay-300" style="opacity: 0;">
+          <a
+            href="/contact/#formulier"
             class="group bg-brand text-white rounded-full px-8 py-4 text-lg font-semibold hover:bg-white hover:text-black transition-all duration-300 inline-flex items-center justify-center gap-3"
           >
             Offerte aanvragen
             <span class="group-hover:translate-x-2 transition-transform duration-300">→</span>
           </a>
-          <a 
-            href="/diensten/" 
+          <a
+            href="/diensten/"
             class="border-2 border-white text-white rounded-full px-8 py-4 text-lg font-semibold hover:bg-white hover:text-black transition-all duration-300 text-center"
           >
             Bekijk onze diensten
           </a>
         </div>
+
+        <!-- Social chips -->
+        <div class="flex flex-wrap items-center gap-3 pt-2 animate-fade-in-up delay-300">
+          <a href={tiktokUrl} target="_blank" rel="noopener" class="group inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/5 backdrop-blur px-4 py-2 text-sm font-semibold hover:bg-white hover:text-black transition-all duration-300">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3h-2.9v12.4a2.3 2.3 0 1 1-2.3-2.3c.2 0 .5 0 .7.1V10.2a5.3 5.3 0 1 0 4.5 5.2V8.9a6.5 6.5 0 0 0 3.9 1.3V7.3a3.6 3.6 0 0 1-3.6-3.6 3.7 3.7 0 0 1-.3-.7Z"/></svg>
+            TikTok
+          </a>
+          <a href={instagramUrl} target="_blank" rel="noopener" class="group inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/5 backdrop-blur px-4 py-2 text-sm font-semibold hover:bg-white hover:text-black transition-all duration-300">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+            Instagram
+          </a>
+          <span class="text-sm text-gray-300">Elke woensdag om 19:00 een nieuwe video</span>
+        </div>
       </div>
 
-      <div class="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm md:text-base text-gray-300 animate-fade-in-up delay-300">
+      <div class="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm md:text-base text-gray-200 animate-fade-in-up delay-300">
         <span><span class="text-brand mr-2">✓</span>Voor particulier en zakelijk</span>
         <span><span class="text-brand mr-2">✓</span>Eén voertuig of wagenpark</span>
         <span><span class="text-brand mr-2">✓</span>Actief in Nederland en België</span>
       </div>
-
     </div>
 
     <!-- Scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-      <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-10">
+      <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
       </svg>
     </div>
   </section>
 
+  <!-- Media-muur: Bekend van onze video's -->
+  <section class="py-24 md:py-32 bg-gray-950 relative overflow-hidden">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-end mb-12">
+        <div class="reveal">
+          <p class="text-brand font-medium tracking-widest uppercase mb-4">Volg ons</p>
+          <h2 class="heading-lg">
+            Bekend van<br />
+            <span class="text-gray-500">onze video's</span>
+          </h2>
+          <p class="text-lg text-gray-400 mt-6 max-w-xl">
+            Van inbouw tot afwerking: we laten ons werk zien op TikTok en Instagram. Elke woensdag om 19:00 uur een nieuwe video.
+          </p>
+        </div>
+        <div class="reveal flex flex-wrap gap-3 lg:justify-end">
+          <a href={tiktokUrl} target="_blank" rel="noopener" class="motion-button inline-flex items-center gap-2 bg-white text-black rounded-full px-6 py-3 font-semibold hover:bg-brand hover:text-white transition-all duration-300">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3h-2.9v12.4a2.3 2.3 0 1 1-2.3-2.3c.2 0 .5 0 .7.1V10.2a5.3 5.3 0 1 0 4.5 5.2V8.9a6.5 6.5 0 0 0 3.9 1.3V7.3a3.6 3.6 0 0 1-3.6-3.6 3.7 3.7 0 0 1-.3-.7Z"/></svg>
+            @scharlooinstall
+          </a>
+          <a href={instagramUrl} target="_blank" rel="noopener" class="motion-button inline-flex items-center gap-2 rounded-full px-6 py-3 font-semibold text-white transition-all duration-300" style="background: linear-gradient(45deg, #f09433, #dc2743 50%, #bc1888);">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+            @scharloo_install
+          </a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 reveal">
+        {reels.map((reel) => (
+          <a
+            href={reel.bron === 'tiktok' ? tiktokUrl : instagramUrl}
+            target="_blank"
+            rel="noopener"
+            class="reel-tile group relative block aspect-[9/16] rounded-2xl overflow-hidden ring-1 ring-white/10 bg-black"
+          >
+            <video
+              class="reel-video absolute inset-0 w-full h-full object-cover"
+              muted
+              loop
+              playsinline
+              preload="none"
+              poster={reel.poster}
+            >
+              <source src={reel.video} type="video/mp4" />
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-black/30 transition-opacity duration-300 group-hover:from-black/70"></div>
+            <!-- Bron-badge -->
+            <span class="absolute top-3 left-3 flex items-center justify-center w-9 h-9 rounded-full bg-black/55 backdrop-blur ring-1 ring-white/20" aria-hidden="true">
+              {reel.bron === 'tiktok' ? (
+                <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3h-2.9v12.4a2.3 2.3 0 1 1-2.3-2.3c.2 0 .5 0 .7.1V10.2a5.3 5.3 0 1 0 4.5 5.2V8.9a6.5 6.5 0 0 0 3.9 1.3V7.3a3.6 3.6 0 0 1-3.6-3.6 3.7 3.7 0 0 1-.3-.7Z"/></svg>
+              ) : (
+                <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+              )}
+            </span>
+            <!-- Play-icoon -->
+            <span class="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0" aria-hidden="true">
+              <span class="flex items-center justify-center w-14 h-14 rounded-full bg-white/15 backdrop-blur ring-1 ring-white/30">
+                <svg class="w-6 h-6 text-white translate-x-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+            </span>
+            <span class="absolute bottom-3 left-3 right-3 text-sm font-semibold text-white drop-shadow">{reel.titel}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- Intro Section -->
-  <section class="py-24 bg-gray-950">
+  <section class="py-24 bg-black">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="max-w-3xl reveal">
         <p class="text-brand font-medium tracking-widest uppercase mb-4">Over ons</p>
@@ -82,7 +185,7 @@ const reasons = [
   </section>
 
   <!-- Services Grid -->
-  <section class="py-32 bg-black">
+  <section class="py-28 bg-gray-950">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <!-- Section header with video -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-20 items-center">
@@ -96,21 +199,21 @@ const reasons = [
         <!-- YouTube Short (Portrait) -->
         <div class="reveal flex justify-center lg:justify-end image-zoom">
           <div class="video-card">
-            <iframe 
-              src="https://www.youtube.com/embed/Vykfc3ZDeMw" 
+            <iframe
+              src="https://www.youtube.com/embed/Vykfc3ZDeMw"
               title="Bekijk een installatie van Scharloo-Install"
-              frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
             ></iframe>
           </div>
         </div>
       </div>
-      
+
       <!-- Services list -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border-t border-gray-800 reveal">
         {diensten.map((service, i) => (
-          <a 
+          <a
             href={dienstUrl(service)}
             class={`group motion-card py-8 md:py-12 border-b border-gray-800 flex items-center justify-between hover:bg-gray-900 transition-colors px-4 md:px-8 ${i % 2 === 0 ? 'md:border-r' : ''}`}
             style={`--item-index:${i}`}
@@ -128,7 +231,7 @@ const reasons = [
   </section>
 
   <!-- Why Choose Us -->
-  <section class="py-32 bg-gray-950">
+  <section class="py-32 bg-black">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div class="reveal">
@@ -147,96 +250,14 @@ const reasons = [
           </ul>
         </div>
         <div class="reveal photo-card photo-card-accent">
-          <img 
-            src="/images/team-homepage.jpg" 
-            alt="Het Scharloo-Install team" 
+          <img
+            src="/images/team-homepage.jpg"
+            alt="Het Scharloo-Install team"
             loading="lazy"
           />
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- Social / Volg ons -->
-  <section class="py-32 bg-black relative overflow-hidden">
-    <div class="hero-glow" aria-hidden="true"></div>
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-      <div class="reveal text-center max-w-3xl mx-auto mb-16">
-        <p class="text-brand font-medium tracking-widest uppercase mb-4">Volg ons</p>
-        <h2 class="heading-lg mb-6">
-          Zie ons werk<br />
-          <span class="text-gray-500">op social media</span>
-        </h2>
-        <p class="text-xl text-gray-400 leading-relaxed">
-          Elke woensdag om 19:00 uur een nieuwe video. Van inbouw tot techniek: volg ons op TikTok en Instagram en mis niets.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-        <!-- TikTok: live feed -->
-        <div class="reveal motion-card flex flex-col">
-          <div class="flex items-center justify-between mb-5">
-            <div class="flex items-center gap-3">
-              <span class="flex items-center justify-center w-11 h-11 rounded-xl bg-white/5 ring-1 ring-white/10" aria-hidden="true">
-                <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3h-2.9v12.4a2.3 2.3 0 1 1-2.3-2.3c.2 0 .5 0 .7.1V10.2a5.3 5.3 0 1 0 4.5 5.2V8.9a6.5 6.5 0 0 0 3.9 1.3V7.3a3.6 3.6 0 0 1-3.6-3.6 3.7 3.7 0 0 1-.3-.7Z"/></svg>
-              </span>
-              <div>
-                <p class="font-bold text-lg leading-tight">TikTok</p>
-                <a href="https://www.tiktok.com/@scharlooinstall" target="_blank" rel="noopener" class="text-sm text-gray-400 hover:text-brand transition-colors">@scharlooinstall</a>
-              </div>
-            </div>
-            <a href="https://www.tiktok.com/@scharlooinstall" target="_blank" rel="noopener" class="text-sm font-semibold text-brand hover:text-white transition-colors">Volgen →</a>
-          </div>
-          <div class="bg-white rounded-2xl p-2 ring-1 ring-white/10 flex-1 min-h-[520px] overflow-hidden">
-            <blockquote
-              class="tiktok-embed"
-              cite="https://www.tiktok.com/@scharlooinstall"
-              data-unique-id="scharlooinstall"
-              data-embed-type="creator"
-              style="max-width: 100%; min-width: 288px; margin: 0;"
-            >
-              <section>
-                <a target="_blank" rel="noopener" href="https://www.tiktok.com/@scharlooinstall">@scharlooinstall</a>
-              </section>
-            </blockquote>
-          </div>
-        </div>
-
-        <!-- Instagram -->
-        <div class="reveal motion-card flex flex-col">
-          <div class="flex items-center justify-between mb-5">
-            <div class="flex items-center gap-3">
-              <span class="flex items-center justify-center w-11 h-11 rounded-xl bg-white/5 ring-1 ring-white/10" aria-hidden="true">
-                <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
-              </span>
-              <div>
-                <p class="font-bold text-lg leading-tight">Instagram</p>
-                <a href="https://www.instagram.com/scharloo_install" target="_blank" rel="noopener" class="text-sm text-gray-400 hover:text-brand transition-colors">@scharloo_install</a>
-              </div>
-            </div>
-            <a href="https://www.instagram.com/scharloo_install" target="_blank" rel="noopener" class="text-sm font-semibold text-brand hover:text-white transition-colors">Volgen →</a>
-          </div>
-          <a
-            href="https://www.instagram.com/scharloo_install"
-            target="_blank"
-            rel="noopener"
-            class="group relative flex-1 min-h-[520px] rounded-2xl ring-1 ring-white/10 overflow-hidden flex flex-col items-center justify-center text-center p-10"
-            style="background: radial-gradient(circle at 30% 20%, rgba(22,129,222,0.25), transparent 60%), linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);"
-          >
-            <span class="flex items-center justify-center w-20 h-20 rounded-2xl mb-6 transition-transform duration-300 group-hover:scale-110" style="background: linear-gradient(45deg, #f09433, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);" aria-hidden="true">
-              <svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
-            </span>
-            <p class="text-2xl font-bold mb-3">Bekijk onze reels</p>
-            <p class="text-gray-400 max-w-xs mb-8">De nieuwste beelden van onze installaties en projecten vind je op Instagram.</p>
-            <span class="inline-flex items-center gap-2 bg-white text-black rounded-full px-7 py-3 font-semibold group-hover:bg-brand group-hover:text-white transition-all duration-300">
-              Volg @scharloo_install
-              <span class="group-hover:translate-x-1 transition-transform duration-300">→</span>
-            </span>
-          </a>
-        </div>
-      </div>
-    </div>
-    <script async src="https://www.tiktok.com/embed.js"></script>
   </section>
 
   <!-- CTA Section -->
@@ -249,8 +270,8 @@ const reasons = [
         Vertel ons welk systeem u zoekt en in welk voertuig het moet worden ingebouwd. We denken mee over een passende oplossing en maken graag een vrijblijvende offerte.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a 
-          href="/contact/#formulier" 
+        <a
+          href="/contact/#formulier"
           class="group inline-flex items-center gap-3 bg-white text-brand rounded-full px-10 py-5 text-xl font-bold hover:bg-black hover:text-white transition-all duration-300"
         >
           Vraag vrijblijvend een offerte aan
@@ -265,21 +286,24 @@ const reasons = [
   </section>
 </Layout>
 
+<style>
+  .hero-bg-video { filter: saturate(1.05); }
+  .reel-tile .reel-video { transition: transform 700ms cubic-bezier(.2,.75,.25,1); }
+  .reel-tile:hover .reel-video { transform: scale(1.06); }
+  /* Poster-foto blijft altijd zichtbaar; alleen de beweging stopt via JS. */
+</style>
+
 <script>
-  // Scroll reveal animation
-  const reveals = document.querySelectorAll('.reveal');
-  
-  const revealOnScroll = () => {
-    reveals.forEach(el => {
-      const top = el.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-      
-      if (top < windowHeight - 100) {
-        el.classList.add('active');
-      }
-    });
-  };
-  
-  window.addEventListener('scroll', revealOnScroll);
-  revealOnScroll();
+  // Media-tegels: preview afspelen bij hover (desktop), op mobiel toont de poster.
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.reel-tile').forEach((tile) => {
+    const video = tile.querySelector('video');
+    if (!video) return;
+    tile.addEventListener('mouseenter', () => { video.play().catch(() => {}); });
+    tile.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
+  });
+
+  // Achtergrondvideo pauzeren bij 'reduced motion'.
+  const heroVideo = document.querySelector('.hero-bg-video');
+  if (heroVideo && prefersReduced) { heroVideo.pause(); }
 </script>
