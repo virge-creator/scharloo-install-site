@@ -162,7 +162,9 @@ body {
 
 /* Big bold headings - MrBoost style */
 .heading-xl {
-  @apply text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none;
+  @apply sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none;
+  font-size: clamp(1.6rem, 7.6vw, 2rem);
+  overflow-wrap: break-word;
 }
 
 .heading-lg {
