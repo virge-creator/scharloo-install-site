@@ -1,240 +1,236 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const diensten = [
+  { value: 'ritregistratie', label: 'Voertuigvolgsysteem / ritregistratie' },
+  { value: 'startblokkering', label: 'GPS + startonderbreker' },
+  { value: 'dashcam', label: 'Dashcam inbouw' },
+  { value: 'alarmsystemen', label: 'Alarmsysteem (SCM/CCV)' },
+  { value: 'blu-eye', label: 'Target Blu Eye 2' },
+  { value: 'trekhaak', label: 'Trekhaak monteren' },
+  { value: 'canbus', label: 'CAN-bus installatie' },
+  { value: 'driverid', label: 'Driver ID / RFID' },
+  { value: 'tachograaf', label: 'Tachograaf uitlezen' },
+  { value: 'io', label: 'I/O integratie' },
+  { value: 'anders', label: 'Anders' },
+];
 ---
 
-<Layout title="Contact" description="Neem contact op met Scharloo-Install voor een vrijblijvende offerte.">
+<Layout title="Contact" description="Neem contact op met Scharloo-Install voor een vrijblijvende offerte. Bel, mail of stuur ons uw vraag, wij reageren snel.">
   <!-- Hero -->
-  <section class="min-h-[60vh] bg-black text-white flex items-end pb-20">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+  <section class="relative bg-black text-white overflow-hidden pt-28 pb-20 md:pt-36 md:pb-24">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
       <p class="text-brand font-medium tracking-widest uppercase mb-4 animate-fade-in-up">Contact</p>
       <h1 class="heading-xl animate-fade-in-up delay-100" style="opacity: 0;">
-        Neem<br />
-        <span class="text-gray-500">contact op</span>
+        Laten we uw<br />
+        <span class="text-brand">project</span> bespreken
       </h1>
-    </div>
-  </section>
+      <p class="text-xl text-gray-300 max-w-2xl mt-8 animate-fade-in-up delay-200" style="opacity: 0;">
+        Of het nu gaat om één voertuig of een heel wagenpark, wij denken met u mee en maken een passend voorstel. U krijgt snel en persoonlijk antwoord.
+      </p>
 
-  <!-- Intro Section -->
-  <section class="py-20 bg-black border-t border-gray-800">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="max-w-4xl reveal">
-        <p class="text-xl md:text-2xl text-gray-300 leading-relaxed">
-          Bij <span class="text-white font-semibold">Scharloo-Install B.V.</span> staan wij klaar om uw vragen te beantwoorden en u te helpen bij professionele voertuiginstallaties. Of het nu gaat om voertuigvolgsystemen, dashcams of alarmsystemen. Ons team denkt meedenkend mee en zorgt voor een <span class="text-brand">snelle en betrouwbare service</span>. Wij streven naar kwaliteit, klanttevredenheid en flexibiliteit bij elk contactmoment.
-        </p>
+      <!-- Snelle acties -->
+      <div class="mt-10 flex flex-wrap gap-3 animate-fade-in-up delay-300">
+        <a href="tel:+31182796197" class="motion-button inline-flex items-center gap-2 bg-brand text-white rounded-full px-6 py-3.5 font-semibold hover:bg-white hover:text-black transition-all duration-300">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 11.2 18.8a19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.09 3.18 2 2 0 0 1 4.08 1h3a2 2 0 0 1 2 1.72c.12.96.35 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.05 8.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.84.57 2.8.69A2 2 0 0 1 22 16.92Z"/></svg>
+          Bel direct
+        </a>
+        <a href="#formulier" class="motion-button inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/5 px-6 py-3.5 font-semibold text-white hover:bg-white hover:text-black transition-all duration-300">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H5.17L4 17.17V4z"/></svg>
+          Stuur een bericht
+        </a>
+        <a href="mailto:info@scharloo-install.nl" class="motion-button inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/5 px-6 py-3.5 font-semibold text-white hover:bg-white hover:text-black transition-all duration-300">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          Mail ons
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section class="py-24 lg:py-32 bg-gray-950">
+  <!-- Contact + formulier -->
+  <section id="formulier" class="py-20 md:py-28 bg-gray-950 border-t border-white/10 scroll-mt-24">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
-        <!-- Left: Contact Info -->
-        <div class="reveal">
-          <div class="space-y-12">
-            <div>
-              <p class="text-gray-500 uppercase tracking-widest text-sm mb-3">Telefoon</p>
-              <a href="tel:+31182796197" class="text-3xl md:text-4xl font-bold hover:text-brand transition-colors">
-                0182 796 197
-              </a>
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16">
+        <!-- Links: info -->
+        <div class="lg:col-span-2 reveal space-y-6">
+          <a href="tel:+31182796197" class="group block rounded-2xl bg-black ring-1 ring-white/10 p-6 hover:ring-brand transition-all">
+            <div class="flex items-center gap-4">
+              <span class="flex items-center justify-center w-12 h-12 rounded-xl bg-brand/15 text-brand flex-shrink-0">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 11.2 18.8a19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.09 3.18 2 2 0 0 1 4.08 1h3a2 2 0 0 1 2 1.72c.12.96.35 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.05 8.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.84.57 2.8.69A2 2 0 0 1 22 16.92Z"/></svg>
+              </span>
+              <div>
+                <p class="text-gray-500 uppercase tracking-widest text-xs mb-1">Telefoon</p>
+                <p class="text-xl font-bold group-hover:text-brand transition-colors">0182 796 197</p>
+              </div>
             </div>
-            
-            <div>
-              <p class="text-gray-500 uppercase tracking-widest text-sm mb-3">Email</p>
-              <a href="mailto:info@scharloo-install.nl" class="text-3xl md:text-4xl font-bold hover:text-brand transition-colors">
-                info@scharloo-install.nl
-              </a>
-            </div>
-            
-            <div>
-              <p class="text-gray-500 uppercase tracking-widest text-sm mb-3">Website</p>
-              <p class="text-3xl md:text-4xl font-bold">
-                scharloo-install.nl
-              </p>
-            </div>
+          </a>
 
-            <div class="pt-8">
-              <p class="text-gray-500 uppercase tracking-widest text-sm mb-3">Openingstijden</p>
-              <div class="space-y-2 text-lg text-gray-300">
-                <p>Ma – Vr: <span class="font-semibold text-white">08:00 - 17:00</span></p>
-                <p>Za: <span class="font-semibold text-white">Op afspraak</span></p>
-                <p>Zo: <span class="text-gray-500">Gesloten</span></p>
+          <a href="mailto:info@scharloo-install.nl" class="group block rounded-2xl bg-black ring-1 ring-white/10 p-6 hover:ring-brand transition-all">
+            <div class="flex items-center gap-4">
+              <span class="flex items-center justify-center w-12 h-12 rounded-xl bg-brand/15 text-brand flex-shrink-0">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              </span>
+              <div class="min-w-0">
+                <p class="text-gray-500 uppercase tracking-widest text-xs mb-1">E-mail</p>
+                <p class="text-lg md:text-xl font-bold break-words group-hover:text-brand transition-colors">info@scharloo-install.nl</p>
+              </div>
+            </div>
+          </a>
+
+          <div class="rounded-2xl bg-black ring-1 ring-white/10 p-6">
+            <div class="flex items-center gap-4 mb-4">
+              <span class="flex items-center justify-center w-12 h-12 rounded-xl bg-brand/15 text-brand flex-shrink-0">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              </span>
+              <p class="text-gray-500 uppercase tracking-widest text-xs">Openingstijden</p>
+            </div>
+            <div class="space-y-2 text-gray-300">
+              <div class="flex justify-between"><span>Ma t/m Vr</span><span class="font-semibold text-white">08:00 – 17:00</span></div>
+              <div class="flex justify-between"><span>Zaterdag</span><span class="font-semibold text-white">Op afspraak</span></div>
+              <div class="flex justify-between"><span>Zondag</span><span class="text-gray-500">Gesloten</span></div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl bg-black ring-1 ring-white/10 p-6">
+            <div class="flex items-start gap-4">
+              <span class="flex items-center justify-center w-12 h-12 rounded-xl bg-brand/15 text-brand flex-shrink-0">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <div>
+                <p class="text-gray-500 uppercase tracking-widest text-xs mb-1">Bezoekadres</p>
+                <p class="text-white font-semibold leading-snug">Leeghwaterstraat 33-05<br />2811 DT Reeuwijk</p>
+                <a href="https://www.google.com/maps/dir//Leeghwaterstraat+33-05,+2811+DT+Reeuwijk" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-brand hover:text-white transition-colors font-semibold mt-3 text-sm">
+                  Route plannen
+                  <span>→</span>
+                </a>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Right: Contact Form -->
-        <div class="reveal">
-          <form class="space-y-8" name="contact" method="POST" action="https://formspree.io/f/mykbkjjw">
-            <input type="hidden" name="_subject" value="Nieuw bericht via Scharloo-Install.nl" />
-            <input type="hidden" name="_source" value="scharloo-install.nl" />
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div>
-                <label for="name" class="block text-sm font-medium text-gray-500 uppercase tracking-widest mb-3">
-                  Naam *
-                </label>
-                <input 
-                  type="text" 
-                  id="name" 
-                  name="name" 
-                  required
-                  class="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-700 focus:border-brand focus:ring-0 text-lg text-white transition-colors"
-                />
-              </div>
-              <div>
-                <label for="phone" class="block text-sm font-medium text-gray-500 uppercase tracking-widest mb-3">
-                  Telefoon
-                </label>
-                <input 
-                  type="tel" 
-                  id="phone" 
-                  name="phone"
-                  class="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-700 focus:border-brand focus:ring-0 text-lg text-white transition-colors"
-                />
-              </div>
-            </div>
-            
-            <div>
-              <label for="email" class="block text-sm font-medium text-gray-500 uppercase tracking-widest mb-3">
-                Email *
-              </label>
-              <input 
-                type="email" 
-                id="email" 
-                name="email" 
-                required
-                class="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-700 focus:border-brand focus:ring-0 text-lg text-white transition-colors"
-              />
-            </div>
-            
-            <div>
-              <label for="service" class="block text-sm font-medium text-gray-500 uppercase tracking-widest mb-3">
-                Dienst
-              </label>
-              <select 
-                id="service" 
-                name="service"
-                class="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-700 focus:border-brand focus:ring-0 text-lg text-white transition-colors cursor-pointer"
-              >
-                <option value="" class="bg-gray-900">Selecteer een dienst</option>
-                <option value="ritregistratie" class="bg-gray-900">Ritregistratie</option>
-                <option value="dashcam" class="bg-gray-900">Dashcam inbouw</option>
-                <option value="alarmsystemen" class="bg-gray-900">Alarmsystemen</option>
-                <option value="canbus" class="bg-gray-900">CAN Bus installatie</option>
-                <option value="driverid" class="bg-gray-900">Driver ID / RFID</option>
-                <option value="tachograaf" class="bg-gray-900">Tachograaf</option>
-                <option value="startblokkering" class="bg-gray-900">Startblokkering</option>
-                <option value="io" class="bg-gray-900">I/O installatie</option>
-                <option value="anders" class="bg-gray-900">Anders</option>
-              </select>
-            </div>
-            
-            <div>
-              <label for="message" class="block text-sm font-medium text-gray-500 uppercase tracking-widest mb-3">
-                Bericht *
-              </label>
-              <textarea 
-                id="message" 
-                name="message" 
-                rows="4" 
-                required
-                class="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-gray-700 focus:border-brand focus:ring-0 text-lg text-white transition-colors resize-none"
-              ></textarea>
-            </div>
-            
-            <button 
-              type="submit"
-              class="group w-full rounded-full bg-brand text-white py-5 text-lg font-semibold hover:bg-white hover:text-black transition-all duration-300 flex items-center justify-center gap-3 mt-8"
-            >
-              Verstuur bericht
-              <span class="group-hover:translate-x-2 transition-transform duration-300">→</span>
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
+        <!-- Rechts: formulier -->
+        <div class="lg:col-span-3 reveal">
+          <div class="rounded-3xl bg-black ring-1 ring-white/10 p-7 md:p-10">
+            <h2 class="text-2xl md:text-3xl font-bold mb-2">Vraag een vrijblijvende offerte aan</h2>
+            <p class="text-gray-400 mb-8">Vul het formulier in, dan nemen we zo snel mogelijk contact met u op.</p>
 
-  <!-- Location Section -->
-  <section class="py-24 bg-black">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <!-- Address Card -->
-        <div class="reveal">
-          <p class="text-brand font-medium tracking-widest uppercase mb-6">Locatie</p>
-          <div class="bg-gray-900 border border-gray-800 p-8 md:p-10 relative overflow-hidden">
-            <!-- Decorative accent -->
-            <div class="absolute top-0 left-0 w-1 h-full bg-brand"></div>
-            
-            <div class="space-y-6">
+            <form class="space-y-6" name="contact" method="POST" action="https://formspree.io/f/mykbkjjw">
+              <input type="hidden" name="_subject" value="Nieuw bericht via Scharloo-Install.nl" />
+              <input type="hidden" name="_source" value="scharloo-install.nl" />
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="name" class="block text-sm font-medium text-gray-400 mb-2">Naam *</label>
+                  <input type="text" id="name" name="name" required
+                    class="w-full rounded-xl bg-white/[0.04] border border-white/10 px-4 py-3.5 text-white placeholder-gray-500 outline-none focus:border-brand focus:bg-white/[0.06] transition-colors" />
+                </div>
+                <div>
+                  <label for="phone" class="block text-sm font-medium text-gray-400 mb-2">Telefoon</label>
+                  <input type="tel" id="phone" name="phone"
+                    class="w-full rounded-xl bg-white/[0.04] border border-white/10 px-4 py-3.5 text-white placeholder-gray-500 outline-none focus:border-brand focus:bg-white/[0.06] transition-colors" />
+                </div>
+              </div>
+
               <div>
-                <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
-                  Scharloo-Install B.V.
-                </h3>
-                <p class="text-gray-500 text-sm uppercase tracking-widest">Bezoekadres</p>
+                <label for="email" class="block text-sm font-medium text-gray-400 mb-2">E-mail *</label>
+                <input type="email" id="email" name="email" required
+                  class="w-full rounded-xl bg-white/[0.04] border border-white/10 px-4 py-3.5 text-white placeholder-gray-500 outline-none focus:border-brand focus:bg-white/[0.06] transition-colors" />
               </div>
-              
-              <div class="space-y-2 text-lg text-gray-300">
-                <p class="flex items-start gap-3">
-                  <span class="text-brand mt-1">📍</span>
-                  <span>
-                    Leeghwaterstraat 33-05<br />
-                    2811 DT Reeuwijk<br />
-                    Nederland
-                  </span>
-                </p>
+
+              <div>
+                <label for="service" class="block text-sm font-medium text-gray-400 mb-2">Dienst</label>
+                <select id="service" name="service"
+                  class="w-full rounded-xl bg-white/[0.04] border border-white/10 px-4 py-3.5 text-white outline-none focus:border-brand focus:bg-white/[0.06] transition-colors cursor-pointer">
+                  <option value="" class="bg-gray-900">Selecteer een dienst</option>
+                  {diensten.map((d) => (
+                    <option value={d.value} class="bg-gray-900">{d.label}</option>
+                  ))}
+                </select>
               </div>
-              
-              <a 
-                href="https://www.google.com/maps/dir//Leeghwaterstraat+33-05,+2811+DT+Reeuwijk" 
-                target="_blank"
-                rel="noopener noreferrer"
-                class="group inline-flex items-center gap-3 text-brand hover:text-white transition-colors font-semibold mt-4"
-              >
-                Route plannen
+
+              <div>
+                <label for="message" class="block text-sm font-medium text-gray-400 mb-2">Bericht *</label>
+                <textarea id="message" name="message" rows="5" required placeholder="Vertel ons over uw voertuig (merk, type, bouwjaar) en wat u zoekt."
+                  class="w-full rounded-xl bg-white/[0.04] border border-white/10 px-4 py-3.5 text-white placeholder-gray-500 outline-none focus:border-brand focus:bg-white/[0.06] transition-colors resize-none"></textarea>
+              </div>
+
+              <button type="submit"
+                class="group w-full rounded-full bg-brand text-white py-4 text-lg font-semibold hover:bg-white hover:text-black transition-all duration-300 flex items-center justify-center gap-3">
+                Verstuur bericht
                 <span class="group-hover:translate-x-2 transition-transform duration-300">→</span>
-              </a>
-            </div>
+              </button>
+              <p class="text-center text-sm text-gray-500">Of bel ons direct op <a href="tel:+31182796197" class="text-brand hover:text-white transition-colors font-semibold">0182 796 197</a></p>
+            </form>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Locatie -->
+  <section class="py-20 md:py-28 bg-black">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <p class="text-brand font-medium tracking-widest uppercase mb-4 reveal">Locatie</p>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+        <!-- Adres -->
+        <div class="reveal rounded-2xl bg-gray-950 ring-1 ring-white/10 p-8 md:p-10 flex flex-col justify-center">
+          <h3 class="text-2xl md:text-3xl font-bold mb-6">Scharloo-Install B.V.</h3>
+          <div class="space-y-5 text-gray-300">
+            <p class="flex items-start gap-3">
+              <span class="flex items-center justify-center w-9 h-9 rounded-lg bg-brand/15 text-brand flex-shrink-0">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <span class="pt-1">Leeghwaterstraat 33-05<br />2811 DT Reeuwijk, Nederland</span>
+            </p>
+            <p class="flex items-center gap-3">
+              <span class="flex items-center justify-center w-9 h-9 rounded-lg bg-brand/15 text-brand flex-shrink-0">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 11.2 18.8a19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.09 3.18 2 2 0 0 1 4.08 1h3a2 2 0 0 1 2 1.72c.12.96.35 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.05 8.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.84.57 2.8.69A2 2 0 0 1 22 16.92Z"/></svg>
+              </span>
+              <a href="tel:+31182796197" class="hover:text-brand transition-colors">0182 796 197</a>
+            </p>
+          </div>
+          <a href="https://www.google.com/maps/dir//Leeghwaterstraat+33-05,+2811+DT+Reeuwijk" target="_blank" rel="noopener"
+            class="motion-button inline-flex items-center justify-center gap-3 bg-brand text-white rounded-full px-8 py-4 font-semibold hover:bg-white hover:text-black transition-all duration-300 mt-8 self-start">
+            Route plannen
+            <span>→</span>
+          </a>
         </div>
 
-        <!-- Map -->
-        <div class="reveal">
-          <div class="relative aspect-square md:aspect-[4/3] overflow-hidden border border-gray-800">
-            <!-- Dark themed map -->
-            <iframe 
-              src="https://maps.google.com/maps?q=Leeghwaterstraat+33-05,+2811+DT+Reeuwijk,+Netherlands&t=&z=15&ie=UTF8&iwloc=&output=embed"
-              width="100%" 
-              height="100%" 
-              style="border:0; filter: grayscale(100%) invert(92%) contrast(83%);" 
-              allowfullscreen="" 
-              loading="lazy" 
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Locatie Scharloo-Install B.V."
-              class="absolute inset-0"
-            ></iframe>
-            <!-- Dark overlay for brand consistency -->
-            <div class="absolute inset-0 bg-brand/10 pointer-events-none"></div>
-          </div>
-        </div>
+        <!-- Kaart (klikbaar, opent Google Maps) -->
+        <a href="https://www.google.com/maps/search/?api=1&query=Leeghwaterstraat+33-05,+2811+DT+Reeuwijk" target="_blank" rel="noopener"
+          class="reveal group relative rounded-2xl overflow-hidden ring-1 ring-white/10 min-h-[320px] lg:min-h-full block">
+          <iframe
+            src="https://www.google.com/maps?q=Leeghwaterstraat%2033-05,%202811%20DT%20Reeuwijk&z=15&output=embed"
+            width="100%" height="100%" style="border:0; filter: grayscale(0.25);"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Locatie Scharloo-Install B.V." class="absolute inset-0 w-full h-full"></iframe>
+          <!-- Klik-indicator -->
+          <span class="absolute bottom-4 right-4 inline-flex items-center gap-2 bg-black/80 backdrop-blur text-white text-sm font-semibold rounded-full px-4 py-2 ring-1 ring-white/15 group-hover:bg-brand transition-colors">
+            Open in Google Maps →
+          </span>
+        </a>
       </div>
     </div>
   </section>
 </Layout>
 
 <script>
+  // Reveal
   const reveals = document.querySelectorAll('.reveal');
-  
-  const revealOnScroll = () => {
-    reveals.forEach(el => {
-      const top = el.getBoundingClientRect().top;
-      if (top < window.innerHeight - 100) {
-        el.classList.add('active');
-      }
-    });
-  };
-  
-  window.addEventListener('scroll', revealOnScroll);
-  revealOnScroll();
+  const onScroll = () => reveals.forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 80) el.classList.add('active');
+  });
+  window.addEventListener('scroll', onScroll);
+  onScroll();
+
+  // Dienst voorselecteren vanuit ?dienst=...
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const dienst = params.get('dienst');
+    if (dienst) {
+      const sel = document.getElementById('service');
+      if (sel && [...sel.options].some(o => o.value === dienst)) sel.value = dienst;
+    }
+  } catch (e) {}
 </script>
