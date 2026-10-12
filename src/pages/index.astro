@@ -339,7 +339,7 @@ const googleReviewUrl = 'https://share.google/aYQsEkbVwLwUOTUO2';
       {featurableId && (
         <div class="reveal mt-14">
           <div id={featurableId} data-featurable-async></div>
-          <script src="https://featurable.com/assets/js/widget.js" async></script>
+          <script is:inline src="https://featurable.com/assets/bundle.js" defer></script>
         </div>
       )}
     </div>
