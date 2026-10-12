@@ -135,9 +135,12 @@ const whatsappUrl = `https://wa.me/${whatsappNummer}?text=${encodeURIComponent('
             <h2 class="text-2xl md:text-3xl font-bold mb-2">Vraag een vrijblijvende offerte aan</h2>
             <p class="text-gray-400 mb-8">Vul het formulier in, dan nemen we zo snel mogelijk contact met u op.</p>
 
-            <form class="space-y-6" name="contact" method="POST" action="https://formspree.io/f/mykbkjjw">
-              <input type="hidden" name="_subject" value="Nieuw bericht via Scharloo-Install.nl" />
-              <input type="hidden" name="_source" value="scharloo-install.nl" />
+            <form class="space-y-6" name="contact" method="POST" action="https://api.web3forms.com/submit">
+              <input type="hidden" name="access_key" value="faee0902-5b88-45c0-a1de-101ea4e2efea" />
+              <input type="hidden" name="subject" value="Nieuw bericht via Scharloo-Install.nl" />
+              <input type="hidden" name="from_name" value="Scharloo-Install website" />
+              <!-- Honeypot tegen spam: laten mensen leeg, bots vullen 'm in -->
+              <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
