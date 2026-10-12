@@ -284,6 +284,7 @@ export const diensten: Dienst[] = [
     nummer: '10',
     title: 'Target Blu Eye 2',
     subtitle: 'Hulpdiensten vroegtijdig detecteren',
+    bestelLink: 'https://buy.stripe.com/00wdRa4OHcjWa847Ti3VC01',
     kort: 'Het unieke systeem dat de aanwezigheid van naderende hulpdiensten detecteert en u ruim op tijd waarschuwt, voor meer overzicht en rust achter het stuur.',
     intro: 'Weet eerder dan wie ook dat er een hulpdienst nadert. De Target Blu Eye 2 detecteert het communicatienetwerk van politie, ambulance, brandweer en marechaussee, en waarschuwt u ruim op tijd, professioneel ingebouwd in uw voertuig.',
     over: [
