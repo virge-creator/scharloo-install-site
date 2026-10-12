@@ -263,13 +263,25 @@ const prijsBg = (heeftVarianten || heeftExtraFotos) ? 'bg-gray-950' : 'bg-black'
               ))}
             </ul>
 
-            <a
-              href={contactUrl}
-              class="inline-flex w-full sm:w-auto items-center justify-center gap-3 bg-brand text-white rounded-full px-10 py-4 font-semibold hover:bg-white hover:text-black transition-all duration-300"
-            >
-              Vraag een offerte aan
-              <span>→</span>
-            </a>
+            {dienst.bestelLink ? (
+              <a
+                href={dienst.bestelLink}
+                target="_blank"
+                rel="noopener"
+                class="inline-flex w-full sm:w-auto items-center justify-center gap-3 bg-brand text-white rounded-full px-10 py-4 font-semibold hover:bg-white hover:text-black transition-all duration-300"
+              >
+                Bestel &amp; betaal
+                <span>→</span>
+              </a>
+            ) : (
+              <a
+                href={contactUrl}
+                class="inline-flex w-full sm:w-auto items-center justify-center gap-3 bg-brand text-white rounded-full px-10 py-4 font-semibold hover:bg-white hover:text-black transition-all duration-300"
+              >
+                Vraag een offerte aan
+                <span>→</span>
+              </a>
+            )}
           </div>
         </div>
       ) : (
@@ -289,13 +301,25 @@ const prijsBg = (heeftVarianten || heeftExtraFotos) ? 'bg-gray-950' : 'bg-black'
             ))}
           </div>
           <div class="text-center mt-10 reveal">
-            <a
-              href={contactUrl}
-              class="inline-flex items-center justify-center gap-3 bg-brand text-white rounded-full px-10 py-4 font-semibold hover:bg-white hover:text-black transition-all duration-300"
-            >
-              Vraag een offerte aan
-              <span>→</span>
-            </a>
+            {dienst.bestelLink ? (
+              <a
+                href={dienst.bestelLink}
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center justify-center gap-3 bg-brand text-white rounded-full px-10 py-4 font-semibold hover:bg-white hover:text-black transition-all duration-300"
+              >
+                Bestel &amp; betaal
+                <span>→</span>
+              </a>
+            ) : (
+              <a
+                href={contactUrl}
+                class="inline-flex items-center justify-center gap-3 bg-brand text-white rounded-full px-10 py-4 font-semibold hover:bg-white hover:text-black transition-all duration-300"
+              >
+                Vraag een offerte aan
+                <span>→</span>
+              </a>
+            )}
           </div>
         </div>
       )}
