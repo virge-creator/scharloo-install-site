@@ -319,7 +319,6 @@ const googleReviewUrl = 'https://share.google/aYQsEkbVwLwUOTUO2';
 
       <div
         id="google-reviews"
-        class="reveal"
         data-widget={widgetUuid}
         data-google-url={googleReviewUrl}
       >
@@ -357,7 +356,7 @@ const googleReviewUrl = 'https://share.google/aYQsEkbVwLwUOTUO2';
         .then((j) => {
           const w = (j && j.widget) || {};
           const sum = w.gbpLocationSummary || {};
-          const rating = (sum.rating || 5).toString().replace('.', ',');
+          const rating = Number(sum.rating || 5).toFixed(1).replace('.', ',');
           const count = sum.reviewsCount || (w.reviews || []).length;
           const reviews = (w.reviews || []).filter((r) => (r.originalText || r.text || '').trim().length > 0).slice(0, 6);
           if (!reviews.length) return;
@@ -482,6 +481,10 @@ const googleReviewUrl = 'https://share.google/aYQsEkbVwLwUOTUO2';
   .sr-name { font-weight:700; color:#fff; font-size:.95rem; line-height:1.15; }
   .sr-date { color:#6b7280; font-size:.8rem; }
   .sr-text { color:#d1d5db; line-height:1.6; font-size:.95rem; }
+  #google-reviews .sr-summary, #google-reviews .sr-grid { animation: sr-fade .6s ease both; }
+  #google-reviews .sr-grid { animation-delay: .1s; }
+  @keyframes sr-fade { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:none; } }
+  @media (prefers-reduced-motion: reduce) { #google-reviews .sr-summary, #google-reviews .sr-grid { animation:none; } }
 </style>
 
 <script>
