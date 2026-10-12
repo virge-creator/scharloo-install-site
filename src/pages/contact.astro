@@ -169,9 +169,22 @@ const whatsappUrl = `https://wa.me/${whatsappNummer}?text=${encodeURIComponent('
                 </select>
               </div>
 
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="kenteken" class="block text-sm font-medium text-gray-400 mb-2">Kenteken</label>
+                  <input type="text" id="kenteken" name="kenteken" placeholder="bijv. 12-ABC-3"
+                    class="w-full rounded-xl bg-white/[0.04] border border-white/10 px-4 py-3.5 text-white placeholder-gray-500 outline-none focus:border-brand focus:bg-white/[0.06] transition-colors" />
+                </div>
+                <div>
+                  <label for="voertuig" class="block text-sm font-medium text-gray-400 mb-2">Merk &amp; model</label>
+                  <input type="text" id="voertuig" name="voertuig" placeholder="bijv. BMW 3-serie"
+                    class="w-full rounded-xl bg-white/[0.04] border border-white/10 px-4 py-3.5 text-white placeholder-gray-500 outline-none focus:border-brand focus:bg-white/[0.06] transition-colors" />
+                </div>
+              </div>
+
               <div>
-                <label for="message" class="block text-sm font-medium text-gray-400 mb-2">Bericht *</label>
-                <textarea id="message" name="message" rows="5" required placeholder="Vertel ons over uw voertuig (merk, type, bouwjaar) en wat u zoekt."
+                <label for="message" class="block text-sm font-medium text-gray-400 mb-2">Extra wensen of speciale aanvragen *</label>
+                <textarea id="message" name="message" rows="5" required placeholder="Vertel ons wat u zoekt. Heeft u een speciale wens of maatwerk nodig? Wij doen en kunnen vrijwel alles — vraag het gerust."
                   class="w-full rounded-xl bg-white/[0.04] border border-white/10 px-4 py-3.5 text-white placeholder-gray-500 outline-none focus:border-brand focus:bg-white/[0.06] transition-colors resize-none"></textarea>
               </div>
 
