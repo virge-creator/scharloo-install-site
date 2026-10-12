@@ -32,6 +32,7 @@ export interface Dienst {
   metaTitle: string;         // SEO-titel (zonder "| Scharloo-Install")
   metaDesc: string;          // SEO-omschrijving
   externLink?: { text: string; url: string }; // bv. webshop
+  bestelLink?: string;       // Stripe-betaallink voor online bestellen (iDEAL). Leeg = geen bestelknop.
   detailUrl?: string;        // overschrijft de standaard /diensten/<slug>/
   genereerPagina: boolean;   // false = geen eigen detailpagina (bv. alarmsystemen)
   afbeelding?: string;       // pad naar foto, bv '/images/diensten/target-blu-eye.jpg'

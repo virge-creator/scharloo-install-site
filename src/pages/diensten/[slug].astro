@@ -53,8 +53,11 @@ const prijsBg = (heeftVarianten || heeftExtraFotos) ? 'bg-gray-950' : 'bg-black'
           </span>
         </div>
       )}
-      <div class="mt-8 flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-300" style="opacity: 0;">
-        <a href={contactUrl} class="inline-flex items-center justify-center gap-3 rounded-full bg-brand px-7 py-4 font-semibold text-white transition-all duration-300 hover:bg-white hover:text-black">Vraag vrijblijvend advies <span>→</span></a>
+      <div class="mt-8 flex flex-col sm:flex-row flex-wrap gap-4 animate-fade-in-up delay-300" style="opacity: 0;">
+        {dienst.bestelLink && (
+          <a href={dienst.bestelLink} target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-3 rounded-full bg-brand px-7 py-4 font-semibold text-white transition-all duration-300 hover:bg-white hover:text-black">Direct bestellen &amp; betalen <span>→</span></a>
+        )}
+        <a href={contactUrl} class={`inline-flex items-center justify-center gap-3 rounded-full px-7 py-4 font-semibold transition-all duration-300 ${dienst.bestelLink ? 'border border-gray-700 text-white hover:border-brand hover:text-brand' : 'bg-brand text-white hover:bg-white hover:text-black'}`}>Vraag vrijblijvend advies <span>→</span></a>
         <a href="tel:+31182796197" class="inline-flex items-center justify-center rounded-full border border-gray-700 px-7 py-4 font-semibold text-white transition-colors hover:border-brand hover:text-brand">Bel (0182) 79 61 97</a>
       </div>
     </div>
