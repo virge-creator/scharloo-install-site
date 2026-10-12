@@ -37,6 +37,16 @@ const dienstIconen: Record<string, string> = {
   'trekhaken': '<circle cx="12" cy="5" r="2"/><path d="M12 7v4l-5 6"/><rect x="3" y="17" width="18" height="4" rx="1"/>',
 };
 const standaardIcoon = '<circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/>';
+
+// Merken waarvoor we inbouwen (vertrouwensbalk). Pas de lijst gerust aan.
+const merken = [
+  'BMW', 'Audi', 'Mercedes-Benz', 'Volkswagen', 'Porsche', 'Volvo',
+  'Tesla', 'Ford', 'Toyota', 'Renault', 'Peugeot', 'MAN', 'DAF', 'Iveco',
+];
+
+// Google reviews. Vul 'featurableId' in met je gratis Featurable widget-ID voor live reviews.
+const featurableId = 'featurable-52bb09bd-2ded-438c-adfa-3edc3b75e6e5';
+const googleReviewUrl = 'https://share.google/aYQsEkbVwLwUOTUO2';
 ---
 
 <Layout title="Voertuigsystemen professioneel ingebouwd" description="Scharloo-Install bouwt voertuigvolgsystemen, alarmsystemen, dashcams en voertuigtechniek netjes in. Voor particulieren, bedrijven en wagenparken in Nederland en België.">
@@ -199,6 +209,20 @@ const standaardIcoon = '<circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/>
     </div>
   </section>
 
+  <!-- Merkenbalk (vertrouwen) -->
+  <section class="py-14 bg-black border-y border-white/10 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <p class="text-center text-sm text-gray-500 uppercase tracking-widest mb-8 reveal">Wij bouwen in voor elk merk</p>
+    </div>
+    <div class="merquee" aria-hidden="true">
+      <div class="merquee-track">
+        {[...merken, ...merken].map((merk) => (
+          <span class="brand-word">{merk}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- Services Grid -->
   <section class="py-28 bg-gray-950">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -277,6 +301,47 @@ const standaardIcoon = '<circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/>
     </div>
   </section>
 
+  <!-- Reviews -->
+  <section class="py-28 bg-gray-950 relative overflow-hidden">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <div class="reveal text-center max-w-2xl mx-auto">
+        <p class="text-brand font-medium tracking-widest uppercase mb-4">Reviews</p>
+        <h2 class="heading-lg mb-8">
+          Wat onze<br />
+          <span class="text-gray-500">klanten zeggen</span>
+        </h2>
+
+        <!-- Google trust-kaart -->
+        <div class="inline-flex flex-col sm:flex-row items-center gap-5 rounded-2xl bg-black ring-1 ring-white/10 px-7 py-6">
+          <div class="flex items-center gap-4">
+            <svg class="w-10 h-10 flex-shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M23.52 12.27c0-.82-.07-1.6-.21-2.36H12v4.46h6.47a5.53 5.53 0 0 1-2.4 3.63v3.02h3.88c2.27-2.09 3.57-5.17 3.57-8.75Z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.96-1.08 7.95-2.91l-3.88-3.02c-1.08.72-2.45 1.15-4.07 1.15-3.13 0-5.78-2.11-6.73-4.96H1.26v3.12A12 12 0 0 0 12 24Z"/>
+              <path fill="#FBBC05" d="M5.27 14.26a7.2 7.2 0 0 1 0-4.52V6.62H1.26a12 12 0 0 0 0 10.76l4.01-3.12Z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.44-3.44A11.97 11.97 0 0 0 12 0 12 12 0 0 0 1.26 6.62l4.01 3.12C6.22 6.86 8.87 4.75 12 4.75Z"/>
+            </svg>
+            <div class="text-left">
+              <div class="flex items-center gap-1 text-[#FBBC05] text-lg" aria-hidden="true">★★★★★</div>
+              <p class="text-sm text-gray-300">Beoordeeld door onze klanten op Google</p>
+            </div>
+          </div>
+          <a href={googleReviewUrl} target="_blank" rel="noopener" class="motion-button inline-flex items-center gap-2 bg-brand text-white rounded-full px-6 py-3 font-semibold hover:bg-white hover:text-black transition-all duration-300">
+            Bekijk op Google
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+
+      {featurableId && (
+        <div class="reveal mt-14">
+          <div id={featurableId} data-featurable-async></div>
+          <script src="https://featurable.com/assets/js/widget.js" async></script>
+        </div>
+      )}
+    </div>
+  </section>
+
   <!-- CTA Section -->
   <section class="py-32 bg-brand text-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center reveal">
@@ -308,6 +373,30 @@ const standaardIcoon = '<circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/>
   .reel-tile .reel-video { transition: transform 700ms cubic-bezier(.2,.75,.25,1); }
   .reel-tile:hover .reel-video { transform: scale(1.06); }
   /* Poster-foto blijft altijd zichtbaar; alleen de beweging stopt via JS. */
+
+  /* Lopende merkenbalk */
+  .merquee {
+    width: 100%; overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  }
+  .merquee-track {
+    display: inline-flex; align-items: center; gap: 3.5rem;
+    white-space: nowrap; width: max-content;
+    animation: merquee-scroll 36s linear infinite;
+  }
+  .brand-word {
+    font-weight: 800; font-size: 1.6rem; letter-spacing: 0.04em;
+    color: #4b5563; transition: color .3s ease;
+  }
+  .brand-word:hover { color: #fff; }
+  @keyframes merquee-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .merquee-track { animation: none; justify-content: center; flex-wrap: wrap; gap: 1.5rem 2.5rem; white-space: normal; }
+  }
 </style>
 
 <script>
