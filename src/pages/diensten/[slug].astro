@@ -64,11 +64,11 @@ const prijsBg = (heeftVarianten || heeftExtraFotos) ? 'bg-gray-950' : 'bg-black'
   {dienst.afbeelding && !bluEyePagina && (
     <section class="bg-black">
       <div class="max-w-6xl mx-auto px-6 lg:px-8 -mt-6 lg:-mt-10">
-        <div class="reveal relative overflow-hidden rounded-2xl ring-1 ring-white/10">
+        <div class="reveal relative overflow-hidden rounded-2xl ring-1 ring-white/10 bg-black">
           <img
             src={dienst.afbeelding}
             alt={dienst.afbeeldingAlt ?? dienst.title}
-            class="w-full h-[34vh] min-h-[220px] max-h-[420px] object-cover"
+            class="w-full aspect-[16/9] object-contain"
             loading="lazy"
             onerror="this.closest('section').style.display='none'"
           />
@@ -105,8 +105,8 @@ const prijsBg = (heeftVarianten || heeftExtraFotos) ? 'bg-gray-950' : 'bg-black'
             <img src={dienst.afbeeldingen[0].src} alt={dienst.afbeeldingen[0].alt} class="relative mx-auto max-h-[46vh] w-auto object-contain p-8" loading="lazy" />
           </div>
         ) : (
-          <div class="reveal overflow-hidden rounded-2xl ring-1 ring-white/10">
-            <img src={dienst.afbeeldingen[0].src} alt={dienst.afbeeldingen[0].alt} class="w-full h-[40vh] min-h-[260px] max-h-[460px] object-cover" loading="lazy" />
+          <div class="reveal overflow-hidden rounded-2xl ring-1 ring-white/10 bg-black">
+            <img src={dienst.afbeeldingen[0].src} alt={dienst.afbeeldingen[0].alt} class="w-full aspect-[16/9] object-contain" loading="lazy" />
           </div>
         )}
       </div>
@@ -199,7 +199,7 @@ const prijsBg = (heeftVarianten || heeftExtraFotos) ? 'bg-gray-950' : 'bg-black'
 
       {eenPrijs || !heeftPrijs ? (
         <!-- Eén vaste prijs, of prijs op aanvraag: één strak aanbod-blok -->
-        <div class="reveal motion-card max-w-xl mx-auto relative bg-gray-950 border border-gray-800">
+        <div class="reveal motion-card max-w-xl mx-auto relative bg-gray-950 rounded-2xl ring-1 ring-white/10 overflow-hidden">
           <div class="absolute inset-x-0 top-0 h-1 bg-brand"></div>
           <div class="p-10 lg:p-12 text-center">
             {heeftPrijs ? (
@@ -274,7 +274,7 @@ const prijsBg = (heeftVarianten || heeftExtraFotos) ? 'bg-gray-950' : 'bg-black'
         <div>
           <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
             {dienst.prijzen.map((p) => (
-              <div class="reveal motion-card relative bg-gray-950 border border-gray-800 p-8 text-center">
+              <div class="reveal motion-card relative bg-gray-950 rounded-2xl ring-1 ring-white/10 overflow-hidden p-8 text-center">
                 <div class="absolute inset-x-0 top-0 h-1 bg-brand"></div>
                 <p class="text-gray-500 text-sm uppercase tracking-widest mb-4">{p.naam}</p>
                 <div class="flex items-end justify-center gap-2">

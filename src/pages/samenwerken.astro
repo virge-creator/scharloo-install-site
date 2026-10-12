@@ -61,8 +61,10 @@ const partners = [
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {reasons.map((reason, i) => (
-          <div class="reveal bg-gray-950 p-8 border border-gray-800 hover:border-brand transition-colors">
-            <span class="text-brand text-3xl mb-4 block">✓</span>
+          <div class="reveal motion-card bg-gray-950 rounded-2xl ring-1 ring-white/10 hover:ring-brand p-8 transition-all">
+            <span class="flex items-center justify-center w-12 h-12 rounded-xl bg-brand/15 text-brand mb-5">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>
+            </span>
             <h3 class="text-2xl font-bold mb-2">{reason.title}</h3>
             <p class="text-gray-400">{reason.description}</p>
           </div>
