@@ -11,7 +11,8 @@
 
 export interface Prijs {
   naam: string;
-  prijs: string;              // eenmalig bedrag
+  prijs: string;              // eenmalig bedrag (de "nu"-prijs)
+  vanPrijs?: string;          // optioneel: oude/reguliere prijs, wordt doorgestreept getoond als "van". Leeg = geen actie.
   detail?: string;
   maand?: string;             // maandbedrag, bv '€15'
   maandDetail?: string;       // bv 'p/m excl. btw'
@@ -67,6 +68,7 @@ export const diensten: Dienst[] = [
       {
         naam: 'Compleet geïnstalleerd',
         prijs: '€275',
+        vanPrijs: '€349', // VOORBEELD-actieprijs, pas aan naar je echte reguliere prijs
         detail: 'incl. montage en btw',
         maand: '€12,50',
         maandDetail: 'p/m excl. btw',
@@ -102,6 +104,7 @@ export const diensten: Dienst[] = [
       {
         naam: 'Compleet geïnstalleerd',
         prijs: '€475',
+        vanPrijs: '€595', // VOORBEELD-actieprijs, pas aan naar je echte reguliere prijs
         detail: 'incl. inbouw en btw',
         maand: '€15',
         maandDetail: 'p/m excl. btw',
@@ -323,6 +326,7 @@ export const diensten: Dienst[] = [
       {
         naam: 'Target Blu Eye 2, compleet geïnstalleerd',
         prijs: '€1.899',
+        vanPrijs: '€2.199', // VOORBEELD-actieprijs, pas aan naar je echte reguliere prijs
         detail: 'incl. inbouw en btw',
       },
     ],
