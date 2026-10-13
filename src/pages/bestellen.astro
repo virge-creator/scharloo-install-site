@@ -8,13 +8,13 @@ const bestelbaar = diensten.filter((d) => d.prijzen.length > 0 && d.slug !== 'da
 const stappen = [
   { titel: 'Kies uw dienst', tekst: 'Selecteer de dienst die u wilt en reken direct veilig online af.' },
   { titel: 'Betaal met iDEAL', tekst: 'Snel en vertrouwd betalen via iDEAL, creditcard of Apple/Google Pay.' },
-  { titel: 'Afspraak ingepland', tekst: 'Binnen 3 werkdagen plannen wij samen met u de inbouwafspraak in.' },
+  { titel: 'Afspraak ingepland', tekst: 'Binnen 24 uur plannen wij samen met u de inbouwafspraak in.' },
 ];
 ---
 
 <Layout
   title="Online bestellen & betalen"
-  description="Bestel uw dienst van Scharloo-Install direct online en reken veilig af via iDEAL. Wij nemen binnen 3 werkdagen contact op om uw inbouwafspraak te plannen."
+  description="Bestel uw dienst van Scharloo-Install direct online en reken veilig af via iDEAL. Wij nemen binnen 24 uur contact op om uw inbouwafspraak te plannen."
 >
   <!-- Hero -->
   <section class="relative bg-black text-white overflow-hidden pt-28 pb-16 md:pt-36 md:pb-20">
@@ -26,12 +26,12 @@ const stappen = [
         <span class="text-brand">veilig</span> betaald
       </h1>
       <p class="text-xl text-gray-300 max-w-2xl mt-8 animate-fade-in-up delay-200" style="opacity: 0;">
-        Bestel uw dienst online en reken in één keer af via iDEAL. Daarna plannen wij binnen 3 werkdagen uw inbouwafspraak in.
+        Bestel uw dienst online en reken in één keer af via iDEAL. Daarna plannen wij binnen 24 uur uw inbouwafspraak in.
       </p>
       <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-gray-400 animate-fade-in-up delay-300">
         <span class="inline-flex items-center gap-2"><svg class="w-4 h-4 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>Veilig betalen via Stripe</span>
         <span class="inline-flex items-center gap-2"><svg class="w-4 h-4 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/></svg>iDEAL, creditcard & meer</span>
-        <span class="inline-flex items-center gap-2"><svg class="w-4 h-4 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Binnen 3 werkdagen ingepland</span>
+        <span class="inline-flex items-center gap-2"><svg class="w-4 h-4 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Binnen 24 uur ingepland</span>
       </div>
     </div>
   </section>
