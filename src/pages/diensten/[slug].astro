@@ -40,7 +40,14 @@ const prijsBg = (heeftVarianten || heeftExtraFotos) ? 'bg-gray-950' : 'bg-black'
       {heeftPrijs && (
         <div class="mt-8 animate-fade-in-up delay-200" style="opacity: 0;">
           <span class="inline-flex flex-wrap items-center gap-x-3 gap-y-1 border border-gray-700 rounded-full pl-5 pr-6 py-2.5">
-            <span class="text-gray-500 text-sm uppercase tracking-wide">vanaf</span>
+            {eerstePrijs.vanPrijs ? (
+              <>
+                <span class="rounded-full bg-brand text-white text-[11px] font-bold uppercase tracking-wide px-2.5 py-0.5">Actie</span>
+                <span class="text-gray-500 text-base line-through decoration-brand/60">{eerstePrijs.vanPrijs}</span>
+              </>
+            ) : (
+              <span class="text-gray-500 text-sm uppercase tracking-wide">vanaf</span>
+            )}
             <span class="text-brand text-lg font-bold">{eerstePrijs.prijs}</span>
             {eerstePrijs.detail && <span class="text-gray-400 text-sm">{eerstePrijs.detail}</span>}
             {eerstePrijs.maand && (
@@ -204,6 +211,9 @@ const prijsBg = (heeftVarianten || heeftExtraFotos) ? 'bg-gray-950' : 'bg-black'
         <!-- Eén vaste prijs, of prijs op aanvraag: één strak aanbod-blok -->
         <div class="reveal motion-card max-w-xl mx-auto relative bg-gray-950 rounded-2xl ring-1 ring-white/10 overflow-hidden">
           <div class="absolute inset-x-0 top-0 h-1 bg-brand"></div>
+          {heeftPrijs && eerstePrijs.vanPrijs && (
+            <span class="absolute top-4 right-4 z-10 rounded-full bg-brand text-white text-[11px] font-bold uppercase tracking-wide px-3 py-1 shadow-lg shadow-brand/30">Tijdelijke actie</span>
+          )}
           <div class="p-10 lg:p-12 text-center">
             {heeftPrijs ? (
               <>
@@ -216,7 +226,11 @@ const prijsBg = (heeftVarianten || heeftExtraFotos) ? 'bg-gray-950' : 'bg-black'
                       <div>
                         <p class="text-gray-500 text-xs uppercase tracking-widest mb-2">Eenmalig</p>
                         <div class="flex items-end justify-center gap-1.5">
-                          <span class="text-gray-500 text-sm mb-1.5">vanaf</span>
+                          {eerstePrijs.vanPrijs ? (
+                            <span class="text-gray-500 text-lg mb-1.5 line-through decoration-brand/60">{eerstePrijs.vanPrijs}</span>
+                          ) : (
+                            <span class="text-gray-500 text-sm mb-1.5">vanaf</span>
+                          )}
                           <span class="text-4xl lg:text-5xl font-black text-white leading-none">{eerstePrijs.prijs}</span>
                         </div>
                         {eerstePrijs.detail && <p class="text-gray-500 text-xs mt-2">{eerstePrijs.detail}</p>}
@@ -236,7 +250,11 @@ const prijsBg = (heeftVarianten || heeftExtraFotos) ? 'bg-gray-950' : 'bg-black'
                 ) : (
                   <>
                     <div class="flex items-end justify-center gap-2">
-                      <span class="text-gray-500 text-lg mb-2">vanaf</span>
+                      {eerstePrijs.vanPrijs ? (
+                        <span class="text-gray-500 text-2xl mb-2.5 line-through decoration-brand/60">{eerstePrijs.vanPrijs}</span>
+                      ) : (
+                        <span class="text-gray-500 text-lg mb-2">vanaf</span>
+                      )}
                       <span class="text-6xl lg:text-7xl font-black text-white leading-none">{eerstePrijs.prijs}</span>
                     </div>
                     {eerstePrijs.detail && <p class="text-gray-400 mt-3">{eerstePrijs.detail}</p>}
