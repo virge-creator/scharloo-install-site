@@ -1,6 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { diensten, dienstUrl } from '../data/diensten';
+import { alarmPakketten, volgPakketten } from '../data/alarm.ts';
+
+// Alarm- en voertuigvolgpakketten samen in één shop-grid.
+const beveiliging = [...alarmPakketten, ...volgPakketten];
 
 // Online bestelbaar: diensten met een vaste prijs, behalve dashcams (nog finetunen).
 const bestelbaar = diensten.filter((d) => d.prijzen.length > 0 && d.slug !== 'dashcams');
@@ -123,6 +127,73 @@ const stappen = [
       <p class="text-center text-gray-500 text-sm mt-10 reveal">
         Staat uw dienst er niet bij, of wilt u maatwerk? <a href="/contact/#formulier" class="text-brand hover:text-white transition-colors font-semibold">Neem contact op</a> voor een offerte op maat.
       </p>
+    </div>
+  </section>
+
+  <!-- Alarmsystemen & beveiliging (shop) -->
+  <section class="py-20 md:py-24 bg-black border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+        <div class="max-w-2xl">
+          <p class="text-brand font-medium tracking-widest uppercase mb-4">Alarmsystemen &amp; beveiliging</p>
+          <h2 class="heading-lg mb-4">SCM/CCV-pakketten<br /><span class="text-gray-500">met vaste prijs</span></h2>
+          <p class="text-lg text-gray-400">Vaste pakketprijs, inclusief btw, montage en SCM/CCV-certificaat. Bij de voertuigvolgsystemen komt een jaarlijks meldkamerabonnement.</p>
+        </div>
+        <div class="inline-flex items-center gap-3 self-start rounded-2xl bg-white ring-1 ring-white/10 px-5 py-3 shadow-xl shadow-black/40">
+          <img src="/images/SCM-logo-Kiwa-kleuren-ONDERTITEL.jpg" alt="SCM / Kiwa erkend keurmerk" class="h-9 w-auto" loading="lazy" />
+          <span class="text-sm font-bold text-gray-900 leading-tight">Officieel<br />SCM/CCV-erkend</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+        {beveiliging.map((pakket) => (
+          <div class="motion-card reveal group rounded-2xl bg-gray-950 ring-1 ring-white/10 hover:ring-brand overflow-hidden flex flex-col transition-all">
+            {/* Foto-tegel */}
+            <div class="relative h-48 bg-gradient-to-br from-brand/20 via-white/[0.03] to-transparent flex items-center justify-center border-b border-white/10">
+              {pakket.populair ? (
+                <span class="absolute top-3 left-3 z-10 rounded-full bg-brand text-white text-[11px] font-bold uppercase tracking-wide px-3 py-1 shadow-lg shadow-brand/30">Meest gekozen</span>
+              ) : pakket.vanPrijs && (
+                <span class="absolute top-3 left-3 z-10 rounded-full bg-white text-black text-[11px] font-bold uppercase tracking-wide px-3 py-1 shadow-lg">Actie</span>
+              )}
+              <img src={pakket.foto} alt={`${pakket.klasse} - ${pakket.sub}`} loading="lazy" class="max-h-40 w-auto object-contain p-4 transition-transform duration-500 group-hover:scale-105" />
+            </div>
+
+            {/* Body */}
+            <div class="p-6 md:p-7 flex flex-col flex-1">
+              <h3 class="text-xl font-bold">{pakket.klasse}</h3>
+              <p class="text-brand/80 text-sm font-medium mt-1 mb-3">{pakket.sub}</p>
+              <p class="text-gray-400 text-sm leading-relaxed mb-5">{pakket.omschrijving}</p>
+
+              <div class="mt-auto">
+                <div class="flex items-baseline gap-2">
+                  {pakket.vanPrijs && <span class="text-gray-500 text-base line-through decoration-brand/60">{pakket.vanPrijs}</span>}
+                  <span class="text-3xl font-black text-white leading-none">{pakket.prijs}</span>
+                </div>
+                <p class="text-gray-500 text-xs mt-1.5">
+                  {pakket.abonnement ? `eenmalig + ${pakket.abonnement}` : 'eenmalig, incl. btw en montage'}
+                </p>
+
+                <div class="mt-5 flex flex-col gap-2.5">
+                  {pakket.bestelLink ? (
+                    <a href={pakket.bestelLink} target="_blank" rel="noopener" class="motion-button inline-flex items-center justify-center gap-2 bg-brand text-white rounded-full px-6 py-3.5 font-semibold hover:bg-white hover:text-black transition-all duration-300">
+                      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                      Bestel &amp; betaal
+                    </a>
+                  ) : (
+                    <a href="/contact/?dienst=alarmsystemen#formulier" class="motion-button inline-flex items-center justify-center gap-2 bg-brand text-white rounded-full px-6 py-3.5 font-semibold hover:bg-white hover:text-black transition-all duration-300">
+                      Prijs aanvragen
+                      <span>→</span>
+                    </a>
+                  )}
+                  <a href="/alarmsystemen/" class="inline-flex items-center justify-center rounded-full border border-white/20 text-white px-6 py-3 font-semibold hover:border-brand hover:text-brand transition-colors">
+                    Meer info
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 

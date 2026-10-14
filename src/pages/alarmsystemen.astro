@@ -1,102 +1,37 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
-// Alarmsystemen, eenmalige prijs, incl. btw, montage en SCM/CCV-certificaat
-const alarmPakketten = [
-  {
-    klasse: 'Klasse 2',
-    prijs: '€849',
-    handzender: '€899',
-    populair: false,
-    omschrijving: 'Startonderbreker met inbraak- en omtrekbeveiliging.',
-    features: [
-      'SCM/CCV-certificaat',
-      'Startonderbreker',
-      'Radardetectie en omtrekbeveiliging',
-      'Noodstroomsirene',
-    ],
-  },
-  {
-    klasse: 'Klasse 3',
-    prijs: '€999',
-    handzender: '€1.049',
-    populair: false,
-    omschrijving: 'Klasse 2, uitgebreid met hellingshoekdetectie tegen wegslepen.',
-    features: [
-      'SCM/CCV-certificaat',
-      'Startonderbreker',
-      'Radardetectie en omtrekbeveiliging',
-      'Hellingshoekdetectie',
-      'Noodstroomsirene',
-    ],
-  },
-];
-
-// Voertuigvolgsystemen, eenmalige prijs + jaarlijks meldkamerabonnement (PAC)
-const volgPakketten = [
-  {
-    klasse: 'Klasse 4',
-    prijs: '€699',
-    abonnement: '€275 per jaar',
-    populair: false,
-    omschrijving: 'Voertuigvolgsysteem met 24/7 meldkamer en jammingdetectie.',
-    features: [
-      'SCM/CCV-certificaat',
-      'Voertuigvolgsysteem',
-      'Startblokkade op afstand',
-      '24/7 meldkamer',
-      'Jammingdetectie',
-    ],
-  },
-  {
-    klasse: 'Klasse 5',
-    prijs: '€799',
-    abonnement: '€275 per jaar',
-    populair: true,
-    omschrijving: 'Het complete systeem: alarm én voertuigvolgsysteem met pushmelding.',
-    features: [
-      'SCM/CCV-certificaat',
-      'Alarm gekoppeld aan voertuigvolgsysteem',
-      'Startblokkade op afstand',
-      '24/7 meldkamer',
-      'Jammingdetectie',
-      'Pushmelding bij alarm',
-    ],
-  },
-  {
-    klasse: 'Klasse TV: terugvindsysteem',
-    prijs: '€299',
-    abonnement: '€99 per jaar',
-    populair: false,
-    omschrijving: 'Compact terugvindsysteem om uw voertuig na diefstal te traceren.',
-    features: [
-      'SCM/CCV-certificaat',
-      'Terugvindsysteem',
-      '24/7 meldkamer',
-    ],
-  },
-];
+import { alarmPakketten, volgPakketten } from '../data/alarm.ts';
 
 // Uitleg per klasse, extra tekst voor zoekmachines en bezoekers
 const klasseUitleg = [
   {
-    naam: 'Alarm klasse 2',
+    naam: 'Klasse 2',
+    sub: 'Alarmsysteem',
+    foto: '/images/alarm-klasse-2.png',
     tekst: 'Een SCM/CCV alarm klasse 2 combineert een startonderbreker met inbraak- en omtrekbeveiliging. Sensoren detecteren beweging in en rond het voertuig en activeren de noodstroomsirene. Dit is de instap voor een volwaardig auto-alarm en vaak voldoende wanneer uw verzekeraar een alarm eist zonder hellingshoekdetectie.',
   },
   {
-    naam: 'Alarm klasse 3',
+    naam: 'Klasse 3',
+    sub: 'Alarm + hellingdetectie',
+    foto: '/images/alarm-klasse-3.png',
     tekst: 'Een alarm klasse 3 heeft alles van klasse 2 en voegt hellingshoekdetectie toe. Probeert een dief uw voertuig op te krikken of weg te slepen, dan gaat het alarm af. Klasse 3 is de meest gevraagde klasse door verzekeraars en beschermt dankzij eigen autorisatie ook tegen keyless diefstal (de relay attack).',
   },
   {
-    naam: 'Klasse 4: voertuigvolgsysteem',
+    naam: 'Klasse 4',
+    sub: 'Voertuigvolgsysteem',
+    foto: '/images/alarm-klasse-4.png',
     tekst: 'Een klasse 4 voertuigvolgsysteem is een SCM/CCV-gecertificeerd track & trace systeem met aansluiting op een 24/7 meldkamer. Bij diefstal wordt uw voertuig via GPS gevolgd en kan het op afstand worden geblokkeerd. Jammingdetectie merkt het direct wanneer iemand het signaal probeert te verstoren.',
   },
   {
-    naam: 'Klasse 5: alarm én volgsysteem gekoppeld',
+    naam: 'Klasse 5',
+    sub: 'Alarm + volgsysteem',
+    foto: '/images/alarm-klasse-5.png',
     tekst: 'Klasse 5 is de meest complete oplossing: een alarm gekoppeld aan een voertuigvolgsysteem. Gaat het alarm af, dan ontvangen u én de meldkamer direct een pushmelding, zodat er meteen actie ondernomen kan worden. U combineert zo afschrikking, tracking en opvolging in één systeem.',
   },
   {
-    naam: 'Klasse TV: terugvindsysteem',
+    naam: 'Klasse TV',
+    sub: 'Peilzender / terugvinden',
+    foto: '/images/alarm-klasse-tv.png',
     tekst: 'Het klasse TV terugvindsysteem is een compacte, SCM/CCV-gecertificeerde tracker waarmee uw voertuig na diefstal snel wordt teruggevonden via de meldkamer. Een voordelige oplossing met een laag jaarabonnement, ideaal als aanvulling of voor voertuigen met een lager risicoprofiel.',
   },
 ];
@@ -117,7 +52,7 @@ const faqs = [
   },
   {
     vraag: 'Wat kost een alarmsysteem inbouwen?',
-    antwoord: 'Onze vanaf-prijzen: klasse 2 vanaf €849, klasse 3 vanaf €999, klasse 4 vanaf €699 en klasse 5 vanaf €799, inclusief btw, montage en SCM/CCV-certificaat. Bij de voertuigvolgsystemen (klasse 4, 5 en het terugvindsysteem) komt een jaarlijks meldkamerabonnement. De definitieve prijs hangt af van merk, model en bouwjaar.',
+    antwoord: 'Wij werken met vaste pakketprijzen: klasse 2 voor €849, klasse 3 voor €999, klasse 4 voor €699 en klasse 5 voor €799, inclusief btw, montage en SCM/CCV-certificaat. Bij de voertuigvolgsystemen (klasse 4, 5 en het terugvindsysteem) komt een jaarlijks meldkamerabonnement. U kunt de meeste pakketten direct online bestellen en betalen.',
   },
   {
     vraag: 'Helpt het tegen keyless diefstal (relay attack)?',
@@ -204,23 +139,26 @@ const faqSchema = {
           <span class="text-gray-500">en klasse 3</span>
         </h2>
         <p class="text-xl text-gray-400 mb-12 max-w-2xl">
-          Eenmalige prijs, inclusief btw, montage en SCM/CCV-certificaat.
+          Vaste pakketprijs, inclusief btw, montage en SCM/CCV-certificaat. Direct online te bestellen.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {alarmPakketten.map((pakket) => (
           <div class={`reveal motion-card relative bg-gray-950 p-8 rounded-2xl ring-1 ${pakket.populair ? 'ring-2 ring-brand' : 'ring-white/10'} hover:ring-brand transition-all flex flex-col`}>
-            {pakket.populair && (
+            {pakket.populair ? (
               <span class="absolute -top-3 left-8 bg-brand text-white text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full">Meest gekozen</span>
+            ) : pakket.vanPrijs && (
+              <span class="absolute -top-3 left-8 bg-white text-black text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full">Actie</span>
             )}
-            <h3 class="text-2xl font-bold mb-2">{pakket.klasse}</h3>
+            <h3 class="text-2xl font-bold mb-1">{pakket.klasse}</h3>
+            <p class="text-brand text-sm font-semibold mb-3">{pakket.sub}</p>
             <p class="text-gray-400 mb-6">{pakket.omschrijving}</p>
-            <div class="flex items-baseline gap-2 mb-1">
-              <span class="text-gray-500 text-sm">vanaf</span>
+            <div class="flex items-baseline flex-wrap gap-x-3 gap-y-1 mb-1">
               <span class="text-4xl font-black text-white">{pakket.prijs}</span>
+              {pakket.vanPrijs && <span class="text-lg text-gray-500 line-through">{pakket.vanPrijs}</span>}
             </div>
-            <p class="text-gray-500 text-sm mb-6">Met losse handzender: {pakket.handzender}</p>
+            <p class="text-gray-500 text-sm mb-6">Eenmalig, incl. btw en montage</p>
             <ul class="space-y-3 mb-8">
               {pakket.features.map((feature) => (
                 <li class="flex items-center gap-3 text-gray-300">
@@ -229,9 +167,16 @@ const faqSchema = {
                 </li>
               ))}
             </ul>
-            <a href="/contact/?dienst=alarmsystemen#formulier" class="mt-auto inline-flex items-center justify-center gap-2 border border-gray-700 text-white rounded-full px-6 py-3 font-semibold hover:border-brand hover:text-brand transition-colors">
-              Offerte aanvragen
-            </a>
+            {pakket.bestelLink ? (
+              <a href={pakket.bestelLink} class="motion-button mt-auto inline-flex items-center justify-center gap-2 bg-brand text-white rounded-full px-6 py-3 font-semibold hover:bg-white hover:text-black transition-all">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                Bestel &amp; betaal
+              </a>
+            ) : (
+              <a href="/contact/?dienst=alarmsystemen#formulier" class="mt-auto inline-flex items-center justify-center gap-2 border border-gray-700 text-white rounded-full px-6 py-3 font-semibold hover:border-brand hover:text-brand transition-colors">
+                Offerte aanvragen
+              </a>
+            )}
           </div>
         ))}
       </div>
@@ -248,23 +193,26 @@ const faqSchema = {
           <span class="text-gray-500">terugvindsysteem</span>
         </h2>
         <p class="text-xl text-gray-400 mb-12 max-w-2xl">
-          Eenmalige prijs plus een jaarlijks abonnement op de meldkamer (PAC).
+          Vaste pakketprijs plus een jaarlijks abonnement op de meldkamer (PAC).
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {volgPakketten.map((pakket) => (
           <div class={`reveal motion-card relative bg-black p-8 rounded-2xl ring-1 ${pakket.populair ? 'ring-2 ring-brand' : 'ring-white/10'} hover:ring-brand transition-all flex flex-col`}>
-            {pakket.populair && (
+            {pakket.populair ? (
               <span class="absolute -top-3 left-8 bg-brand text-white text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full">Meest gekozen</span>
+            ) : pakket.vanPrijs && (
+              <span class="absolute -top-3 left-8 bg-white text-black text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full">Actie</span>
             )}
-            <h3 class="text-xl font-bold mb-2">{pakket.klasse}</h3>
+            <h3 class="text-xl font-bold mb-1">{pakket.klasse}</h3>
+            <p class="text-brand text-sm font-semibold mb-3">{pakket.sub}</p>
             <p class="text-gray-400 mb-6 text-sm">{pakket.omschrijving}</p>
-            <div class="flex items-baseline gap-2 mb-1">
-              <span class="text-gray-500 text-sm">vanaf</span>
+            <div class="flex items-baseline flex-wrap gap-x-2.5 gap-y-1 mb-1">
               <span class="text-3xl font-black text-white">{pakket.prijs}</span>
+              {pakket.vanPrijs && <span class="text-base text-gray-500 line-through">{pakket.vanPrijs}</span>}
             </div>
-            <p class="text-gray-500 text-sm mb-6">+ {pakket.abonnement}</p>
+            <p class="text-gray-500 text-sm mb-6">eenmalig + {pakket.abonnement}</p>
             <ul class="space-y-3 mb-8">
               {pakket.features.map((feature) => (
                 <li class="flex items-center gap-3 text-gray-300 text-sm">
@@ -273,9 +221,16 @@ const faqSchema = {
                 </li>
               ))}
             </ul>
-            <a href="/contact/?dienst=alarmsystemen#formulier" class="mt-auto inline-flex items-center justify-center gap-2 border border-gray-700 text-white rounded-full px-6 py-3 font-semibold hover:border-brand hover:text-brand transition-colors">
-              Offerte aanvragen
-            </a>
+            {pakket.bestelLink ? (
+              <a href={pakket.bestelLink} class="motion-button mt-auto inline-flex items-center justify-center gap-2 bg-brand text-white rounded-full px-6 py-3 font-semibold hover:bg-white hover:text-black transition-all">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                Bestel &amp; betaal
+              </a>
+            ) : (
+              <a href="/contact/?dienst=alarmsystemen#formulier" class="mt-auto inline-flex items-center justify-center gap-2 border border-gray-700 text-white rounded-full px-6 py-3 font-semibold hover:border-brand hover:text-brand transition-colors">
+                Offerte aanvragen
+              </a>
+            )}
           </div>
         ))}
       </div>
@@ -285,19 +240,32 @@ const faqSchema = {
   <!-- Uitleg per klasse -->
   <section class="py-24 bg-black">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="reveal">
-        <p class="text-brand font-medium tracking-widest uppercase mb-4">Uitleg</p>
-        <h2 class="heading-lg mb-12">
-          De alarmklassen<br />
-          <span class="text-gray-500">uitgelegd</span>
-        </h2>
+      <div class="reveal flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+        <div>
+          <p class="text-brand font-medium tracking-widest uppercase mb-4">Uitleg</p>
+          <h2 class="heading-lg">De alarmklassen<br /><span class="text-gray-500">in beeld</span></h2>
+        </div>
+        <div class="inline-flex items-center gap-3 self-start rounded-2xl bg-white ring-1 ring-white/10 px-5 py-3 shadow-xl shadow-black/40">
+          <img src="/images/SCM-logo-Kiwa-kleuren-ONDERTITEL.jpg" alt="SCM / Kiwa erkend keurmerk" class="h-9 w-auto" loading="lazy" />
+          <span class="text-sm font-bold text-gray-900 leading-tight">Officieel<br />SCM/CCV-erkend</span>
+        </div>
       </div>
 
-      <div class="max-w-3xl space-y-8">
-        {klasseUitleg.map((item) => (
-          <div class="reveal border-t border-gray-800 pt-8">
-            <h3 class="text-2xl font-bold mb-3">{item.naam}</h3>
-            <p class="text-lg text-gray-400 leading-relaxed">{item.tekst}</p>
+      <div class="space-y-5 md:space-y-6">
+        {klasseUitleg.map((item, i) => (
+          <div class="reveal motion-card grid md:grid-cols-5 gap-6 md:gap-8 items-center rounded-2xl bg-gray-950 ring-1 ring-white/10 hover:ring-brand p-6 md:p-8 transition-all">
+            <div class={`md:col-span-2 relative overflow-hidden rounded-xl bg-black/40 ring-1 ring-white/5 flex items-center justify-center p-4 min-h-[180px] ${i % 2 ? 'md:order-2' : ''}`}>
+              <div class="pointer-events-none absolute inset-0" style="background:radial-gradient(55% 60% at 50% 50%,rgba(22,129,222,.16),transparent 70%)"></div>
+              <img src={item.foto} alt={`${item.naam} - ${item.sub}`} class="relative max-h-48 w-auto object-contain" loading="lazy" />
+            </div>
+            <div class="md:col-span-3">
+              <div class="flex items-center gap-x-3 gap-y-2 mb-3 flex-wrap">
+                <h3 class="text-2xl font-bold">{item.naam}</h3>
+                <span class="text-brand/90 text-sm font-semibold">{item.sub}</span>
+                <span class="inline-flex items-center rounded-full bg-brand/15 text-brand text-[11px] font-bold uppercase tracking-wide px-2.5 py-1">SCM/CCV erkend</span>
+              </div>
+              <p class="text-gray-400 leading-relaxed">{item.tekst}</p>
+            </div>
           </div>
         ))}
       </div>
@@ -316,7 +284,7 @@ const faqSchema = {
           </li>
           <li class="flex items-start gap-4 text-xl text-gray-300">
             <span class="text-brand text-2xl leading-none">✓</span>
-            Het zijn vanaf-prijzen. De definitieve prijs hangt af van merk, model en bouwjaar, bijvoorbeeld bij een dubbele startblokkering of wanneer er LED-verlichting moet worden aangestuurd.
+            Vaste pakketprijzen, zodat u vooraf precies weet waar u aan toe bent. De meeste pakketten bestelt u direct online en betaalt u meteen af.
           </li>
           <li class="flex items-start gap-4 text-xl text-gray-300">
             <span class="text-brand text-2xl leading-none">✓</span>
