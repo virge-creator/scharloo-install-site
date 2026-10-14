@@ -8,6 +8,8 @@ const bestelbaar = diensten.filter((d) => d.prijzen.length > 0 && d.slug !== 'da
 // Productfoto per dienst voor de shop-kaarten. Heeft een dienst hier geen foto,
 // dan toont de kaart automatisch een nette branded icoon-tegel.
 const kaartFoto: Record<string, string> = {
+  'voertuigvolgsystemen': '/images/eco5-tracker.png',
+  'gps-startonderbreker': '/images/eco5-startonderbreker.png',
   'target-blu-eye': '/images/blu-eye-2-set-transparant.png',
   'trekhaken': '/images/590000-transparant.png',
 };

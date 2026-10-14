@@ -74,11 +74,12 @@ const prijsBg = (heeftVarianten || heeftExtraFotos) ? 'bg-gray-950' : 'bg-black'
   {dienst.afbeelding && !bluEyePagina && (
     <section class="bg-black">
       <div class="max-w-6xl mx-auto px-6 lg:px-8 -mt-6 lg:-mt-10">
-        <div class="reveal relative overflow-hidden rounded-2xl ring-1 ring-white/10 bg-black">
+        <div class="reveal relative overflow-hidden rounded-2xl ring-1 ring-white/10 bg-gray-950">
+          <div class="pointer-events-none absolute inset-0" style="background:radial-gradient(55% 60% at 50% 45%,rgba(22,129,222,.18),transparent 70%)"></div>
           <img
             src={dienst.afbeelding}
             alt={dienst.afbeeldingAlt ?? dienst.title}
-            class="w-full aspect-[16/9] object-contain"
+            class="relative mx-auto max-h-[44vh] w-auto object-contain p-8 md:p-10"
             loading="lazy"
             onerror="this.closest('section').style.display='none'"
           />

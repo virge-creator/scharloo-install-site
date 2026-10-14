@@ -50,6 +50,8 @@ export const diensten: Dienst[] = [
     title: 'Voertuigvolgsystemen',
     subtitle: 'Tracking & ritregistratie',
     bestelLink: 'https://buy.stripe.com/eVq5kE4OH0Be0xu7Ti3VC03',
+    afbeelding: '/images/eco5-tracker.png',
+    afbeeldingAlt: 'Ruptela Eco5 Lite GNSS-tracker voor voertuigvolgsystemen',
     kort: 'Realtime GPS-tracking en automatische ritregistratie voor uw voertuig of volledige wagenpark, met overzicht in één online dashboard.',
     intro: 'Realtime GPS-tracking en automatische ritregistratie voor uw voertuig of volledige wagenpark, professioneel ingebouwd, met overzicht in één online dashboard.',
     over: [
@@ -85,6 +87,8 @@ export const diensten: Dienst[] = [
     title: 'GPS + startonderbreker',
     subtitle: 'Tracking & startonderbreking op afstand',
     bestelLink: 'https://buy.stripe.com/bJe6oI3KD83Gbc8flK3VC02',
+    afbeelding: '/images/eco5-startonderbreker.png',
+    afbeeldingAlt: 'GPS-tracker met startonderbreker-relais voor voertuigbeveiliging',
     kort: 'Live voertuigtracking, ritregistratie en een op afstand bedienbare startonderbreking, bij diefstal zet u uw voertuig op afstand stil.',
     intro: 'Live voertuigtracking, ritregistratie en een op afstand bedienbare startonderbreking. Bij diefstal of ongeoorloofd gebruik maakt u uw voertuig op afstand onstartbaar, waar het ook is.',
     over: [
