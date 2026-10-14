@@ -65,9 +65,7 @@ const stappen = [
         {bestelbaar.map((d) => {
           const p = d.prijzen[0];
           const heeftLink = !!d.bestelLink;
-          // Maatwerk (prijs afhankelijk van merk/model) is niet direct afrekenbaar.
-          const opAanvraag = d.slug === 'trekhaken';
-          const aanvraagLabel = opAanvraag ? 'Prijs aanvragen' : 'Direct aanvragen';
+          const aanvraagLabel = 'Direct aanvragen';
           const foto = kaartFoto[d.slug];
           return (
             <div class="motion-card reveal group rounded-2xl bg-black ring-1 ring-white/10 hover:ring-brand overflow-hidden flex flex-col transition-all">
@@ -102,7 +100,7 @@ const stappen = [
                   )}
 
                   <div class="mt-5 flex flex-col gap-2.5">
-                    {heeftLink && !opAanvraag ? (
+                    {heeftLink ? (
                       <a href={d.bestelLink} target="_blank" rel="noopener" class="motion-button inline-flex items-center justify-center gap-2 bg-brand text-white rounded-full px-6 py-3.5 font-semibold hover:bg-white hover:text-black transition-all duration-300">
                         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
                         Bestel &amp; betaal
