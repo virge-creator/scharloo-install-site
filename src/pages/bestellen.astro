@@ -6,8 +6,12 @@ import { alarmPakketten, volgPakketten } from '../data/alarm.ts';
 // Alarm- en voertuigvolgpakketten samen in één shop-grid.
 const beveiliging = [...alarmPakketten, ...volgPakketten];
 
-// Online bestelbaar: diensten met een vaste prijs, behalve dashcams (nog finetunen).
-const bestelbaar = diensten.filter((d) => d.prijzen.length > 0 && d.slug !== 'dashcams');
+// Direct bestelbaar: diensten met een Stripe-betaallink.
+const bestelbaar = diensten.filter((d) => !!d.bestelLink);
+const directSlugs = new Set(bestelbaar.map((d) => d.slug));
+
+// Op aanvraag: de overige diensten met een eigen detailpagina (maatwerk / offerte).
+const opAanvraagDiensten = diensten.filter((d) => d.genereerPagina && !directSlugs.has(d.slug));
 
 // Productfoto per dienst voor de shop-kaarten. Heeft een dienst hier geen foto,
 // dan toont de kaart automatisch een nette branded icoon-tegel.
@@ -24,6 +28,12 @@ const dienstIconen: Record<string, string> = {
   'gps-startonderbreker': '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><rect x="9.5" y="11" width="5" height="4.5" rx="1"/><path d="M10.2 11V9.6a1.8 1.8 0 0 1 3.6 0V11"/>',
   'target-blu-eye': '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>',
   'trekhaken': '<circle cx="12" cy="5" r="2"/><path d="M12 7v4l-5 6"/><rect x="3" y="17" width="18" height="4" rx="1"/>',
+  'dashcams': '<path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3Z"/><circle cx="12" cy="13" r="3.5"/>',
+  'tachograaf': '<path d="M12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="m13.5 9.5 3-3"/><path d="M4.2 18a8 8 0 1 1 15.6 0Z"/>',
+  'can-bus': '<circle cx="5" cy="12" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 12h5"/><path d="m12 12 5-5"/><path d="m12 12 5 5"/>',
+  'driver-id': '<rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="8" cy="12" r="2.5"/><path d="M14 10h5"/><path d="M14 14h5"/>',
+  'io-integraties': '<path d="M9 2v6"/><path d="M15 2v6"/><path d="M7 8h10v3a5 5 0 0 1-10 0Z"/><path d="M12 16v6"/>',
+  'temperatuur-monitoring': '<path d="M14 14.76V5a2 2 0 0 0-4 0v9.76a4 4 0 1 0 4 0Z"/>',
 };
 const standaardIcoon = '<circle cx="12" cy="12" r="9"/><path d="m9 12 2 2 4-4"/>';
 
@@ -58,9 +68,14 @@ const stappen = [
     </div>
   </section>
 
-  <!-- Bestelbare diensten (shop) -->
+  <!-- Direct bestelbaar (shop) -->
   <section class="py-20 md:py-24 bg-gray-950 border-t border-white/10">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="reveal max-w-2xl mb-12">
+        <p class="text-brand font-medium tracking-widest uppercase mb-4">Direct bestelbaar</p>
+        <h2 class="heading-lg mb-4">Online bestellen<br /><span class="text-gray-500">&amp; direct betalen</span></h2>
+        <p class="text-lg text-gray-400">Vaste prijzen, inclusief montage en btw. Reken veilig af via iDEAL en wij plannen binnen 24 uur uw inbouwafspraak in.</p>
+      </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
         {bestelbaar.map((d) => {
           const p = d.prijzen[0];
@@ -121,10 +136,6 @@ const stappen = [
           );
         })}
       </div>
-
-      <p class="text-center text-gray-500 text-sm mt-10 reveal">
-        Staat uw dienst er niet bij, of wilt u maatwerk? <a href="/contact/#formulier" class="text-brand hover:text-white transition-colors font-semibold">Neem contact op</a> voor een offerte op maat.
-      </p>
     </div>
   </section>
 
@@ -192,6 +203,65 @@ const stappen = [
           </div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <!-- Op aanvraag / maatwerk -->
+  <section class="py-20 md:py-24 bg-gray-950 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="reveal max-w-2xl mb-12">
+        <p class="text-brand font-medium tracking-widest uppercase mb-4">Op aanvraag &amp; maatwerk</p>
+        <h2 class="heading-lg mb-4">Overige diensten<br /><span class="text-gray-500">op maat geprijsd</span></h2>
+        <p class="text-lg text-gray-400">Deze diensten stellen we op maat samen voor uw voertuig of wagenpark. Vraag vrijblijvend een prijs aan, dan denken we met u mee.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+        {opAanvraagDiensten.map((d) => {
+          const p = d.prijzen[0];
+          return (
+            <div class="motion-card reveal group rounded-2xl bg-black ring-1 ring-white/10 hover:ring-brand overflow-hidden flex flex-col transition-all">
+              {/* Icoon-tegel */}
+              <div class="relative h-40 bg-gradient-to-br from-brand/15 via-white/[0.03] to-transparent flex items-center justify-center border-b border-white/10">
+                <span class="flex items-center justify-center w-16 h-16 rounded-2xl bg-brand/15 text-brand ring-1 ring-brand/30">
+                  <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" set:html={dienstIconen[d.slug] || standaardIcoon}></svg>
+                </span>
+              </div>
+
+              {/* Body */}
+              <div class="p-6 md:p-7 flex flex-col flex-1">
+                <h3 class="text-lg font-bold">{d.title}</h3>
+                <p class="text-brand/80 text-sm font-medium mt-1 mb-3">{d.subtitle}</p>
+                <p class="text-gray-400 text-sm leading-relaxed mb-5">{d.kort}</p>
+
+                <div class="mt-auto">
+                  {p ? (
+                    <div class="flex items-baseline gap-2">
+                      <span class="text-gray-500 text-xs">vanaf</span>
+                      <span class="text-2xl font-black text-white leading-none">{p.prijs}</span>
+                    </div>
+                  ) : (
+                    <p class="text-gray-400 text-sm font-semibold">Prijs op aanvraag</p>
+                  )}
+
+                  <div class="mt-5 flex flex-col gap-2.5">
+                    <a href={`/contact/?dienst=${d.slug}#formulier`} class="motion-button inline-flex items-center justify-center gap-2 bg-brand text-white rounded-full px-6 py-3.5 font-semibold hover:bg-white hover:text-black transition-all duration-300">
+                      Prijs aanvragen
+                      <span>→</span>
+                    </a>
+                    <a href={dienstUrl(d)} class="inline-flex items-center justify-center rounded-full border border-white/20 text-white px-6 py-3 font-semibold hover:border-brand hover:text-brand transition-colors">
+                      Meer info
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <p class="text-center text-gray-500 text-sm mt-10 reveal">
+        Staat uw dienst er niet bij, of wilt u maatwerk? <a href="/contact/#formulier" class="text-brand hover:text-white transition-colors font-semibold">Neem contact op</a> voor een offerte op maat.
+      </p>
     </div>
   </section>
 
