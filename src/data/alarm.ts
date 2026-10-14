@@ -27,7 +27,7 @@ export const alarmPakketten: AlarmPakket[] = [
     omschrijving: 'Startonderbreker met inbraak- en omtrekbeveiliging. Compleet inclusief montage en SCM/CCV-certificaat.',
     foto: '/images/alarm-klasse-2.png',
     features: ['SCM/CCV-certificaat', 'Startonderbreker', 'Radardetectie en omtrekbeveiliging', 'Noodstroomsirene', 'Inclusief montage'],
-    bestelLink: '',
+    bestelLink: 'https://buy.stripe.com/8x23cwephcjW0xu0qQ3VC05',
   },
   {
     klasse: 'Klasse 3',
@@ -38,7 +38,7 @@ export const alarmPakketten: AlarmPakket[] = [
     omschrijving: 'Klasse 2 uitgebreid met hellingshoekdetectie tegen wegslepen. De meest gevraagde klasse door verzekeraars.',
     foto: '/images/alarm-klasse-3.png',
     features: ['SCM/CCV-certificaat', 'Startonderbreker', 'Radardetectie en omtrekbeveiliging', 'Hellingshoekdetectie', 'Noodstroomsirene', 'Inclusief montage'],
-    bestelLink: '',
+    bestelLink: 'https://buy.stripe.com/4gM3cw5SL1Fibc83D23VC06',
   },
 ];
 
@@ -53,7 +53,7 @@ export const volgPakketten: AlarmPakket[] = [
     omschrijving: 'Voertuigvolgsysteem met 24/7 meldkamer en jammingdetectie.',
     foto: '/images/alarm-klasse-4.png',
     features: ['SCM/CCV-certificaat', 'Voertuigvolgsysteem', 'Startblokkade op afstand', '24/7 meldkamer', 'Jammingdetectie', 'Inclusief montage'],
-    bestelLink: '',
+    bestelLink: 'https://buy.stripe.com/eVq28sftl83G1By2yY3VC07',
   },
   {
     klasse: 'Klasse 5',
@@ -65,7 +65,7 @@ export const volgPakketten: AlarmPakket[] = [
     omschrijving: 'Het complete systeem: alarm én voertuigvolgsysteem met pushmelding.',
     foto: '/images/alarm-klasse-5.png',
     features: ['SCM/CCV-certificaat', 'Alarm gekoppeld aan voertuigvolgsysteem', 'Startblokkade op afstand', '24/7 meldkamer', 'Jammingdetectie', 'Pushmelding bij alarm', 'Inclusief montage'],
-    bestelLink: '',
+    bestelLink: 'https://buy.stripe.com/8x2aEYch91Fifso4H63VC08',
   },
   {
     klasse: 'Klasse TV',
@@ -77,6 +77,6 @@ export const volgPakketten: AlarmPakket[] = [
     omschrijving: 'Compact terugvindsysteem om uw voertuig na diefstal te traceren.',
     foto: '/images/alarm-klasse-tv.png',
     features: ['SCM/CCV-certificaat', 'Terugvindsysteem', '24/7 meldkamer', 'Inclusief montage'],
-    bestelLink: '',
+    bestelLink: 'https://buy.stripe.com/4gMfZigxp2Jma84c9y3VC09',
   },
 ];
