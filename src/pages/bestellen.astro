@@ -182,6 +182,12 @@ const stappen = [
                   {pakket.abonnement ? `eenmalig + ${pakket.abonnement}` : 'eenmalig, incl. btw en montage'}
                 </p>
 
+                {pakket.opmerking && (
+                  <p class="mt-4 text-xs text-brand bg-brand/10 ring-1 ring-brand/20 rounded-lg px-3 py-2.5 leading-snug">
+                    <span class="font-bold">Let op:</span> {pakket.opmerking}
+                  </p>
+                )}
+
                 <div class="mt-5 flex flex-col gap-2.5">
                   {pakket.bestelLink ? (
                     <a href={pakket.bestelLink} target="_blank" rel="noopener" class="motion-button inline-flex items-center justify-center gap-2 bg-brand text-white rounded-full px-6 py-3.5 font-semibold hover:bg-white hover:text-black transition-all duration-300">

@@ -26,7 +26,7 @@ const klasseUitleg = [
     naam: 'Klasse 5',
     sub: 'Alarm + volgsysteem',
     foto: '/images/alarm-klasse-5.png',
-    tekst: 'Klasse 5 is de meest complete oplossing: een alarm gekoppeld aan een voertuigvolgsysteem. Gaat het alarm af, dan ontvangen u én de meldkamer direct een pushmelding, zodat er meteen actie ondernomen kan worden. U combineert zo afschrikking, tracking en opvolging in één systeem.',
+    tekst: 'Klasse 5 is de meest complete oplossing: een alarm gekoppeld aan een voertuigvolgsysteem. Gaat het alarm af, dan ontvangen u én de meldkamer direct een pushmelding, zodat er meteen actie ondernomen kan worden. U combineert zo afschrikking, tracking en opvolging in één systeem. Klasse 5 wordt ingebouwd als koppeling op een bestaand Klasse 3-alarm; is er nog geen Klasse 3 aanwezig, dan installeren wij die eerst.',
   },
   {
     naam: 'Klasse TV',
@@ -48,7 +48,7 @@ const faqs = [
   },
   {
     vraag: 'Wat is het verschil tussen klasse 4 en klasse 5?',
-    antwoord: 'Klasse 4 is een voertuigvolgsysteem dat los staat van het alarm. Bij klasse 5 is het volgsysteem gekoppeld aan een alarm, zodat een alarmmelding automatisch doorgaat naar de meldkamer, met een pushmelding naar u.',
+    antwoord: 'Klasse 4 is een voertuigvolgsysteem dat los staat van het alarm. Bij klasse 5 is het volgsysteem gekoppeld aan een alarm, zodat een alarmmelding automatisch doorgaat naar de meldkamer, met een pushmelding naar u. Klasse 5 wordt ingebouwd als koppeling op een bestaand Klasse 3-alarm. Heeft uw voertuig nog geen Klasse 3, dan installeren wij die eerst; dat is een voorwaarde voor klasse 5.',
   },
   {
     vraag: 'Wat kost een alarmsysteem inbouwen?',
@@ -167,6 +167,11 @@ const faqSchema = {
                 </li>
               ))}
             </ul>
+            {pakket.opmerking && (
+              <p class="-mt-3 mb-6 text-xs text-brand bg-brand/10 ring-1 ring-brand/20 rounded-lg px-3 py-2.5 leading-snug">
+                <span class="font-bold">Let op:</span> {pakket.opmerking}
+              </p>
+            )}
             {pakket.bestelLink ? (
               <a href={pakket.bestelLink} class="motion-button mt-auto inline-flex items-center justify-center gap-2 bg-brand text-white rounded-full px-6 py-3 font-semibold hover:bg-white hover:text-black transition-all">
                 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
@@ -221,6 +226,11 @@ const faqSchema = {
                 </li>
               ))}
             </ul>
+            {pakket.opmerking && (
+              <p class="-mt-3 mb-6 text-xs text-brand bg-brand/10 ring-1 ring-brand/20 rounded-lg px-3 py-2.5 leading-snug">
+                <span class="font-bold">Let op:</span> {pakket.opmerking}
+              </p>
+            )}
             {pakket.bestelLink ? (
               <a href={pakket.bestelLink} class="motion-button mt-auto inline-flex items-center justify-center gap-2 bg-brand text-white rounded-full px-6 py-3 font-semibold hover:bg-white hover:text-black transition-all">
                 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>

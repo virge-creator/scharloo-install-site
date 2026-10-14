@@ -15,6 +15,7 @@ export interface AlarmPakket {
   foto: string;
   features: string[];
   bestelLink?: string;   // Stripe-betaallink; leeg = Offerte aanvragen
+  opmerking?: string;    // belangrijke voorwaarde, bv Klasse 5 vereist een bestaand Klasse 3
 }
 
 export const alarmPakketten: AlarmPakket[] = [
@@ -62,10 +63,11 @@ export const volgPakketten: AlarmPakket[] = [
     vanPrijs: '€949',
     abonnement: '€275 per jaar',
     populair: true,
-    omschrijving: 'Het complete systeem: alarm én voertuigvolgsysteem met pushmelding.',
+    omschrijving: 'De koppeling van uw alarm aan een voertuigvolgsysteem met pushmelding, ingebouwd op een bestaand Klasse 3-systeem.',
     foto: '/images/alarm-klasse-5.png',
     features: ['SCM/CCV-certificaat', 'Alarm gekoppeld aan voertuigvolgsysteem', 'Startblokkade op afstand', '24/7 meldkamer', 'Jammingdetectie', 'Pushmelding bij alarm', 'Inclusief montage'],
     bestelLink: 'https://buy.stripe.com/8x2aEYch91Fifso4H63VC08',
+    opmerking: 'Klasse 5 wordt ingebouwd op een bestaand Klasse 3-alarm (koppeling alarm + volgsysteem). Is er nog geen Klasse 3 aanwezig, dan is die eerst vereist.',
   },
   {
     klasse: 'Klasse TV',
