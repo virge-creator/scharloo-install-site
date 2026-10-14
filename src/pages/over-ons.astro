@@ -5,17 +5,17 @@ const values = [
   {
     title: 'Kwaliteit',
     description: 'Wij werken uitsluitend met kwalitatieve materialen van gerenommeerde merken.',
-    number: '01'
+    icon: '<path d="M12 2 4 5v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V5l-8-3Z"/><path d="m9 12 2 2 4-4"/>'
   },
   {
     title: 'Snelheid',
     description: 'De meeste installaties zijn binnen een dag gereed. Uw voertuig is snel weer inzetbaar.',
-    number: '02'
+    icon: '<path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/>'
   },
   {
     title: 'Service',
     description: 'Ook na de installatie staan wij voor u klaar. Bij vragen helpen wij u graag verder.',
-    number: '03'
+    icon: '<path d="M3 18v-5a9 9 0 0 1 18 0v5"/><path d="M21 19a2 2 0 0 1-2 2h-2v-6h2a2 2 0 0 1 2 2Z"/><path d="M3 19a2 2 0 0 0 2 2h2v-6H5a2 2 0 0 0-2 2Z"/>'
   },
 ];
 ---
@@ -87,12 +87,14 @@ const values = [
         </h2>
       </div>
       
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-l border-gray-800">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
         {values.map(value => (
-          <div class="p-8 lg:p-12 border-r border-b border-gray-800 reveal">
-            <span class="text-6xl font-black text-gray-900">{value.number}</span>
-            <h3 class="text-2xl font-bold -mt-6 mb-4">{value.title}</h3>
-            <p class="text-gray-400 text-lg">{value.description}</p>
+          <div class="motion-card reveal rounded-2xl bg-black ring-1 ring-white/10 hover:ring-brand p-7 md:p-8 transition-all">
+            <span class="flex items-center justify-center w-12 h-12 rounded-xl bg-brand/15 text-brand mb-6">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={value.icon}></svg>
+            </span>
+            <h3 class="text-2xl font-bold mb-3">{value.title}</h3>
+            <p class="text-gray-400 leading-relaxed">{value.description}</p>
           </div>
         ))}
       </div>
