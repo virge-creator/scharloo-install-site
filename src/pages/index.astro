@@ -51,6 +51,44 @@ const merken = [
 const featurableId = 'featurable-52bb09bd-2ded-438c-adfa-3edc3b75e6e5';
 const widgetUuid = featurableId.replace('featurable-', '');
 const googleReviewUrl = 'https://share.google/aYQsEkbVwLwUOTUO2';
+
+// Veelgestelde vragen (accordeon + FAQ-structuurdata voor Google).
+const faqs = [
+  {
+    vraag: 'Werken jullie door heel Nederland?',
+    antwoord: 'Ja. Wij zijn gevestigd in Reeuwijk (bij Gouda) en bouwen in door heel Nederland, zowel in onze werkplaats als op locatie bij u of op uw bedrijf. We zijn ook actief in België.',
+  },
+  {
+    vraag: 'Hoe snel kan ik terecht?',
+    antwoord: 'Na uw aanvraag nemen wij binnen 24 uur contact op om een afspraak in te plannen. Onze monteurs zijn flexibel inzetbaar, ook ’s avonds en in het weekend, bijvoorbeeld voor bedrijven die hun voertuigen overdag nodig hebben.',
+  },
+  {
+    vraag: 'Voldoet een alarm van jullie aan de eisen van mijn verzekeraar?',
+    antwoord: 'Ja. Wij zijn een SCM/CCV-erkend inbouwbedrijf en leveren bij elke installatie een geldig certificaat. Daarmee wordt uw beveiliging door verzekeraars geaccepteerd. Welke klasse u precies nodig heeft, hangt af van uw voertuig en verzekeraar; wij adviseren u vrijblijvend.',
+  },
+  {
+    vraag: 'Voor welke voertuigen bouwen jullie in?',
+    antwoord: 'Van personenauto’s en supercars tot bestelbussen, vrachtwagens en grondverzetmachines (zoals shovels en graafmachines). We werken met vrijwel alle merken en voertuigtypen.',
+  },
+  {
+    vraag: 'Kan ik online bestellen en betalen?',
+    antwoord: 'Ja. Een groot deel van ons aanbod kunt u direct online bestellen en veilig afrekenen via iDEAL. Voor maatwerk of specialistische diensten vraagt u eenvoudig een prijs aan. Daarna plannen wij binnen 24 uur de afspraak in.',
+  },
+  {
+    vraag: 'Krijg ik een factuur met btw?',
+    antwoord: 'Ja, u ontvangt altijd een nette factuur inclusief btw. Al onze prijzen zijn inclusief btw en montage, tenzij anders vermeld.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.vraag,
+    acceptedAnswer: { '@type': 'Answer', text: f.antwoord },
+  })),
+};
 ---
 
 <Layout title="Voertuigsystemen professioneel ingebouwd" description="Scharloo-Install bouwt voertuigvolgsystemen, alarmsystemen, dashcams en voertuigtechniek netjes in. Voor particulieren, bedrijven en wagenparken in Nederland en België.">
@@ -305,8 +343,43 @@ const googleReviewUrl = 'https://share.google/aYQsEkbVwLwUOTUO2';
     </div>
   </section>
 
+  <!-- Verzekeraar & keurmerk (vertrouwen) -->
+  <section class="py-24 md:py-28 bg-gray-950 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="reveal grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Keurmerk-tegel -->
+        <div class="order-2 lg:order-1 flex flex-wrap items-center justify-center gap-8 rounded-3xl bg-white ring-1 ring-white/10 p-10 shadow-2xl shadow-black/40">
+          <img src="/images/driehoek-CCV-voertuigbeveiliging-oranje.png" alt="CCV-keurmerk voertuigbeveiliging" class="h-28 md:h-32 w-auto object-contain" loading="lazy" />
+          <span class="hidden sm:block h-20 w-px bg-gray-200"></span>
+          <img src="/images/SCM-logo-Kiwa-kleuren-ONDERTITEL.jpg" alt="SCM Secure Connected Mobility en Kiwa" class="h-14 md:h-16 w-auto object-contain" loading="lazy" />
+        </div>
+        <!-- Tekst -->
+        <div class="order-1 lg:order-2">
+          <p class="text-brand font-medium tracking-widest uppercase mb-4">Kiwa SCM/CCV-keurmerk</p>
+          <h2 class="heading-lg mb-6">Geaccepteerd<br /><span class="text-gray-500">door uw verzekeraar</span></h2>
+          <p class="text-lg text-gray-400 leading-relaxed mb-8 max-w-xl">
+            Als officieel <span class="text-white font-semibold">SCM/CCV-erkend inbouwbedrijf</span> leveren wij alarmsystemen en voertuigvolgsystemen met een geldig certificaat. Daarmee voldoet u aan de eisen van uw verzekeraar en wordt uw beveiliging bij het afsluiten van een voertuigverzekering geaccepteerd.
+          </p>
+          <ul class="space-y-3">
+            {[
+              'Officieel SCM/CCV-erkend inbouwbedrijf',
+              'Geldig certificaat bij elke installatie',
+              'Voldoet aan de eisen van uw verzekeraar',
+              'Klasse 2 t/m 5, afgestemd op uw voertuig',
+            ].map((punt) => (
+              <li class="flex items-center gap-3 text-gray-200">
+                <span class="flex-none w-5 h-5 rounded-full bg-brand/15 text-brand grid place-items-center text-xs font-bold">✓</span>
+                {punt}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Reviews -->
-  <section class="py-28 bg-gray-950 relative overflow-hidden">
+  <section class="py-28 bg-black relative overflow-hidden">
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
       <div class="reveal text-center max-w-2xl mx-auto mb-12">
@@ -399,6 +472,34 @@ const googleReviewUrl = 'https://share.google/aYQsEkbVwLwUOTUO2';
     })();
   </script>
 
+  <!-- Veelgestelde vragen (accordeon) -->
+  <section class="py-24 md:py-28 bg-gray-950 border-t border-white/10">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <div class="reveal text-center max-w-2xl mx-auto mb-12">
+        <p class="text-brand font-medium tracking-widest uppercase mb-4">Veelgestelde vragen</p>
+        <h2 class="heading-lg">Antwoord op<br /><span class="text-gray-500">uw vragen</span></h2>
+      </div>
+
+      <div class="reveal flex flex-col gap-3">
+        {faqs.map((f) => (
+          <details class="group rounded-2xl bg-black ring-1 ring-white/10 hover:ring-white/20 transition-all">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 py-5 text-lg font-semibold text-white">
+              {f.vraag}
+              <span class="flex-none w-7 h-7 rounded-full bg-brand/15 text-brand grid place-items-center transition-transform duration-300 group-open:rotate-45">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </summary>
+            <div class="px-6 pb-6 -mt-1 text-gray-400 leading-relaxed">{f.antwoord}</div>
+          </details>
+        ))}
+      </div>
+
+      <p class="reveal text-center text-gray-500 mt-10">
+        Staat uw vraag er niet bij? <a href="/contact/#formulier" class="text-brand hover:text-white font-semibold transition-colors">Neem gerust contact op</a>.
+      </p>
+    </div>
+  </section>
+
   <!-- CTA Section -->
   <section class="relative py-24 md:py-32 bg-black overflow-hidden border-t border-white/10 reveal">
     <div class="absolute -top-40 right-[-10%] w-[45rem] h-[45rem] bg-brand/15 rounded-full blur-3xl" aria-hidden="true"></div>
@@ -429,6 +530,9 @@ const googleReviewUrl = 'https://share.google/aYQsEkbVwLwUOTUO2';
       </div>
   </section>
 </Layout>
+
+<!-- FAQ-structuurdata voor zoekmachines -->
+<script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
 
 <style>
   .hero-bg-video { filter: saturate(1.05); }
