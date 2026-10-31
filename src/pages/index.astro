@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { diensten, dienstUrl } from '../data/diensten';
+import Verzekeraars from '../components/Verzekeraars.astro';
+import { verzekeraarsTekst } from '../data/verzekeraars';
 
 const reasons = [
   'Gespecialiseerd in voertuigsystemen',
@@ -64,7 +66,11 @@ const faqs = [
   },
   {
     vraag: 'Voldoet een alarm van jullie aan de eisen van mijn verzekeraar?',
-    antwoord: 'Ja. Wij zijn een SCM/CCV-erkend inbouwbedrijf en leveren bij elke installatie een geldig certificaat. Daarmee wordt uw beveiliging door verzekeraars geaccepteerd. Welke klasse u precies nodig heeft, hangt af van uw voertuig en verzekeraar; wij adviseren u vrijblijvend.',
+    antwoord: 'Ja. Wij zijn een Kiwa SCM/CCV-erkend inbouwbedrijf en leveren bij elke installatie een geldig SCM/CCV-certificaat. Dat certificaat wordt door alle Nederlandse autoverzekeraars geaccepteerd. Welke klasse u precies nodig heeft, hangt af van uw voertuig en verzekeraar; dat zoeken wij gratis voor u uit.',
+  },
+  {
+    vraag: 'Welke verzekeraars accepteren jullie alarmsystemen?',
+    antwoord: `Alle Nederlandse autoverzekeraars, waaronder ${verzekeraarsTekst}. Zij vragen een geldig SCM/CCV-certificaat, en dat ontvangt u van ons direct na de inbouw.`,
   },
   {
     vraag: 'Voor welke voertuigen bouwen jullie in?',
@@ -348,10 +354,11 @@ const faqSchema = {
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="reveal grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <!-- Keurmerk-tegel -->
-        <div class="order-2 lg:order-1 flex flex-wrap items-center justify-center gap-8 rounded-3xl bg-white ring-1 ring-white/10 p-10 shadow-2xl shadow-black/40">
-          <img src="/images/driehoek-CCV-voertuigbeveiliging-oranje.png" alt="CCV-keurmerk voertuigbeveiliging" class="h-28 md:h-32 w-auto object-contain" loading="lazy" />
-          <span class="hidden sm:block h-20 w-px bg-gray-200"></span>
-          <img src="/images/SCM-logo-Kiwa-kleuren-ONDERTITEL.jpg" alt="SCM Secure Connected Mobility en Kiwa" class="h-14 md:h-16 w-auto object-contain" loading="lazy" />
+        <div class="order-2 lg:order-1 relative flex flex-wrap items-center justify-center gap-12 py-6">
+          <div class="pointer-events-none absolute inset-0" style="background:radial-gradient(60% 70% at 50% 50%,rgba(22,129,222,.12),transparent 70%)" aria-hidden="true"></div>
+          <img src="/images/driehoek-CCV-voertuigbeveiliging-oranje.png" alt="CCV-keurmerk voertuigbeveiliging" class="relative h-32 md:h-40 w-auto object-contain" loading="lazy" />
+          <span class="relative hidden sm:block h-24 w-px bg-white/15"></span>
+          <img src="/images/scm-logo-transparant.png" alt="SCM Secure Connected Mobility en Kiwa" class="relative h-16 md:h-20 w-auto object-contain" loading="lazy" />
         </div>
         <!-- Tekst -->
         <div class="order-1 lg:order-2">
@@ -374,6 +381,9 @@ const faqSchema = {
             ))}
           </ul>
         </div>
+      </div>
+      <div class="reveal mt-14 pt-10 border-t border-white/10">
+        <Verzekeraars variant="compact" />
       </div>
     </div>
   </section>

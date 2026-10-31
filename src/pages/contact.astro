@@ -285,8 +285,8 @@ import { verzekeraars } from '../data/verzekeraars';
     if (params.get('check')) {
       const msg = document.getElementById('message') as HTMLTextAreaElement | null;
       const subj = document.querySelector('input[name="subject"]') as HTMLInputElement | null;
-      if (msg && !msg.value) msg.value = `Graag een gratis verzekeraarcheck: welke alarmklasse eist ${verz || 'mijn verzekeraar'} voor mijn auto?`;
-      if (subj) subj.value = `Gratis verzekeraarcheck${verz ? ' (' + verz + ')' : ''} via Scharloo-Install.nl`;
+      if (msg && !msg.value) msg.value = `Graag een gratis klassecheck: welke alarmklasse eist ${verz || 'mijn verzekeraar'} voor mijn auto?`;
+      if (subj) subj.value = `Gratis klassecheck${verz ? ' (' + verz + ')' : ''} via Scharloo-Install.nl`;
     }
   } catch (e) {}
 </script>

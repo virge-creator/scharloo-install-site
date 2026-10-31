@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { diensten, dienstUrl } from '../data/diensten';
 import { alarmPakketten, volgPakketten } from '../data/alarm.ts';
+import Verzekeraars from '../components/Verzekeraars.astro';
 
 // Alarm- en voertuigvolgpakketten samen in één shop-grid.
 const beveiliging = [...alarmPakketten, ...volgPakketten];
@@ -148,10 +149,15 @@ const stappen = [
           <h2 class="heading-lg mb-4">SCM/CCV-pakketten<br /><span class="text-gray-500">met vaste prijs</span></h2>
           <p class="text-lg text-gray-400">Vaste pakketprijs, inclusief btw, montage en SCM/CCV-certificaat. Bij de voertuigvolgsystemen komt een jaarlijks meldkamerabonnement.</p>
         </div>
-        <div class="inline-flex items-center gap-3 self-start rounded-2xl bg-white ring-1 ring-white/10 px-5 py-3 shadow-xl shadow-black/40">
-          <img src="/images/SCM-logo-Kiwa-kleuren-ONDERTITEL.jpg" alt="SCM / Kiwa erkend keurmerk" class="h-9 w-auto" loading="lazy" />
-          <span class="text-sm font-bold text-gray-900 leading-tight">Officieel<br />SCM/CCV-erkend</span>
+        <div class="inline-flex items-center gap-4 self-start rounded-2xl bg-white/[0.04] ring-1 ring-white/10 px-5 py-3 backdrop-blur-sm">
+          <img src="/images/scm-logo-transparant.png" alt="SCM / Kiwa erkend keurmerk" class="h-9 w-auto" loading="lazy" />
+          <img src="/images/driehoek-CCV-voertuigbeveiliging-oranje.png" alt="CCV-keurmerk voertuigbeveiliging" class="h-9 w-auto" loading="lazy" />
+          <span class="text-sm font-bold text-white leading-tight">Officieel<br />SCM/CCV-erkend</span>
         </div>
+      </div>
+
+      <div class="reveal mb-10">
+        <Verzekeraars variant="compact" />
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">

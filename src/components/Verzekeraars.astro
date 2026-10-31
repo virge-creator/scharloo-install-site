@@ -3,7 +3,7 @@
 //  variant="full"    = klikbaar raster: bezoeker kiest zijn verzekeraar en krijgt een persoonlijke
 //                      boodschap met knoppen voor een gratis verzekeraarcheck of direct bellen.
 //  variant="compact" = rustige logobalk, voor onder een tekstblok.
-// Logo's verschijnen automatisch als het bestand bestaat in public/images/verzekeraars/<slug>.(svg|png|webp).
+// Logo's verschijnen automatisch als public/images/<slug>.png bestaat (of in de submap verzekeraars/).
 // Logo's worden optisch even groot gemaakt: een breed logo wordt lager, een compact logo hoger.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -14,10 +14,13 @@ interface Props {
 }
 const { variant = 'full' } = Astro.props;
 
-const map = path.join(process.cwd(), 'public', 'images', 'verzekeraars');
+// Zoekt het logo eerst in public/images/verzekeraars/, daarna gewoon in public/images/.
+const mappen = ['images/verzekeraars', 'images'];
 const logoVoor = (slug: string): string | null => {
-  for (const ext of ['svg', 'png', 'webp']) {
-    if (fs.existsSync(path.join(map, `${slug}.${ext}`))) return `/images/verzekeraars/${slug}.${ext}`;
+  for (const m of mappen) {
+    for (const ext of ['png', 'webp', 'svg']) {
+      if (fs.existsSync(path.join(process.cwd(), 'public', m, `${slug}.${ext}`))) return `/${m}/${slug}.${ext}`;
+    }
   }
   return null;
 };

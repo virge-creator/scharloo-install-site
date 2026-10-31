@@ -1,5 +1,5 @@
 // Nederlandse autoverzekeraars die SCM/CCV-gecertificeerde beveiliging accepteren.
-// Logo's staan in public/images/verzekeraars/<slug>.png (wit, transparant).
+// Logo's staan in public/images/<slug>.png (wit, transparant), bv. public/images/allianz.png.
 // Nieuwe verzekeraar? Voeg een regel toe en zet het logo met dezelfde naam in die map.
 // Zonder logo toont het blok automatisch de naam.
 
@@ -26,7 +26,7 @@ export const verzekeraars: Verzekeraar[] = [
   { slug: 'de-goudse', naam: 'De Goudse' },
   { slug: 'klaverblad', naam: 'Klaverblad' },
   { slug: 'unigarant', naam: 'Unigarant' },
-  { slug: 'allianz-direct', naam: 'Allianz Direct' },
+  { slug: 'allianzdirect', naam: 'Allianz Direct' },
   { slug: 'nh1816', naam: 'NH1816' },
   { slug: 'bovemij', naam: 'Bovemij' },
   { slug: 'enra', naam: 'ENRA' },
