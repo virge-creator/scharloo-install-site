@@ -2,8 +2,9 @@
 // Verzekeraars-blok.
 //  variant="full"    = klikbaar raster: bezoeker kiest zijn verzekeraar en krijgt een persoonlijke
 //                      boodschap met knoppen voor een gratis verzekeraarcheck of direct bellen.
-//  variant="compact" = rustige rij met namen, voor onder een tekstblok.
+//  variant="compact" = rustige logobalk, voor onder een tekstblok.
 // Logo's verschijnen automatisch als het bestand bestaat in public/images/verzekeraars/<slug>.(svg|png|webp).
+// Logo's worden optisch even groot gemaakt: een breed logo wordt lager, een compact logo hoger.
 import fs from 'node:fs';
 import path from 'node:path';
 import { verzekeraars } from '../data/verzekeraars';
@@ -20,7 +21,25 @@ const logoVoor = (slug: string): string | null => {
   }
   return null;
 };
-const lijst = verzekeraars.map((v) => ({ ...v, logo: logoVoor(v.slug) }));
+// Breedte/hoogte van een PNG uit de bestandskop lezen (geen extra pakket nodig).
+const verhouding = (logo: string | null): number => {
+  if (!logo || !logo.endsWith('.png')) return 3;
+  try {
+    const b = fs.readFileSync(path.join(process.cwd(), 'public', logo));
+    return b.readUInt32BE(16) / b.readUInt32BE(20);
+  } catch { return 3; }
+};
+// Optisch gelijk formaat: zelfde 'oppervlak', begrensd in hoogte en breedte.
+const maat = (r: number, oppervlak: number, maxH: number, maxW: number) => {
+  let h = Math.sqrt(oppervlak / r);
+  h = Math.min(h, maxH, maxW / r);
+  return { h: Math.round(h), w: Math.round(h * r) };
+};
+const lijst = verzekeraars.map((v) => {
+  const logo = logoVoor(v.slug);
+  const r = verhouding(logo);
+  return { ...v, logo, groot: maat(r, 3400, 44, 190), klein: maat(r, 1300, 28, 92) };
+});
 const checkUrl = '/contact/?dienst=alarmsystemen&check=1#formulier';
 ---
 
@@ -32,7 +51,7 @@ const checkUrl = '/contact/?dienst=alarmsystemen&check=1#formulier';
         <li>
           <button
             type="button"
-            class="verz-tegel relative w-full flex items-center justify-center h-20 rounded-xl bg-white/[0.03] ring-1 ring-white/10 px-4 text-center transition-all hover:ring-brand/60 hover:bg-white/[0.06] aria-pressed:ring-2 aria-pressed:ring-brand aria-pressed:bg-brand/10"
+            class="verz-tegel relative w-full flex items-center justify-center h-24 rounded-xl bg-white/[0.03] ring-1 ring-white/10 px-4 text-center transition-all hover:ring-brand/60 hover:bg-white/[0.06] aria-pressed:ring-2 aria-pressed:ring-brand aria-pressed:bg-brand/10"
             aria-pressed="false"
             data-naam={v.naam}
             data-slug={v.slug}
@@ -40,11 +59,19 @@ const checkUrl = '/contact/?dienst=alarmsystemen&check=1#formulier';
             {v.partner && (
               <span class="absolute top-1.5 right-1.5 rounded-full bg-brand px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">Partner</span>
             )}
-            {v.logo ? (
-              <img src={v.logo} alt={v.naam} class="verz-logo max-h-8 max-w-[80%] w-auto object-contain" loading="lazy" />
-            ) : (
-              <span class="text-gray-200 font-semibold tracking-tight leading-tight">{v.naam}</span>
-            )}
+            <span class="flex flex-col items-center gap-1.5">
+              <span class="h-11 w-full flex items-center justify-center">
+                {v.logo ? (
+                  <img src={v.logo} alt={`Logo ${v.naam}`} width={v.groot.w} height={v.groot.h} style={`height:${v.groot.h}px;width:auto`} class="verz-logo max-w-[85%] object-contain" loading="lazy" />
+                ) : (
+                  <span class="text-gray-200 font-semibold tracking-tight leading-tight">{v.naam}</span>
+                )}
+              </span>
+              <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-400">
+                <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>
+                Geaccepteerd
+              </span>
+            </span>
           </button>
         </li>
       ))}
@@ -54,12 +81,15 @@ const checkUrl = '/contact/?dienst=alarmsystemen&check=1#formulier';
     <div class="verz-paneel mt-5 rounded-2xl bg-gradient-to-br from-brand/15 via-brand/[0.06] to-transparent ring-1 ring-brand/30 p-6 md:p-8" aria-live="polite">
       <div class="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-10">
         <div class="flex-1 min-w-0">
-          <p class="verz-titel text-xl md:text-2xl font-bold text-white mb-2">Eist uw verzekeraar een SCM-alarm?</p>
-          <p class="verz-tekst text-gray-300 leading-relaxed">Wij zoeken gratis voor u uit welke klasse uw verzekeraar voor uw auto vraagt. Na de inbouw ontvangt u het SCM/CCV-certificaat dat uw verzekeraar accepteert.</p>
+          <p class="flex items-center gap-2.5 text-xl md:text-2xl font-bold text-white mb-2">
+            <span class="flex-none w-7 h-7 rounded-full bg-emerald-500/15 text-emerald-400 grid place-items-center"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span>
+            <span class="verz-titel">Alle verzekeraars accepteren ons certificaat</span>
+          </p>
+          <p class="verz-tekst text-gray-300 leading-relaxed">Ons SCM/CCV-certificaat wordt geaccepteerd door alle Nederlandse autoverzekeraars, dus ook door die van u. Twijfelt u welke klasse uw verzekeraar voor uw auto eist? Dat zoeken wij gratis voor u uit.</p>
         </div>
         <div class="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3 flex-none">
           <a href={checkUrl} class="verz-check motion-button inline-flex items-center justify-center gap-2 rounded-full bg-brand px-6 py-3.5 font-semibold text-white hover:bg-white hover:text-black transition-all duration-300">
-            <span class="verz-check-label">Gratis verzekeraarcheck</span>
+            <span class="verz-check-label">Gratis klassecheck</span>
             <span>→</span>
           </a>
           <a href="tel:+31182796197" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-6 py-3.5 font-semibold text-white hover:border-brand hover:text-brand transition-colors">
@@ -71,13 +101,13 @@ const checkUrl = '/contact/?dienst=alarmsystemen&check=1#formulier';
     </div>
   </div>
 ) : (
-  <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
-    <p class="flex-none text-xs font-semibold uppercase tracking-widest text-gray-500">Geaccepteerd door o.a.</p>
-    <ul class="flex flex-wrap items-center gap-2" aria-label="Verzekeraars die SCM/CCV-gecertificeerde beveiliging accepteren">
+  <div class="flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-8">
+    <p class="flex-none text-xs font-semibold uppercase tracking-widest text-gray-500 lg:max-w-[9rem] leading-relaxed">Geaccepteerd door alle verzekeraars</p>
+    <ul class="flex-1 grid grid-cols-4 sm:grid-cols-5 lg:grid-cols-10 items-center gap-x-5 gap-y-6" aria-label="Verzekeraars die SCM/CCV-gecertificeerde beveiliging accepteren">
       {lijst.map((v) => (
-        <li class="flex items-center h-9 rounded-full bg-white/[0.04] ring-1 ring-white/10 px-3.5">
+        <li class="flex items-center justify-center min-w-0">
           {v.logo ? (
-            <img src={v.logo} alt={v.naam} class="verz-logo h-4 w-auto object-contain" loading="lazy" />
+            <img src={v.logo} alt={`Logo ${v.naam}`} width={v.klein.w} height={v.klein.h} style={`height:${v.klein.h}px;width:auto`} class="verz-logo verz-klein max-w-full object-contain" loading="lazy" />
           ) : (
             <span class="text-sm text-gray-300 font-medium">{v.naam}</span>
           )}
@@ -89,7 +119,10 @@ const checkUrl = '/contact/?dienst=alarmsystemen&check=1#formulier';
 
 <style>
   /* Logo's in één rustige witte tint, zodat ze opgaan in de donkere site. */
-  .verz-logo { filter: brightness(0) invert(1); opacity: .8; transition: opacity .25s ease; }
+  /* Logo's zijn al wit en transparant; de filter vangt een later toegevoegd gekleurd logo op. */
+  .verz-logo { filter: brightness(0) invert(1); opacity: .85; transition: opacity .25s ease; }
+  .verz-klein { opacity: .6; }
+  .verz-klein:hover { opacity: 1; }
   .verz-tegel:hover .verz-logo, .verz-tegel[aria-pressed="true"] .verz-logo { opacity: 1; }
 </style>
 
@@ -106,9 +139,9 @@ const checkUrl = '/contact/?dienst=alarmsystemen&check=1#formulier';
         const naam = knop.dataset.naam || '';
         root.querySelectorAll('.verz-tegel').forEach((k) => k.setAttribute('aria-pressed', 'false'));
         knop.setAttribute('aria-pressed', 'true');
-        if (titel) titel.textContent = `Verzekerd bij ${naam}?`;
-        if (tekst) tekst.textContent = `Eist ${naam} een SCM-alarm of voertuigvolgsysteem? Wij bouwen het in en leveren het SCM/CCV-certificaat dat ${naam} accepteert. We zoeken gratis voor u uit welke klasse ${naam} voor uw auto vraagt.`;
-        if (label) label.textContent = `Gratis check voor ${naam}`;
+        if (titel) titel.textContent = `Ja, ${naam} accepteert ons certificaat`;
+        if (tekst) tekst.textContent = `Ons SCM/CCV-certificaat voldoet aan de eisen van ${naam}. Na de inbouw stuurt u het certificaat naar ${naam} en uw auto is goed verzekerd. Twijfelt u welke klasse ${naam} voor uw auto eist? Wij zoeken het gratis voor u uit.`;
+        if (label) label.textContent = `Gratis klassecheck`;
         if (check) {
           const [pad, hash] = basis.split('#');
           check.href = `${pad}&verzekeraar=${encodeURIComponent(naam)}${hash ? '#' + hash : ''}`;
