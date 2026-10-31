@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { alarmPakketten, volgPakketten } from '../data/alarm.ts';
+import Verzekeraars from '../components/Verzekeraars.astro';
+import { verzekeraarsTekst } from '../data/verzekeraars';
 
 // Uitleg per klasse, extra tekst voor zoekmachines en bezoekers
 const klasseUitleg = [
@@ -43,6 +45,14 @@ const faqs = [
     antwoord: 'Dat hangt af van uw verzekeraar en voertuig. Bij nieuwere of duurdere voertuigen eist de verzekeraar vaak een SCM/CCV-goedgekeurd alarm (meestal klasse 3) of een voertuigvolgsysteem (klasse 4 of 5). Wij adviseren u vrijblijvend welke klasse in uw situatie nodig is.',
   },
   {
+    vraag: 'Accepteert mijn verzekeraar een alarm van Scharloo-Install?',
+    antwoord: `Ja. Wij zijn een SCM/CCV-erkend inbouwbedrijf en leveren bij elke installatie een geldig SCM/CCV-certificaat. Dat certificaat wordt geaccepteerd door alle Nederlandse autoverzekeraars, waaronder ${verzekeraarsTekst}. Welke klasse u nodig heeft, verschilt per verzekeraar en voertuig; wij zoeken dat vrijblijvend voor u uit.`,
+  },
+  {
+    vraag: 'Welke alarmklasse eist mijn verzekeraar?',
+    antwoord: 'Dat hangt af van uw verzekeraar, de cataloguswaarde en het merk en type van uw auto. Bij nieuwere of duurdere auto’s vragen verzekeraars meestal minimaal klasse 3, soms een voertuigvolgsysteem (klasse 4 of 5). Stuur ons uw kenteken en verzekeraar, dan zoeken wij gratis uit welke klasse u nodig heeft.',
+  },
+  {
     vraag: 'Wat is het verschil tussen klasse 2 en klasse 3?',
     antwoord: 'Beide hebben een startonderbreker en inbraakdetectie. Klasse 3 voegt hellingshoekdetectie toe, waardoor het alarm ook afgaat bij wegslepen of opkrikken. Daarom vragen verzekeraars meestal om klasse 3.',
   },
@@ -77,8 +87,8 @@ const faqSchema = {
 ---
 
 <Layout
-  title="Alarmsysteem inbouwen: SCM/CCV klasse 2 t/m 5 | prijzen"
-  description="SCM/CCV-alarmsystemen en voertuigvolgsystemen (klasse 2 t/m 5 en terugvindsysteem) professioneel ingebouwd, inclusief montage en certificaat. Bekijk de prijzen."
+  title="SCM alarm inbouwen | Geaccepteerd door uw verzekeraar"
+  description="SCM/CCV-alarm laten inbouwen, klasse 2 t/m 5. Geaccepteerd door alle verzekeraars, zoals Centraal Beheer, Interpolis, Allianz en a.s.r. Inclusief montage en certificaat."
 >
   <!-- Hero -->
   <section class="min-h-[60vh] bg-black text-white flex items-end pb-20 relative overflow-hidden">
@@ -88,15 +98,19 @@ const faqSchema = {
       <p class="text-brand font-medium tracking-widest uppercase mb-4 animate-fade-in-up delay-100">Voertuigbeveiliging</p>
       <h1 class="heading-xl animate-fade-in-up delay-100" style="opacity: 0;">
         Alarmsysteem inbouwen<br />
-        <span class="text-gray-500">met SCM/CCV-certificaat</span>
+        <span class="text-gray-500">goedgekeurd voor uw verzekeraar</span>
       </h1>
       <p class="text-xl text-gray-400 max-w-2xl mt-8 animate-fade-in-up delay-200" style="opacity: 0;">
-        SCM/CCV-gecertificeerde alarmsystemen en voertuigvolgsystemen (klasse 2 t/m 5), professioneel ingebouwd op locatie of in onze werkplaats. Bekijk hieronder de klassen en prijzen.
+        Eist uw verzekeraar een SCM-alarm of voertuigvolgsysteem? Wij bouwen het in, op locatie of in onze werkplaats, en u krijgt direct het SCM/CCV-certificaat dat uw verzekeraar vraagt. Vaste prijzen, ook ’s avonds en in het weekend.
       </p>
       <div class="mt-8 flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-300">
-        <a href="/contact/?dienst=alarmsystemen#formulier" class="inline-flex items-center justify-center gap-3 rounded-full bg-brand px-7 py-4 font-semibold text-white transition-all duration-300 hover:bg-white hover:text-black">Vraag advies over uw voertuig <span>→</span></a>
+        <a href="/contact/?dienst=alarmsystemen&check=1#formulier" class="inline-flex items-center justify-center gap-3 rounded-full bg-brand px-7 py-4 font-semibold text-white transition-all duration-300 hover:bg-white hover:text-black">Gratis verzekeraarcheck <span>→</span></a>
         <a href="tel:+31182796197" class="inline-flex items-center justify-center rounded-full border border-gray-700 px-7 py-4 font-semibold text-white transition-colors hover:border-brand hover:text-brand">Bel (0182) 79 61 97</a>
       </div>
+      <a href="#verzekeraars" class="mt-6 inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors animate-fade-in-up delay-300">
+        <svg class="w-4 h-4 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+        Geaccepteerd door alle Nederlandse verzekeraars
+      </a>
     </div>
   </section>
 
@@ -112,19 +126,51 @@ const faqSchema = {
     </div>
   </section>
 
-  <!-- Certificering en keurmerken (compacte strip, geen losse kaartjes) -->
-  <section class="py-16 bg-black">
-    <div class="max-w-5xl mx-auto px-6 lg:px-8">
-      <div class="reveal flex flex-col sm:flex-row sm:items-center gap-8 rounded-2xl border border-gray-800 bg-gray-950 p-7">
-        <div class="sm:max-w-xs">
-          <p class="text-brand font-medium tracking-widest uppercase mb-2 text-sm">Erkend &amp; gecertificeerd</p>
-          <p class="text-gray-400 text-sm leading-relaxed">Onze alarmsystemen worden geleverd met een geldig SCM/CCV-certificaat, zodat u voldoet aan de eisen van uw verzekeraar.</p>
+  <!-- Verzekeraars & keurmerk: vertrouwen voor de verzekering -->
+  <section id="verzekeraars" class="py-24 bg-black border-t border-white/10" style="scroll-margin-top:6rem">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="reveal grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14 items-start mb-12">
+        <div class="lg:col-span-3">
+          <p class="text-brand font-medium tracking-widest uppercase mb-4">Geaccepteerd door alle verzekeraars</p>
+          <h2 class="heading-lg mb-6">Eist uw verzekeraar<br /><span class="text-gray-500">een SCM-alarm?</span></h2>
+          <p class="text-lg text-gray-400 leading-relaxed max-w-2xl">
+            Wij zijn een <span class="text-white font-semibold">Kiwa SCM/CCV-erkend inbouwbedrijf</span>. Na elke inbouw ontvangt u een geldig SCM/CCV-certificaat, precies het bewijs dat alle Nederlandse autoverzekeraars vragen. Zo voldoet u direct aan uw polisvoorwaarden en bent u verzekerd tegen diefstal.
+          </p>
         </div>
-        <div class="flex flex-1 items-center justify-center gap-4 rounded-xl bg-white px-6 py-5">
-          <img src="/images/SCM-logo-Kiwa-kleuren-ONDERTITEL.jpg" alt="SCM Secure Connected Mobility en Kiwa" class="h-12 md:h-14 w-auto object-contain" loading="lazy" />
-          <span class="h-10 w-px bg-gray-200"></span>
-          <img src="/images/driehoek-CCV-voertuigbeveiliging-oranje.png" alt="CCV-keurmerk voor voertuigbeveiliging" class="h-14 md:h-16 w-auto object-contain" loading="lazy" />
+        <div class="lg:col-span-2 flex items-center justify-center lg:justify-end gap-8 lg:pt-10">
+          <img src="/images/driehoek-CCV-voertuigbeveiliging-oranje.png" alt="CCV-keurmerk voor voertuigbeveiliging" class="h-24 md:h-28 w-auto object-contain" loading="lazy" />
+          <span class="h-16 w-px bg-white/15"></span>
+          <img src="/images/scm-logo-transparant.png" alt="SCM Secure Connected Mobility en Kiwa" class="h-12 md:h-14 w-auto object-contain" loading="lazy" />
         </div>
+      </div>
+
+      <div class="reveal">
+        <Verzekeraars variant="full" />
+      </div>
+
+      <!-- Zo regelen wij het -->
+      <div class="reveal mt-16">
+        <h3 class="text-2xl font-bold mb-6">In drie stappen geregeld met uw verzekeraar</h3>
+        <ol class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {[
+            { t: 'Gratis verzekeraarcheck', d: 'Stuur uw kenteken en verzekeraar. Wij zoeken uit welke klasse uw verzekeraar voor uw auto eist, zodat u niet te veel en niet te weinig betaalt.' },
+            { t: 'Inbouw binnen 24 uur gepland', d: 'Op locatie of in onze werkplaats in Reeuwijk, door heel Nederland. Ook ’s avonds en in het weekend, zodat u uw auto niet hoeft te missen.' },
+            { t: 'Certificaat voor uw verzekeraar', d: 'Direct na de inbouw ontvangt u het SCM/CCV-certificaat. Dat stuurt u door naar uw verzekeraar en u voldoet aan de polis.' },
+          ].map((stap, i) => (
+            <li class="rounded-2xl bg-gray-950 ring-1 ring-white/10 p-6">
+              <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-brand/15 text-brand font-black mb-4">{i + 1}</span>
+              <p class="text-lg font-bold mb-2">{stap.t}</p>
+              <p class="text-sm text-gray-400 leading-relaxed">{stap.d}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <!-- Urgentie, eerlijk geformuleerd -->
+      <div class="reveal mt-6 flex flex-col sm:flex-row sm:items-center gap-4 rounded-2xl border border-amber-500/30 bg-amber-500/[0.06] px-6 py-5">
+        <svg class="w-6 h-6 flex-none text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <p class="text-gray-300 text-sm leading-relaxed"><span class="text-white font-semibold">Nieuwe auto gekocht?</span> Veel verzekeraars geven u na aanschaf maar een beperkte termijn om het vereiste alarm in te laten bouwen. Zonder geldig certificaat keert de verzekering bij diefstal mogelijk niet uit. Plan daarom op tijd.</p>
+        <a href="tel:+31182796197" class="flex-none inline-flex items-center justify-center rounded-full bg-white text-black px-5 py-2.5 text-sm font-bold hover:bg-brand hover:text-white transition-colors">Bel direct</a>
       </div>
     </div>
   </section>
@@ -255,9 +301,10 @@ const faqSchema = {
           <p class="text-brand font-medium tracking-widest uppercase mb-4">Uitleg</p>
           <h2 class="heading-lg">De alarmklassen<br /><span class="text-gray-500">in beeld</span></h2>
         </div>
-        <div class="inline-flex items-center gap-3 self-start rounded-2xl bg-white ring-1 ring-white/10 px-5 py-3 shadow-xl shadow-black/40">
-          <img src="/images/SCM-logo-Kiwa-kleuren-ONDERTITEL.jpg" alt="SCM / Kiwa erkend keurmerk" class="h-9 w-auto" loading="lazy" />
-          <span class="text-sm font-bold text-gray-900 leading-tight">Officieel<br />SCM/CCV-erkend</span>
+        <div class="inline-flex items-center gap-4 self-start rounded-2xl bg-white/[0.04] ring-1 ring-white/10 px-5 py-3 backdrop-blur-sm">
+          <img src="/images/scm-logo-transparant.png" alt="SCM / Kiwa erkend keurmerk" class="h-9 w-auto" loading="lazy" />
+          <img src="/images/driehoek-CCV-voertuigbeveiliging-oranje.png" alt="CCV-keurmerk voertuigbeveiliging" class="h-9 w-auto" loading="lazy" />
+          <span class="text-sm font-bold text-white leading-tight">Officieel<br />SCM/CCV-erkend</span>
         </div>
       </div>
 

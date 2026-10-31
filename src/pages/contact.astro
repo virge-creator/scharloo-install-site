@@ -18,6 +18,7 @@ const diensten = [
 // WhatsApp: pas het nummer aan naar jouw WhatsApp-nummer (internationaal, zonder + of spaties)
 const whatsappNummer = '31182796197';
 const whatsappUrl = `https://wa.me/${whatsappNummer}?text=${encodeURIComponent('Hallo Scharloo-Install, ik heb een vraag over:')}`;
+import { verzekeraars } from '../data/verzekeraars';
 ---
 
 <Layout title="Contact" description="Neem contact op met Scharloo-Install voor een vrijblijvende offerte. Bel, mail of stuur ons uw vraag, wij reageren snel.">
@@ -186,6 +187,15 @@ const whatsappUrl = `https://wa.me/${whatsappNummer}?text=${encodeURIComponent('
               </div>
 
               <div>
+                <label for="verzekeraar" class="block text-sm font-medium text-gray-400 mb-2">Uw verzekeraar <span class="text-gray-600">(optioneel)</span></label>
+                <input type="text" id="verzekeraar" name="verzekeraar" list="verzekeraar-lijst" placeholder="bijv. Centraal Beheer"
+                  class="w-full rounded-xl bg-white/[0.04] border border-white/10 px-4 py-3.5 text-white placeholder-gray-500 outline-none focus:border-brand focus:bg-white/[0.06] transition-colors" />
+                <datalist id="verzekeraar-lijst">
+                  {verzekeraars.map((v) => <option value={v.naam} />)}
+                </datalist>
+              </div>
+
+              <div>
                 <label for="message" class="block text-sm font-medium text-gray-400 mb-2">Extra wensen of speciale aanvragen *</label>
                 <textarea id="message" name="message" rows="5" required placeholder="Vertel ons wat u zoekt. Heeft u een speciale wens of maatwerk nodig? Wij doen en kunnen vrijwel alles — vraag het gerust."
                   class="w-full rounded-xl bg-white/[0.04] border border-white/10 px-4 py-3.5 text-white placeholder-gray-500 outline-none focus:border-brand focus:bg-white/[0.06] transition-colors resize-none"></textarea>
@@ -267,6 +277,16 @@ const whatsappUrl = `https://wa.me/${whatsappNummer}?text=${encodeURIComponent('
     if (dienst) {
       const sel = document.getElementById('service');
       if (sel && [...sel.options].some(o => o.value === dienst)) sel.value = dienst;
+    }
+    // Verzekeraar en gratis check vanaf de alarmpagina
+    const verz = params.get('verzekeraar');
+    const veld = document.getElementById('verzekeraar') as HTMLInputElement | null;
+    if (verz && veld) veld.value = verz;
+    if (params.get('check')) {
+      const msg = document.getElementById('message') as HTMLTextAreaElement | null;
+      const subj = document.querySelector('input[name="subject"]') as HTMLInputElement | null;
+      if (msg && !msg.value) msg.value = `Graag een gratis verzekeraarcheck: welke alarmklasse eist ${verz || 'mijn verzekeraar'} voor mijn auto?`;
+      if (subj) subj.value = `Gratis verzekeraarcheck${verz ? ' (' + verz + ')' : ''} via Scharloo-Install.nl`;
     }
   } catch (e) {}
 </script>
